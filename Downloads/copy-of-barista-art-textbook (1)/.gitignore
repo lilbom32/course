@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Exclude le-floraltravel related folders and files
+../le-floraltravel-*
+../*le-floraltravel*
+../le_floraltravel*
+../le-floral-*

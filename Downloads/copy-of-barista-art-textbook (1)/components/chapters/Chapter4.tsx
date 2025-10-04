@@ -5,8 +5,8 @@ import { ChapterTitle, SectionTitle, SubSectionTitle, Paragraph, StyledList, Cha
 const Chapter4: React.FC = () => {
   return (
     <div>
-      <ChapterTitle>Bài 4: Latte Art</ChapterTitle>
-      <ChapterSubtitle>Tổng quan về nghệ thuật vẽ hình trên bề mặt cà phê bằng bọt sữa.</ChapterSubtitle>
+      <ChapterTitle>Bài 4: <strong>Latte Art</strong> (Nghệ Thuật Vẽ Hình Trên Cà Phê)</ChapterTitle>
+      <ChapterSubtitle>Tổng quan về <strong>Latte Art</strong> (nghệ thuật vẽ hình) trên bề mặt cà phê bằng <strong>microfoam</strong> (bọt sữa mịn).</ChapterSubtitle>
 
       {/* Coffee Drink Variations Images */}
       <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
@@ -34,37 +34,37 @@ const Chapter4: React.FC = () => {
         </div>
       </div>
 
-      <SectionTitle>4.3 Tổng Quan Latte Art</SectionTitle>
-      <SubSectionTitle>4.3.1 Khởi nguồn Latte Art</SubSectionTitle>
+      <SectionTitle>4.3 Tổng Quan <strong>Latte Art</strong></SectionTitle>
+      <SubSectionTitle>4.3.1 Khởi nguồn <strong>Latte Art</strong></SubSectionTitle>
       <Paragraph>
-        Sự phát triển của espresso và microfoam ở Ý vào những năm 1900 đã đặt nền móng cho Latte Art. Tuy nhiên, kỹ thuật này lại được lan truyền và phổ biến rộng rãi khắp thế giới từ Mỹ, mà công lao lớn thuộc về David Schomer ở Seattle vào cuối những năm 1980. Ông là người tiên phong trong việc sáng tạo và đào tạo về "Caffe Latte Art", với những hình ảnh đầu tiên là trái tim và rosetta.
+        Sự phát triển của <strong>espresso</strong> (cà phê đậm đặc) và <strong>microfoam</strong> (bọt sữa mịn) ở Ý vào những năm 1900 đã đặt nền móng cho <strong>Latte Art</strong> (nghệ thuật vẽ hình trên cà phê). Tuy nhiên, kỹ thuật này lại được lan truyền và phổ biến rộng rãi khắp thế giới từ Mỹ, mà công lao lớn thuộc về David Schomer ở Seattle vào cuối những năm 1980. Ông là người tiên phong trong việc sáng tạo và đào tạo về "Caffe <strong>Latte Art</strong>", với những hình ảnh đầu tiên là trái tim và <strong>rosetta</strong> (hình lá).
       </Paragraph>
 
-      <SubSectionTitle>4.3.2 Latte Art là gì?</SubSectionTitle>
+      <SubSectionTitle>4.3.2 <strong>Latte Art</strong> là gì?</SubSectionTitle>
       <Paragraph>
-        Latte Art là nghệ thuật vẽ hình lên bề mặt cà phê bằng bọt sữa. Đây là một trong những kỹ thuật ấn tượng nhất của barista. Ban đầu, latte art chỉ là việc đổ bọt sữa một cách khéo léo lên tách cà phê espresso để tạo ra một kết cấu vững chắc. Sau này, các hoạ tiết đầu tiên được trang trí là trái tim (heart) và rosetta.
+        <strong>Latte Art</strong> (nghệ thuật vẽ hình trên cà phê) là nghệ thuật vẽ hình lên bề mặt cà phê bằng <strong>microfoam</strong> (bọt sữa mịn). Đây là một trong những kỹ thuật ấn tượng nhất của barista. Ban đầu, <strong>Latte Art</strong> chỉ là việc đổ bọt sữa một cách khéo léo lên tách cà phê <strong>espresso</strong> để tạo ra một kết cấu vững chắc. Sau này, các hoạ tiết đầu tiên được trang trí là trái tim (<strong>heart</strong>) và <strong>rosetta</strong> (hình lá).
       </Paragraph>
       
-      <SectionTitle>4.4 Kỹ Thuật Latte Art</SectionTitle>
-      <Paragraph>Kỹ thuật Latte Art được chia làm 3 giai đoạn chính:</Paragraph>
-      <SubSectionTitle>Giai đoạn 1: Tạo bọt sữa (foam)</SubSectionTitle>
+      <SectionTitle>4.4 Kỹ Thuật <strong>Latte Art</strong></SectionTitle>
+      <Paragraph>Kỹ thuật <strong>Latte Art</strong> được chia làm 3 giai đoạn chính:</Paragraph>
+      <SubSectionTitle>Giai đoạn 1: Tạo <strong>microfoam</strong> (bọt sữa mịn)</SubSectionTitle>
       <Paragraph>
-        Đây là bước quan trọng nhất. Cần tạo ra một lớp bọt sữa (microfoam) mịn, mượt, không có bong bóng lớn. Sữa cần được làm lạnh và sử dụng ca đánh sữa lạnh để có thêm thời gian tạo bọt trước khi sữa quá nóng.
+        Đây là bước quan trọng nhất. Cần tạo ra một lớp <strong>microfoam</strong> (bọt sữa mịn) mịn, mượt, không có bong bóng lớn. Sữa cần được làm lạnh và sử dụng ca đánh sữa lạnh để có thêm thời gian tạo bọt trước khi sữa quá nóng.
       </Paragraph>
 
-      <SubSectionTitle>Giai đoạn 2: Chiết suất Espresso tiêu chuẩn</SubSectionTitle>
+      <SubSectionTitle>Giai đoạn 2: Chiết xuất <strong>espresso</strong> tiêu chuẩn</SubSectionTitle>
       <Paragraph>
-        Một shot espresso hoàn hảo với lớp crema dày, màu nâu cánh gián và không bị vỡ là nền tảng không thể thiếu. Lớp crema này chính là "khung vẽ" cho nghệ thuật latte art.
+        Một shot <strong>espresso</strong> (cà phê đậm đặc) hoàn hảo với lớp <strong>crema</strong> (lớp bọt nâu) dày, màu nâu cánh gián và không bị vỡ là nền tảng không thể thiếu. Lớp <strong>crema</strong> này chính là "khung vẽ" cho nghệ thuật <strong>Latte Art</strong>.
       </Paragraph>
       
-      <SubSectionTitle>Giai đoạn 3: Rót sữa và thực hiện kỹ thuật Latte Art</SubSectionTitle>
+      <SubSectionTitle>Giai đoạn 3: Rót sữa và thực hiện kỹ thuật <strong>Latte Art</strong></SubSectionTitle>
        <StyledList items={[
-        "Bước 1: Bắt đầu rót từ trên cao một chút để sữa chìm xuống dưới lớp crema, cho đến khi cốc đầy khoảng 1/2.",
-        "Bước 2: Hạ thấp ca sữa xuống gần bề mặt cà phê để bọt trắng bắt đầu nổi lên và tạo hình.",
-        "Bước 3: Di chuyển ca sữa để tạo hình mong muốn (ví dụ: lắc cổ tay để tạo hình rosetta, hoặc giữ yên để tạo hình trái tim).",
+        "Bước 1: Bắt đầu rót từ trên cao một chút để sữa chìm xuống dưới lớp <strong>crema</strong> (lớp bọt nâu), cho đến khi cốc đầy khoảng 1/2.",
+        "Bước 2: Hạ thấp ca sữa xuống gần bề mặt cà phê để <strong>microfoam</strong> (bọt sữa mịn) bắt đầu nổi lên và tạo hình.",
+        "Bước 3: Di chuyển ca sữa để tạo hình mong muốn (ví dụ: lắc cổ tay để tạo hình <strong>rosetta</strong> (hình lá), hoặc giữ yên để tạo hình trái tim).",
         "Bước 4: Khi gần đầy, nâng cao ca sữa và rót một dòng nhỏ để kết thúc hình vẽ."
        ]}/>
-       <Note>Nếu đổ quá nhanh sẽ làm vỡ lớp crema. Nhưng nếu đổ quá chậm sẽ khiến bọt bị sót lại trong kết cấu.</Note>
+       <Note>Nếu đổ quá nhanh sẽ làm vỡ lớp <strong>crema</strong> (lớp bọt nâu). Nhưng nếu đổ quá chậm sẽ khiến <strong>microfoam</strong> (bọt sữa mịn) bị sót lại trong kết cấu.</Note>
     </div>
   );
 };

@@ -61,25 +61,25 @@ const Chapter5: React.FC = () => {
 
   return (
     <div>
-      <ChapterTitle>Bài 5: Latte Art Hình Trên Tách Cà Phê</ChapterTitle>
-      <ChapterSubtitle>Hướng dẫn thực hành chi tiết các kỹ thuật Latte Art từ cơ bản đến nâng cao, bao gồm trái tim, rosetta, tulip và thiên nga.</ChapterSubtitle>
+      <ChapterTitle>Bài 5: <strong>Latte Art</strong> (Nghệ Thuật Vẽ Hình) Trên Tách Cà Phê</ChapterTitle>
+      <ChapterSubtitle>Hướng dẫn thực hành chi tiết các kỹ thuật <strong>Latte Art</strong> (nghệ thuật vẽ hình trên cà phê) từ cơ bản đến nâng cao, bao gồm trái tim, <strong>rosetta</strong> (hình lá), <strong>tulip</strong> (hoa tulip) và thiên nga.</ChapterSubtitle>
 
-      <SectionTitle>5.1 Tổng Quan Về Latte Art</SectionTitle>
+      <SectionTitle>5.1 Tổng Quan Về <strong>Latte Art</strong></SectionTitle>
       <Paragraph>
-        Latte Art là nghệ thuật tạo hình trên bề mặt cà phê bằng cách rót sữa đã đánh bọt một cách có kiểm soát. Đây là kỹ năng đỉnh cao của barista, đòi hỏi sự kết hợp hoàn hảo giữa kỹ thuật đánh sữa, chiết xuất espresso và khả năng kiểm soát dòng chảy.
+        <strong>Latte Art</strong> (nghệ thuật vẽ hình trên cà phê) là nghệ thuật tạo hình trên bề mặt cà phê bằng cách rót sữa đã đánh bọt một cách có kiểm soát. Đây là kỹ năng đỉnh cao của barista, đòi hỏi sự kết hợp hoàn hảo giữa kỹ thuật đánh sữa tạo <strong>microfoam</strong> (bọt sữa mịn), chiết xuất <strong>espresso</strong> (cà phê đậm đặc) và khả năng kiểm soát dòng chảy.
       </Paragraph>
 
       <ImageCard 
         src="https://d3awvtnmmsvyot.cloudfront.net/api/file/Xe1yP7KQ1uuJq4uzwVNC/convert?w=1200&quality=90" 
-        caption="Hình 5.0: Tổng quan về nghệ thuật Latte Art - sự kết hợp hoàn hảo giữa cà phê và sữa" 
+        caption="Hình 5.0: Tổng quan về nghệ thuật <strong>Latte Art</strong> (nghệ thuật vẽ hình trên cà phê) - sự kết hợp hoàn hảo giữa cà phê và sữa" 
       />
 
       <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 mb-8 border-l-4 border-amber-400">
         <h3 className="text-xl font-semibold text-amber-800 mb-4">🎯 Mục Tiêu Học Tập</h3>
         <StyledList items={[
-          "Nắm vững các kỹ thuật Latte Art cơ bản: trái tim và rosetta",
+          "Nắm vững các kỹ thuật <strong>Latte Art</strong> cơ bản: trái tim và <strong>rosetta</strong> (hình lá)",
           "Hiểu rõ nguyên lý tạo hình và kiểm soát dòng chảy",
-          "Thực hành các kỹ thuật nâng cao: tulip và thiên nga",
+          "Thực hành các kỹ thuật nâng cao: <strong>tulip</strong> (hoa tulip) và thiên nga",
           "Xử lý được các vấn đề thường gặp trong quá trình thực hành",
           "Phát triển phong cách riêng và sáng tạo các mẫu mới"
         ]} />
@@ -88,51 +88,51 @@ const Chapter5: React.FC = () => {
       <SectionTitle>5.2 Chuẩn Bị Dụng Cụ Và Nguyên Liệu</SectionTitle>
       <SubSectionTitle>Dụng cụ cần thiết</SubSectionTitle>
       <StyledList items={[
-        "Ca đánh sữa (steaming pitcher) dung tích 600ml",
-        "Tách cà phê espresso tiêu chuẩn (150-200ml)",
-        "Máy pha cà phê espresso với vòi đánh sữa",
+        "Ca đánh sữa (<strong>steaming pitcher</strong>) dung tích 600ml",
+        "Tách cà phê <strong>espresso</strong> tiêu chuẩn (150-200ml)",
+        "Máy pha cà phê <strong>espresso</strong> với <strong>steam wand</strong> (vòi hơi nước)",
         "Nhiệt kế đo nhiệt độ sữa",
         "Khăn lau sạch",
-        "Thìa nhỏ để điều chỉnh bọt sữa"
+        "Thìa nhỏ để điều chỉnh <strong>microfoam</strong> (bọt sữa mịn)"
       ]} />
 
       <SubSectionTitle>Yêu cầu về nguyên liệu</SubSectionTitle>
       <StyledList items={[
-        "Espresso: 30ml, chiết xuất trong 25-30 giây, lớp crema dày 3-5mm",
+        "<strong>Espresso</strong> (cà phê đậm đặc): 30ml, chiết xuất trong 25-30 giây, lớp <strong>crema</strong> (lớp bọt nâu) dày 3-5mm",
         "Sữa tươi: 150-200ml, nhiệt độ lạnh (2-4°C)",
         "Chất lượng sữa: hàm lượng chất béo 3,5-4%, protein 3,2-3,5%"
       ]} />
 
       <Note>
-        Chất lượng sữa ảnh hưởng trực tiếp đến khả năng tạo bọt. Sữa có hàm lượng protein cao sẽ tạo bọt ổn định hơn.
+        Chất lượng sữa ảnh hưởng trực tiếp đến khả năng tạo <strong>microfoam</strong> (bọt sữa mịn). Sữa có hàm lượng protein cao sẽ tạo bọt ổn định hơn.
       </Note>
 
       <ImageCard 
         src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80" 
-        caption="Hình 5.0.1: Dụng cụ cần thiết cho Latte Art - ca đánh sữa, tách cà phê, máy espresso và các phụ kiện" 
+        caption="Hình 5.0.1: Dụng cụ cần thiết cho <strong>Latte Art</strong> - ca đánh sữa, tách cà phê, máy <strong>espresso</strong> và các phụ kiện" 
       />
 
-      <SectionTitle>5.3 Kỹ Thuật Đánh Sữa Cho Latte Art</SectionTitle>
+      <SectionTitle>5.3 Kỹ Thuật Đánh Sữa Cho <strong>Latte Art</strong></SectionTitle>
       <Paragraph>
-        Kỹ thuật đánh sữa là nền tảng của Latte Art. Bạn cần tạo ra microfoam - lớp bọt sữa mịn, mượt, không có bong bóng lớn, có độ đặc vừa phải để có thể tạo hình.
+        Kỹ thuật đánh sữa là nền tảng của <strong>Latte Art</strong>. Bạn cần tạo ra <strong>microfoam</strong> (bọt sữa mịn) - lớp bọt sữa mịn, mượt, không có bong bóng lớn, có độ đặc vừa phải để có thể tạo hình.
       </Paragraph>
 
       <SubSectionTitle>Quy trình đánh sữa chuẩn</SubSectionTitle>
       <StyledList items={[
         "Bước 1: Làm lạnh ca đánh sữa và sữa tươi",
-        "Bước 2: Đặt vòi hơi nước ở góc 45° so với bề mặt sữa",
-        "Bước 3: Bật hơi nước và đưa vòi xuống sâu 1cm để tạo bọt",
+        "Bước 2: Đặt <strong>steam wand</strong> (vòi hơi nước) ở góc 45° so với bề mặt sữa",
+        "Bước 3: Bật hơi nước và đưa vòi xuống sâu 1cm để tạo <strong>microfoam</strong> (bọt sữa mịn)",
         "Bước 4: Khi sữa nóng lên 40°C, hạ vòi xuống sâu hơn để làm nóng",
         "Bước 5: Tắt hơi nước khi sữa đạt 60-65°C",
-        "Bước 6: Lắc nhẹ ca sữa để hòa trộn bọt và sữa lỏng"
+        "Bước 6: Lắc nhẹ ca sữa để hòa trộn <strong>microfoam</strong> (bọt sữa mịn) và sữa lỏng"
       ]} />
 
       <ImageCard 
         src="https://horecavn.com/wp-content/uploads/2024/05/kham-pha-ky-thuat-tao-hinh-latte-art-de-tro-thanh-barista-chuyen-nghiep_20240526183954.jpg" 
-        caption="Hình 5.1: Kỹ thuật đánh sữa cho Latte Art" 
+        caption="Hình 5.1: Kỹ thuật đánh sữa cho <strong>Latte Art</strong>" 
       />
 
-      <SectionTitle>5.4 Các Kỹ Thuật Latte Art Cơ Bản</SectionTitle>
+      <SectionTitle>5.4 Các Kỹ Thuật <strong>Latte Art</strong> Cơ Bản</SectionTitle>
       
       <div className="mb-8">
         <div className="flex flex-wrap gap-2 mb-6">

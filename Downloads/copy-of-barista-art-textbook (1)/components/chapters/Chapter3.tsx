@@ -31,7 +31,7 @@ const Chapter3: React.FC = () => {
             <ImageCard
               src="https://pplx-res.cloudinary.com/image/upload/v1755846359/pplx_project_search_images/f0a8aec97fb05bb573f2e665d79aa6c9042659bf.png"
               alt="Person steaming milk with a steam wand in a metal pitcher for microfoam texture preparation"
-              caption="Hình 3.3: Kỹ thuật steam wand tạo microfoam texture trong pitcher kim loại"
+              caption="Hình 3.3: Kỹ thuật <strong>steam wand</strong> (vòi hơi nước) tạo <strong>microfoam</strong> (bọt sữa mịn) texture trong pitcher kim loại"
             />
           </div>
         </div>
