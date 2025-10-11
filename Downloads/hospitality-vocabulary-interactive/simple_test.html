@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Watermark -->
+    <div class="watermark"></div>
+    
+    <h1>Simple Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function testCSVLoading() {
+            const results = document.getElementById('results');
+            
+            try {
+                // Test loading allergies_diet_vocabulary.csv
+                const response1 = await fetch('allergies_diet_vocabulary.csv');
+                const text1 = await response1.text();
+                const lines1 = text1.split('\n');
+                
+                // Test loading table_skills_vocabulary.csv
+                const response2 = await fetch('table_skills_vocabulary.csv');
+                const text2 = await response2.text();
+                const lines2 = text2.split('\n');
+                
+                results.innerHTML = `
+                    <h2>CSV Loading Test Results:</h2>
+                    <p><strong>Allergies & Diet CSV:</strong> ${lines1.length} lines</p>
+                    <p><strong>Table Skills CSV:</strong> ${lines2.length} lines</p>
+                    <p><strong>Status:</strong> ✅ Both files loaded successfully</p>
+                    
+                    <h3>Sample from Allergies & Diet:</h3>
+                    <pre>${lines1.slice(0, 3).join('\n')}</pre>
+                    
+                    <h3>Sample from Table Skills:</h3>
+                    <pre>${lines2.slice(0, 3).join('\n')}</pre>
+                `;
+            } catch (error) {
+                results.innerHTML = `
+                    <h2>Error:</h2>
+                    <p style="color: red;">${error.message}</p>
+                `;
+            }
+        }
+        
+        // Run test when page loads
+        window.addEventListener('load', testCSVLoading);
+    </script>
+</body>
+</html>

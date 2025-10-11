@@ -1,0 +1,23 @@
+{
+  "name": "hospitality-vocabulary-interactive",
+  "version": "1.0.0",
+  "description": "Interactive hospitality vocabulary learning app",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npx http-server -p 3001 -c-1",
+    "start": "npx http-server -p 3000 -c-1",
+    "build": "echo 'No build process needed for static files'",
+    "serve": "npx http-server -p 8080 -c-1"
+  },
+  "keywords": [
+    "hospitality",
+    "vocabulary",
+    "learning",
+    "interactive"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

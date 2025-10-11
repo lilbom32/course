@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Module Click</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .debug-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .course-card {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .course-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .course-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .course-card-icon {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        .course-card-title {
+            margin: 0;
+            color: #333;
+        }
+        .course-card-subtitle {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+        .test-result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .error {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <h1>=' Debug Module Click</h1>
+        
+        <div class="debug-info">
+            <h3>Debug Information:</h3>
+            <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
+            <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+            <p><strong>Screen Size:</strong> <span id="screenSize"></span></p>
+        </div>
+        
+        <h2>Test Module Cards:</h2>
+        <div id="microlearningModules">
+            <!-- Modules will be loaded here -->
+        </div>
+        
+        <div id="test-result" class="test-result">
+            <h3>Test Result:</h3>
+            <p id="result-text"></p>
+        </div>
+    </div>
+
+    <script>
+        // Sample data
+        const microlearningModules = {
+            comprehensive: [
+                {
+                    id: 'trends-2025',
+                    title: 'Xu h��ng 2025',
+                    duration: 25,
+                    description: 'Module t�ng h�p v� 3 xu h��ng ch�nh: Tech-driven Service, Wellness & Bleisure, Sustainability',
+                    lessons: [
+                        { id: 'tech-mobile-checkin', title: 'Mobile Check-in & Digital Keys', duration: 4, type: 'video', level: 'advanced' },
+                        { id: 'ai-concierge', title: 'AI Concierge & Smart Services', duration: 3, type: 'interactive', level: 'advanced' }
+                    ]
+                },
+                {
+                    id: 'reception-comprehensive',
+                    title: 'Nghi�p v� L� t�n',
+                    duration: 30,
+                    description: 'Module t�ng h�p v� nghi�p v� l� t�n chuy�n nghi�p',
+                    lessons: [
+                        { id: 'check-in-process', title: 'Quy tr�nh Check-in', duration: 5, type: 'video', level: 'basic' },
+                        { id: 'guest-services', title: 'D�ch v� kh�ch h�ng', duration: 4, type: 'interactive', level: 'intermediate' }
+                    ]
+                },
+                {
+                    id: 'housekeeping-comprehensive',
+                    title: 'Nghi�p v� Ph�ng',
+                    duration: 25,
+                    description: 'Module t�ng h�p v� nghi�p v� ph�ng kh�ch s�n',
+                    lessons: [
+                        { id: 'room-cleaning', title: 'Quy tr�nh v� sinh ph�ng', duration: 6, type: 'video', level: 'basic' },
+                        { id: 'maintenance', title: 'B�o tr� ph�ng', duration: 4, type: 'interactive', level: 'intermediate' }
+                    ]
+                }
+            ]
+        };
+
+        function getCourseType(moduleId) {
+            if (moduleId.includes('trends')) return 'trends';
+            if (moduleId.includes('reception')) return 'reception';
+            if (moduleId.includes('housekeeping')) return 'housekeeping';
+            return 'general';
+        }
+
+        function getCourseIcon(courseType) {
+            const icons = {
+                'trends': '<',
+                'reception': '<�',
+                'housekeeping': '>�',
+                'general': '=�'
+            };
+            return icons[courseType] || icons.general;
+        }
+
+        function showModuleDetail(moduleId, level) {
+            console.log('showModuleDetail called:', moduleId, level);
+            
+            let module;
+            if (level === 'mixed' || level === 'comprehensive') {
+                module = microlearningModules.comprehensive.find(m => m.id === moduleId);
+            } else {
+                module = microlearningModules[level]?.find(m => m.id === moduleId);
+            }
+            
+            if (!module) {
+                console.error('Module not found:', moduleId, 'level:', level);
+                showResult(`ERROR: Module not found - ID: ${moduleId}, Level: ${level}`, 'error');
+                return;
+            }
+
+            console.log('Module found:', module);
+            showResult(`
+                <strong>SUCCESS!</strong><br>
+                Module ID: ${moduleId}<br>
+                Module Title: ${module.title}<br>
+                Level: ${level}<br>
+                Duration: ${module.duration} ph�t<br>
+                Lessons: ${module.lessons.length} b�i h�c<br>
+                <br>
+                <strong>Lessons:</strong><br>
+                ${module.lessons.map(lesson => `" ${lesson.title} (${lesson.duration} ph�t)`).join('<br>')}
+            `, 'success');
+        }
+
+        function showResult(message, type) {
+            const resultDiv = document.getElementById('test-result');
+            const resultText = document.getElementById('result-text');
+            
+            resultText.innerHTML = message;
+            resultDiv.className = `test-result ${type}`;
+            resultDiv.style.display = 'block';
+        }
+
+        function loadMicrolearningSection() {
+            console.log('Loading microlearning section...');
+            
+            const container = document.getElementById('microlearningModules');
+            
+            if (!container) {
+                console.error('microlearningModules container not found!');
+                return;
+            }
+            
+            const allModules = microlearningModules.comprehensive.map(module => ({ ...module, level: 'mixed' }));
+            console.log('Available modules:', allModules.map(m => m.id));
+            
+            container.innerHTML = allModules.map((module, index) => {
+                const courseType = getCourseType(module.id);
+                const courseIcon = getCourseIcon(courseType);
+                
+                return `
+                    <div class="course-card" data-module-id="${module.id}" data-level="${module.level}">
+                        <div class="course-card-header">
+                            <span class="course-card-icon">${courseIcon}</span>
+                            <div>
+                                <h3 class="course-card-title">${module.title}</h3>
+                                <p class="course-card-subtitle">${module.lessons.length} B�i h�c " ${module.duration} ph�t</p>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <p>${module.description}</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            console.log('Modules rendered, adding event listeners...');
+            
+            // Add event listeners for course cards
+            const courseCards = container.querySelectorAll('.course-card');
+            console.log('Found course cards:', courseCards.length);
+            
+            courseCards.forEach((card, index) => {
+                console.log(`Adding listener to card ${index}:`, card.dataset.moduleId);
+                
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const moduleId = card.dataset.moduleId;
+                    const level = card.dataset.level;
+                    
+                    console.log('Course card clicked:', moduleId, level);
+                    
+                    // Add visual feedback
+                    card.style.borderColor = '#28a745';
+                    card.style.backgroundColor = '#f8fff9';
+                    
+                    setTimeout(() => {
+                        card.style.borderColor = '';
+                        card.style.backgroundColor = '';
+                    }, 1000);
+                    
+                    // Show module detail
+                    showModuleDetail(moduleId, level);
+                });
+                
+                // Add keyboard support
+                card.setAttribute('tabindex', '0');
+                card.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
+                });
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set debug info
+            document.getElementById('timestamp').textContent = new Date().toLocaleString();
+            document.getElementById('userAgent').textContent = navigator.userAgent;
+            document.getElementById('screenSize').textContent = `${screen.width}x${screen.height}`;
+            
+            // Load modules
+            loadMicrolearningSection();
+            
+            console.log('Debug page initialized');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Showcase - Module "Nghi�p v� L� t�n"</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .showcase-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-teal-600) 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        .showcase-header h1 {
+            font-size: var(--font-size-4xl);
+            margin-bottom: 16px;
+            font-weight: var(--font-weight-bold);
+        }
+        .showcase-header p {
+            font-size: var(--font-size-lg);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .comparison-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .comparison-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-card-border);
+        }
+        .comparison-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 16px;
+            font-size: var(--font-size-xl);
+            text-align: center;
+        }
+        .improvement-list {
+            list-style: none;
+            padding: 0;
+        }
+        .improvement-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--color-card-border-inner);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .improvement-list li:last-child {
+            border-bottom: none;
+        }
+        .improvement-list li::before {
+            content: "";
+            font-size: var(--font-size-lg);
+        }
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .mece-summary {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-card-border);
+            margin-bottom: 40px;
+        }
+        .mece-summary h2 {
+            color: var(--color-primary);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .mece-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .mece-item {
+            padding: 20px;
+            background: var(--color-bg-1);
+            border-radius: var(--radius-base);
+            border-left: 4px solid var(--color-primary);
+        }
+        .mece-item h4 {
+            color: var(--color-text);
+            margin-bottom: 12px;
+            font-size: var(--font-size-lg);
+        }
+        .mece-item p {
+            color: var(--color-text-secondary);
+            margin: 0;
+            font-size: var(--font-size-sm);
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .comparison-section {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            .mece-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Watermark -->
+    <div class="watermark"></div>
+    
+    <div class="showcase-container">
+        <div class="showcase-header">
+            <h1><� UI/UX Enhancement Showcase</h1>
+            <p>Module "Nghi�p v� L� t�n" - �p d�ng Design Thinking & Visual Hierarchy</p>
+        </div>
+
+        <div class="comparison-section">
+            <div class="comparison-card">
+                <h3>L Tr��c khi c�i thi�n</h3>
+                <ul class="improvement-list">
+                    <li>Thi�u visual hierarchy r� r�ng</li>
+                    <li>CTA ch�a n�i b�t, g�y confusion</li>
+                    <li>Meta info t�ch r�i, kh� scan</li>
+                    <li>Thi�u micro-interactions</li>
+                    <li>Typography ch�a t�i �u</li>
+                    <li>Spacing kh�ng nh�t qu�n</li>
+                </ul>
+            </div>
+            
+            <div class="comparison-card">
+                <h3> Sau khi c�i thi�n</h3>
+                <ul class="improvement-list">
+                    <li>F-pattern layout v�i hierarchy r� r�ng</li>
+                    <li>Primary CTA n�i b�t v�i gradient & shadow</li>
+                    <li>Meta info ��c gom nh�m logic</li>
+                    <li>Smooth animations & micro-interactions</li>
+                    <li>Typography hierarchy t�i �u</li>
+                    <li>Design system consistency</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mece-summary">
+            <h2>=� Ph�n t�ch MECE Framework</h2>
+            <div class="mece-grid">
+                <div class="mece-item">
+                    <h4><� Information Hierarchy</h4>
+                    <p>�p d�ng F-pattern layout: Ti�u � � M� t� � Meta info � CTA. C�i thi�n scanability v� gi�m cognitive load.</p>
+                </div>
+                <div class="mece-item">
+                    <h4>=A Visual Hierarchy</h4>
+                    <p>T� l� 60-30-10: N�n (60%) - N�i dung (30%) - Nh�n m�nh (10%). Primary CTA v�i gradient v� shadow n�i b�t.</p>
+                </div>
+                <div class="mece-item">
+                    <h4>>� Cognitive Load</h4>
+                    <p>Gom nh�m meta info, gi�m decision fatigue t� 2 CTA xu�ng 1 primary. Progressive level badges.</p>
+                </div>
+                <div class="mece-item">
+                    <h4><� Design System</h4>
+                    <p>Component-based layout, spacing grid nh�t qu�n. Typography hierarchy v�i font weights v� sizes r� r�ng.</p>
+                </div>
+                <div class="mece-item">
+                    <h4>� Interaction Flow</h4>
+                    <p>Micro-interactions v�i hover states, smooth animations, staggered content reveal. Enhanced toggle button.</p>
+                </div>
+                <div class="mece-item">
+                    <h4>=� Responsive Design</h4>
+                    <p>Mobile-first approach v�i breakpoints t�i �u. Touch-friendly buttons v� spacing ph� h�p.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modules-grid" id="showcaseModules">
+            <!-- Enhanced modules will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Sample module data for showcase
+        const showcaseModules = [
+            {
+                id: 'reception-comprehensive',
+                title: '>� Nghi�p v� L� t�n',
+                duration: 30,
+                description: 'Module t�ng h�p to�n di�n v� nghi�p v� l� t�n kh�ch s�n, t� c� b�n �n n�ng cao',
+                lessons: [
+                    { id: 'check-in-process', title: 'Quy tr�nh check-in c� b�n', duration: 3, type: 'video', level: 'basic' },
+                    { id: 'reservation-handling', title: 'X� l� �t ph�ng', duration: 2, type: 'interactive', level: 'basic' },
+                    { id: 'guest-communication', title: 'Giao ti�p v�i kh�ch', duration: 3, type: 'scenario', level: 'basic' },
+                    { id: 'brand-standards', title: 'Ti�u chu�n th��ng hi�u', duration: 2, type: 'video', level: 'basic' },
+                    { id: 'complaint-handling', title: 'X� l� khi�u n�i', duration: 4, type: 'vr-simulation', level: 'intermediate' },
+                    { id: 'overbooking-recovery', title: 'X� l� overbooking', duration: 3, type: 'scenario', level: 'intermediate' },
+                    { id: 'upselling-techniques', title: 'K� thu�t upselling', duration: 3, type: 'interactive', level: 'intermediate' },
+                    { id: 'guest-relations', title: 'Quan h� kh�ch h�ng', duration: 3, type: 'video', level: 'intermediate' },
+                    { id: 'vip-management', title: 'Qu�n l� kh�ch VIP', duration: 4, type: 'vr-simulation', level: 'advanced' },
+                    { id: 'revenue-management', title: 'Qu�n l� doanh thu', duration: 4, type: 'interactive', level: 'advanced' },
+                    { id: 'crisis-management', title: 'Qu�n l� kh�ng ho�ng', duration: 4, type: 'scenario', level: 'advanced' }
+                ]
+            }
+        ];
+
+        // Function to get lesson icon
+        function getLessonIcon(type) {
+            const icons = {
+                'video': '<�',
+                'interactive': '<�',
+                'scenario': '<�',
+                'simulation': '=',
+                'vr-simulation': '>}'
+            };
+            return icons[type] || '=�';
+        }
+
+        // Function to get level badge class
+        function getLevelBadgeClass(level) {
+            const classes = {
+                'basic': 'level-basic',
+                'intermediate': 'level-intermediate',
+                'advanced': 'level-advanced'
+            };
+            return classes[level] || '';
+        }
+
+        // Function to get level display name
+        function getLevelDisplayName(level) {
+            const names = {
+                'basic': 'C� b�n',
+                'intermediate': 'Trung c�p',
+                'advanced': 'N�ng cao'
+            };
+            return names[level] || level;
+        }
+
+        // Function to create enhanced module card HTML
+        function createEnhancedModuleCard(module) {
+            const basicLessons = module.lessons.filter(l => l.level === 'basic').length;
+            const intermediateLessons = module.lessons.filter(l => l.level === 'intermediate').length;
+            const advancedLessons = module.lessons.filter(l => l.level === 'advanced').length;
+
+            return `
+                <div class="module-accordion" data-module-id="${module.id}">
+                    <div class="module-header" data-module-toggle="${module.id}">
+                        <div class="module-header-content">
+                            <div class="module-title-section">
+                                <h3>${module.title}</h3>
+                                <p class="module-description-short">${module.description}</p>
+                            </div>
+                            
+                            <div class="module-meta">
+                                <div class="module-meta-group">
+                                    <span class="module-meta-icon">�</span>
+                                    <span class="module-duration">${module.duration} ph�t</span>
+                                </div>
+                                <div class="module-meta-group">
+                                    <span class="module-meta-icon">=�</span>
+                                    <span class="module-lesson-count">${module.lessons.length} b�i h�c</span>
+                                </div>
+                            </div>
+                            
+                            <div class="module-levels">
+                                <span class="level-badge level-basic">C� b�n (${basicLessons})</span>
+                                <span class="level-badge level-intermediate">Trung c�p (${intermediateLessons})</span>
+                                <span class="level-badge level-advanced">N�ng cao (${advancedLessons})</span>
+                            </div>
+                            
+                            <div class="module-toggle">
+                                <span class="toggle-icon">�</span>
+                            </div>
+                        </div>
+                        
+                        <div class="module-actions">
+                            <button class="btn btn--outline" data-module-id="${module.id}">
+                                =� Chi ti�t
+                            </button>
+                            <button class="btn btn--primary" data-module-id="${module.id}">
+                                � B�t �u h�c ngay
+                            </button>
+                        </div>
+                    </div>
+                    <div class="module-content" id="content-${module.id}">
+                        <div class="module-lessons">
+                            <h4>Danh s�ch b�i h�c</h4>
+                            ${module.lessons.map(lesson => `
+                                <div class="lesson-item" data-lesson-id="${lesson.id}">
+                                    <div class="lesson-icon">${getLessonIcon(lesson.type)}</div>
+                                    <div class="lesson-info">
+                                        <h5>${lesson.title}</h5>
+                                        <div class="lesson-meta">
+                                            <span class="lesson-duration">� ${lesson.duration} ph�t</span>
+                                            <span class="lesson-level level-badge ${getLevelBadgeClass(lesson.level)}">${getLevelDisplayName(lesson.level)}</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn--primary btn--sm start-lesson">B�t �u</button>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render showcase modules
+        function renderShowcaseModules() {
+            const container = document.getElementById('showcaseModules');
+            container.innerHTML = showcaseModules.map(module => createEnhancedModuleCard(module)).join('');
+
+            // Add event listeners with enhanced animations
+            container.querySelectorAll('[data-module-toggle]').forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    const moduleId = toggle.dataset.moduleToggle;
+                    const content = document.getElementById(`content-${moduleId}`);
+                    const icon = toggle.querySelector('.toggle-icon');
+                    const header = toggle;
+                    
+                    if (content.classList.contains('expanded')) {
+                        // Collapse
+                        content.classList.remove('expanded');
+                        header.classList.remove('expanded');
+                        icon.textContent = '�';
+                    } else {
+                        // Expand
+                        content.classList.add('expanded');
+                        header.classList.add('expanded');
+                        icon.textContent = '�';
+                    }
+                });
+            });
+
+            // Add button event listeners
+            container.querySelectorAll('button[data-module-id]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const moduleId = btn.dataset.moduleId;
+                    if (btn.textContent.includes('Chi ti�t')) {
+                        console.log('View details for module:', moduleId);
+                        alert('=� Xem chi ti�t module: ' + moduleId);
+                    } else {
+                        console.log('Start module:', moduleId);
+                        alert('=� B�t �u h�c module: ' + moduleId);
+                    }
+                });
+            });
+
+            container.querySelectorAll('.start-lesson').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const lessonItem = e.target.closest('.lesson-item');
+                    const lessonId = lessonItem.dataset.lessonId;
+                    console.log('Start lesson:', lessonId);
+                    alert('=� B�t �u b�i h�c: ' + lessonId);
+                });
+            });
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', renderShowcaseModules);
+    </script>
+</body>
+</html>

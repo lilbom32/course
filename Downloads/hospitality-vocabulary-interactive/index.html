@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Thuật ngữ Khách sạn</title>
+    <!-- Google Fonts for Vietnamese support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Thuật ngữ Khách sạn</h2>
+                <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" class="form-control" id="searchInput" placeholder="Tìm kiếm thuật ngữ...">
+            </div>
+            
+            <div class="nav-menu">
+                <div class="nav-section">
+                    <button class="nav-item active" data-section="dashboard">
+                        📊 Trang chủ
+                    </button>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>Học từ vựng</h3>
+                    <button class="nav-item" data-section="microlearning">
+                        ⚡ Microlearning
+                    </button>
+                    <button class="nav-item" data-section="topics">
+                        📚 Theo chủ đề
+                    </button>
+                    <button class="nav-item" data-section="basic" data-level="basic">
+                        🟢 Cơ bản
+                    </button>
+                    <button class="nav-item" data-section="intermediate" data-level="intermediate">
+                        🟡 Trung cấp
+                    </button>
+                    <button class="nav-item" data-section="advanced" data-level="advanced">
+                        🔴 Nâng cao
+                    </button>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>Thực hành</h3>
+                    <button class="nav-item" data-section="quiz">
+                        📝 Kiểm tra
+                    </button>
+                    <button class="nav-item" data-section="scenarios">
+                        🎭 Tình huống
+                    </button>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>Hướng dẫn</h3>
+                    <button class="nav-item" data-section="career">
+                        💼 Nghề nghiệp
+                    </button>
+                    <button class="nav-item" data-section="culture">
+                        🌍 Văn hóa
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="dashboard-header">
+                    <h1>Chào mừng đến với Học thuật ngữ Khách sạn</h1>
+                    <p>Nâng cao kỹ năng ngôn ngữ chuyên ngành của bạn</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-content">
+                            <h3 id="totalTerms">0</h3>
+                            <p>Tổng số thuật ngữ</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <h3 id="learnedTerms">0</h3>
+                            <p>Đã học</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-content">
+                            <h3 id="streakDays">0</h3>
+                            <p>Chuỗi ngày học</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-content">
+                            <h3 id="progress">0%</h3>
+                            <p>Tiến độ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quick-access">
+                    <h2>Truy cập nhanh</h2>
+                    <div class="quick-access-grid">
+                        <button class="quick-access-card" data-action="startBasic">
+                            <div class="level-indicator basic"></div>
+                            <h3>Bắt đầu học cơ bản</h3>
+                            <p>Thuật ngữ cần thiết cho nhân viên mới</p>
+                        </button>
+                        <button class="quick-access-card" data-action="takeQuiz">
+                            <div class="level-indicator quiz"></div>
+                            <h3>Kiểm tra kiến thức</h3>
+                            <p>Đánh giá mức độ hiểu biết của bạn</p>
+                        </button>
+                        <button class="quick-access-card" data-action="practiceScenario">
+                            <div class="level-indicator scenario"></div>
+                            <h3>Thực hành tình huống</h3>
+                            <p>Luyện tập với các tình huống thực tế</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Microlearning Section -->
+            <section id="microlearning" class="content-section">
+                <div class="microlearning-header">
+                    <h1>⚡ Microlearning</h1>
+                    <p>Học nhanh với các module 2-7 phút</p>
+                </div>
+                
+                <div class="trending-section">
+                    <h2>🔥 Xu hướng 2025</h2>
+                    <div id="trendingContent" class="trending-grid"></div>
+                </div>
+                
+                <div class="modules-section">
+                    <h2>📚 Tất cả Module</h2>
+                    <div id="microlearningModules" class="modules-grid"></div>
+                </div>
+            </section>
+
+            <!-- Topics Section -->
+            <section id="topics" class="content-section">
+                <div class="topics-header">
+                    <h1>📚 Học theo chủ đề</h1>
+                    <p>Chọn chủ đề bạn muốn học</p>
+                </div>
+                
+                <div class="topics-grid" id="topicsGrid"></div>
+                
+                <!-- Topic Detail Section (hidden by default) -->
+                <div id="topicDetail" class="topic-detail hidden">
+                    <button class="btn btn--outline back-to-topics" id="backToTopics">← Quay lại danh sách</button>
+                    
+                    <div class="vocabulary-header">
+                        <h1 id="topicTitle">Chủ đề</h1>
+                        <div class="vocabulary-controls">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="topicProgress"></div>
+                            </div>
+                            <span class="progress-text" id="topicProgressText">0/0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-container">
+                        <div class="flashcard" id="topicFlashcard">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <div class="card-content">
+                                        <h2 id="topicEnglishTerm">English Term</h2>
+                                        <p class="category" id="topicCategoryLabel">Category</p>
+                                        <p class="example" id="topicExampleSentence">Example sentence</p>
+                                    </div>
+                                </div>
+                                <div class="flashcard-back">
+                                    <div class="card-content">
+                                        <h2 id="topicVietnameseTerm">Vietnamese</h2>
+                                        <p class="pronunciation" id="topicIpaPronunciation">[IPA]</p>
+                                        <p class="definition" id="topicTermDefinition">Definition</p>
+                                        <button class="btn btn--primary audio-btn" id="topicAudioBtn">🔊 Phát âm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flashcard-controls">
+                            <button class="btn btn--outline" id="topicPrevCard">← Trước</button>
+                            <button class="btn btn--secondary" id="topicFlipCard">Lật thẻ</button>
+                            <button class="btn btn--outline" id="topicNextCard">Sau →</button>
+                        </div>
+                        
+                        <div class="card-actions">
+                            <button class="btn btn--secondary" id="topicBookmarkBtn">🔖 Đánh dấu</button>
+                            <button class="btn btn--primary" id="topicLearnedBtn">✅ Đã học</button>
+                            <button class="btn btn--outline" id="topicReviewBtn">🔄 Ôn tập</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vocabulary Learning Section -->
+            <section id="vocabulary" class="content-section">
+                <div class="vocabulary-header">
+                    <h1 id="vocabularyTitle">Học từ vựng</h1>
+                    <div class="vocabulary-controls">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="vocabularyProgress"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">0/0</span>
+                    </div>
+                </div>
+                
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="card-content">
+                                    <h2 id="englishTerm">Click to start</h2>
+                                    <p class="category" id="categoryLabel">Category</p>
+                                    <p class="example" id="exampleSentence">Example sentence</p>
+                                </div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="card-content">
+                                    <h2 id="vietnameseTerm">Vietnamese</h2>
+                                    <p class="pronunciation" id="ipaPronunciation">[IPA]</p>
+                                    <p class="definition" id="termDefinition">Definition</p>
+                                    <button class="btn btn--primary audio-btn" id="audioBtn">🔊 Phát âm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-controls">
+                        <button class="btn btn--outline" id="prevCard">← Trước</button>
+                        <button class="btn btn--secondary" id="flipCard">Lật thẻ</button>
+                        <button class="btn btn--outline" id="nextCard">Sau →</button>
+                    </div>
+                    
+                    <div class="card-actions">
+                        <button class="btn btn--secondary" id="bookmarkBtn">🔖 Đánh dấu</button>
+                        <button class="btn btn--primary" id="learnedBtn">✅ Đã học</button>
+                        <button class="btn btn--outline" id="reviewBtn">🔄 Ôn tập</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section id="quiz" class="content-section">
+                <div class="quiz-header">
+                    <h1>Kiểm tra kiến thức</h1>
+                    <div class="quiz-stats">
+                        <span>Câu hỏi: <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></span>
+                        <span>Điểm: <span id="quizScore">0</span></span>
+                    </div>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h3 id="questionText">Chọn nghĩa tiếng Việt của thuật ngữ sau:</h3>
+                        <h2 id="questionTerm">Check-in</h2>
+                    </div>
+                    
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-option="0">Option 1</button>
+                        <button class="quiz-option" data-option="1">Option 2</button>
+                        <button class="quiz-option" data-option="2">Option 3</button>
+                        <button class="quiz-option" data-option="3">Option 4</button>
+                    </div>
+                    
+                    <div class="quiz-controls">
+                        <button class="btn btn--primary" id="submitAnswer" disabled>Trả lời</button>
+                        <button class="btn btn--outline" id="skipQuestion">Bỏ qua</button>
+                    </div>
+                    
+                    <div class="quiz-feedback hidden" id="quizFeedback">
+                        <p id="feedbackText"></p>
+                        <button class="btn btn--secondary" id="nextQuestion">Câu tiếp theo</button>
+                    </div>
+                </div>
+                
+                <div class="quiz-results hidden" id="quizResults">
+                    <h2>Kết quả kiểm tra</h2>
+                    <div class="results-summary">
+                        <div class="result-stat">
+                            <h3 id="finalScore">0/10</h3>
+                            <p>Điểm số</p>
+                        </div>
+                        <div class="result-stat">
+                            <h3 id="accuracy">0%</h3>
+                            <p>Độ chính xác</p>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary" id="retakeQuiz">Làm lại</button>
+                    <button class="btn btn--outline" id="reviewMistakes">Xem lại lỗi sai</button>
+                </div>
+            </section>
+
+            <!-- Scenarios Section -->
+            <section id="scenarios" class="content-section">
+                <div class="scenarios-header">
+                    <h1>Thực hành tình huống</h1>
+                    <p>Luyện tập với các tình huống thực tế trong khách sạn</p>
+                </div>
+                
+                <div class="scenario-container">
+                    <div class="scenario-card">
+                        <h3 id="scenarioTitle">Tình huống</h3>
+                        <p id="scenarioSituation">Mô tả tình huống...</p>
+                        
+                        <div class="scenario-options">
+                            <h4>Bạn sẽ xử lý như thế nào?</h4>
+                            <div class="scenario-choices">
+                                <button class="scenario-choice" data-choice="0">Lựa chọn 1</button>
+                                <button class="scenario-choice" data-choice="1">Lựa chọn 2</button>
+                                <button class="scenario-choice" data-choice="2">Lựa chọn 3</button>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-feedback hidden" id="scenarioFeedback">
+                            <h4>Phản hồi:</h4>
+                            <p id="scenarioExplanation"></p>
+                            <button class="btn btn--primary" id="nextScenario">Tình huống tiếp theo</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Career Section -->
+            <section id="career" class="content-section">
+                <div class="career-header">
+                    <h1>Lộ trình nghề nghiệp</h1>
+                    <p>Tìm hiểu về các cơ hội phát triển trong ngành khách sạn</p>
+                </div>
+                
+                <div class="career-paths">
+                    <div class="career-path">
+                        <h3>🏨 Bộ phận Lễ tân</h3>
+                        <div class="career-levels" id="frontOfficeCareer"></div>
+                    </div>
+                    <div class="career-path">
+                        <h3>🍽️ Bộ phận Ăn uống</h3>
+                        <div class="career-levels" id="foodBeverageCareer"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Culture Section -->
+            <section id="culture" class="content-section">
+                <div class="culture-header">
+                    <h1>Mẹo văn hóa</h1>
+                    <p>Hiểu về văn hóa khách hàng quốc tế</p>
+                </div>
+                
+                <div class="culture-tips" id="cultureTips"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

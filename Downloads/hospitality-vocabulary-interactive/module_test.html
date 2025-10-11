@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Module Cards</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .test-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Watermark -->
+    <div class="watermark"></div>
+    
+    <div class="test-container">
+        <h1 class="test-title">Test Module Cards - Hospitality Vocabulary</h1>
+        
+        <!-- Sort Controls -->
+        <div class="sort-controls">
+            <div class="sort-controls-left">
+                <h3 class="sort-label">S�p x�p theo:</h3>
+                <div class="sort-dropdown">
+                    <select class="sort-select" id="sortSelect">
+                        <option value="alphabetical-asc">A � Z (T�n)</option>
+                        <option value="alphabetical-desc">Z � A (T�n)</option>
+                        <option value="duration-asc">Th�i gian: Ng�n � D�i</option>
+                        <option value="duration-desc">Th�i gian: D�i � Ng�n</option>
+                        <option value="lessons-asc">S� b�i: �t � Nhi�u</option>
+                        <option value="lessons-desc">S� b�i: Nhi�u � �t</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sort-controls-right">
+                <div class="sort-buttons">
+                    <button class="sort-btn" data-sort="alphabetical-asc">
+                        <span class="sort-icon">=$</span>
+                        A-Z
+                    </button>
+                    <button class="sort-btn" data-sort="alphabetical-desc">
+                        <span class="sort-icon">=$</span>
+                        Z-A
+                    </button>
+                    <button class="sort-btn" data-sort="duration-desc">
+                        <span class="sort-icon">�</span>
+                        Th�i gian
+                    </button>
+                </div>
+                <div class="sort-results" id="sortResults">
+                    Hi�n th� 1 module
+                </div>
+            </div>
+        </div>
+        
+        <div class="modules-grid" id="testModules">
+            <!-- Modules will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Sample module data (same structure as in app.js)
+        const testModules = [
+            {
+                id: 'reception-comprehensive',
+                title: '>� Nghi�p v� L� t�n',
+                duration: 30,
+                description: 'Module t�ng h�p to�n di�n v� nghi�p v� l� t�n kh�ch s�n, t� c� b�n �n n�ng cao',
+                lessons: [
+                    { id: 'check-in-process', title: 'Quy tr�nh check-in c� b�n', duration: 3, type: 'video', level: 'basic' },
+                    { id: 'reservation-handling', title: 'X� l� �t ph�ng', duration: 2, type: 'interactive', level: 'basic' },
+                    { id: 'guest-communication', title: 'Giao ti�p v�i kh�ch', duration: 3, type: 'scenario', level: 'basic' },
+                    { id: 'brand-standards', title: 'Ti�u chu�n th��ng hi�u', duration: 2, type: 'video', level: 'basic' },
+                    { id: 'complaint-handling', title: 'X� l� khi�u n�i', duration: 4, type: 'vr-simulation', level: 'intermediate' },
+                    { id: 'overbooking-recovery', title: 'X� l� overbooking', duration: 3, type: 'scenario', level: 'intermediate' },
+                    { id: 'upselling-techniques', title: 'K� thu�t upselling', duration: 3, type: 'interactive', level: 'intermediate' },
+                    { id: 'guest-relations', title: 'Quan h� kh�ch h�ng', duration: 3, type: 'video', level: 'intermediate' },
+                    { id: 'vip-management', title: 'Qu�n l� kh�ch VIP', duration: 4, type: 'vr-simulation', level: 'advanced' },
+                    { id: 'revenue-management', title: 'Qu�n l� doanh thu', duration: 4, type: 'interactive', level: 'advanced' },
+                    { id: 'crisis-management', title: 'Qu�n l� kh�ng ho�ng', duration: 4, type: 'scenario', level: 'advanced' }
+                ]
+            },
+            {
+                id: 'food-beverage-comprehensive',
+                title: '<} Nghi�p v� n u�ng',
+                duration: 35,
+                description: 'Module t�ng h�p v� d�ch v� F&B, t� ph�c v� c� b�n �n qu�n l� nh� h�ng cao c�p',
+                lessons: [
+                    { id: 'basic-service', title: 'Ph�c v� c� b�n', duration: 3, type: 'video', level: 'basic' },
+                    { id: 'table-setting', title: 'K� nng �t b�n', duration: 2, type: 'interactive', level: 'basic' },
+                    { id: 'menu-knowledge', title: 'Hi�u bi�t th�c �n', duration: 3, type: 'video', level: 'basic' },
+                    { id: 'order-taking', title: 'Ghi nh�n �n h�ng', duration: 2, type: 'scenario', level: 'basic' },
+                    { id: 'wine-service', title: 'D�ch v� r��u vang', duration: 4, type: 'video', level: 'intermediate' },
+                    { id: 'upselling-techniques', title: 'K� thu�t upselling', duration: 3, type: 'interactive', level: 'intermediate' },
+                    { id: 'complaint-handling', title: 'X� l� khi�u n�i', duration: 3, type: 'scenario', level: 'intermediate' },
+                    { id: 'special-dietary', title: 'Y�u c�u n u�ng �c bi�t', duration: 3, type: 'video', level: 'intermediate' },
+                    { id: 'fine-dining-service', title: 'D�ch v� fine dining', duration: 4, type: 'video', level: 'advanced' },
+                    { id: 'sommelier-skills', title: 'K� nng sommelier', duration: 4, type: 'interactive', level: 'advanced' },
+                    { id: 'restaurant-management', title: 'Qu�n l� nh� h�ng', duration: 4, type: 'simulation', level: 'advanced' }
+                ]
+            },
+            {
+                id: 'table-skills-comprehensive',
+                title: '<} K� nng �t b�n',
+                duration: 20,
+                description: 'Module t�ng h�p v� k� nng �t b�n v� ph�c v� b�n n chuy�n nghi�p',
+                lessons: [
+                    { id: 'basic-table-setting', title: '�t b�n c� b�n', duration: 2, type: 'video', level: 'basic' },
+                    { id: 'tableware-knowledge', title: 'Hi�u bi�t � d�ng b�n', duration: 2, type: 'interactive', level: 'basic' },
+                    { id: 'place-setting', title: 'B� � n c� nh�n', duration: 2, type: 'video', level: 'basic' },
+                    { id: 'table-manners', title: 'Ph�p t�c b�n n', duration: 2, type: 'video', level: 'basic' },
+                    { id: 'formal-table-setting', title: '�t b�n trang tr�ng', duration: 3, type: 'video', level: 'intermediate' },
+                    { id: 'service-styles', title: 'Phong c�ch ph�c v�', duration: 3, type: 'interactive', level: 'intermediate' },
+                    { id: 'special-occasions', title: 'S� ki�n �c bi�t', duration: 3, type: 'scenario', level: 'intermediate' },
+                    { id: 'dining-etiquette', title: 'Nghi th�c n u�ng', duration: 2, type: 'video', level: 'intermediate' },
+                    { id: 'banquet-management', title: 'Qu�n l� ti�c buffet', duration: 4, type: 'video', level: 'advanced' },
+                    { id: 'luxury-service', title: 'D�ch v� cao c�p', duration: 3, type: 'interactive', level: 'advanced' },
+                    { id: 'cultural-dining', title: 'Vn h�a n u�ng a d�ng', duration: 3, type: 'simulation', level: 'advanced' }
+                ]
+            },
+            {
+                id: 'allergies-diet-comprehensive',
+                title: '=� D� �ng & Ch� � n',
+                duration: 25,
+                description: 'Module t�ng h�p v� qu�n l� d� �ng v� c�c ch� � n �c bi�t',
+                lessons: [
+                    { id: 'allergy-awareness', title: 'Nh�n th�c v� d� �ng', duration: 3, type: 'video', level: 'basic' },
+                    { id: 'common-allergens', title: 'Ch�t g�y d� �ng th��ng g�p', duration: 2, type: 'interactive', level: 'basic' },
+                    { id: 'cross-contamination', title: 'Nhi�m ch�o', duration: 2, type: 'video', level: 'basic' },
+                    { id: 'emergency-response', title: 'X� l� kh�n c�p', duration: 3, type: 'scenario', level: 'basic' },
+                    { id: 'dietary-restrictions', title: 'H�n ch� n u�ng', duration: 3, type: 'video', level: 'intermediate' },
+                    { id: 'special-diets', title: 'Ch� � n �c bi�t', duration: 3, type: 'interactive', level: 'intermediate' },
+                    { id: 'menu-modifications', title: 'i�u ch�nh th�c �n', duration: 3, type: 'scenario', level: 'intermediate' },
+                    { id: 'guest-communication', title: 'Giao ti�p v�i kh�ch', duration: 2, type: 'video', level: 'intermediate' },
+                    { id: 'nutritional-knowledge', title: 'Ki�n th�c dinh d��ng', duration: 4, type: 'video', level: 'advanced' },
+                    { id: 'therapeutic-diets', title: 'Ch� � n i�u tr�', duration: 4, type: 'interactive', level: 'advanced' },
+                    { id: 'allergy-management', title: 'Qu�n l� d� �ng to�n di�n', duration: 3, type: 'simulation', level: 'advanced' }
+                ]
+            },
+            {
+                id: 'guest-services-comprehensive',
+                title: '> D�ch v� Kh�ch h�ng',
+                duration: 30,
+                description: 'Module t�ng h�p v� d�ch v� kh�ch h�ng, t� h� tr� c� b�n �n qu�n l� VIP',
+                lessons: [
+                    { id: 'guest-greeting', title: 'Ch�o �n kh�ch', duration: 2, type: 'video', level: 'basic' },
+                    { id: 'information-service', title: 'D�ch v� th�ng tin', duration: 3, type: 'interactive', level: 'basic' },
+                    { id: 'concierge-basics', title: 'Concierge c� b�n', duration: 3, type: 'video', level: 'basic' },
+                    { id: 'local-attractions', title: 'i�m tham quan �a ph��ng', duration: 2, type: 'interactive', level: 'basic' },
+                    { id: 'transportation-services', title: 'D�ch v� v�n chuy�n', duration: 3, type: 'video', level: 'intermediate' },
+                    { id: 'tour-booking', title: '�t tour du l�ch', duration: 3, type: 'interactive', level: 'intermediate' },
+                    { id: 'special-requests', title: 'Y�u c�u �c bi�t', duration: 3, type: 'scenario', level: 'intermediate' },
+                    { id: 'business-services', title: 'D�ch v� doanh nghi�p', duration: 2, type: 'video', level: 'intermediate' },
+                    { id: 'vip-services', title: 'D�ch v� VIP', duration: 4, type: 'video', level: 'advanced' },
+                    { id: 'luxury-concierge', title: 'Concierge cao c�p', duration: 4, type: 'interactive', level: 'advanced' },
+                    { id: 'guest-relations', title: 'Quan h� kh�ch h�ng', duration: 4, type: 'simulation', level: 'advanced' }
+                ]
+            },
+            {
+                id: 'housekeeping-comprehensive',
+                title: '<� Nghi�p v� Bu�ng ph�ng',
+                duration: 25,
+                description: 'Module t�ng h�p v� qu�n l� bu�ng ph�ng, t� v� sinh c� b�n �n qu�n l� ch�t l��ng n�ng cao',
+                lessons: [
+                    { id: 'room-cleaning', title: 'V� sinh ph�ng ngh� c� b�n', duration: 3, type: 'video', level: 'basic' },
+                    { id: 'linen-management', title: 'Qu�n l� ga g�i', duration: 2, type: 'interactive', level: 'basic' },
+                    { id: 'maintenance-reporting', title: 'B�o c�o s�a ch�a', duration: 1, type: 'simulation', level: 'basic' },
+                    { id: 'safety-procedures', title: 'Quy tr�nh an to�n', duration: 2, type: 'video', level: 'basic' },
+                    { id: 'deep-cleaning', title: 'V� sinh s�u', duration: 4, type: 'video', level: 'intermediate' },
+                    { id: 'inventory-management', title: 'Qu�n l� t�n kho', duration: 3, type: 'interactive', level: 'intermediate' },
+                    { id: 'guest-requests', title: 'X� l� y�u c�u kh�ch', duration: 2, type: 'scenario', level: 'intermediate' },
+                    { id: 'quality-inspection', title: 'Ki�m tra ch�t l��ng', duration: 3, type: 'interactive', level: 'intermediate' },
+                    { id: 'quality-control', title: 'Ki�m so�t ch�t l��ng n�ng cao', duration: 4, type: 'video', level: 'advanced' },
+                    { id: 'staff-scheduling', title: 'L�p l�ch nh�n vi�n', duration: 3, type: 'interactive', level: 'advanced' },
+                    { id: 'sustainability', title: 'Th�c h�nh b�n v�ng', duration: 3, type: 'simulation', level: 'advanced' }
+                ]
+            }
+        ];
+
+        // Function to get lesson icon
+        function getLessonIcon(type) {
+            const icons = {
+                'video': '<�',
+                'interactive': '<�',
+                'scenario': '<�',
+                'simulation': '=',
+                'vr-simulation': '>}'
+            };
+            return icons[type] || '=�';
+        }
+
+        // Function to get level badge class
+        function getLevelBadgeClass(level) {
+            const classes = {
+                'basic': 'level-basic',
+                'intermediate': 'level-intermediate',
+                'advanced': 'level-advanced'
+            };
+            return classes[level] || '';
+        }
+
+        // Function to get level display name
+        function getLevelDisplayName(level) {
+            const names = {
+                'basic': 'C� b�n',
+                'intermediate': 'Trung c�p',
+                'advanced': 'N�ng cao'
+            };
+            return names[level] || level;
+        }
+
+        // Function to create modern module card HTML
+        function createModuleCard(module) {
+            const basicLessons = module.lessons.filter(l => l.level === 'basic').length;
+            const intermediateLessons = module.lessons.filter(l => l.level === 'intermediate').length;
+            const advancedLessons = module.lessons.filter(l => l.level === 'advanced').length;
+
+            return `
+                <div class="module-accordion" data-module-id="${module.id}">
+                    <div class="module-header" data-module-toggle="${module.id}">
+                        <div class="module-header-content">
+                            <div class="module-title-section">
+                                <h3>${module.title}</h3>
+                                <p class="module-description-short">${module.description}</p>
+                            </div>
+                            
+                            <div class="module-meta">
+                                <div class="module-meta-group">
+                                    <span class="module-meta-icon">�</span>
+                                    <span class="module-duration">${module.duration} ph�t</span>
+                                </div>
+                                <div class="module-meta-group">
+                                    <span class="module-meta-icon">=�</span>
+                                    <span class="module-lesson-count">${module.lessons.length} b�i h�c</span>
+                                </div>
+                            </div>
+                            
+                            <div class="module-levels">
+                                <span class="level-badge level-basic">C� b�n (${basicLessons})</span>
+                                <span class="level-badge level-intermediate">Trung c�p (${intermediateLessons})</span>
+                                <span class="level-badge level-advanced">N�ng cao (${advancedLessons})</span>
+                            </div>
+                        </div>
+                        
+                        <div class="module-actions">
+                            <button class="btn btn--outline" data-module-id="${module.id}">
+                                =� Chi ti�t
+                            </button>
+                            <button class="btn btn--primary" data-module-id="${module.id}">
+                                � B�t �u h�c ngay
+                            </button>
+                            <div class="module-toggle">
+                                <span class="toggle-icon">�</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-content" id="content-${module.id}">
+                        <div class="module-lessons">
+                            <h4>Danh s�ch b�i h�c</h4>
+                            ${module.lessons.map(lesson => `
+                                <div class="lesson-item" data-lesson-id="${lesson.id}">
+                                    <div class="lesson-icon">${getLessonIcon(lesson.type)}</div>
+                                    <div class="lesson-info">
+                                        <h5>${lesson.title}</h5>
+                                        <div class="lesson-meta">
+                                            <span class="lesson-duration">� ${lesson.duration} ph�t</span>
+                                            <span class="lesson-level level-badge ${getLevelBadgeClass(lesson.level)}">${getLevelDisplayName(lesson.level)}</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn--primary btn--sm start-lesson">B�t �u</button>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render all modules
+        function renderModules() {
+            const container = document.getElementById('testModules');
+            container.innerHTML = testModules.map(module => createModuleCard(module)).join('');
+
+            // Add event listeners with enhanced animations
+            container.querySelectorAll('[data-module-toggle]').forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    const moduleId = toggle.dataset.moduleToggle;
+                    const content = document.getElementById(`content-${moduleId}`);
+                    const icon = toggle.querySelector('.toggle-icon');
+                    const header = toggle;
+                    
+                    if (content.classList.contains('expanded')) {
+                        // Collapse
+                        content.classList.remove('expanded');
+                        header.classList.remove('expanded');
+                        icon.textContent = '�';
+                    } else {
+                        // Expand
+                        content.classList.add('expanded');
+                        header.classList.add('expanded');
+                        icon.textContent = '�';
+                    }
+                });
+            });
+
+            // Add button event listeners
+            container.querySelectorAll('button[data-module-id]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const moduleId = btn.dataset.moduleId;
+                    if (btn.textContent.includes('Chi ti�t')) {
+                        console.log('View details for module:', moduleId);
+                    } else {
+                        console.log('Start module:', moduleId);
+                    }
+                });
+            });
+
+            container.querySelectorAll('.start-lesson').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const lessonItem = e.target.closest('.lesson-item');
+                    const lessonId = lessonItem.dataset.lessonId;
+                    console.log('Start lesson:', lessonId);
+                });
+            });
+        }
+
+        // Global variables for sorting
+        let currentSort = 'alphabetical-asc';
+        let sortedModules = [...testModules];
+
+        // Sort modules function
+        function sortModules(sortType) {
+            currentSort = sortType;
+            
+            // Add sorting animation class
+            const container = document.getElementById('testModules');
+            container.classList.add('sorting');
+            
+            // Add sorting class to all modules
+            container.querySelectorAll('.module-accordion').forEach(module => {
+                module.classList.add('sorting');
+            });
+
+            // Sort modules based on type
+            sortedModules = [...testModules].sort((a, b) => {
+                switch (sortType) {
+                    case 'alphabetical-asc':
+                        return a.title.localeCompare(b.title, 'vi');
+                    case 'alphabetical-desc':
+                        return b.title.localeCompare(a.title, 'vi');
+                    case 'duration-asc':
+                        return a.duration - b.duration;
+                    case 'duration-desc':
+                        return b.duration - a.duration;
+                    case 'lessons-asc':
+                        return a.lessons.length - b.lessons.length;
+                    case 'lessons-desc':
+                        return b.lessons.length - a.lessons.length;
+                    default:
+                        return 0;
+                }
+            });
+
+            // Update UI after a short delay for animation
+            setTimeout(() => {
+                renderSortedModules();
+                updateSortUI();
+                updateResultsCounter();
+                
+                // Remove sorting classes
+                setTimeout(() => {
+                    container.classList.remove('sorting');
+                    container.querySelectorAll('.module-accordion').forEach(module => {
+                        module.classList.remove('sorting');
+                    });
+                }, 300);
+            }, 200);
+        }
+
+        // Render sorted modules
+        function renderSortedModules() {
+            const container = document.getElementById('testModules');
+            container.innerHTML = sortedModules.map(module => createModuleCard(module)).join('');
+
+            // Re-add event listeners
+            addModuleEventListeners(container);
+        }
+
+        // Add event listeners to modules
+        function addModuleEventListeners(container) {
+            // Toggle event listeners
+            container.querySelectorAll('[data-module-toggle]').forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    const moduleId = toggle.dataset.moduleToggle;
+                    const content = document.getElementById(`content-${moduleId}`);
+                    const icon = toggle.querySelector('.toggle-icon');
+                    const header = toggle;
+                    
+                    if (content.classList.contains('expanded')) {
+                        // Collapse
+                        content.classList.remove('expanded');
+                        header.classList.remove('expanded');
+                        icon.textContent = '�';
+                    } else {
+                        // Expand
+                        content.classList.add('expanded');
+                        header.classList.add('expanded');
+                        icon.textContent = '�';
+                    }
+                });
+            });
+
+            // Button event listeners
+            container.querySelectorAll('button[data-module-id]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const moduleId = btn.dataset.moduleId;
+                    if (btn.textContent.includes('Chi ti�t')) {
+                        console.log('View details for module:', moduleId);
+                        alert('=� Xem chi ti�t module: ' + moduleId);
+                    } else {
+                        console.log('Start module:', moduleId);
+                        alert('=� B�t �u h�c module: ' + moduleId);
+                    }
+                });
+            });
+
+            container.querySelectorAll('.start-lesson').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const lessonItem = e.target.closest('.lesson-item');
+                    const lessonId = lessonItem.dataset.lessonId;
+                    console.log('Start lesson:', lessonId);
+                    alert('=� B�t �u b�i h�c: ' + lessonId);
+                });
+            });
+        }
+
+        // Update sort UI
+        function updateSortUI() {
+            // Update dropdown
+            document.getElementById('sortSelect').value = currentSort;
+            
+            // Update buttons
+            document.querySelectorAll('.sort-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.sort === currentSort) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Update results counter
+        function updateResultsCounter() {
+            const resultsElement = document.getElementById('sortResults');
+            const count = sortedModules.length;
+            resultsElement.textContent = `Hi�n th� ${count} module`;
+        }
+
+        // Initialize sort controls
+        function initializeSortControls() {
+            // Dropdown change event
+            document.getElementById('sortSelect').addEventListener('change', (e) => {
+                sortModules(e.target.value);
+            });
+
+            // Button click events
+            document.querySelectorAll('.sort-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const sortType = e.currentTarget.dataset.sort;
+                    sortModules(sortType);
+                });
+            });
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            renderModules();
+            initializeSortControls();
+        });
+    </script>
+</body>
+</html>

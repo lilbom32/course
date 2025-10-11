@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Scenarios</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="app-container">
+        <main class="main-content">
+            <section id="scenarios" class="content-section active">
+                <div class="scenarios-header">
+                    <h1><� Test Scenarios</h1>
+                    <p>Ki�m tra h� th�ng t�nh hu�ng</p>
+                </div>
+                
+                <div class="scenario-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalScenarioCount">0</span>
+                        <span class="stat-label">T�ng s� t�nh hu�ng</span>
+                    </div>
+                </div>
+                
+                <div class="scenario-categories-grid" id="scenarioCategoriesGrid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+                
+                <div class="scenario-container" id="currentScenarioContainer" style="display: none;">
+                    <div class="scenario-card">
+                        <h3 id="scenarioTitle">T�nh hu�ng</h3>
+                        <p id="scenarioSituation">M� t� t�nh hu�ng...</p>
+                        
+                        <div class="scenario-options">
+                            <h4>B�n s� x� l� nh� th� n�o?</h4>
+                            <div class="scenario-choices">
+                                <button class="scenario-choice" data-choice="0">L�a ch�n 1</button>
+                                <button class="scenario-choice" data-choice="1">L�a ch�n 2</button>
+                                <button class="scenario-choice" data-choice="2">L�a ch�n 3</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Test Scenarios Data
+        const scenariosByCategory = {
+            "Allergies & Diet": [
+                {
+                    title: "Kh�ch d� �ng gluten",
+                    situation: "Kh�ch h�ng h�i v� m�n n kh�ng ch�a gluten v� t� ra lo l�ng v� t�nh tr�ng d� �ng nghi�m tr�ng.",
+                    options: [
+                        "�m b�o v�i kh�ch v� quy tr�nh an to�n v� g�i � m�n ph� h�p",
+                        "Ch� g�i � salad � an to�n nh�t",
+                        "H�i kh�ch mang thu�c ch�ng d� �ng ch�a"
+                    ],
+                    correct: 0,
+                    explanation: "Lu�n �m b�o an to�n tuy�t �i, giao ti�p r� r�ng v� quy tr�nh v� l�a ch�n th�c ph�m.",
+                    level: "basic",
+                    keyPhrases: ["gluten-free", "allergy alert", "safe preparation", "cross-contamination"]
+                }
+            ],
+            "D�ch v� kh�ch h�ng": [
+                {
+                    title: "Kh�ch ph�n n�n v� th�i gian ch�",
+                    situation: "Kh�ch h�ng ph�n n�n � ch� 30 ph�t m� m�n n ch�a ��c ph�c v�, t� ra b�c b�i.",
+                    options: [
+                        "Xin l�i ch�n th�nh, gi�i th�ch l� do v� �a ra gi�i ph�p b� �p",
+                        "Ch� xin l�i v� h�a m�n s� �n s�m",
+                        "� l�i cho b�p v� kh�ng ch�u tr�ch nhi�m"
+                    ],
+                    correct: 0,
+                    explanation: "Ch�u tr�ch nhi�m, giao ti�p t�ch c�c v� �a ra gi�i ph�p c� th� � kh�i ph�c l�ng tin.",
+                    level: "basic",
+                    keyPhrases: ["sincere apology", "service recovery", "compensation", "customer satisfaction"]
+                }
+            ]
+        };
+
+        function getCategoryIcon(category) {
+            const icons = {
+                'Allergies & Diet': '=�',
+                'D�ch v� kh�ch h�ng': '>'
+            };
+            return icons[category] || '=�';
+        }
+
+        function renderScenarioCategories() {
+            const container = document.getElementById('scenarioCategoriesGrid');
+            if (!container) {
+                console.error('Container not found');
+                return;
+            }
+            
+            container.innerHTML = '';
+
+            Object.entries(scenariosByCategory).forEach(([category, scenarios]) => {
+                const categoryCard = document.createElement('div');
+                categoryCard.className = 'scenario-category-card';
+                categoryCard.innerHTML = `
+                    <h3>${getCategoryIcon(category)} ${category}</h3>
+                    <p>Luy�n t�p ${scenarios.length} t�nh hu�ng th�c t� trong l)nh v�c ${category.toLowerCase()}</p>
+                    <div class="scenario-category-stats">
+                        <span class="scenario-count">${scenarios.length} t�nh hu�ng</span>
+                        <span class="progress">0% ho�n th�nh</span>
+                    </div>
+                `;
+                
+                categoryCard.addEventListener('click', () => {
+                    alert(`Clicked on ${category} - ${scenarios.length} scenarios`);
+                });
+                
+                container.appendChild(categoryCard);
+            });
+        }
+
+        function updateStats() {
+            const totalScenarios = Object.values(scenariosByCategory).flat().length;
+            const totalElement = document.getElementById('totalScenarioCount');
+            if (totalElement) {
+                totalElement.textContent = totalScenarios;
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded, initializing scenarios...');
+            renderScenarioCategories();
+            updateStats();
+            console.log('Scenarios initialized successfully');
+        });
+    </script>
+</body>
+</html>

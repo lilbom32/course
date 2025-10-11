@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Lesson Card Layout Improvements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: #f8fafc; padding: 40px 20px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1 style="font-size: 32px; font-weight: 700; color: #1e293b; margin-bottom: 12px;">
+                =� Demo Th� B�i H�c M�i
+            </h1>
+            <p style="font-size: 16px; color: #64748b;">
+                Giao di�n g�n g�ng, s�ch s� v� hi�n �i h�n
+            </p>
+        </div>
+
+        <div class="modules-grid">
+            <!-- Card 1: Not Started -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-header-top">
+                        <h3>Ch�o �n & Check-in Kh�ch</h3>
+                    </div>
+                    <div class="module-meta">
+                        <span class="module-duration">25 ph�t</span>
+                        <span class="module-level">C� b�n</span>
+                        <span class="module-lesson-count">4 b�i h�c</span>
+                    </div>
+                </div>
+                
+                <p class="module-description">H�c c�ch ch�o �n v� ng k� nh�n ph�ng cho kh�ch m�t c�ch chuy�n nghi�p, t�o �n t��ng t�t ngay t� l�n �u ti�n.</p>
+                
+                <div class="module-lessons">
+                    <div class="lesson-summary">
+                        <span class="lesson-summary-icon">=�</span>
+                        <span class="lesson-summary-title">Gi�i thi�u v� quy tr�nh check-in</span>
+                        <span class="lesson-summary-duration">5 ph�t</span>
+                    </div>
+                    <div class="lesson-summary">
+                        <span class="lesson-summary-icon">=�</span>
+                        <span class="lesson-summary-title">C�c m�u c�u giao ti�p c� b�n</span>
+                        <span class="lesson-summary-duration">8 ph�t</span>
+                    </div>
+                    <div class="lesson-summary">
+                        <span class="lesson-summary-icon"><�</span>
+                        <span class="lesson-summary-title">Th�c h�nh v�i t�nh hu�ng m�u</span>
+                        <span class="lesson-summary-duration">12 ph�t</span>
+                    </div>
+                </div>
+                
+                <div class="module-actions">
+                    <button class="btn btn--primary">=� B�t �u</button>
+                    <button class="btn btn--outline">=� Chi ti�t</button>
+                </div>
+            </div>
+
+            <!-- Card 2: In Progress -->
+            <div class="module-card in-progress">
+                <div class="module-header">
+                    <div class="module-header-top">
+                        <h3>X� l� Y�u c�u & Khi�u n�i</h3>
+                        <span class="module-badge in-progress">� ang h�c</span>
+                    </div>
+                    <div class="module-meta">
+                        <span class="module-duration">30 ph�t</span>
+                        <span class="module-level">Trung c�p</span>
+                        <span class="module-lesson-count">5 b�i h�c</span>
+                    </div>
+                </div>
+                
+                <div class="module-progress-bar">
+                    <div class="module-progress-fill" style="width: 60%"></div>
+                </div>
+                
+                <p class="module-description">K� nng x� l� c�c y�u c�u �c bi�t v� gi�i quy�t khi�u n�i c�a kh�ch h�ng m�t c�ch hi�u qu� v� chuy�n nghi�p.</p>
+                
+                <div class="module-lessons">
+                    <div class="lesson-summary completed">
+                        <span class="lesson-summary-icon">=�</span>
+                        <span class="lesson-summary-title">Ph�n lo�i y�u c�u kh�ch h�ng</span>
+                        <span class="lesson-summary-duration">6 ph�t</span>
+                    </div>
+                    <div class="lesson-summary completed">
+                        <span class="lesson-summary-icon">=�</span>
+                        <span class="lesson-summary-title">K� thu�t l�ng nghe t�ch c�c</span>
+                        <span class="lesson-summary-duration">8 ph�t</span>
+                    </div>
+                    <div class="lesson-summary current">
+                        <span class="lesson-summary-icon"><�</span>
+                        <span class="lesson-summary-title">X� l� t�nh hu�ng kh�</span>
+                        <span class="lesson-summary-duration">10 ph�t</span>
+                    </div>
+                    <div class="lesson-summary-more">+ 2 b�i h�c kh�c</div>
+                </div>
+                
+                <div class="module-actions">
+                    <button class="btn btn--primary">� Ti�p t�c</button>
+                    <button class="btn btn--outline">=� Chi ti�t</button>
+                </div>
+            </div>
+
+            <!-- Card 3: Completed -->
+            <div class="module-card completed">
+                <div class="module-header">
+                    <div class="module-header-top">
+                        <h3>K� nng Giao ti�p i�n tho�i</h3>
+                        <span class="module-badge completed"> Ho�n th�nh</span>
+                    </div>
+                    <div class="module-meta">
+                        <span class="module-duration">20 ph�t</span>
+                        <span class="module-level">C� b�n</span>
+                        <span class="module-lesson-count">3 b�i h�c</span>
+                    </div>
+                </div>
+                
+                <div class="module-progress-bar">
+                    <div class="module-progress-fill completed" style="width: 100%"></div>
+                </div>
+                
+                <p class="module-description">Th�nh th�o c�c k� nng giao ti�p qua i�n tho�i, t� nh�n cu�c g�i �n x� l� �t ph�ng v� tr� l�i th�c m�c.</p>
+                
+                <div class="module-lessons">
+                    <div class="lesson-summary completed">
+                        <span class="lesson-summary-icon">=�</span>
+                        <span class="lesson-summary-title">C�ch tr� l�i i�n tho�i chuy�n nghi�p</span>
+                        <span class="lesson-summary-duration">7 ph�t</span>
+                    </div>
+                    <div class="lesson-summary completed">
+                        <span class="lesson-summary-icon">=�</span>
+                        <span class="lesson-summary-title">X� l� �t ph�ng qua i�n tho�i</span>
+                        <span class="lesson-summary-duration">8 ph�t</span>
+                    </div>
+                    <div class="lesson-summary completed">
+                        <span class="lesson-summary-icon"><�</span>
+                        <span class="lesson-summary-title">B�i t�p th�c h�nh</span>
+                        <span class="lesson-summary-duration">5 ph�t</span>
+                    </div>
+                </div>
+                
+                <div class="module-actions">
+                    <button class="btn btn--primary">= Xem l�i</button>
+                    <button class="btn btn--outline">=� Chi ti�t</button>
+                </div>
+            </div>
+
+            <!-- Card 4: Advanced Module -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-header-top">
+                        <h3>Qu�n l� Tr�i nghi�m Kh�ch h�ng VIP</h3>
+                    </div>
+                    <div class="module-meta">
+                        <span class="module-duration">45 ph�t</span>
+                        <span class="module-level">N�ng cao</span>
+                        <span class="module-lesson-count">6 b�i h�c</span>
+                    </div>
+                </div>
+                
+                <p class="module-description">N�ng cao k� nng ph�c v� kh�ch VIP v�i c�c ti�u chu�n cao nh�t, t�o tr�i nghi�m �ng nh� v� x�y d�ng l�ng trung th�nh.</p>
+                
+                <div class="module-lessons">
+                    <div class="lesson-summary">
+                        <span class="lesson-summary-icon">=�</span>
+                        <span class="lesson-summary-title">Hi�u t�m l� kh�ch h�ng VIP</span>
+                        <span class="lesson-summary-duration">10 ph�t</span>
+                    </div>
+                    <div class="lesson-summary">
+                        <span class="lesson-summary-icon">=�</span>
+                        <span class="lesson-summary-title">C� nh�n h�a d�ch v�</span>
+                        <span class="lesson-summary-duration">12 ph�t</span>
+                    </div>
+                    <div class="lesson-summary">
+                        <span class="lesson-summary-icon"><�</span>
+                        <span class="lesson-summary-title">D� o�n nhu c�u</span>
+                        <span class="lesson-summary-duration">8 ph�t</span>
+                    </div>
+                    <div class="lesson-summary-more">+ 3 b�i h�c kh�c</div>
+                </div>
+                
+                <div class="module-actions">
+                    <button class="btn btn--primary">=� B�t �u</button>
+                    <button class="btn btn--outline">=� Chi ti�t</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+            <h2 style="font-size: 24px; font-weight: 600; color: #1e293b; margin-bottom: 16px;">
+                ( C�i Ti�n Ch�nh
+            </h2>
+            <ul style="color: #64748b; line-height: 1.8; font-size: 15px;">
+                <li>=� <strong>Layout g�n g�ng h�n</strong> - C�u tr�c section r� r�ng v�i padding h�p l�</li>
+                <li><� <strong>M�u s�c ph�n bi�t</strong> - Metadata v�i m�u ri�ng, d� nh�n bi�t</li>
+                <li><� <strong>Badge tr�ng th�i</strong> - Hi�n th� r� r�ng tr�ng th�i h�c t�p</li>
+                <li>=� <strong>Progress bar �p</strong> - Gradient m�u, shadow v� animation</li>
+                <li>=� <strong>Danh s�ch b�i h�c</strong> - Grid layout chuy�n nghi�p, hi�n th� � th�ng tin</li>
+                <li>= <strong>Action buttons c�i ti�n</strong> - Full-width, gradient, v�i icons</li>
+                <li>=� <strong>Responsive design</strong> - T� �ng i�u ch�nh tr�n m�i thi�t b�</li>
+                <li>( <strong>Animations m��t</strong> - FadeIn, hover effects, transitions</li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        }
+    </style>
+</body>
+</html>
+

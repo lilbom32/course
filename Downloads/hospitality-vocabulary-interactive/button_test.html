@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Button Click</title>
+    <style>
+        .test-container {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .btn:hover {
+            background: #f0f0f0;
+        }
+        .log {
+            background: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Test Button Click Functionality</h1>
+        
+        <button class="btn" id="backToModule">← Quay lại Module</button>
+        
+        <div class="log" id="log"></div>
+        
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Click the button above</li>
+            <li>Check if the log shows the click event</li>
+            <li>Check browser console for additional logs</li>
+        </ol>
+    </div>
+
+    <script>
+        const log = document.getElementById('log');
+        
+        function addLog(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            log.textContent += `[${timestamp}] ${message}\n`;
+            console.log(message);
+        }
+        
+        // Test 1: Direct event listener
+        const backToModule = document.getElementById('backToModule');
+        if (backToModule) {
+            addLog('Button found, adding direct event listener');
+            backToModule.addEventListener('click', (e) => {
+                addLog('Button clicked via direct listener');
+                e.preventDefault();
+                e.stopPropagation();
+                testBackToModule();
+            });
+        } else {
+            addLog('ERROR: Button not found');
+        }
+        
+        // Test 2: Event delegation
+        document.addEventListener('click', (e) => {
+            if (e.target && e.target.id === 'backToModule') {
+                addLog('Button clicked via event delegation');
+                e.preventDefault();
+                e.stopPropagation();
+                testBackToModule();
+            }
+        });
+        
+        function testBackToModule() {
+            addLog('backToCurrentModule function called');
+            addLog('This would normally navigate back to module detail');
+        }
+        
+        addLog('Test page loaded');
+    </script>
+</body>
+</html>
+
+

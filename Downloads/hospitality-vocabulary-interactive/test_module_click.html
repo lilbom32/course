@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Module Click</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .course-card {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .course-card:hover {
+            border-color: #667eea;
+            background-color: #f8f9fa;
+        }
+        .test-result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Module Click Functionality</h1>
+    
+    <div id="microlearningModules">
+        <div class="course-card" data-module-id="trends-2025" data-level="mixed">
+            <h3>Xu h��ng 2025</h3>
+            <p>Module t�ng h�p v� 3 xu h��ng ch�nh</p>
+        </div>
+        
+        <div class="course-card" data-module-id="reception-comprehensive" data-level="mixed">
+            <h3>Nghi�p v� L� t�n</h3>
+            <p>Module t�ng h�p v� nghi�p v� l� t�n</p>
+        </div>
+    </div>
+    
+    <div id="test-result" class="test-result" style="display: none;">
+        <h3>Test Result:</h3>
+        <p id="result-text"></p>
+    </div>
+
+    <script>
+        // Sample microlearningModules data
+        const microlearningModules = {
+            comprehensive: [
+                {
+                    id: 'trends-2025',
+                    title: 'Xu h��ng 2025',
+                    duration: 25,
+                    description: 'Module t�ng h�p v� 3 xu h��ng ch�nh: Tech-driven Service, Wellness & Bleisure, Sustainability',
+                    lessons: [
+                        { id: 'tech-mobile-checkin', title: 'Mobile Check-in & Digital Keys', duration: 4, type: 'video', level: 'advanced' },
+                        { id: 'ai-concierge', title: 'AI Concierge & Smart Services', duration: 3, type: 'interactive', level: 'advanced' }
+                    ]
+                },
+                {
+                    id: 'reception-comprehensive',
+                    title: 'Nghi�p v� L� t�n',
+                    duration: 30,
+                    description: 'Module t�ng h�p v� nghi�p v� l� t�n chuy�n nghi�p',
+                    lessons: [
+                        { id: 'check-in-process', title: 'Quy tr�nh Check-in', duration: 5, type: 'video', level: 'basic' },
+                        { id: 'guest-services', title: 'D�ch v� kh�ch h�ng', duration: 4, type: 'interactive', level: 'intermediate' }
+                    ]
+                }
+            ]
+        };
+
+        function showModuleDetail(moduleId, level) {
+            let module;
+            
+            // Handle mixed level (comprehensive modules)
+            if (level === 'mixed' || level === 'comprehensive') {
+                module = microlearningModules.comprehensive.find(m => m.id === moduleId);
+            } else {
+                module = microlearningModules[level]?.find(m => m.id === moduleId);
+            }
+            
+            if (!module) {
+                console.error('Module not found:', moduleId, 'level:', level);
+                document.getElementById('result-text').textContent = `ERROR: Module not found - ID: ${moduleId}, Level: ${level}`;
+                document.getElementById('test-result').style.display = 'block';
+                return;
+            }
+
+            console.log('Module found:', module);
+            document.getElementById('result-text').innerHTML = `
+                <strong>SUCCESS!</strong><br>
+                Module ID: ${moduleId}<br>
+                Module Title: ${module.title}<br>
+                Level: ${level}<br>
+                Duration: ${module.duration} ph�t<br>
+                Lessons: ${module.lessons.length} b�i h�c
+            `;
+            document.getElementById('test-result').style.display = 'block';
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const microlearningModulesContainer = document.getElementById('microlearningModules');
+            
+            microlearningModulesContainer.querySelectorAll('.course-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    const moduleId = card.dataset.moduleId;
+                    const level = card.dataset.level;
+                    
+                    console.log('Course card clicked:', moduleId, level);
+                    
+                    // Show module detail when course card is clicked
+                    showModuleDetail(moduleId, level);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Section Switch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .content-section {
+            display: none;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 10px 0;
+            min-height: 200px;
+        }
+        .content-section.active {
+            display: block;
+            border-color: #667eea;
+            background-color: #f8f9ff;
+        }
+        .test-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #5a6fd8;
+        }
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        .course-card {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .course-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>=' Test Section Switch</h1>
+        
+        <div class="debug-info">
+            <h3>Debug Information:</h3>
+            <p><strong>Active Section:</strong> <span id="activeSection">None</span></p>
+            <p><strong>All Sections:</strong> <span id="allSections">Loading...</span></p>
+        </div>
+        
+        <div>
+            <button class="test-button" onclick="showSection('microlearning')">Show Microlearning</button>
+            <button class="test-button" onclick="showSection('module-detail')">Show Module Detail</button>
+            <button class="test-button" onclick="showSection('lesson-viewer')">Show Lesson Viewer</button>
+        </div>
+        
+        <!-- Microlearning Section -->
+        <section id="microlearning" class="content-section">
+            <h2>Microlearning Section</h2>
+            <p>This is the microlearning section with module cards.</p>
+            
+            <div class="course-card" data-module-id="trends-2025" data-level="mixed" onclick="testModuleClick('trends-2025', 'mixed')">
+                <h3>< Xu h��ng 2025</h3>
+                <p>Module t�ng h�p v� 3 xu h��ng ch�nh: Tech-driven Service, Wellness & Bleisure, Sustainability</p>
+                <p><strong>Click me to test module detail!</strong></p>
+            </div>
+            
+            <div class="course-card" data-module-id="reception-comprehensive" data-level="mixed" onclick="testModuleClick('reception-comprehensive', 'mixed')">
+                <h3><� Nghi�p v� L� t�n</h3>
+                <p>Module t�ng h�p v� nghi�p v� l� t�n chuy�n nghi�p</p>
+                <p><strong>Click me to test module detail!</strong></p>
+            </div>
+        </section>
+        
+        <!-- Module Detail Section -->
+        <section id="module-detail" class="content-section">
+            <h2>Module Detail Section</h2>
+            <div style="background: #e8f5e8; padding: 15px; border-radius: 5px; margin: 10px 0;">
+                <h3> SUCCESS!</h3>
+                <p>You successfully navigated to the module detail section!</p>
+                <p><strong>Module:</strong> <span id="moduleTitle">Loading...</span></p>
+                <p><strong>Level:</strong> <span id="moduleLevel">Loading...</span></p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h4>Lessons in this module:</h4>
+                <ul id="moduleLessons">
+                    <li>Loading lessons...</li>
+                </ul>
+            </div>
+            
+            <button class="test-button" onclick="showSection('microlearning')">� Back to Modules</button>
+        </section>
+        
+        <!-- Lesson Viewer Section -->
+        <section id="lesson-viewer" class="content-section">
+            <h2>Lesson Viewer Section</h2>
+            <div style="background: #fff3cd; padding: 15px; border-radius: 5px; margin: 10px 0;">
+                <h3>=� Lesson Content</h3>
+                <p>This would show the actual lesson content.</p>
+            </div>
+            
+            <button class="test-button" onclick="showSection('module-detail')">� Back to Module</button>
+        </section>
+    </div>
+
+    <script>
+        // Sample module data
+        const modules = {
+            'trends-2025': {
+                title: 'Xu h��ng 2025',
+                level: 'mixed',
+                lessons: [
+                    { id: 'tech-mobile-checkin', title: 'Mobile Check-in & Digital Keys' },
+                    { id: 'ai-concierge', title: 'AI Concierge & Smart Services' },
+                    { id: 'tech-integration', title: 'T�ch h�p C�ng ngh�' }
+                ]
+            },
+            'reception-comprehensive': {
+                title: 'Nghi�p v� L� t�n',
+                level: 'mixed',
+                lessons: [
+                    { id: 'check-in-process', title: 'Quy tr�nh Check-in' },
+                    { id: 'guest-services', title: 'D�ch v� kh�ch h�ng' }
+                ]
+            }
+        };
+
+        function showSection(sectionId) {
+            console.log('showSection called:', sectionId);
+            
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                console.log('Section activated:', sectionId);
+            } else {
+                console.error('Section not found:', sectionId);
+            }
+            
+            // Update debug info
+            updateDebugInfo();
+        }
+
+        function testModuleClick(moduleId, level) {
+            console.log('Module clicked:', moduleId, level);
+            
+            const module = modules[moduleId];
+            if (!module) {
+                console.error('Module not found:', moduleId);
+                return;
+            }
+            
+            // Update module detail content
+            document.getElementById('moduleTitle').textContent = module.title;
+            document.getElementById('moduleLevel').textContent = module.level;
+            
+            // Update lessons list
+            const lessonsList = document.getElementById('moduleLessons');
+            lessonsList.innerHTML = module.lessons.map(lesson => 
+                `<li>${lesson.title} <button onclick="showSection('lesson-viewer')">View Lesson</button></li>`
+            ).join('');
+            
+            // Show module detail section
+            showSection('module-detail');
+        }
+
+        function updateDebugInfo() {
+            const activeSection = document.querySelector('.content-section.active');
+            document.getElementById('activeSection').textContent = activeSection ? activeSection.id : 'None';
+            
+            const allSections = Array.from(document.querySelectorAll('.content-section')).map(s => s.id);
+            document.getElementById('allSections').textContent = allSections.join(', ');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Test page initialized');
+            updateDebugInfo();
+            
+            // Show microlearning by default
+            showSection('microlearning');
+        });
+    </script>
+</body>
+</html>

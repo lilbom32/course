@@ -1,0 +1,830 @@
+Phân loại chuyên môn,Cấp độ chuyên môn,Thuật ngữ (English),Tiếng Việt,Phát âm (IPA),Định nghĩa chuyên môn,Ứng dụng thực tế
+Kỹ thuật chế biến,Cao cấp,Molecular Gastronomy,Ẩm thực phân tử,/məˈlekjələr gæˈstrɒnəmi/,"Khoa học ứng dụng vào nấu ăn, sử dụng thiết bị đặc biệt tạo texture mới","Tạo ra ""trứng cá muối"" từ nước trái cây, gelato nóng không tan"
+Kỹ thuật chế biến,Cao cấp,Sous Vide,Nấu chân không,/suː ˈviːd/,Kỹ thuật nấu chân không ở nhiệt độ thấp trong thời gian dài,"Nấu steak hoàn hảo 56°C trong 2 giờ, đảm bảo độ mềm đều"
+Kỹ thuật chế biến,Trung cấp,Confit,Ngâm dầu thấp nhiệt,/kɒnˈfiː/,Ngâm thực phẩm trong dầu/mỡ ở nhiệt độ thấp để bảo quản và tạo hương vị,Duck confit - vịt ngâm mỡ 12 giờ tạo texture mềm mượt
+Kỹ thuật chế biến,Trung cấp,Flambé,Nướng có cồn,/fləmˈbeɪ/,"Kỹ thuật đốt cồn tạo lửa để nấu món ăn, tăng hương vị",Banana flambé - chuối nướng với rum tạo hương vị đặc biệt
+Kỹ thuật chế biến,Cơ bản,Sauté,Xào nhanh,/soʊˈteɪ/,Xào nhanh ở nhiệt độ cao với ít dầu mỡ,Sauté rau củ giữ nguyên màu xanh và độ giòn
+Kỹ thuật chế biến,Cao cấp,Spherification,Kỹ thuật tạo cầu,/ˌsfɪərɪfɪˈkeɪʃən/,Tạo ra những quả cầu chất lỏng bằng alginate và calcium,"Tạo ""trái cây nổ"" trong miệng với vị chua ngọt"
+Kỹ thuật chế biến,Cao cấp,Foam Technique,Kỹ thuật tạo bọt,/foʊm tekˈniːk/,Sử dụng lecithin tạo bọt từ các chất lỏng,"Foam cocktail, bọt trà xanh trên dessert"
+Kỹ thuật chế biến,Trung cấp,Emulsification,Nhũ tương hóa,/ɪˌmʌlsɪfɪˈkeɪʃən/,Kết hợp hai chất lỏng không hòa tan tạo thành hỗn hợp đồng nhất,"Mayonnaise, hollandaise - sốt mịn từ dầu và trứng"
+Kỹ thuật chế biến,Trung cấp,Reduction,Cô đặc nước sốt,/rɪˈdʌkʃən/,Cô đặc nước sốt bằng cách đun sôi để bay hơi nước,Giảm 500ml rượu vang thành 50ml để tăng đậm đà
+Kỹ thuật chế biến,Cơ bản,Blanching,Chần sơ,/ˈblæntʃɪŋ/,Luộc nhanh rồi ngâm nước đá để giữ màu và độ giòn,Rau xanh luộc 30 giây giữ màu và vitamin
+Kỹ thuật chế biến,Cao cấp,Tempering,Điều hòa nhiệt độ,/ˈtempərɪŋ/,Kiểm soát nhiệt độ chocolate để tạo độ bóng và không bị lem,Chocolate tempering tạo độ bóng hoàn hảo
+Kỹ thuật chế biến,Cao cấp,Caramelization,Caramel hóa,/ˌkærəməlaɪˈzeɪʃən/,Đường hóa nâu tạo màu và hương vị đặc trưng,Onion caramelization - hành tây nâu mật tạo ngọt tự nhiên
+Kỹ thuật chế biến,Trung cấp,Braising,Hầm chậm,/ˈbreɪzɪŋ/,Nấu chậm trong chất lỏng ở nhiệt độ thấp,Short ribs braised 4 giờ trong rượu vang đỏ
+Kỹ thuật chế biến,Trung cấp,Poaching,Luộc nhẹ,/ˈpoʊtʃɪŋ/,Nấu trong nước sôi nhẹ không sủi bọt,Cá hồi poached trong court bouillon
+Kỹ thuật chế biến,Cơ bản,Grilling,Nướng vỉ,/ˈgrɪlɪŋ/,Nướng trên vỉ ở nhiệt độ cao,Thịt nướng vỉ tạo vết grill đẹp mắt
+Kỹ thuật chế biến,Cao cấp,Dehydration,Sấy khô,/ˌdiːhaɪˈdreɪʃən/,Loại bỏ nước khỏi thực phẩm để bảo quản và tạo texture,Tomat sấy khô 65°C trong 12 giờ tạo vị umami
+Kỹ thuật chế biến,Trung cấp,Smoking,Hun khói,/ˈsmoʊkɪŋ/,Sử dụng khói để tạo hương vị và bảo quản thực phẩm,Salmon cold smoked 6 giờ với oak wood chips
+Kỹ thuật chế biến,Cơ bản,Steaming,Hấp,/ˈstiːmɪŋ/,Nấu bằng hơi nước để giữ chất dinh dưỡng,Vegetables steamed 5 phút giữ màu xanh và vitamin
+Kỹ thuật chế biến,Cao cấp,Fermentation,Lên men,/ˌfɜːrmənˈteɪʃən/,Quá trình chuyển hóa vi sinh vật tạo hương vị đặc biệt,Kimchi, miso, kombucha - probiotic tự nhiên
+Phong cách phục vụ,Cao cấp,Gueridon Service,Phục vụ xe đẩy,/ˈgeɪriːdɒn ˈsɜːrvɪs/,"Phục vụ từ xe đẩy di động, chuẩn bị món ăn trước mặt khách",Caesar salad được trộn tại bàn khách từ xe đẩy chuyên dụng
+Phong cách phục vụ,Cao cấp,Silver Service,Phục vụ bạc,/ˈsɪlvər ˈsɜːrvɪs/,"Phục vụ bằng dụng cụ bạc, trang trọng và chuyên nghiệp",Phục vụ fine dining với dụng cụ bạc sang trọng
+Phong cách phục vụ,Cao cấp,French Service,Phục vụ kiểu Pháp,/frentʃ ˈsɜːrvɪs/,"Phục vụ theo cách truyền thống Pháp, từ phải sang trái","Nhân viên phục vụ từ phía phải khách, thu từ phía trái"
+Phong cách phục vụ,Trung cấp,Russian Service,Phục vụ kiểu Nga,/ˈrʌʃən ˈsɜːrvɪs/,"Phục vụ từ khay lớn, khách tự lấy phần của mình",Khách tự lấy thức ăn từ khay lớn do server cầm
+Phong cách phục vụ,Trung cấp,American Service,Phục vụ kiểu Mỹ,/əˈmerɪkən ˈsɜːrvɪs/,Phục vụ đĩa đã trang trí sẵn từ bếp,Đĩa được trang trí hoàn chỉnh từ bếp mang ra
+Phong cách phục vụ,Trung cấp,English Service,Phục vụ kiểu Anh,/ˈɪŋglɪʃ ˈsɜːrvɪs/,Khách tự phục vụ từ đĩa chung do nhân viên cầm,"Server đặt đĩa chung, khách tự chia phần"
+Phong cách phục vụ,Cơ bản,Buffet Service,Phục vụ buffet,/bʊˈfeɪ ˈsɜːrvɪs/,Khách tự lấy thức ăn từ quận bar buffet,Khách tự lấy thức ăn từ các quầy buffet đa dạng
+Phong cách phục vụ,Cơ bản,Family Style,Phục vụ gia đình,/ˈfæməli staɪl/,Thức ăn được đựng trong đĩa lớn để cả bàn chia sẻ,"Paella, lẩu được đặt giữa bàn để mọi người cùng ăn"
+Phong cách phục vụ,Cao cấp,Tableside Service,Phục vụ tại bàn,/ˈteɪbəlˌsaɪd ˈsɜːrvɪs/,Chuẩn bị hoặc hoàn thiện món ăn ngay tại bàn khách,"Flambé, carving được thực hiện tại bàn khách"
+Phong cách phục vụ,Cao cấp,Chef's Table,Bàn của bếp trưởng,/ʃefs ˈteɪbəl/,Bàn đặc biệt trong bếp để khách quan sát đầu bếp làm việc,Khách ngồi trong bếp xem chef nấu và được phục vụ đặc biệt
+Phong cách phục vụ,Trung cấp,Tasting Menu Service,Phục vụ thực đơn nếm,/ˈteɪstɪŋ ˈmenjuː ˈsɜːrvɪs/,Phục vụ nhiều món nhỏ theo trình tự đã định,Omakase - 8-12 món nhỏ theo trình tự của chef
+Phong cách phục vụ,Trung cấp,Wine Pairing Service,Phục vụ ghép rượu,/waɪn ˈpɛrɪŋ ˈsɜːrvɪs/,Phục vụ rượu phù hợp với từng món ăn,Mỗi món ăn đều có rượu vang phù hợp đi kèm
+Phong cách phục vụ,Cơ bản,Plated Service,Phục vụ đĩa sẵn,/ˈpleɪtəd ˈsɜːrvɪs/,Phục vụ đĩa đã được trang trí hoàn chỉnh,Món ăn đã hoàn thiện được mang thẳng ra phục vụ
+Phong cách phục vụ,Cơ bản,Butler Service,Phục vụ quản gia,/ˈbʌtlər ˈsɜːrvɪs/,Phục vụ cá nhân hóa cao cấp như quản gia riêng,Phục vụ cá nhân với sự chú ý đặc biệt đến từng khách
+Phong cách phục vụ,Cơ bản,Cafeteria Service,Phục vụ tự phục vụ,/ˌkæfəˈtɪriə ˈsɜːrvɪs/,Khách hàng tự phục vụ tại quầy,Khách tự phục vụ tại quầy như trong căng tin
+Phong cách phục vụ,Cao cấp,Banquet Service,Phục vụ tiệc,/ˈbæŋkwɪt ˈsɜːrvɪs/,Phục vụ cho sự kiện lớn với nhiều khách cùng lúc,Tiệc cưới 300 khách với service đồng bộ và chuyên nghiệp
+Phong cách phục vụ,Trung cấp,Counter Service,Phục vụ quầy,/ˈkaʊntər ˈsɜːrvɪs/,Khách đặt món tại quầy và nhận tại chỗ,Quick service restaurant - khách order và nhận ngay
+Chuyên môn đồ uống,Cao cấp,Sommelier,Chuyên gia rượu vang,/sʌməˈlɪeɪ/,"Chuyên gia về rượu vang, tư vấn và phục vụ rượu chuyên nghiệp",Tư vấn Bordeaux 2010 phù hợp với steak wagyu
+Chuyên môn đồ uống,Cao cấp,Wine Pairing,Ghép đôi rượu vang,/waɪn ˈpɛrɪŋ/,Nghệ thuật kết hợp rượu với món ăn để tăng cường hương vị,"Chablis với hàu tươi, Pinot Noir với vịt quay"
+Chuyên môn đồ uống,Cao cấp,Decanting,Rót rượu sang bình,/dɪˈkæntɪŋ/,Chuyển rượu sang bình khác để loại bỏ cặn và thông khí,Chuyển rượu vang cũ sang bình thuỷ tinh trong suốt
+Chuyên môn đồ uống,Cao cấp,Aerating,Thông khí rượu,/ˈɛreɪtɪŋ/,Cho không khí tiếp xúc với rượu để mở hương vị,Mở rượu vang đỏ 30 phút trước khi phục vụ
+Chuyên môn đồ uống,Trung cấp,Wine Tasting,Nếm rượu vang,/waɪn ˈteɪstɪŋ/,"Quy trình đánh giá rượu qua màu sắc, mùi hương và vị","Đánh giá màu, mùi, vị để xác định chất lượng"
+Chuyên môn đồ uống,Trung cấp,Cocktail Mixology,Pha chế cocktail,/ˈkɒkteɪl mɪkˈsɒlədʒi/,Nghệ thuật pha chế cocktail chuyên nghiệp,"Negroni, Martini, Old Fashioned theo công thức chuẩn"
+Chuyên môn đồ uống,Trung cấp,Flair Bartending,Pha chế biểu diễn,/flɛr ˈbɑːrtendɪŋ/,Pha chế kết hợp với động tác biểu diễn,"Tom Cruise trong ""Cocktail"" - pha chế kèm biểu diễn"
+Chuyên môn đồ uống,Cơ bản,Muddling,Nghiền nguyên liệu,/ˈmʌdəlɪŋ/,"Nghiền trái cây, thảo mộc để chiết xuất tinh dầu",Mojito - nghiền lá mint để chiết xuất tinh dầu
+Chuyên môn đồ uống,Cơ bản,Shaking,Lắc cocktail,/ˈʃeɪkɪŋ/,Lắc mạnh để trộn và làm lạnh cocktail,Whiskey Sour - lắc mạnh với đá để tạo bọt
+Chuyên môn đồ uống,Cơ bản,Stirring,Khuấy cocktail,/ˈstɜːrɪŋ/,Khuấy nhẹ nhàng để trộn mà không tạo bọt,Manhattan - khuấy nhẹ với đá để không làm đục
+Chuyên môn đồ uống,Cao cấp,Wine Cellar Management,Quản lý hầm rượu,/waɪn ˈselər ˈmænɪdʒmənt/,"Quản lý, bảo quản và phân loại rượu trong hầm","Hầm rượu 18°C, độ ẩm 70%, không rung động"
+Chuyên môn đồ uống,Cao cấp,Vintage Selection,Chọn lựa vintage,/ˈvɪntɪdʒ sɪˈlekʃən/,Chọn lựa rượu theo năm sản xuất và chất lượng,Chọn Vintage Champagne 2008 cho dịp đặc biệt
+Chuyên môn đồ uống,Trung cấp,Temperature Control,Kiểm soát nhiệt độ,/ˈtempərətʃər kənˈtroʊl/,Kiểm soát nhiệt độ bảo quản và phục vụ rượu,"Rượu vang đỏ 16-18°C, trắng 8-12°C"
+Chuyên môn đồ uống,Trung cấp,Glassware Selection,Chọn ly phù hợp,/ˈglæsˌwɛr sɪˈlekʃən/,Chọn ly phù hợp cho từng loại đồ uống,"Burgundy glass cho Pinot Noir, Bordeaux glass cho Cabernet"
+Chuyên môn đồ uống,Cơ bản,Serving Protocol,Quy trình phục vụ,/ˈsɜːrvɪŋ ˈproʊtəˌkɔl/,Quy trình chuẩn mực phục vụ đồ uống,"Mở rượu vang, kiểm tra nút chai, cho khách nếm trước"
+Chuyên môn đồ uống,Cao cấp,Craft Beer,Thủ công nghiệp bia,/kræft bɪr/,Bia được sản xuất thủ công với nguyên liệu chất lượng cao,IPA craft beer với hoa bia địa phương
+Chuyên môn đồ uống,Trung cấp,Espresso,Espresso,/eˈspresoʊ/,Cà phê được pha bằng máy áp suất cao,Double shot espresso 30ml trong 25-30 giây
+Chuyên môn đồ uống,Cơ bản,Latte Art,Nghệ thuật latte,/ˈlɑːteɪ ɑːrt/,Tạo hình nghệ thuật trên bề mặt cà phê latte,Heart, rosetta, tulip patterns trên latte
+Phân loại thực đơn,Cao cấp,Degustation Menu,Thực đơn thưởng thức,/ˌdegəˈsteɪʃən ˈmenjuː/,Thực đơn nhiều món nhỏ để khách nếm thử đa dạng hương vị,8 món nhỏ showcase tài năng chef qua nhiều técnica
+Phân loại thực đơn,Cao cấp,Prix Fixe Menu,Thực đơn giá cố định,/priː fɪks ˈmenjuː/,Thực đơn có giá cố định bao gồm nhiều món,Set menu 3 món $85: soup + main + dessert
+Phân loại thực đơn,Cao cấp,Tasting Menu,Thực đơn nếm thử,/ˈteɪstɪŋ ˈmenjuː/,Thực đơn được thiết kế để trải nghiệm hương vị toàn diện,Chef tự chọn 6 món để khách trải nghiệm đa dạng
+Phân loại thực đơn,Trung cấp,À la Carte,Gọi món riêng lẻ,/ˌɑː lə ˈkɑːrt/,"Gọi món riêng lẻ theo sở thích, không theo set","Khách chọn soup $8, steak $45, dessert $12 riêng biệt"
+Phân loại thực đơn,Trung cấp,Table d'Hôte,Thực đơn cố định,/ˌtɑːbəl ˈdoʊt/,Thực đơn cố định với lựa chọn hạn chế,"Set lunch $25: salad, fish, coffee - không đổi"
+Phân loại thực đơn,Trung cấp,Seasonal Menu,Thực đơn theo mùa,/ˈsiːzənəl ˈmenjuː/,Thực đơn thay đổi theo mùa vụ nguyên liệu,"Menu mùa xuân: măng tây, mùa thu: nấm truffle"
+Phân loại thực đơn,Cơ bản,Chef's Special,Món đặc biệt bếp trưởng,/ʃefs ˈspeʃəl/,Món đặc biệt do bếp trưởng sáng tạo hàng ngày,Hôm nay có special: sea bass vừa về từ bến cảng
+Phân loại thực đơn,Cơ bản,Market Menu,Thực đơn chợ,/ˈmɑːrkɪt ˈmenjuː/,Thực đơn dựa trên nguyên liệu tươi từ chợ,Menu thay đổi dựa trên nguyên liệu tươi từ chợ sáng
+Phân loại thực đơn,Cơ bản,Pre-Theater Menu,Thực đơn trước kịch,/priː ˈθiːətər ˈmenjuː/,Thực đơn nhanh cho khách đi xem kịch,Menu 2 tiếng hoàn thành trước 8pm curtain call
+Phân loại thực đơn,Cao cấp,Wine Dinner Menu,Thực đơn tiệc rượu,/waɪn ˈdɪnər ˈmenjuː/,Thực đơn kết hợp với rượu vang cao cấp,Menu 5 món kết hợp với 5 ly rượu vang premium
+Phân loại thực đơn,Trung cấp,Vegetarian Menu,Thực đơn chay,/ˌvedʒəˈtɛriən ˈmenjuː/,"Thực đơn không có thịt, chỉ có rau và sữa","Menu không thịt: quinoa salad, mushroom risotto"
+Phân loại thực đơn,Trung cấp,Vegan Menu,Thực đơn thuần chay,/ˈviːgən ˈmenjuː/,Thực đơn hoàn toàn từ thực vật,"Menu hoàn toàn thực vật: không trứng, sữa, mật ong"
+Phân loại thực đơn,Cơ bản,Children's Menu,Thực đơn trẻ em,/ˈtʃɪldrənz ˈmenjuː/,Thực đơn phù hợp với trẻ em,"Menu trẻ em: chicken nuggets, mac & cheese"
+Phân loại thực đơn,Cơ bản,Senior Menu,Thực đơn người cao tuổi,/ˈsiːnjər ˈmenjuː/,Thực đơn cho người cao tuổi với khẩu phần nhỏ,"Menu người cao tuổi: portion nhỏ, dễ nhai"
+Phân loại thực đơn,Cơ bản,Gluten-Free Menu,Thực đơn không gluten,/ˈgluːtən friː ˈmenjuː/,Thực đơn không chứa gluten cho người dị ứng,Menu không gluten: thay thế bằng rice flour
+Phân loại thực đơn,Cao cấp,Omakase Menu,Thực đơn omakase,/oʊməˈkɑːseɪ ˈmenjuː/,Thực đơn để chef tự quyết định món ăn cho khách,Chef chọn 10-15 món theo tài năng và nguyên liệu tươi
+Phân loại thực đơn,Trung cấp,Brunch Menu,Thực đơn brunch,/brʌntʃ ˈmenjuː/,Thực đơn kết hợp giữa breakfast và lunch,"Eggs benedict, avocado toast, pancakes từ 10am-2pm"
+Vận hành bếp,Cao cấp,Mise en Place,Chuẩn bị sẵn sàng,/miːz ɒn ˈplɑːs/,Chuẩn bị tất cả nguyên liệu và dụng cụ trước khi nấu,"Tất cả nguyên liệu cắt sẵn, gia vị đong sẵn trước service"
+Vận hành bếp,Cao cấp,Brigade System,Hệ thống phân đội,/brɪˈgeɪd ˈsɪstəm/,Hệ thống phân công rõ ràng trong bếp chuyên nghiệp,Executive Chef > Sous Chef > CDP > Demi > Commis
+Vận hành bếp,Trung cấp,Expediting,Điều phối xuất món,/ˈekspəˌdaɪtɪŋ/,Kiểm tra và điều phối món ăn trước khi ra khách,"Kiểm tra temperature, presentation trước khi pass"
+Vận hành bếp,Trung cấp,Food Costing,Tính giá thành món ăn,/fuːd ˈkɔːstɪŋ/,Tính toán chi phí nguyên liệu cho từng món ăn,Food cost 28% revenue - steak cost $12 bán $42
+Vận hành bếp,Trung cấp,Portion Control,Kiểm soát khẩu phần,/ˈpɔːrʃən kənˈtroʊl/,Kiểm soát kích thước và trọng lượng khẩu phần chuẩn,"Mỗi portion steak 200g, mỗi ly wine 150ml chuẩn"
+Vận hành bếp,Cơ bản,Kitchen Prep,Chuẩn bị bếp,/ˈkɪtʃən prep/,Chuẩn bị nguyên liệu và thiết lập bếp trước ca làm,"Prep list: cắt 5kg onion, làm 2L stock, marinate 20 steaks"
+Vận hành bếp,Cơ bản,Line Cooking,Nấu ăn dây chuyền,/laɪn ˈkʊkɪŋ/,"Nấu ăn theo dây chuyền, mỗi người một nhiệm vụ cụ thể","Grill station nướng, sauté station xào, garde manger salad"
+Vận hành bếp,Cơ bản,Plating,Trang trí đĩa,/ˈpleɪtɪŋ/,Trang trí và trình bày món ăn trên đĩa nghệ thuật,"Plating: protein 6h, starch 3h, vegetable 9h position"
+Vận hành bếp,Cao cấp,Quality Control,Kiểm soát chất lượng,/ˈkwɑːləti kənˈtroʊl/,Kiểm tra chất lượng món ăn trước khi phục vụ,"Check temperature 63°C, seasoning, presentation mỗi dish"
+Vận hành bếp,Cao cấp,Menu Engineering,Kỹ thuật thực đơn,/ˈmenjuː ˌendʒəˈnɪrɪŋ/,Thiết kế thực đơn tối ưu lợi nhuận và sở thích khách,"Phân tích menu: dish nào profitable, nào cần adjust giá"
+Vận hành bếp,Trung cấp,Inventory Management,Quản lý kho,/ˈɪnvənˌtɔri ˈmænɪdʒmənt/,"Quản lý nguyên liệu, theo dõi tồn kho và đặt hàng","Theo dõi inventory, đặt hàng khi stock còn 20%"
+Vận hành bếp,Trung cấp,HACCP Standards,Tiêu chuẩn HACCP,/ˈhæsəp ˈstændərdz/,Tiêu chuẩn quốc tế về an toàn thực phẩm,"Critical Control Points: nhiệt độ, thời gian, contamination"
+Vận hành bếp,Cơ bản,Food Safety,An toàn thực phẩm,/fuːd ˈseɪfti/,Đảm bảo vệ sinh và an toàn trong chế biến thực phẩm,"Wash hands, separate raw/cooked, maintain cold chain"
+Vận hành bếp,Cơ bản,Cross-Training,Đào tạo chéo,/krɔs ˈtreɪnɪŋ/,Đào tạo nhân viên làm nhiều vị trí khác nhau,"Server có thể expedite, prep cook có thể work line"
+Vận hành bếp,Cơ bản,Station Setup,Thiết lập vị trí,/ˈsteɪʃən ˈsetʌp/,Sắp xếp và tổ chức không gian làm việc hiệu quả,"Mỗi station có toolkit riêng, clean as you go"
+Vận hành bếp,Cao cấp,Molecular Mixology,Pha chế phân tử,/məˈlekjələr mɪkˈsɒlədʒi/,Ứng dụng khoa học vào pha chế cocktail,"Spherification cocktail, smoke-infused drinks"
+Vận hành bếp,Trung cấp,Zero Waste Kitchen,Bếp không rác thải,/ˈziːroʊ weɪst ˈkɪtʃən/,Tối ưu hóa sử dụng nguyên liệu không lãng phí,Composting, vegetable scraps làm stock
+Quản lý khách sạn,Cao cấp,Revenue Management,Quản lý doanh thu,/ˈrevəˌnuː ˈmænɪdʒmənt/,Tối ưu hóa giá phòng để tối đa hóa lợi nhuận,Dynamic pricing theo demand và seasonality
+Quản lý khách sạn,Cao cấp,Yield Management,Quản lý năng suất,/jiːld ˈmænɪdʒmənt/,Tối ưu hóa doanh thu từ capacity có sẵn,Sell high-value rooms trước, overbook strategically
+Quản lý khách sạn,Trung cấp,Front Office Operations,Hoạt động lễ tân,/frʌnt ˈɔfɪs ˌɒpəˈreɪʃənz/,Quản lý các hoạt động hàng ngày tại bộ phận lễ tân,Check-in/out, reservations, guest services
+Quản lý khách sạn,Trung cấp,Housekeeping Management,Quản lý buồng phòng,/ˈhaʊskiːpɪŋ ˈmænɪdʒmənt/,Quản lý việc dọn dẹp và bảo trì phòng khách,Room status, cleaning schedules, maintenance
+Quản lý khách sạn,Trung cấp,Concierge Services,Dịch vụ concierge,/ˈkɒnsɪeəʒ ˈsɜːrvɪsɪz/,Dịch vụ hỗ trợ khách hàng cá nhân hóa cao,Restaurant reservations, tour bookings, special requests
+Quản lý khách sạn,Cơ bản,Guest Relations,Quan hệ khách hàng,/ɡest rɪˈleɪʃənz/,Xây dựng và duy trì mối quan hệ tốt với khách hàng,Handle complaints, special occasions, loyalty programs
+Quản lý khách sạn,Cơ bản,Property Management,Quản lý tài sản,/ˈprɒpərti ˈmænɪdʒmənt/,Quản lý tổng thể tài sản khách sạn,Maintenance, renovations, capital improvements
+Quản lý khách sạn,Cơ bản,Staff Training,Đào tạo nhân viên,/stæf ˈtreɪnɪŋ/,Đào tạo và phát triển kỹ năng cho nhân viên,Orientation, skill development, certification programs
+Quản lý khách sạn,Cao cấp,Asset Management,Quản lý tài sản đầu tư,/ˈæset ˈmænɪdʒmənt/,Quản lý tài sản khách sạn như một khoản đầu tư,ROI optimization, property valuation, portfolio management
+Quản lý khách sạn,Cao cấp,Brand Standards,Tiêu chuẩn thương hiệu,/brænd ˈstændərdz/,Duy trì tính nhất quán của thương hiệu khách sạn,Service standards, visual identity, guest experience
+Quản lý khách sạn,Trung cấp,Quality Assurance,Đảm bảo chất lượng,/ˈkwɑːləti əˈʃʊrəns/,Đảm bảo chất lượng dịch vụ đạt tiêu chuẩn,Mystery shopping, guest feedback, performance metrics
+Quản lý khách sạn,Trung cấp,Cost Control,Kiểm soát chi phí,/kɔst kənˈtroʊl/,Quản lý và kiểm soát chi phí hoạt động,Budget management, expense tracking, cost reduction
+Quản lý khách sạn,Cơ bản,Inventory Control,Kiểm soát tồn kho,/ˈɪnvənˌtɔri kənˈtroʊl/,Quản lý tồn kho vật tư và thiết bị,Stock levels, ordering systems, waste reduction
+Quản lý khách sạn,Cơ bản,Security Management,Quản lý an ninh,/sɪˈkjʊrəti ˈmænɪdʒmənt/,Đảm bảo an ninh và an toàn cho khách và tài sản,Access control, surveillance, emergency procedures
+Marketing & Sales,Cao cấp,Digital Marketing,Marketing số,/ˈdɪdʒɪtəl ˈmɑːrkɪtɪŋ/,Sử dụng kênh số để quảng bá và bán dịch vụ,Social media, email campaigns, online advertising
+Marketing & Sales,Cao cấp,Brand Positioning,Định vị thương hiệu,/brænd pəˈzɪʃənɪŋ/,Xác định vị trí thương hiệu trong thị trường,Luxury positioning, value proposition, competitive analysis
+Marketing & Sales,Trung cấp,Revenue Optimization,Tối ưu hóa doanh thu,/ˈrevəˌnuː ˌɒptɪmaɪˈzeɪʃən/,Tối đa hóa doanh thu thông qua các chiến lược khác nhau,Pricing strategies, upselling, package deals
+Marketing & Sales,Trung cấp,Guest Acquisition,Thu hút khách hàng,/ɡest ˌækwɪˈzɪʃən/,Chiến lược thu hút khách hàng mới,Direct bookings, OTA partnerships, loyalty programs
+Marketing & Sales,Trung cấp,Market Research,Nghiên cứu thị trường,/ˈmɑːrkɪt rɪˈsɜːrtʃ/,Phân tích thị trường và đối thủ cạnh tranh,Competitor analysis, guest demographics, market trends
+Marketing & Sales,Cơ bản,Social Media Marketing,Marketing mạng xã hội,/ˈsoʊʃəl ˈmiːdiə ˈmɑːrkɪtɪŋ/,Sử dụng mạng xã hội để quảng bá dịch vụ,Instagram, Facebook, TikTok content creation
+Marketing & Sales,Cơ bản,Email Marketing,Marketing email,/ˈiːmeɪl ˈmɑːrkɪtɪŋ/,Sử dụng email để giao tiếp với khách hàng,Newsletters, promotional campaigns, guest retention
+Marketing & Sales,Cơ bản,Content Marketing,Marketing nội dung,/ˈkɒntent ˈmɑːrkɪtɪŋ/,Tạo nội dung hấp dẫn để thu hút khách hàng,Blog posts, videos, travel guides
+Marketing & Sales,Cao cấp,Influencer Marketing,Marketing người ảnh hưởng,/ˈɪnfluənsər ˈmɑːrkɪtɪŋ/,Hợp tác với người có ảnh hưởng để quảng bá,Travel bloggers, food critics, celebrity partnerships
+Marketing & Sales,Cao cấp,CRM Strategy,Chiến lược CRM,/siː ɑːr em ˈstrætədʒi/,Quản lý mối quan hệ khách hàng hiệu quả,Guest profiles, personalized service, loyalty programs
+Marketing & Sales,Trung cấp,SEO Optimization,Tối ưu hóa SEO,/es iː oʊ ˌɒptɪmaɪˈzeɪʃən/,Tối ưu hóa website để xuất hiện trên Google,Keyword research, content optimization, local SEO
+Marketing & Sales,Trung cấp,PPC Advertising,Quảng cáo PPC,/piː piː siː ˈædvərˌtaɪzɪŋ/,Quảng cáo trả phí trên các nền tảng tìm kiếm,Google Ads, Bing Ads, Facebook Ads campaigns
+Marketing & Sales,Cơ bản,Local Marketing,Marketing địa phương,/ˈloʊkəl ˈmɑːrkɪtɪŋ/,Quảng bá dịch vụ trong cộng đồng địa phương,Local partnerships, community events, regional promotions
+Marketing & Sales,Cơ bản,Event Marketing,Marketing sự kiện,/ɪˈvent ˈmɑːrkɪtɪŋ/,Quảng bá thông qua các sự kiện và hoạt động,Weddings, conferences, special celebrations
+Dịch vụ khách hàng,Cao cấp,Service Excellence,Dịch vụ xuất sắc,/ˈsɜːrvɪs ɪkˈseləns/,Cung cấp dịch vụ vượt trên mong đợi của khách hàng,Anticipating needs, going above and beyond
+Dịch vụ khách hàng,Cao cấp,Personalized Service,Dịch vụ cá nhân hóa,/ˈpɜːrsənəˌlaɪzd ˈsɜːrvɪs/,Tùy chỉnh dịch vụ theo sở thích cá nhân của khách,Guest preferences, special occasions, custom experiences
+Dịch vụ khách hàng,Trung cấp,Guest Recovery,Khôi phục khách hàng,/ɡest rɪˈkʌvəri/,Khôi phục mối quan hệ sau khi khách có trải nghiệm không tốt,Apology protocols, compensation, service recovery
+Dịch vụ khách hàng,Trung cấp,Complaint Handling,Xử lý khiếu nại,/kəmˈpleɪnt ˈhændəlɪŋ/,Xử lý hiệu quả các khiếu nại của khách hàng,Active listening, problem solving, follow-up
+Dịch vụ khách hàng,Trung cấp,Expectation Management,Quản lý kỳ vọng,/ˌekspekˈteɪʃən ˈmænɪdʒmənt/,Quản lý và đáp ứng kỳ vọng của khách hàng,Clear communication, realistic promises, delivery
+Dịch vụ khách hàng,Cơ bản,Guest Communication,Giao tiếp với khách,/ɡest kəˌmjuːnɪˈkeɪʃən/,Kỹ năng giao tiếp hiệu quả với khách hàng,Active listening, clear explanations, cultural sensitivity
+Dịch vụ khách hàng,Cơ bản,Problem Solving,Giải quyết vấn đề,/ˈprɒbləm ˈsɒlvɪŋ/,Khả năng xác định và giải quyết vấn đề nhanh chóng,Root cause analysis, creative solutions, quick response
+Dịch vụ khách hàng,Cơ bản,Multilingual Service,Dịch vụ đa ngôn ngữ,/ˌmʌltiˈlɪŋɡwəl ˈsɜːrvɪs/,Cung cấp dịch vụ bằng nhiều ngôn ngữ khác nhau,Language training, translation services, cultural awareness
+Dịch vụ khách hàng,Cao cấp,Emotional Intelligence,Trí tuệ cảm xúc,/ɪˈmoʊʃənəl ɪnˈtelədʒəns/,Khả năng hiểu và quản lý cảm xúc của bản thân và người khác,Empathy, self-awareness, social skills
+Dịch vụ khách hàng,Cao cấp,Crisis Management,Quản lý khủng hoảng,/ˈkraɪsɪs ˈmænɪdʒmənt/,Xử lý các tình huống khủng hoảng và khẩn cấp,Emergency protocols, communication plans, damage control
+Dịch vụ khách hàng,Trung cấp,Service Recovery,Dịch vụ khôi phục,/ˈsɜːrvɪs rɪˈkʌvəri/,Khôi phục trải nghiệm khách hàng sau sự cố,Apology, compensation, improved service
+Dịch vụ khách hàng,Trung cấp,Guest Loyalty,Lòng trung thành khách hàng,/ɡest ˈlɔɪəlti/,Xây dựng và duy trì lòng trung thành của khách hàng,Loyalty programs, personalized experiences, relationship building
+Dịch vụ khách hàng,Cơ bản,Active Listening,Lắng nghe tích cực,/ˈæktɪv ˈlɪsənɪŋ/,Kỹ năng lắng nghe và hiểu rõ nhu cầu của khách hàng,Full attention, clarification, empathy
+Dịch vụ khách hàng,Cơ bản,Cultural Sensitivity,Nhạy cảm văn hóa,/ˈkʌltʃərəl ˈsensətɪvəti/,Hiểu và tôn trọng sự khác biệt văn hóa của khách hàng,Cultural awareness, respectful communication, adaptation
+Kỹ thuật nấu ăn,Cao cấp,Flambé,Nướng có cồn,/fləmˈbeɪ/,"Kỹ thuật đốt cồn tạo lửa để nấu món ăn, tăng hương vị",Banana flambé - chuối nướng với rum tạo hương vị đặc biệt
+Kỹ thuật nấu ăn,Trung cấp,Sauté,Xào nhanh,/soʊˈteɪ/,Xào nhanh ở nhiệt độ cao với ít dầu mỡ,Sauté rau củ giữ nguyên màu xanh và độ giòn
+Kỹ thuật nấu ăn,Cao cấp,Spherification,Kỹ thuật tạo cầu,/ˌsfɪərɪfɪˈkeɪʃən/,Tạo ra những quả cầu chất lỏng bằng alginate và calcium,"Tạo ""trái cây nổ"" trong miệng với vị chua ngọt"
+Kỹ thuật nấu ăn,Cao cấp,Foam Technique,Kỹ thuật tạo bọt,/foʊm tekˈniːk/,Sử dụng lecithin tạo bọt từ các chất lỏng,"Foam cocktail, bọt trà xanh trên dessert"
+Kỹ thuật nấu ăn,Trung cấp,Emulsification,Nhũ tương hóa,/ɪˌmʌlsɪfɪˈkeɪʃən/,Kết hợp hai chất lỏng không hòa tan tạo thành hỗn hợp đồng nhất,"Mayonnaise, hollandaise - sốt mịn từ dầu và trứng"
+Kỹ thuật nấu ăn,Trung cấp,Reduction,Cô đặc nước sốt,/rɪˈdʌkʃən/,Cô đặc nước sốt bằng cách đun sôi để bay hơi nước,Giảm 500ml rượu vang thành 50ml để tăng đậm đà
+Kỹ thuật nấu ăn,Cơ bản,Blanching,Chần sơ,/ˈblæntʃɪŋ/,Luộc nhanh rồi ngâm nước đá để giữ màu và độ giòn,Rau xanh luộc 30 giây giữ màu và vitamin
+Kỹ thuật nấu ăn,Cao cấp,Tempering,Điều hòa nhiệt độ,/ˈtempərɪŋ/,Kiểm soát nhiệt độ chocolate để tạo độ bóng và không bị lem,Chocolate tempering tạo độ bóng hoàn hảo
+Kỹ thuật nấu ăn,Cao cấp,Caramelization,Caramel hóa,/ˌkærəməlaɪˈzeɪʃən/,Đường hóa nâu tạo màu và hương vị đặc trưng,Onion caramelization - hành tây nâu mật tạo ngọt tự nhiên
+Kỹ thuật nấu ăn,Trung cấp,Braising,Hầm chậm,/ˈbreɪzɪŋ/,Nấu chậm trong chất lỏng ở nhiệt độ thấp,Short ribs braised 4 giờ trong rượu vang đỏ
+Kỹ thuật nấu ăn,Trung cấp,Poaching,Luộc nhẹ,/ˈpoʊtʃɪŋ/,Nấu trong nước sôi nhẹ không sủi bọt,Cá hồi poached trong court bouillon
+Kỹ thuật nấu ăn,Cơ bản,Grilling,Nướng vỉ,/ˈgrɪlɪŋ/,Nướng trên vỉ ở nhiệt độ cao,Thịt nướng vỉ tạo vết grill đẹp mắt
+Kỹ thuật nấu ăn,Cao cấp,Dehydration,Sấy khô,/ˌdiːhaɪˈdreɪʃən/,Loại bỏ nước khỏi thực phẩm để bảo quản và tạo texture,Tomat sấy khô 65°C trong 12 giờ tạo vị umami
+Kỹ thuật nấu ăn,Trung cấp,Smoking,Hun khói,/ˈsmoʊkɪŋ/,Sử dụng khói để tạo hương vị và bảo quản thực phẩm,Salmon cold smoked 6 giờ với oak wood chips
+Kỹ thuật nấu ăn,Cơ bản,Steaming,Hấp,/ˈstiːmɪŋ/,Nấu bằng hơi nước để giữ chất dinh dưỡng,Vegetables steamed 5 phút giữ màu xanh và vitamin
+Kỹ thuật nấu ăn,Cao cấp,Fermentation,Lên men,/ˌfɜːrmənˈteɪʃən/,Quá trình chuyển hóa vi sinh vật tạo hương vị đặc biệt,Kimchi, miso, kombucha - probiotic tự nhiên
+Check-in,Nhận phòng,[tʃek ɪn],Front Office,Process of registering guest arrival,Check-in time is 3:00 PM.,Basic
+Check-out,Trả phòng,[tʃek aʊt],Front Office,Process of guest departure,Check-out time is 11:00 AM.,Basic
+Reservation,Đặt phòng,[ˌrezərˈveɪʃən],Front Office,Advance booking for accommodation,Your reservation is confirmed.,Basic
+Reception,Lễ tân,[rɪˈsepʃən],Front Office,Front desk area,Please go to reception for assistance.,Basic
+Guest,Khách,[gest],Front Office,Hotel customer,Our guest needs extra towels.,Basic
+Room Key,Chìa khóa phòng,[ruːm kiː],Front Office,Access card for room,Here is your room key.,Basic
+Lobby,Sảnh khách sạn,[ˈlɑːbi],Front Office,Main entrance area,Please wait in the lobby.,Basic
+Receptionist,Nhân viên lễ tân,[rɪˈsepʃənɪst],Front Office,Front desk staff,The receptionist will help you.,Basic
+Luggage,Hành lý,[ˈlʌgɪdʒ],Front Office,Guest's bags,Where is your luggage?,Basic
+Porter,Nhân viên khuân vác,[ˈpɔːrtər],Front Office,Staff who carries luggage,The porter will help with bags.,Basic
+Concierge,Nhân viên hỗ trợ,[ˈkɑːnsiˌerʒ],Front Office,Guest assistance staff,Ask the concierge for directions.,Basic
+Registration,Đăng ký,[ˌredʒɪˈstreɪʃən],Front Office,Check-in process,Please complete registration.,Basic
+Identification,Giấy tờ tùy thân,[aɪˌdentɪfɪˈkeɪʃən],Front Office,ID document,May I see your identification?,Basic
+Credit Card,Thẻ tín dụng,[ˈkredɪt kɑːrd],Front Office,Payment card,We need a credit card for deposit.,Basic
+Deposit,Tiền đặt cọc,[dɪˈpɑːzɪt],Front Office,Security payment,A deposit is required.,Basic
+Bill,Hóa đơn,[bɪl],Front Office,Invoice for services,Here is your bill.,Basic
+Payment,Thanh toán,[ˈpeɪmənt],Front Office,Money for services,How would you like to make payment?,Basic
+Cash,Tiền mặt,[kæʃ],Front Office,Physical money,Do you accept cash?,Basic
+Receipt,Biên lai,[rɪˈsiːt],Front Office,Payment proof,Keep your receipt.,Basic
+Information,Thông tin,[ˌɪnfərˈmeɪʃən],Front Office,Details or data,Do you need any information?,Basic
+Address,Địa chỉ,[ˈædres],Front Office,Location details,What is your home address?,Basic
+Phone Number,Số điện thoại,[foʊn ˈnʌmbər],Front Office,Contact number,May I have your phone number?,Basic
+Email,Thư điện tử,[ˈiːmeɪl],Front Office,Electronic mail,We'll send confirmation to your email.,Basic
+Confirmation,Xác nhận,[ˌkɑːnfərˈmeɪʃən],Front Office,Verification,Here is your confirmation number.,Basic
+Arrival,Đến,[əˈraɪvəl],Front Office,Coming to hotel,What is your arrival date?,Basic
+Departure,Khởi hành,[dɪˈpɑːrtʃər],Front Office,Leaving hotel,Your departure is tomorrow.,Basic
+Stay,Lưu trú,[steɪ],Front Office,Time at hotel,How long is your stay?,Basic
+Night,Đêm,[naɪt],Front Office,24-hour period,You booked for three nights.,Basic
+Welcome,Chào mừng,[ˈwelkəm],Front Office,Greeting,Welcome to our hotel.,Basic
+Thank you,Cảm ơn,[θæŋk juː],Front Office,Expression of gratitude,Thank you for choosing us.,Basic
+Single Room,Phòng đơn,[ˈsɪŋgəl ruːm],Rooms,Room for one person,I need a single room.,Basic
+Double Room,Phòng đôi,[ˈdʌbəl ruːm],Rooms,Room for two people,We have a double room available.,Basic
+Twin Room,Phòng hai giường đơn,[twɪn ruːm],Rooms,Room with two single beds,Would you prefer a twin room?,Basic
+Suite,Phòng suite,[swiːt],Rooms,Luxury room with living area,The presidential suite is available.,Basic
+Bedroom,Phòng ngủ,[ˈbedruːm],Rooms,Sleeping area,The bedroom has a king bed.,Basic
+Bathroom,Phòng tắm,[ˈbæθruːm],Rooms,Washing facilities,The bathroom has a shower.,Basic
+Bed,Giường,[bed],Rooms,Sleeping furniture,The bed is very comfortable.,Basic
+Pillow,Gối,[ˈpɪloʊ],Rooms,Head rest,Would you like extra pillows?,Basic
+Blanket,Chăn,[ˈblæŋkɪt],Rooms,Bed covering,There are extra blankets in the closet.,Basic
+Towel,Khăn tắm,[ˈtaʊəl],Rooms,Drying cloth,Fresh towels are provided daily.,Basic
+Shower,Vòi sen,[ˈʃaʊər],Rooms,Washing facility,The shower has hot water.,Basic
+Television,Tivi,[ˈteləˌvɪʒən],Rooms,TV set,The television has cable channels.,Basic
+Air Conditioning,Máy lạnh,[er kənˈdɪʃənɪŋ],Rooms,Climate control,Please adjust the air conditioning.,Basic
+Heating,Sưởi ấm,[ˈhiːtɪŋ],Rooms,Warmth system,The heating can be controlled.,Basic
+Window,Cửa sổ,[ˈwɪndoʊ],Rooms,Glass opening,The window has a city view.,Basic
+Balcony,Ban công,[ˈbælkəni],Rooms,Outdoor platform,The room has a private balcony.,Basic
+View,Tầm nhìn,[vjuː],Rooms,Scenic outlook,You have an ocean view.,Basic
+Closet,Tủ quần áo,[ˈklɑːzət],Rooms,Storage space,Hang your clothes in the closet.,Basic
+Safe,Két sắt,[seɪf],Rooms,Security box,Valuables go in the safe.,Basic
+Mini Bar,Tủ lạnh nhỏ,[ˈmɪni bɑːr],Rooms,Small refrigerator,The mini bar is stocked.,Basic
+Phone,Điện thoại,[foʊn],Rooms,Communication device,Use the phone to call reception.,Basic
+Internet,Internet,[ˈɪntərnet],Rooms,Online connection,Free internet is available.,Basic
+WiFi,WiFi,[ˈwaɪfaɪ],Rooms,Wireless internet,The WiFi password is provided.,Basic
+Key Card,Thẻ từ,[kiː kɑːrd],Rooms,Electronic room key,Use your key card to enter.,Basic
+Room Service,Dịch vụ phòng,[ruːm ˈsɜːrvɪs],Rooms,In-room dining,Room service is available 24/7.,Basic
+Housekeeping,Bộ phận dọn phòng,[ˈhaʊskiːpɪŋ],Housekeeping,Room cleaning service,Housekeeping will clean your room.,Basic
+Clean,Dọn dẹp,[kliːn],Housekeeping,Make tidy,We clean rooms daily.,Basic
+Dirty,Bẩn,[ˈdɜːrti],Housekeeping,Not clean,Please replace dirty towels.,Basic
+Fresh,Tươi mới,[freʃ],Housekeeping,New and clean,Fresh linens are provided.,Basic
+Change,Thay đổi,[tʃeɪndʒ],Housekeeping,Replace with new,Please change the sheets.,Basic
+Replace,Thay thế,[rɪˈpleɪs],Housekeeping,Put new instead,We'll replace the towels.,Basic
+Vacuum,Hút bụi,[ˈvækjuːm],Housekeeping,Clean carpet,Please vacuum the carpet.,Basic
+Dust,Lau bụi,[dʌst],Housekeeping,Remove dust particles,Dust the furniture daily.,Basic
+Polish,Đánh bóng,[ˈpɑːlɪʃ],Housekeeping,Make shiny,Polish the mirrors.,Basic
+Soap,Xà phòng,[soʊp],Housekeeping,Cleaning agent,There's soap in the bathroom.,Basic
+Shampoo,Dầu gội,[ʃæmˈpuː],Housekeeping,Hair washing product,Complimentary shampoo is provided.,Basic
+Amenities,Tiện nghi,[əˈmenətiz],Housekeeping,Guest supplies,All amenities are restocked.,Basic
+Laundry,Giặt ủi,[ˈlɔːndri],Housekeeping,Washing clothes,Laundry service is available.,Basic
+Iron,Bàn ủi,[ˈaɪərn],Housekeeping,Clothing presser,An iron is in the closet.,Basic
+Hanger,Móc treo,[ˈhæŋər],Housekeeping,Clothes holder,Extra hangers are available.,Basic
+Tissue,Giấy ăn,[ˈtɪʃuː],Housekeeping,Paper towel,Tissues are by the bed.,Basic
+Toilet Paper,Giấy vệ sinh,[ˈtɔɪlət ˌpeɪpər],Housekeeping,Bathroom tissue,We need more toilet paper.,Basic
+Trash,Rác,[træʃ],Housekeeping,Waste material,Empty the trash bin.,Basic
+Lost and Found,Đồ thất lạc,[lɔːst ænd faʊnd],Housekeeping,Missing items office,Check lost and found.,Basic
+Maintenance,Bảo trì,[ˈmeɪntənəns],Housekeeping,Repair service,Call maintenance for repairs.,Basic
+Restaurant,Nhà hàng,[ˈrestrɑːnt],F&B,Dining establishment,Our restaurant serves breakfast.,Basic
+Menu,Thực đơn,[ˈmenjuː],F&B,Food list,Here is the menu.,Basic
+Order,Đặt món,[ˈɔːrdər],F&B,Request food,Are you ready to order?,Basic
+Food,Đồ ăn,[fuːd],F&B,Edible items,The food is delicious.,Basic
+Drink,Đồ uống,[drɪŋk],F&B,Beverage,What would you like to drink?,Basic
+Water,Nước,[ˈwɔːtər],F&B,Clear liquid,Would you like still or sparkling water?,Basic
+Coffee,Cà phê,[ˈkɔːfi],F&B,Hot beverage,Coffee is served all day.,Basic
+Tea,Trà,[tiː],F&B,Leaf beverage,We have various teas.,Basic
+Breakfast,Bữa sáng,[ˈbrekfəst],F&B,Morning meal,Breakfast is from 6-10 AM.,Basic
+Lunch,Bữa trưa,[lʌntʃ],F&B,Midday meal,Lunch is served until 3 PM.,Basic
+Dinner,Bữa tối,[ˈdɪnər],F&B,Evening meal,Dinner starts at 6 PM.,Basic
+Buffet,Tiệc buffet,[bəˈfeɪ],F&B,Self-service meal,We have a breakfast buffet.,Basic
+Table,Bàn,[ˈteɪbəl],F&B,Dining surface,Your table is ready.,Basic
+Chair,Ghế,[tʃer],F&B,Seating furniture,Please take a seat on this chair.,Basic
+Waiter,Nhân viên phục vụ nam,[ˈweɪtər],F&B,Male server,Your waiter will take your order.,Basic
+Waitress,Nhân viên phục vụ nữ,[ˈweɪtrəs],F&B,Female server,The waitress is very helpful.,Basic
+Plate,Đĩa,[pleɪt],F&B,Food dish,Clean plates are provided.,Basic
+Cup,Tách,[kʌp],F&B,Drink container,Would you like a cup of coffee?,Basic
+Glass,Ly,[glæs],F&B,Drink vessel,Here's a glass of water.,Basic
+Fork,Dĩa,[fɔːrk],F&B,Eating utensil,You need a fork for salad.,Basic
+Knife,Dao,[naɪf],F&B,Cutting utensil,Use the knife to cut meat.,Basic
+Spoon,Thìa,[spuːn],F&B,Scooping utensil,Here's a spoon for soup.,Basic
+Napkin,Khăn ăn,[ˈnæpkɪn],F&B,Cleaning cloth,Use your napkin.,Basic
+Salt,Muối,[sɔːlt],F&B,Seasoning,Would you like salt and pepper?,Basic
+Pepper,Tiêu,[ˈpepər],F&B,Spice,Black pepper is on the table.,Basic
+Service,Dịch vụ,[ˈsɜːrvɪs],Service,Assistance provided,We provide excellent service.,Basic
+Help,Giúp đỡ,[help],Service,Assistance,How can I help you?,Basic
+Please,Làm ơn,[pliːz],Service,Polite request,Please wait a moment.,Basic
+Excuse me,Xin lỗi,[ɪkˈskjuːz miː],Service,Polite attention getter,"Excuse me, could you help?",Basic
+Sorry,Xin lỗi,[ˈsɔːri],Service,Apology,Sorry for the inconvenience.,Basic
+Problem,Vấn đề,[ˈprɑːbləm],Service,Issue or difficulty,Is there a problem?,Basic
+Solution,Giải pháp,[səˈluːʃən],Service,Answer to problem,We have a solution.,Basic
+Complain,Phù nàn,[kəmˈpleɪn],Service,Express dissatisfaction,The guest wants to complain.,Basic
+Satisfied,Hài lòng,[ˈsætɪsfaɪd],Service,Content with service,Are you satisfied?,Basic
+Comfortable,Thoải mái,[ˈkʌmftəbəl],Service,At ease,Is your room comfortable?,Basic
+Quality,Chất lượng,[ˈkwɑːləti],Service,Standard of service,We maintain high quality.,Basic
+Fast,Nhanh,[fæst],Service,Quick speed,We provide fast service.,Basic
+Slow,Chậm,[sloʊ],Service,Not quick,Service seems slow today.,Basic
+Busy,Bận,[ˈbɪzi],Service,Occupied with work,We're busy tonight.,Basic
+Available,Có sẵn,[əˈveɪləbəl],Service,Ready for use,A room is available.,Basic
+Wait,Chờ đợi,[weɪt],Service,Stay until ready,Please wait here.,Basic
+Ready,Sẵn sàng,[ˈredi],Service,Prepared,Your room is ready.,Basic
+Finished,Hoàn thành,[ˈfɪnɪʃt],Service,Completed,Are you finished eating?,Basic
+Urgent,Khẩn cấp,[ˈɜːrdʒənt],Service,Needs immediate attention,This is urgent.,Basic
+Important,Quan trọng,[ɪmˈpɔːrtənt],Service,Significant,This is important information.,Basic
+Question,Câu hỏi,[ˈkwestʃən],Service,Inquiry,Do you have any questions?,Basic
+Answer,Trả lời,[ˈænsər],Service,Response,I can answer that.,Basic
+Understand,Hiểu,[ˌʌndərˈstænd],Service,Comprehend,Do you understand?,Basic
+Repeat,Lặp lại,[rɪˈpiːt],Service,Say again,Could you repeat that?,Basic
+Speak,Nói,[spiːk],Service,Talk,Do you speak English?,Basic
+Time,Thời gian,[taɪm],Basic,Duration or moment,What time is it?,Basic
+Hour,Giờ,[aʊər],Basic,60 minutes,It's one hour to dinner.,Basic
+Minute,Phút,[ˈmɪnɪt],Basic,60 seconds,Wait five minutes.,Basic
+Morning,Buổi sáng,[ˈmɔːrnɪŋ],Basic,Early day,Good morning!,Basic
+Afternoon,Buổi chiều,[ˌæftərˈnuːn],Basic,After noon,See you this afternoon.,Basic
+Evening,Buổi tối,[ˈiːvnɪŋ],Basic,Late day,Good evening!,Basic
+Today,Hôm nay,[təˈdeɪ],Basic,This day,Today is busy.,Basic
+Tomorrow,Ngày mai,[təˈmɑːroʊ],Basic,Next day,See you tomorrow.,Basic
+Yesterday,Hôm qua,[ˈjestərdeɪ],Basic,Previous day,You arrived yesterday.,Basic
+Week,Tuần,[wiːk],Basic,Seven days,Stay for one week.,Basic
+Left,Trái,[left],Basic,Left side,Turn left here.,Basic
+Right,Phải,[raɪt],Basic,Right side,The elevator is on the right.,Basic
+Straight,Thẳng,[streɪt],Basic,Direct path,Go straight ahead.,Basic
+Up,Lên,[ʌp],Basic,Higher direction,Go up to the third floor.,Basic
+Down,Xuống,[daʊn],Basic,Lower direction,Come down to the lobby.,Basic
+Near,Gần,[nɪr],Basic,Close distance,The restaurant is near.,Basic
+Far,Xa,[fɑːr],Basic,Long distance,The airport is far.,Basic
+Here,Đây,[hɪr],Basic,This place,Wait here please.,Basic
+There,Đó,[ðer],Basic,That place,The restaurant is over there.,Basic
+Where,Đâu,[wer],Basic,What place,Where is the bathroom?,Basic
+Floor,Tầng,[flɔːr],Basic,Building level,Your room is on the 5th floor.,Basic
+Elevator,Thang máy,[ˈeləˌveɪtər],Basic,Lift,Take the elevator up.,Basic
+Stairs,Cầu thang,[sterz],Basic,Steps,The stairs are by the elevator.,Basic
+Exit,Lối ra,[ˈegzɪt],Basic,Way out,The exit is this way.,Basic
+Entrance,Lối vào,[ˈentrəns],Basic,Way in,Use the main entrance.,Basic
+Hotel,Khách sạn,[hoʊˈtel],Basic,Accommodation building,Welcome to our hotel.,Basic
+Motel,Khách sạn ven đường,[moʊˈtel],Basic,Highway accommodation,The motel is near the highway.,Basic
+Resort,Khu nghỉ dưỡng,[rɪˈzɔːrt],Basic,Luxury vacation place,This resort has a spa.,Basic
+Hostel,Nhà trọ,[ˈhɑːstəl],Basic,Budget accommodation,The hostel has shared rooms.,Basic
+Inn,Quán trọ,[ɪn],Basic,Small hotel,The old inn is charming.,Basic
+Lodge,Nhà nghỉ,[lɑːdʒ],Basic,Country accommodation,The mountain lodge is cozy.,Basic
+Villa,Biệt thự,[ˈvɪlə],Basic,Luxury house,The beach villa is beautiful.,Basic
+Apartment,Căn hộ,[əˈpɑːrtmənt],Basic,Self-contained unit,The apartment has a kitchen.,Basic
+Studio,Phòng studio,[ˈstuːdioʊ],Basic,One-room unit,The studio is perfect for one person.,Basic
+Penthouse,Căn penthouse,[ˈpenthaʊs],Basic,Top floor luxury,The penthouse has great views.,Basic
+Rooftop,Sân thượng,[ˈruːftɑːp],Basic,Top of building,The rooftop bar is open.,Basic
+Garden,Vườn,[ˈgɑːrdən],Basic,Outdoor plant area,The hotel has a beautiful garden.,Basic
+Pool,Hồ bơi,[puːl],Basic,Swimming area,The pool is open until 10 PM.,Basic
+Spa,Spa,[spɑː],Basic,Wellness center,Book a spa treatment.,Basic
+Gym,Phòng gym,[dʒɪm],Basic,Exercise room,The gym is open 24/7.,Basic
+Library,Thư viện,[ˈlaɪbreri],Basic,Book room,The library is quiet.,Basic
+Lounge,Phòng chờ,[laʊndʒ],Basic,Relaxation area,Wait in the lounge.,Basic
+Bar,Quầy bar,[bɑːr],Basic,Drink service area,The bar serves cocktails.,Basic
+Restaurant,Nhà hàng,[ˈrestrɑːnt],Basic,Dining place,The restaurant is on the second floor.,Basic
+Café,Quán cà phê,[kæˈfeɪ],Basic,Coffee shop,The café serves breakfast.,Basic
+Shop,Cửa hàng,[ʃɑːp],Basic,Retail store,The gift shop is in the lobby.,Basic
+Bank,Ngân hàng,[bæŋk],Basic,Financial institution,There's a bank nearby.,Basic
+ATM,Máy rút tiền,[eɪ tiː em],Basic,Cash machine,The ATM is in the lobby.,Basic
+Pharmacy,Hiệu thuốc,[ˈfɑːrməsi],Basic,Medicine store,The pharmacy is open 24/7.,Basic
+Hospital,Bệnh viện,[ˈhɑːspɪtəl],Basic,Medical center,The hospital is 5 minutes away.,Basic
+Police,Cảnh sát,[pəˈliːs],Basic,Law enforcement,Call the police if needed.,Basic
+Fire Department,Cứu hỏa,[faɪər dɪˈpɑːrtmənt],Basic,Emergency service,Call fire department for emergency.,Basic
+Taxi,Taxi,[ˈtæksi],Basic,Cab service,Call a taxi from reception.,Basic
+Bus,Xe buýt,[bʌs],Basic,Public transport,The bus stop is outside.,Basic
+Train,Xe lửa,[treɪn],Basic,Rail transport,The train station is nearby.,Basic
+Airport,Sân bay,[ˈerpɔːrt],Basic,Air transport hub,The airport is 30 minutes away.,Basic
+Station,Ga,[ˈsteɪʃən],Basic,Transport hub,The train station is close.,Basic
+Parking,Bãi đỗ xe,[ˈpɑːrkɪŋ],Basic,Car storage area,Valet parking is available.,Basic
+Valet,Dịch vụ đỗ xe,[væˈleɪ],Basic,Parking service,Valet parking costs $20.,Basic
+Garage,Nhà để xe,[gəˈrɑːʒ],Basic,Car storage building,The garage is underground.,Basic
+Lift,Thang máy,[lɪft],Basic,Elevator,Take the lift to your floor.,Basic
+Stairs,Cầu thang,[sterz],Basic,Steps,Use the stairs for exercise.,Basic
+Corridor,Hành lang,[ˈkɔːrɪdɔːr],Basic,Hallway,Your room is down the corridor.,Basic
+Hall,Sảnh,[hɔːl],Basic,Large room,The wedding hall is beautiful.,Basic
+Meeting Room,Phòng họp,[ˈmiːtɪŋ ruːm],Basic,Conference space,Book a meeting room.,Basic
+Conference,Hội nghị,[ˈkɑːnfərəns],Basic,Professional meeting,The conference starts at 9 AM.,Basic
+Event,Sự kiện,[ɪˈvent],Basic,Special occasion,We host many events.,Basic
+Wedding,Đám cưới,[ˈwedɪŋ],Basic,Marriage ceremony,The wedding is tomorrow.,Basic
+Party,Tiệc,[ˈpɑːrti],Basic,Celebration,The birthday party is tonight.,Basic
+Birthday,Sinh nhật,[ˈbɜːrθdeɪ],Basic,Anniversary of birth,Happy birthday!,Basic
+Anniversary,Kỷ niệm,[ˌænɪˈvɜːrsəri],Basic,Yearly celebration,Happy anniversary!,Basic
+Celebration,Lễ kỷ niệm,[ˌseləˈbreɪʃən],Basic,Special event,Join our celebration.,Basic
+Holiday,Ngày lễ,[ˈhɑːlədeɪ],Basic,Special day,Happy holidays!,Basic
+Vacation,Kỳ nghỉ,[vəˈkeɪʃən],Basic,Time off,Enjoy your vacation.,Basic
+Trip,Chuyến đi,[trɪp],Basic,Journey,Have a good trip.,Basic
+Journey,Hành trình,[ˈdʒɜːrni],Basic,Travel,Safe journey.,Basic
+Travel,Du lịch,[ˈtrævəl],Basic,Going places,Travel safely.,Basic
+Tour,Tham quan,[tʊr],Basic,Guided visit,Join our city tour.,Basic
+Guide,Hướng dẫn viên,[gaɪd],Basic,Tour leader,The guide is very knowledgeable.,Basic
+Map,Bản đồ,[mæp],Basic,Location chart,Here's a city map.,Basic
+Direction,Hướng,[dəˈrekʃən],Basic,Way to go,Which direction?,Basic
+Location,Vị trí,[loʊˈkeɪʃən],Basic,Place,What's your location?,Basic
+Address,Địa chỉ,[ˈædres],Basic,Location details,What's your address?,Basic
+City,Thành phố,[ˈsɪti],Basic,Urban area,This is a beautiful city.,Basic
+Town,Thị trấn,[taʊn],Basic,Small city,The town is charming.,Basic
+Village,Làng,[ˈvɪlɪdʒ],Basic,Small community,The village is peaceful.,Basic
+Country,Quốc gia,[ˈkʌntri],Basic,Nation,Which country are you from?,Basic
+State,Tiểu bang,[steɪt],Basic,Region,What state are you from?,Basic
+Province,Tỉnh,[ˈprɑːvɪns],Basic,Administrative area,Which province?,Basic
+District,Quận,[ˈdɪstrɪkt],Basic,City area,Which district?,Basic
+Street,Đường,[striːt],Basic,Road,What street?,Basic
+Avenue,Đại lộ,[ˈævənuː],Basic,Wide street,Walk down the avenue.,Basic
+Road,Đường,[roʊd],Basic,Path for vehicles,The road is busy.,Basic
+Bridge,Cầu,[brɪdʒ],Basic,Water crossing,Cross the bridge.,Basic
+River,Sông,[ˈrɪvər],Basic,Water body,The river is beautiful.,Basic
+Lake,Hồ,[leɪk],Basic,Water body,The lake is calm.,Basic
+Ocean,Đại dương,[ˈoʊʃən],Basic,Sea,The ocean is vast.,Basic
+Sea,Biển,[siː],Basic,Water body,The sea is blue.,Basic
+Mountain,Núi,[ˈmaʊntən],Basic,High land,The mountain is tall.,Basic
+Hill,Đồi,[hɪl],Basic,Small mountain,The hill is green.,Basic
+Forest,Rừng,[ˈfɔːrəst],Basic,Tree area,The forest is dense.,Basic
+Park,Công viên,[pɑːrk],Basic,Green space,The park is lovely.,Basic
+Beach,Bãi biển,[biːtʃ],Basic,Sandy shore,The beach is clean.,Basic
+Island,Đảo,[ˈaɪlənd],Basic,Land in water,The island is tropical.,Basic
+Desert,Sa mạc,[ˈdezərt],Basic,Dry land,The desert is hot.,Basic
+Weather,Thời tiết,[ˈweðər],Basic,Climate condition,How's the weather?,Basic
+Sun,Mặt trời,[sʌn],Basic,Star,The sun is shining.,Basic
+Moon,Mặt trăng,[muːn],Basic,Satellite,The moon is full.,Basic
+Star,Ngôi sao,[stɑːr],Basic,Celestial body,The stars are bright.,Basic
+Rain,Mưa,[reɪn],Basic,Water from sky,It's raining.,Basic
+Snow,Tuyết,[snoʊ],Basic,Frozen water,It's snowing.,Basic
+Wind,Gió,[wɪnd],Basic,Air movement,The wind is strong.,Basic
+Cloud,Mây,[klaʊd],Basic,Sky vapor,The clouds are white.,Basic
+Hot,Nóng,[hɑːt],Basic,High temperature,It's hot today.,Basic
+Cold,Lạnh,[koʊld],Basic,Low temperature,It's cold today.,Basic
+Warm,Ấm,[wɔːrm],Basic,Comfortable heat,It's warm inside.,Basic
+Cool,Mát,[kuːl],Basic,Comfortable cold,It's cool outside.,Basic
+Dry,Khô,[draɪ],Basic,No moisture,The air is dry.,Basic
+Wet,Ướt,[wet],Basic,With moisture,The ground is wet.,Basic
+Light,Ánh sáng,[laɪt],Basic,Brightness,Turn on the light.,Basic
+Dark,Tối,[dɑːrk],Basic,No light,It's dark outside.,Basic
+Big,Lớn,[bɪg],Basic,Large size,The room is big.,Basic
+Small,Nhỏ,[smɔːl],Basic,Small size,The room is small.,Basic
+New,Mới,[nuː],Basic,Recent,This is a new hotel.,Basic
+Old,Cũ,[oʊld],Basic,Not new,This is an old building.,Basic
+Clean,Sạch,[kliːn],Basic,Not dirty,The room is clean.,Basic
+Dirty,Bẩn,[ˈdɜːrti],Basic,Not clean,The room is dirty.,Basic
+Good,Tốt,[gʊd],Basic,Positive quality,The service is good.,Basic
+Bad,Xấu,[bæd],Basic,Negative quality,The service is bad.,Basic
+Nice,Đẹp,[naɪs],Basic,Pleasant,The hotel is nice.,Basic
+Beautiful,Đẹp,[ˈbjuːtəfəl],Basic,Very attractive,The view is beautiful.,Basic
+Ugly,Xấu,[ˈʌgli],Basic,Not attractive,The building is ugly.,Basic
+Expensive,Đắt,[ɪkˈspensɪv],Basic,High cost,The room is expensive.,Basic
+Cheap,Rẻ,[tʃiːp],Basic,Low cost,The room is cheap.,Basic
+Free,Miễn phí,[friː],Basic,No cost,WiFi is free.,Basic
+Paid,Trả phí,[peɪd],Basic,With cost,This service is paid.,Basic
+Open,Mở,[ˈoʊpən],Basic,Not closed,The restaurant is open.,Basic
+Closed,Đóng,[kloʊzd],Basic,Not open,The restaurant is closed.,Basic
+Full,Đầy,[fʊl],Basic,No space,The hotel is full.,Basic
+Empty,Trống,[ˈempti],Basic,No contents,The room is empty.,Basic
+Available,Có sẵn,[əˈveɪləbəl],Basic,Ready to use,A room is available.,Basic
+Unavailable,Không có,[ˌʌnəˈveɪləbəl],Basic,Not ready,The room is unavailable.,Basic
+Easy,Dễ,[ˈiːzi],Basic,Not difficult,This is easy.,Basic
+Difficult,Khó,[ˈdɪfɪkəlt],Basic,Not easy,This is difficult.,Basic
+Fast,Nhanh,[fæst],Basic,Quick speed,The service is fast.,Basic
+Slow,Chậm,[sloʊ],Basic,Not fast,The service is slow.,Basic
+Early,Sớm,[ˈɜːrli],Basic,Before time,Check-in is early.,Basic
+Late,Muộn,[leɪt],Basic,After time,Check-out is late.,Basic
+Now,Bây giờ,[naʊ],Basic,At this time,Do it now.,Basic
+Later,Sau,[ˈleɪtər],Basic,After this time,Do it later.,Basic
+Before,Trước,[bɪˈfɔːr],Basic,Earlier than,Before dinner.,Basic
+After,Sau,[ˈæftər],Basic,Later than,After breakfast.,Basic
+Today,Hôm nay,[təˈdeɪ],Basic,This day,What's today?,Basic
+Month,Tháng,[mʌnθ],Basic,30 days,Stay for one month.,Basic
+Year,Năm,[jɪr],Basic,365 days,Happy new year!,Basic
+Monday,Thứ hai,[ˈmʌndeɪ],Basic,First day,See you Monday.,Basic
+Tuesday,Thứ ba,[ˈtuːzdeɪ],Basic,Second day,See you Tuesday.,Basic
+Wednesday,Thứ tư,[ˈwenzdeɪ],Basic,Third day,See you Wednesday.,Basic
+Thursday,Thứ năm,[ˈθɜːrzdeɪ],Basic,Fourth day,See you Thursday.,Basic
+Friday,Thứ sáu,[ˈfraɪdeɪ],Basic,Fifth day,See you Friday.,Basic
+Saturday,Thứ bảy,[ˈsætərdeɪ],Basic,Sixth day,See you Saturday.,Basic
+Sunday,Chủ nhật,[ˈsʌndeɪ],Basic,Seventh day,See you Sunday.,Basic
+Front Office,Intermediate,Walk-in Guest,Khách đến đột xuất,[wɔːk ɪn gest],Guest without reservation,We welcome walk-in guests.
+Front Office,Intermediate,Overbooking,Đặt phòng quá mức,[ˈoʊvərbʊkɪŋ],More reservations than rooms,We have an overbooking situation.
+Front Office,Intermediate,Upgrade,Nâng cấp,[ˈʌpgreɪd],Better room category,We can upgrade your room.
+Front Office,Intermediate,Downgrade,Hạ cấp,[ˈdaʊngreɪd],Lower room category,"Sorry, we must downgrade."
+Front Office,Intermediate,No-show,Không đến,[noʊ ʃoʊ],Guest doesn't arrive,Mark this as a no-show.
+Front Office,Intermediate,Early Arrival,Đến sớm,[ˈɜːrli əˈraɪvəl],Before check-in time,Can you handle early arrival?
+Front Office,Intermediate,Late Checkout,Trả phòng muộn,[leɪt ˈtʃekaʊt],After standard time,Late checkout incurs a fee.
+Front Office,Intermediate,Group Booking,Đặt phòng đoàn,[gruːp ˈbʊkɪŋ],Multiple room reservation,This is a group booking.
+Front Office,Intermediate,VIP Guest,Khách VIP,[viː aɪ piː gest],Very important person,Prepare for VIP guest arrival.
+Front Office,Intermediate,Loyalty Program,Chương trình khách hàng thân thiết,[ˈlɔɪəlti ˈproʊgræm],Rewards system,Are you in our loyalty program?
+Front Office,Intermediate,Points,Điểm tích lũy,[pɔɪnts],Reward credits,You earned 500 points.
+Front Office,Intermediate,Member,Thành viên,[ˈmembər],Program participant,You're a Gold member.
+Front Office,Intermediate,Benefits,Quyền lợi,[ˈbenəfɪts],Member advantages,Enjoy member benefits.
+Front Office,Intermediate,Cancellation,Hủy đặt phòng,[ˌkænsəˈleɪʃən],Booking termination,What's the cancellation policy?
+Front Office,Intermediate,Modification,Thay đổi,[ˌmɑːdəfəˈkeɪʃən],Booking change,I need a modification.
+Front Office,Intermediate,Extension,Gia hạn,[ɪkˈstenʃən],Stay lengthening,Can I get an extension?
+Front Office,Intermediate,Corporate Rate,Giá doanh nghiệp,[ˈkɔːrpərət reɪt],Business discount,Do you qualify for corporate rate?
+Front Office,Intermediate,Package Deal,Gói ưu đãi,[ˈpækɪdʒ diːl],Bundled services,We have a package deal.
+Front Office,Intermediate,Promotion,Khuyến mãi,[prəˈmoʊʃən],Special offer,There's a current promotion.
+Front Office,Intermediate,Discount,Giảm giá,[ˈdɪskaʊnt],Price reduction,You get a 10% discount.
+Front Office,Intermediate,Voucher,Phiếu mua hàng,[ˈvaʊtʃər],Payment certificate,Do you have a voucher?
+Front Office,Intermediate,Folio,Phiếu tính tiền,[ˈfoʊlioʊ],Guest bill,Here's your folio.
+Front Office,Intermediate,Incidentals,Chi phí phát sinh,[ˌɪnsɪˈdentəlz],Extra charges,Incidentals will be charged.
+Front Office,Intermediate,Authorization,Ủy quyền,[ˌɔːθərəˈzeɪʃən],Payment approval,We need card authorization.
+Front Office,Intermediate,Guarantee,Bảo đảm,[ˌgærənˈtiː],Payment security,Credit card guarantee required.
+Front Office,Intermediate,Settlement,Thanh toán,[ˈsetəlmənt],Final payment,Let's proceed with settlement.
+Front Office,Intermediate,Complimentary,Miễn phí,[ˌkɑːmpləˈmentəri],Free of charge,Breakfast is complimentary.
+Front Office,Intermediate,Chargeable,Tính phí,[ˈtʃɑːrdʒəbəl],Fee required,WiFi is chargeable.
+Front Office,Intermediate,Express Checkout,Trả phòng nhanh,[ɪkˈspres ˈtʃekaʊt],Quick departure,Use express checkout.
+Front Office,Intermediate,Mobile Key,Chìa khóa điện tử,[ˈmoʊbaɪl kiː],Smartphone access,Download mobile key app.
+Front Office,Intermediate,Digital Check-in,Nhận phòng điện tử,[ˈdɪdʒətəl tʃek ɪn],Online registration,Complete digital check-in.
+Front Office,Intermediate,Guest Satisfaction,Sự hài lòng của khách,[gest ˌsætɪsˈfækʃən],Customer happiness,Monitor guest satisfaction.
+Front Office,Intermediate,Feedback,Phản hồi,[ˈfiːdbæk],Customer opinion,We value your feedback.
+Front Office,Intermediate,Survey,Khảo sát,[ˈsɜːrveɪ],Opinion questionnaire,Please complete our survey.
+Front Office,Intermediate,Rating,Đánh giá,[ˈreɪtɪŋ],Score or grade,We received a 5-star rating.
+F&B,Intermediate,À la Carte,Gọi món theo thực đơn,[ˌɑː lə ˈkɑːrt],Individual menu items,Choose from à la carte menu.
+F&B,Intermediate,Table d'Hôte,Thực đơn cố định,[ˌtɑːbəl ˈdoʊt],Fixed menu,Try our table d'hôte.
+F&B,Intermediate,Prix Fixe,Giá cố định,[priː fɪks],Set price menu,We offer prix fixe dinner.
+F&B,Intermediate,Tasting Menu,Thực đơn nếm thử,[ˈteɪstɪŋ ˈmenjuː],Multi-course sampling,Try our chef's tasting menu.
+F&B,Intermediate,Wine Pairing,Ghép đôi rượu vang,[waɪn ˈperɪŋ],Wine and food matching,We suggest wine pairing.
+F&B,Intermediate,Sommelier,Chuyên gia rượu vang,[sʌməˈlɪeɪ],Wine expert,Our sommelier will advise.
+F&B,Intermediate,Appetizer,Món khai vị,[ˈæpətaɪzər],Starter course,Would you like an appetizer?
+F&B,Intermediate,Main Course,Món chính,[meɪn kɔːrs],Primary dish,Choose your main course.
+F&B,Intermediate,Dessert,Món tráng miệng,[dɪˈzɜːrt],Sweet course,Save room for dessert.
+F&B,Intermediate,Signature Dish,Món đặc trưng,[ˈsɪgnətʃər dɪʃ],Restaurant specialty,Try our signature dish.
+F&B,Intermediate,Chef's Special,Món đặc biệt của bếp trưởng,[ʃefs ˈspeʃəl],Daily special,Today's chef's special is salmon.
+F&B,Intermediate,Seasonal Menu,Thực đơn theo mùa,[ˈsiːzənəl ˈmenjuː],Menu with seasonal items,Check our seasonal menu.
+F&B,Intermediate,Vegetarian,Ăn chay,[ˌvedʒəˈteriən],No meat diet,Do you have vegetarian options?
+F&B,Intermediate,Vegan,Ăn thuần chay,[ˈviːgən],No animal products,This dish is vegan.
+F&B,Intermediate,Gluten-free,Không chứa gluten,[ˈgluːtən friː],No gluten ingredients,We have gluten-free bread.
+F&B,Intermediate,Allergy,Dị ứng,[ˈælərdʒi],Food sensitivity,Do you have any allergies?
+F&B,Intermediate,Ingredients,Thành phần,[ɪnˈgriːdiənts],Recipe components,Check the ingredients list.
+F&B,Intermediate,Preparation,Chuẩn bị,[ˌprepəˈreɪʃən],Cooking method,How is this preparation done?
+F&B,Intermediate,Reservation,Đặt bàn,[ˌrezərˈveɪʃən],Table booking,Do you have a reservation?
+F&B,Intermediate,Waiting List,Danh sách chờ,[ˈweɪtɪŋ lɪst],Queue for tables,You're on the waiting list.
+F&B,Intermediate,Seating,Chỗ ngồi,[ˈsiːtɪŋ],Table arrangement,Prefer indoor or outdoor seating?
+F&B,Intermediate,Ambiance,Không khí,[ˈæmbiəns],Restaurant atmosphere,Enjoy the romantic ambiance.
+F&B,Intermediate,Service Charge,Phí dịch vụ,[ˈsɜːrvɪs tʃɑːrdʒ],Additional fee,10% service charge applies.
+F&B,Intermediate,Gratuity,Tiền boa,[grəˈtuːəti],Tip money,Gratuity is included.
+F&B,Intermediate,Split Bill,Chia hóa đơn,[splɪt bɪl],Separate payments,Would you like to split the bill?
+F&B,Intermediate,Takeaway,Mang đi,[ˈteɪkəweɪ],Food to go,Is this for here or takeaway?
+F&B,Intermediate,Delivery,Giao hàng,[dɪˈlɪvəri],Food brought to room,We offer room delivery.
+F&B,Intermediate,Bar,Quầy bar,[bɑːr],Drink service area,The bar is open until 2 AM.
+F&B,Intermediate,Bartender,Nhân viên pha chế,[ˈbɑːrˌtendər],Drink mixer,Ask the bartender for recommendations.
+F&B,Intermediate,Cocktail,Cocktail,[ˈkɑːkteɪl],Mixed drink,Try our signature cocktail.
+F&B,Intermediate,Wine List,Danh sách rượu vang,[waɪn lɪst],Wine menu,Here's our wine list.
+F&B,Intermediate,House Wine,Rượu vang của nhà,[haʊs waɪn],Restaurant's wine,Would you like house wine?
+F&B,Intermediate,Fresh,Tươi,[freʃ],Recently prepared,All ingredients are fresh.
+F&B,Intermediate,Organic,Hữu cơ,[ɔːrˈgænɪk],Natural ingredients,We use organic vegetables.
+F&B,Intermediate,Local,Địa phương,[ˈloʊkəl],Regional products,Try our local specialties.
+Housekeeping,Intermediate,Turn down Service,Dịch vụ xếp giường tối,[tɜːrn daʊn ˈsɜːrvɪs],Evening bed preparation,Turndown service includes mints.
+Housekeeping,Intermediate,Deep Cleaning,Dọn dẹp sâu,[diːp ˈkliːnɪŋ],Thorough cleaning,This room needs deep cleaning.
+Housekeeping,Intermediate,Inspection,Kiểm tra,[ɪnˈspekʃən],Quality check,Room failed inspection.
+Housekeeping,Intermediate,Maintenance Request,Yêu cầu bảo trì,[ˈmeɪntənəns rɪˈkwest],Repair needed,Submit maintenance request.
+Housekeeping,Intermediate,Out of Order,Hỏng,[aʊt əv ˈɔːrdər],Not working,The elevator is out of order.
+Housekeeping,Intermediate,Amenity Replenishment,Bổ sung tiện nghi,[əˈmenəti rɪˈplenɪʃmənt],Restocking supplies,Check amenity replenishment.
+Housekeeping,Intermediate,Linen Change,Thay vải lanh,[ˈlɪnən tʃeɪndʒ],Fresh bed sheets,Request linen change.
+Housekeeping,Intermediate,Towel Service,Dịch vụ khăn tắm,[ˈtaʊəl ˈsɜːrvɪs],Fresh towels,Daily towel service provided.
+Housekeeping,Intermediate,Minibar Restocking,Bổ sung minibar,[ˈmɪni bɑːr riːˈstɑːkɪŋ],Refilling minibar,Minibar restocking needed.
+Housekeeping,Intermediate,Room Status,Trạng thái phòng,[ruːm ˈsteɪtəs],Room condition,Check room status.
+Housekeeping,Intermediate,Occupied,Có khách,[ˈɑːkjupaɪd],Guest in room,Room 205 is occupied.
+Housekeeping,Intermediate,Vacant Dirty,Trống chưa dọn,[ˈveɪkənt ˈdɜːrti],Empty needs cleaning,Room is vacant dirty.
+Housekeeping,Intermediate,Vacant Clean,Trống đã dọn,[ˈveɪkənt kliːn],Ready for guest,Room is vacant clean.
+Housekeeping,Intermediate,Do Not Disturb,Xin đừng làm phiền,[duː nɑːt dɪˈstɜːrb],Privacy request,Guest has do not disturb sign.
+Housekeeping,Intermediate,Make Up Room,Dọn phòng,[meɪk ʌp ruːm],Clean and prepare,Please make up room 302.
+Housekeeping,Intermediate,Priority Room,Phòng ưu tiên,[praɪˈɔːrəti ruːm],Clean first,This is a priority room.
+Housekeeping,Intermediate,Housekeeping Cart,Xe dọn phòng,[ˈhaʊskiːpɪŋ kɑːrt],Cleaning supplies cart,Stock the housekeeping cart.
+Housekeeping,Intermediate,Guest Supplies,Đồ dùng khách,[gest səˈplaɪz],Customer amenities,Restock guest supplies.
+Housekeeping,Intermediate,Lost Property,Đồ thất lạc,[lɔːst ˈprɑːpərti],Left behind items,Found lost property in room.
+Housekeeping,Intermediate,Inventory,Kiểm kê,[ˈɪnvənˌtɔːri],Stock count,Complete linen inventory.
+Housekeeping,Intermediate,Chemical Safety,An toàn hóa chất,[ˈkemɪkəl ˈseɪfti],Cleaning product safety,Follow chemical safety procedures.
+Housekeeping,Intermediate,Uniform,Đồng phục,[ˈjuːnəfɔːrm],Work clothes,Wear proper uniform.
+Housekeeping,Intermediate,Schedule,Lịch trình,[ˈskedʒuːl],Work timetable,Check your schedule.
+Housekeeping,Intermediate,Assignment,Phân công,[əˈsaɪnmənt],Work allocation,Here's your room assignment.
+Housekeeping,Intermediate,Quality Control,Kiểm soát chất lượng,[ˈkwɑːləti kənˈtroʊl],Standard checking,Quality control is important.
+Housekeeping,Intermediate,Guest Request,Yêu cầu của khách,[gest rɪˈkwest],Customer need,Handle guest request quickly.
+Housekeeping,Intermediate,Special Instructions,Hướng dẫn đặc biệt,[ˈspeʃəl ɪnˈstrʌkʃənz],Specific requirements,Follow special instructions.
+Housekeeping,Intermediate,Eco-friendly,Thân thiện môi trường,[ˈiːkoʊ ˈfrendli],Environmentally safe,Use eco-friendly products.
+Housekeeping,Intermediate,Green Initiative,Sáng kiến xanh,[griːn ɪˈnɪʃətɪv],Environmental program,Support green initiative.
+Housekeeping,Intermediate,Sustainability,Bền vững,[səˌsteɪnəˈbɪləti],Environmental responsibility,Focus on sustainability.
+Guest Services,Intermediate,Concierge Services,Dịch vụ hỗ trợ khách,[ˈkɑːnsiˌerʒ ˈsɜːrvəsəz],Guest assistance,Our concierge services are free.
+Guest Services,Intermediate,Tourist Information,Thông tin du lịch,[ˈtʊrɪst ˌɪnfərˈmeɪʃən],Travel guidance,Need tourist information?
+Guest Services,Intermediate,Local Attractions,Điểm tham quan địa phương,[ˈloʊkəl əˈtrækʃənz],Nearby sights,Recommend local attractions.
+Guest Services,Intermediate,Transportation,Phương tiện di chuyển,[ˌtrænspərˈteɪʃən],Travel methods,Arrange transportation.
+Guest Services,Intermediate,Airport Transfer,Đưa đón sân bay,[ˈerpɔːrt ˈtrænsfər],Airport transport,Book airport transfer.
+Guest Services,Intermediate,Taxi Service,Dịch vụ taxi,[ˈtæksi ˈsɜːrvɪs],Cab booking,Call taxi service.
+Guest Services,Intermediate,Car Rental,Thuê xe,[kɑːr ˈrentəl],Vehicle hire,Need car rental information?
+Guest Services,Intermediate,Tour Booking,Đặt tour,[tʊr ˈbʊkɪŋ],Trip reservation,Help with tour booking.
+Guest Services,Intermediate,Theater Tickets,Vé xem kịch,[ˈθiətər ˈtɪkəts],Show reservations,Get theater tickets.
+Guest Services,Intermediate,Restaurant Recommendation,Gợi ý nhà hàng,[ˈrestrɑːnt ˌrekəmənˈdeɪʃən],Dining suggestions,Give restaurant recommendations.
+Guest Services,Intermediate,Dining Reservation,Đặt bàn ăn,[ˈdaɪnɪŋ ˌrezərˈveɪʃən],Table booking,Make dining reservation.
+Guest Services,Intermediate,Shopping Guide,Hướng dẫn mua sắm,[ˈʃɑːpɪŋ gaɪd],Shopping advice,Provide shopping guide.
+Guest Services,Intermediate,Currency Exchange,Đổi tiền,[ˈkɜːrənsi ɪksˈtʃeɪndʒ],Money changing,Where's currency exchange?
+Guest Services,Intermediate,Business Services,Dịch vụ doanh nghiệp,[ˈbɪznəs ˈsɜːrvəsəz],Work assistance,Need business services?
+Guest Services,Intermediate,Printing,In ấn,[ˈprɪntɪŋ],Document copying,Printing available at front desk.
+Guest Services,Intermediate,Fax Service,Dịch vụ fax,[fæks ˈsɜːrvɪs],Document transmission,Fax service costs $2 per page.
+Guest Services,Intermediate,Internet Access,Truy cập internet,[ˈɪntərnet ˈækses],Online connection,Free internet access available.
+Guest Services,Intermediate,Meeting Room,Phòng họp,[ˈmiːtɪŋ ruːm],Conference space,Book meeting room.
+Guest Services,Intermediate,Event Planning,Lập kế hoạch sự kiện,[ɪˈvent ˈplænɪŋ],Occasion organizing,We offer event planning.
+Guest Services,Intermediate,Wedding Services,Dịch vụ đám cưới,[ˈwedɪŋ ˈsɜːrvəsəz],Marriage ceremonies,Wedding services available.
+Guest Services,Intermediate,Spa Services,Dịch vụ spa,[spɑː ˈsɜːrvəsəz],Wellness treatments,Book spa services.
+Guest Services,Intermediate,Fitness Center,Trung tâm thể dục,[ˈfɪtnəs ˈsentər],Exercise facility,Fitness center open 24/7.
+Guest Services,Intermediate,Swimming Pool,Hồ bơi,[ˈswɪmɪŋ puːl],Water recreation,Pool closes at 10 PM.
+Guest Services,Intermediate,Babysitting,Trông trẻ,[ˈbeɪbiˌsɪtɪŋ],Child care,Arrange babysitting service.
+Guest Services,Intermediate,Pet Services,Dịch vụ thú cưng,[pet ˈsɜːrvəsəz],Animal care,Pet services available.
+Guest Services,Intermediate,Wake-up Call,Cuộc gọi đánh thức,[weɪk ʌp kɔːl],Morning call,Set wake-up call for 7 AM.
+Guest Services,Intermediate,Newspaper,Báo,[ˈnuːzˌpeɪpər],Daily publication,Complimentary newspaper delivery.
+Guest Services,Intermediate,Mail Service,Dịch vụ thư tín,[meɪl ˈsɜːrvɪs],Postal handling,Mail service at front desk.
+Guest Services,Intermediate,Package Delivery,Giao hàng,[ˈpækɪdʒ dɪˈlɪvəri],Parcel service,Package delivery received.
+Guest Services,Intermediate,Safe Deposit,Hòm két an toàn,[seɪf dɪˈpɑːzət],Valuables storage,Use safe deposit box.
+Guest Services,Intermediate,Umbrella,Ô,[ʌmˈbrelə],Rain protection,Borrow umbrella from front desk.
+Guest Services,Intermediate,First Aid,Sơ cứu,[fɜːrst eɪd],Medical assistance,First aid kit available.
+Guest Services,Intermediate,Emergency,Khẩn cấp,[ɪˈmɜːrdʒənsi],Urgent situation,Call security for emergency.
+Guest Services,Intermediate,Lost and Found,Đồ thất lạc,[lɔːst ænd faʊnd],Missing items,Check lost and found office.
+Guest Services,Intermediate,Guest Relations,Quan hệ khách hàng,[gest rɪˈleɪʃənz],Customer service,Contact guest relations.
+Technology,Intermediate,Mobile App,Ứng dụng di động,[ˈmoʊbaɪl æp],Smartphone application,Download our mobile app.
+Technology,Intermediate,QR Code,Mã QR,[kjuː ɑːr koʊd],Quick response code,Scan QR code for menu.
+Technology,Intermediate,Contactless,Không tiếp xúc,[ˈkɑːntæktləs],Touch-free service,Contactless payment available.
+Technology,Intermediate,Digital Menu,Thực đơn điện tử,[ˈdɪdʒətəl ˈmenjuː],Electronic menu,Use digital menu on tablet.
+Technology,Intermediate,Smart TV,TV thông minh,[smɑːrt tiː viː],Internet-connected TV,Stream Netflix on smart TV.
+Technology,Intermediate,Voice Control,Điều khiển bằng giọng nói,[vɔɪs kənˈtroʊl],Voice-activated system,Use voice control for lights.
+Technology,Intermediate,AI Assistant,Trợ lý AI,[eɪ aɪ əˈsɪstənt],Artificial intelligence helper,Ask AI assistant for help.
+Technology,Intermediate,Streaming,Phát trực tuyến,[ˈstriːmɪŋ],Online content,Streaming services available.
+Technology,Intermediate,Charging Station,Trạm sạc,[ˈtʃɑːrdʒɪŋ ˈsteɪʃən],Device power point,Charging station in lobby.
+Technology,Intermediate,Bluetooth,Bluetooth,[ˈbluːtuːθ],Wireless connection,Connect via Bluetooth.
+Revenue,Intermediate,Revenue,Doanh thu,[ˈrevəˌnuː],Income from business,Hotel revenue increased 15%.
+Revenue,Intermediate,Profit,Lợi nhuận,[ˈprɑːfət],Financial gain,The hotel made good profit.
+Revenue,Intermediate,Loss,Lỗ,[lɔːs],Financial loss,We had a loss this month.
+Revenue,Intermediate,Budget,Ngân sách,[ˈbʌdʒət],Financial plan,Stay within budget.
+Revenue,Intermediate,Cost,Chi phí,[kɔːst],Expense,Reduce operating costs.
+Revenue,Intermediate,Price,Giá,[praɪs],Amount charged,What's the price?
+Revenue,Intermediate,Rate,Tỷ lệ,[reɪt],Price per unit,The room rate is $200.
+Revenue,Intermediate,Fee,Phí,[fiː],Service charge,There's a service fee.
+Revenue,Intermediate,Charge,Tính phí,[tʃɑːrdʒ],Request payment,We charge for parking.
+Revenue,Intermediate,Payment,Thanh toán,[ˈpeɪmənt],Money exchange,How will you pay?
+Revenue,Intermediate,Invoice,Hóa đơn,[ˈɪnvɔɪs],Bill for services,Here's your invoice.
+Revenue,Intermediate,Receipt,Biên lai,[rɪˈsiːt],Payment proof,Keep your receipt.
+Revenue,Intermediate,Refund,Hoàn tiền,[rɪˈfʌnd],Money return,We'll process your refund.
+Revenue,Intermediate,Discount,Giảm giá,[ˈdɪskaʊnt],Price reduction,You get a 10% discount.
+Revenue,Intermediate,Promotion,Khuyến mãi,[prəˈmoʊʃən],Special offer,Check our promotion.
+Revenue,Intermediate,Deal,Ưu đãi,[diːl],Special arrangement,We have a great deal.
+Revenue,Intermediate,Package,Gói,[ˈpækɪdʒ],Bundled services,Book our romance package.
+Revenue,Intermediate,Offer,Đề xuất,[ˈɔːfər],Proposal,We have a special offer.
+Revenue,Intermediate,Special,Đặc biệt,[ˈspeʃəl],Unusual,This is a special rate.
+Revenue,Intermediate,Standard,Chuẩn,[ˈstændərd],Normal level,Standard rate applies.
+Revenue,Intermediate,Premium,Cao cấp,[ˈpriːmiəm],High quality,Premium service available.
+Revenue,Intermediate,Luxury,Xa hoa,[ˈlʌkʃəri],Expensive quality,Luxury accommodation.
+Revenue,Intermediate,Economy,Kinh tế,[ɪˈkɑːnəmi],Budget level,Economy room available.
+Revenue,Intermediate,Deluxe,Sang trọng,[dəˈlʌks],High quality,Deluxe suite available.
+Revenue,Intermediate,Superior,Ưu việt,[suːˈpɪriər],Better quality,Superior room category.
+Revenue,Intermediate,Executive,Điều hành,[ɪgˈzekjətɪv],Management level,Executive floor access.
+Revenue,Intermediate,Presidential,Tổng thống,[ˌprezɪˈdenʃəl],Highest level,Presidential suite.
+Revenue,Intermediate,Royal,Hoàng gia,[ˈrɔɪəl],King level,Royal treatment.
+Revenue,Intermediate,VIP,Quan trọng,[viː aɪ piː],Very important person,VIP service.
+Revenue,Intermediate,Corporate,Doanh nghiệp,[ˈkɔːrpərət],Business related,Corporate rate available.
+Revenue,Intermediate,Group,Đoàn,[gruːp],Multiple people,Group booking discount.
+Revenue,Intermediate,Individual,Cá nhân,[ˌɪndəˈvɪdʒuəl],Single person,Individual rate.
+Revenue,Intermediate,Family,Gia đình,[ˈfæməli],Related people,Family package available.
+Revenue,Intermediate,Business,Kinh doanh,[ˈbɪznəs],Work related,Business traveler rate.
+Revenue,Intermediate,Leisure,Giải trí,[ˈliːʒər],Recreation related,Leisure traveler rate.
+Revenue,Intermediate,Tourist,Du lịch,[ˈtʊrɪst],Vacation traveler,Tourist information available.
+Revenue,Intermediate,Traveler,Du khách,[ˈtrævələr],Person traveling,Welcome traveler.
+Revenue,Intermediate,Guest,Khách,[gest],Customer,Our valued guest.
+Revenue,Intermediate,Customer,Khách hàng,[ˈkʌstəmər],Person buying,Customer service.
+Revenue,Intermediate,Client,Khách hàng,[ˈklaɪənt],Person served,Important client.
+Revenue,Intermediate,Visitor,Khách thăm,[ˈvɪzɪtər],Person visiting,Welcome visitor.
+Revenue,Intermediate,Patron,Khách quen,[ˈpeɪtrən],Regular customer,Valued patron.
+Revenue,Intermediate,Member,Thành viên,[ˈmembər],Program participant,Club member.
+Revenue,Intermediate,Loyalty,Trung thành,[ˈlɔɪəlti],Faithfulness,Loyalty program.
+Revenue,Intermediate,Program,Chương trình,[ˈproʊgræm],Organized plan,Special program.
+Revenue,Intermediate,Service,Dịch vụ,[ˈsɜːrvɪs],Assistance provided,Excellent service.
+Revenue,Intermediate,Quality,Chất lượng,[ˈkwɑːləti],Standard level,High quality.
+Revenue,Intermediate,Standard,Chuẩn,[ˈstændərd],Normal level,Standard service.
+Revenue,Intermediate,Excellent,Xuất sắc,[ˈeksələnt],Very good,Excellent service.
+Revenue,Intermediate,Outstanding,Nổi bật,[aʊtˈstændɪŋ],Very good,Outstanding performance.
+Revenue,Intermediate,Satisfactory,Thỏa mãn,[ˌsætɪsˈfæktəri],Acceptable,Service is satisfactory.
+Revenue,Intermediate,Unsatisfactory,Không thỏa mãn,[ˌʌnsætɪsˈfæktəri],Not acceptable,Unsatisfactory service.
+Revenue,Intermediate,Poor,Kém,[pʊr],Not good,Poor quality.
+Revenue,Intermediate,Terrible,Khủng khiếp,[ˈterəbəl],Very bad,Terrible service.
+Revenue,Intermediate,Awful,Khủng khiếp,[ˈɔːfəl],Very bad,Awful experience.
+Revenue,Intermediate,Disappointing,Thất vọng,[ˌdɪsəˈpɔɪntɪŋ],Not meeting expectations,Disappointing service.
+Revenue,Intermediate,Pleasant,Dễ chịu,[ˈplezənt],Nice,Pleasant experience.
+Revenue,Intermediate,Enjoyable,Thú vị,[ɪnˈdʒɔɪəbəl],Fun,Enjoyable stay.
+Revenue,Intermediate,Memorable,Đáng nhớ,[ˈmemərəbəl],Unforgettable,Memorable experience.
+Revenue,Intermediate,Unforgettable,Không thể quên,[ˌʌnfərˈgetəbəl],Very memorable,Unforgettable stay.
+Revenue,Intermediate,Remarkable,Đáng chú ý,[rɪˈmɑːrkəbəl],Notable,Remarkable service.
+Revenue,Intermediate,Extraordinary,Phi thường,[ɪkˈstrɔːrdəneri],Very unusual,Extraordinary experience.
+Revenue,Intermediate,Unique,Độc đáo,[juːˈniːk],One of a kind,Unique hotel.
+Revenue,Intermediate,Special,Đặc biệt,[ˈspeʃəl],Unusual,Special occasion.
+Revenue,Intermediate,Rare,Hiếm,[rer],Not common,Rare opportunity.
+Revenue,Intermediate,Common,Thường,[ˈkɑːmən],Usual,Common practice.
+Revenue,Intermediate,Normal,Bình thường,[ˈnɔːrməl],Regular,Normal service.
+Revenue,Intermediate,Regular,Thường xuyên,[ˈregjələr],Usual,Regular customer.
+Revenue,Intermediate,Frequent,Thường xuyên,[ˈfriːkwənt],Often,Frequent guest.
+Revenue,Intermediate,Occasional,Thỉnh thoảng,[əˈkeɪʒənəl],Sometimes,Occasional visitor.
+Revenue,Intermediate,Rare,Hiếm,[rer],Not often,Rare occurrence.
+Revenue,Intermediate,Never,Không bao giờ,[ˈnevər],Not ever,Never happened.
+Revenue,Intermediate,Always,Luôn luôn,[ˈɔːlweɪz],Every time,Always available.
+Revenue,Intermediate,Sometimes,Thỉnh thoảng,[ˈsʌmtaɪmz],Occasionally,Sometimes busy.
+Revenue,Intermediate,Often,Thường xuyên,[ˈɔːfən],Frequently,Often requested.
+Revenue,Intermediate,Usually,Thường,[ˈjuːʒuəli],Normally,Usually available.
+Revenue,Intermediate,Rarely,Hiếm khi,[ˈrerli],Not often,Rarely happens.
+Revenue,Intermediate,Never,Không bao giờ,[ˈnevər],Not ever,Never available.
+Revenue,Intermediate,Always,Luôn luôn,[ˈɔːlweɪz],Every time,Always helpful.
+Butler Service,Dịch vụ quản gia,[ˈbʌtlər ˈsɜːrvɪs],Luxury,Personal attendant service,Butler service includes unpacking.,Advanced
+White Glove Service,Dịch vụ cao cấp tuyệt đối,[waɪt glʌv ˈsɜːrvɪs],Luxury,Highest level service,White glove service for VIPs.,Advanced
+Concierge Level,Cấp độ concierge,[ˈkɑːnsiˌerʒ ˈlevəl],Luxury,Premium guest floor,Upgrade to concierge level.,Advanced
+Executive Lounge,Phòng chờ hạng thương gia,[ɪgˈzekjətɪv laʊndʒ],Luxury,VIP relaxation area,Access to executive lounge.,Advanced
+Presidential Suite,Phòng tổng thống,[ˌprezɪˈdenʃəl swiːt],Luxury,Highest category room,Presidential suite has butler.,Advanced
+Penthouse,Căn penthouse,[ˈpenthaʊs],Luxury,Top floor luxury unit,Penthouse offers panoramic views.,Advanced
+Personal Shopper,Người mua sắm cá nhân,[ˈpɜːrsənəl ˈʃɑːpər],Luxury,Shopping assistant,Personal shopper service available.,Advanced
+Private Dining,Bữa ăn riêng tư,[ˈpraɪvət ˈdaɪnɪŋ],Luxury,Exclusive dining experience,Book private dining room.,Advanced
+Champagne Service,Dịch vụ champagne,[ʃæmˈpeɪn ˈsɜːrvɪs],Luxury,Premium beverage service,Complimentary champagne service.,Advanced
+Turndown Amenity,Quà tặng buổi tối,[ˈtɜːrndaʊn əˈmenəti],Luxury,Evening gift,Turndown amenity is chocolate.,Advanced
+Bespoke Service,Dịch vụ được thiết kế riêng,[bɪˈspoʊk ˈsɜːrvɪs],Luxury,Customized service,We offer bespoke services.,Advanced
+High-End Amenities,Tiện nghi cao cấp,[haɪ end əˈmenətiz],Luxury,Premium facilities,Enjoy high-end amenities.,Advanced
+Exclusive Access,Quyền truy cập độc quyền,[ɪkˈskluːsɪv ˈækses],Luxury,Special privileges,Exclusive access to rooftop.,Advanced
+Premium Brand,Thương hiệu cao cấp,[ˈpriːmiəm brænd],Luxury,High-quality products,Premium brand toiletries.,Advanced
+Luxury Transportation,Phương tiện cao cấp,[ˈlʌkʃəri ˌtrænspərˈteɪʃən],Luxury,High-end vehicles,Luxury transportation arranged.,Advanced
+Private Jet,Máy bay riêng,[ˈpraɪvət dʒet],Luxury,Personal aircraft,Private jet transfer available.,Advanced
+Yacht Charter,Thuê du thuyền,[jɑːt ˈtʃɑːrtər],Luxury,Boat rental,Arrange yacht charter.,Advanced
+Helicopter Transfer,Chuyển bằng trực thăng,[ˈhelɪkɑːptər ˈtrænsfər],Luxury,Aircraft transport,Helicopter transfer to airport.,Advanced
+VIP Protocol,Quy trình VIP,[viː aɪ piː ˈproʊtəkɔl],Luxury,Special procedures,Follow VIP protocol.,Advanced
+Red Carpet Treatment,Đón tiếp thảm đỏ,[red ˈkɑːrpət ˈtriːtmənt],Luxury,Celebrity-style welcome,Red carpet treatment for guests.,Advanced
+Discretion,Kín đáo,[dɪˈskreʃən],Luxury,Privacy and confidentiality,Maintain discretion with celebrities.,Advanced
+Confidentiality,Bảo mật,[ˌkɑːnfəˌdenʃiˈæləti],Luxury,Information security,Guest confidentiality is essential.,Advanced
+Personalization,Cá nhân hóa,[ˌpɜːrsənələˈzeɪʃən],Luxury,Customized experience,Focus on personalization.,Advanced
+Guest Preference,Sở thích khách hàng,[gest ˈprefərəns],Luxury,Customer likes,Note guest preferences.,Advanced
+Anticipatory Service,Dịch vụ đoán trước,[ænˈtɪsəpəˌtɔri ˈsɜːrvɪs],Luxury,Proactive assistance,Provide anticipatory service.,Advanced
+Memorable Experience,Trải nghiệm đáng nhớ,[ˈmemərabəl ɪkˈspɪriəns],Luxury,Unforgettable moments,Create memorable experiences.,Advanced
+Exceeding Expectations,Vượt mong đợi,[ɪkˈsiːdɪŋ ˌekspekˈteɪʃənz],Luxury,Surpassing hopes,Focus on exceeding expectations.,Advanced
+Wow Factor,Yếu tố gây ấn tượng,[waʊ ˈfæktər],Luxury,Impressive element,Add wow factor to service.,Advanced
+Platinum Member,Thành viên bạch kim,[ˈplætənəm ˈmembər],Luxury,Highest tier guest,Platinum member benefits.,Advanced
+Elite Status,Tư cách ưu tú,[ɪˈliːt ˈsteɪtəs],Luxury,Top level recognition,Elite status privileges.,Advanced
+Ambassador Program,Chương trình đại sứ,[æmˈbæsədər ˈproʊgræm],Luxury,Top guest program,Join ambassador program.,Advanced
+Lifetime Recognition,Ghi nhận suốt đời,[ˈlaɪftaɪm ˌrekəgˈnɪʃən],Luxury,Permanent status,Lifetime recognition achieved.,Advanced
+Exclusive Events,Sự kiện độc quyền,[ɪkˈskluːsɪv ɪˈvents],Luxury,Private functions,Invited to exclusive events.,Advanced
+Master Suite,Phòng suite chính,[ˈmæstər swiːt],Luxury,Main luxury room,Master suite with ocean view.,Advanced
+Imperial Service,Dịch vụ hoàng gia,[ɪmˈpɪriəl ˈsɜːrvɪs],Luxury,Royal-style treatment,Imperial service standards.,Advanced
+Opulent,Xa hoa,[ˈɑːpjələnt],Luxury,Luxuriously rich,Opulent room furnishings.,Advanced
+Extravagant,Xa hoa phung phí,[ɪkˈstrævəgənt],Luxury,Lavishly expensive,Extravagant dining experience.,Advanced
+Grandeur,Hùng vĩ,[ˈgrændʒər],Luxury,Impressive magnificence,Hotel's architectural grandeur.,Advanced
+Magnificence,Lộng lẫy,[mægˈnɪfəsəns],Luxury,Impressive beauty,Lobby's magnificence.,Advanced
+Sumptuous,Sang trọng,[ˈsʌmptʃuəs],Luxury,Luxuriously costly,Sumptuous breakfast buffet.,Advanced
+Molecular Gastronomy,Ẩm thực phân tử,[məˈlekjələr gæˈstrɑːnəmi],Fine Dining,Scientific cooking,Restaurant features molecular gastronomy.,Advanced
+Spherification,Kỹ thuật tạo cầu,[ˌsfɪrɪfəˈkeɪʃən],Fine Dining,Liquid sphere technique,Spherification creates caviar pearls.,Advanced
+Sous Vide,Nấu chân không,[suː ˈviːd],Fine Dining,Vacuum cooking method,Steak prepared sous vide.,Advanced
+Foam Technique,Kỹ thuật tạo bọt,[foʊm tekˈniːk],Fine Dining,Culinary foam creation,Basil foam technique.,Advanced
+Deconstruction,Tách rời thành phần,[ˌdiːkənˈstrʌkʃən],Fine Dining,Breaking down dishes,Deconstructed apple pie.,Advanced
+Plating Artistry,Nghệ thuật trang trí đĩa,[ˈpleɪtɪŋ ˈɑːrtəstri],Fine Dining,Food presentation art,Focus on plating artistry.,Advanced
+Amuse-bouche,Món khai vị nhỏ,[aˈmuz buʃ],Fine Dining,Small appetizer,Start with amuse-bouche.,Advanced
+Palate Cleanser,Món làm sạch vị giác,[ˈpælət ˈklenzər],Fine Dining,Taste refresher,Sorbet as palate cleanser.,Advanced
+Degustation,Nếm thử,[ˌdegəˈsteɪʃən],Fine Dining,Tasting experience,Seven-course degustation menu.,Advanced
+Chef's Table,Bàn của bếp trưởng,[ʃefs ˈteɪbəl],Fine Dining,Kitchen dining experience,Book chef's table experience.,Advanced
+Farm-to-Table,Từ trang trại đến bàn ăn,[fɑːrm tə ˈteɪbəl],Fine Dining,Fresh local sourcing,Farm-to-table philosophy.,Advanced
+Terroir,Đặc trưng vùng miền,[terˈwɑːr],Fine Dining,Regional characteristics,Wine reflects terroir.,Advanced
+Provenance,Nguồn gốc,[ˈprɑːvənəns],Fine Dining,Ingredient origin,Know ingredient provenance.,Advanced
+Artisanal,Thủ công,[ɑːrtəˈzænəl],Fine Dining,Handcrafted,Artisanal bread selection.,Advanced
+Heirloom,Giống cổ,[ˈerlum],Fine Dining,Heritage varieties,Heirloom tomatoes.,Advanced
+Sustainable,Bền vững,[səˈsteɪnəbəl],Fine Dining,Environmentally responsible,Sustainable seafood only.,Advanced
+Foraging,Tìm kiếm thực phẩm tự nhiên,[ˈfɔːrɪdʒɪŋ],Fine Dining,Wild ingredient hunting,Menu features foraged herbs.,Advanced
+Umami,Vị umami,[uˈmɑːmi],Fine Dining,Fifth taste,Rich umami flavor.,Advanced
+Mise en Place,Chuẩn bị sẵn sàng,[miːz ɒn ˈplɑːs],Fine Dining,Everything in place,Perfect mise en place.,Advanced
+Culinary Innovation,Đổi mới ẩm thực,[ˈkʌləneri ˌɪnoʊˈveɪʃən],Fine Dining,Creative cooking,Award for culinary innovation.,Advanced
+Gastronomic,Thuộc về ẩm thực,[ˌgæstrəˈnɑːmɪk],Fine Dining,Related to fine food,Gastronomic experience.,Advanced
+Epicurean,Sành ăn,[ˌepəˈkjʊriən],Fine Dining,Food lover,Epicurean delight.,Advanced
+Connoisseur,Người sành,[ˌkɑːnəˈsɜːr],Fine Dining,Expert judge,Wine connoisseur.,Advanced
+Michelin Star,Sao Michelin,[ˈmɪtʃəlɪn stɑːr],Fine Dining,Restaurant rating,Three Michelin star restaurant.,Advanced
+James Beard Award,Giải James Beard,[dʒeɪmz bɪrd əˈwɔːrd],Fine Dining,Culinary honor,James Beard award winner.,Advanced
+World's 50 Best,50 nhà hàng tốt nhất thế giới,[wɜːrldz ˈfɪfti best],Fine Dining,Restaurant ranking,Listed in World's 50 Best.,Advanced
+Culinary Arts,Nghệ thuật ẩm thực,[ˈkʌləneri ɑːrts],Fine Dining,Cooking artistry,Master of culinary arts.,Advanced
+Fusion Cuisine,Ẩm thực fusion,[ˈfjuːʒən kwəˈziːn],Fine Dining,Combined cooking styles,Asian-French fusion cuisine.,Advanced
+Nouvelle Cuisine,Ẩm thực mới,[nuˈvel kwəˈziːn],Fine Dining,Modern French cooking,Nouvelle cuisine techniques.,Advanced
+Haute Cuisine,Ẩm thực cao cấp,[oʊt kwəˈziːn],Fine Dining,High-end cooking,Traditional haute cuisine.,Advanced
+Culinary Heritage,Di sản ẩm thực,[ˈkʌləneri ˈherətɪdʒ],Fine Dining,Food traditions,Preserve culinary heritage.,Advanced
+Gastronomic Journey,Hành trình ẩm thực,[ˌgæstrəˈnɑːmɪk ˈdʒɜːrni],Fine Dining,Food adventure,Embark on gastronomic journey.,Advanced
+Flavor Profile,Hồ sơ hương vị,[ˈfleɪvər ˈproʊfaɪl],Fine Dining,Taste characteristics,Complex flavor profile.,Advanced
+Culinary Philosophy,Triết lý ẩm thực,[ˈkʌləneri fəˈlɑːsəfi],Fine Dining,Cooking beliefs,Chef's culinary philosophy.,Advanced
+Sensory Experience,Trải nghiệm giác quan,[ˈsensəri ɪkˈspɪriəns],Fine Dining,Multi-sense dining,Complete sensory experience.,Advanced
+Sommelier,Chuyên gia rượu vang,[sʌməˈlɪeɪ],Wine Service,Wine expert,Consult with sommelier.,Advanced
+Wine Pairing,Ghép đôi rượu vang,[waɪn ˈperɪŋ],Wine Service,Food and wine matching,Perfect wine pairing.,Advanced
+Decanting,Rót rượu sang bình,[dɪˈkæntɪŋ],Wine Service,Wine aeration process,Red wine needs decanting.,Advanced
+Aerating,Thông khí,[ˈerəˌteɪtɪŋ],Wine Service,Exposing wine to air,Aerating improves flavor.,Advanced
+Vintage,Năm sản xuất,[ˈvɪntɪdʒ],Wine Service,Wine year,Excellent 2018 vintage.,Advanced
+Terroir,Đặc trưng vùng,[terˈwɑːr],Wine Service,Regional character,Bordeaux terroir.,Advanced
+Appellation,Vùng sản xuất,[ˌæpəˈleɪʃən],Wine Service,Wine region designation,Champagne appellation.,Advanced
+Tannins,Chất tanin,[ˈtænɪnz],Wine Service,Wine compounds,High tannin content.,Advanced
+Acidity,Độ chua,[əˈsɪdəti],Wine Service,Wine sharpness,Balanced acidity.,Advanced
+Body,Thân rượu,[ˈbɑːdi],Wine Service,Wine weight,Full-bodied red wine.,Advanced
+Finish,Hậu vị,[ˈfɪnɪʃ],Wine Service,Aftertaste,Long smooth finish.,Advanced
+Bouquet,Hương thơm,[buˈkeɪ],Wine Service,Wine aroma,Complex bouquet.,Advanced
+Nose,Mùi hương,[noʊz],Wine Service,Wine smell,Pleasant nose.,Advanced
+Legs,Vệt rượu,[legz],Wine Service,Wine drips on glass,Good legs indicate quality.,Advanced
+Cellar,Hầm rượu,[ˈselər],Wine Service,Wine storage,Extensive wine cellar.,Advanced
+Corked,Bị hỏng nút chai,[kɔːrkt],Wine Service,Wine defect,This wine is corked.,Advanced
+Oxidized,Bị oxy hóa,[ˈɑːksəˌdaɪzd],Wine Service,Air-damaged wine,Wine tastes oxidized.,Advanced
+Sediment,Cặn rượu,[ˈsedəmənt],Wine Service,Wine deposits,Filter out sediment.,Advanced
+Champagne Flute,Ly champagne,[ʃæmˈpeɪn fluːt],Wine Service,Sparkling wine glass,Serve in champagne flute.,Advanced
+Wine Glasses,Ly rượu vang,[waɪn ˈglæsəz],Wine Service,Proper stemware,Use appropriate wine glasses.,Advanced
+Burgundy Glass,Ly Burgundy,[ˈbɜːrgəndi glæs],Wine Service,Wide bowl glass,Pinot Noir in Burgundy glass.,Advanced
+Bordeaux Glass,Ly Bordeaux,[bɔːrˈdoʊ glæs],Wine Service,Tall wine glass,Cabernet in Bordeaux glass.,Advanced
+Temperature Control,Kiểm soát nhiệt độ,[ˈtempərətʃər kənˈtroʊl],Wine Service,Proper serving temp,Maintain temperature control.,Advanced
+Chilled,Làm lạnh,[tʃɪld],Wine Service,Cold temperature,White wine served chilled.,Advanced
+Room Temperature,Nhiệt độ phòng,[ruːm ˈtempərətʃər],Wine Service,Ambient temperature,Red wine at room temperature.,Advanced
+Ice Bucket,Xô đá,[aɪs ˈbʌkət],Wine Service,Wine chiller,Champagne in ice bucket.,Advanced
+Wine Opener,Dụng cụ mở rượu,[waɪn ˈoʊpənər],Wine Service,Corkscrew tool,Professional wine opener.,Advanced
+Corkscrew,Cái mở nút chai,[ˈkɔːrkskruː],Wine Service,Cork removal tool,Use waiter's corkscrew.,Advanced
+Wine Tasting,Nếm rượu vang,[waɪn ˈteɪstɪŋ],Wine Service,Wine evaluation,Weekly wine tasting.,Advanced
+Flight,Bộ rượu thử,[flaɪt],Wine Service,Wine sampling set,Pinot Noir flight.,Advanced
+Revenue Management,Quản lý doanh thu,[ˈrevəˌnuː ˈmænɪdʒmənt],Revenue,Income optimization,Implement revenue management.,Advanced
+Yield Management,Quản lý lợi nhuận,[jiːld ˈmænɪdʒmənt],Revenue,Profit optimization,Yield management strategies.,Advanced
+ADR,Giá phòng bình quân,[eɪ diː ɑːr],Revenue,Average Daily Rate,ADR increased 15%.,Advanced
+RevPAR,Doanh thu phòng trên phòng có sẵn,[ˈrevpɑːr],Revenue,Revenue Per Available Room,RevPAR performance strong.,Advanced
+Occupancy Rate,Tỷ lệ lấp đầy,[ˈɑːkjəpənsi reɪt],Revenue,Room utilization,95% occupancy rate.,Advanced
+Market Segmentation,Phân khúc thị trường,[ˈmɑːrkət ˌsegmənˈteɪʃən],Revenue,Customer categories,Focus on market segmentation.,Advanced
+Dynamic Pricing,Định giá động,[daɪˈnæmɪk ˈpraɪsɪŋ],Revenue,Flexible rate strategy,Dynamic pricing model.,Advanced
+Demand Forecasting,Dự báo nhu cầu,[dɪˈmænd ˈfɔːrkæstɪŋ],Revenue,Predicting customer needs,Accurate demand forecasting.,Advanced
+Competitive Analysis,Phân tích đối thủ,[kəmˈpetətɪv əˈnæləsəs],Revenue,Market comparison,Monthly competitive analysis.,Advanced
+Rate Parity,Bình đẳng giá,[reɪt ˈperəti],Revenue,Consistent pricing,Maintain rate parity.,Advanced
+OTA,Đại lý du lịch trực tuyến,[oʊ tiː eɪ],Revenue,Online Travel Agent,Manage OTA relationships.,Advanced
+Distribution Channels,Kênh phân phối,[ˌdɪstrəˈbjuːʃən ˈtʃænəlz],Revenue,Booking sources,Diversify distribution channels.,Advanced
+Direct Bookings,Đặt phòng trực tiếp,[dəˈrekt ˈbʊkɪŋz],Revenue,Hotel website reservations,Increase direct bookings.,Advanced
+Commission,Hoa hồng,[kəˈmɪʃən],Revenue,Agent payment,15% commission rate.,Advanced
+Net Rate,Giá thuần,[net reɪt],Revenue,Rate without commission,Quote net rate.,Advanced
+BAR,Giá tốt nhất có sẵn,[bɑːr],Revenue,Best Available Rate,BAR pricing strategy.,Advanced
+Package Rate,Giá gói,[ˈpækɪdʒ reɪt],Revenue,Bundled pricing,Romance package rate.,Advanced
+Group Rate,Giá đoàn,[gruːp reɪt],Revenue,Multiple room discount,Special group rate.,Advanced
+Shoulder Season,Mùa trung bình,[ˈʃoʊldər ˈsiːzən],Revenue,Medium demand period,Shoulder season pricing.,Advanced
+Peak Season,Mùa cao điểm,[piːk ˈsiːzən],Revenue,High demand period,Peak season rates.,Advanced
+Low Season,Mùa thấp điểm,[loʊ ˈsiːzən],Revenue,Low demand period,Low season promotions.,Advanced
+Minimum Stay,Lưu trú tối thiểu,[ˈmɪnəməm steɪ],Revenue,Required night duration,3-night minimum stay.,Advanced
+Advance Purchase,Mua trước,[ədˈvæns ˈpɜːrtʃəs],Revenue,Early booking discount,21-day advance purchase.,Advanced
+Last Minute Rate,Giá phút cuối,[læst ˈmɪnət reɪt],Revenue,Short notice pricing,Last minute rate available.,Advanced
+Length of Stay,Thời gian lưu trú,[leŋθ əv steɪ],Revenue,Duration pricing,Optimize length of stay.,Advanced
+General Manager,Tổng giám đốc,[ˈdʒenərəl ˈmænɪdʒər],Management,Hotel top executive,Meet with general manager.,Advanced
+Assistant Manager,Phó giám đốc,[əˈsɪstənt ˈmænɪdʒər],Management,Deputy manager,Assistant manager on duty.,Advanced
+Department Head,Trưởng bộ phận,[dɪˈpɑːrtmənt hed],Management,Division leader,Department head meeting.,Advanced
+Supervisor,Giám sát viên,[ˈsuːpərˌvaɪzər],Management,Team leader,Night shift supervisor.,Advanced
+Team Leader,Trưởng nhóm,[tiːm ˈliːdər],Management,Group coordinator,Housekeeping team leader.,Advanced
+Shift Manager,Quản lý ca,[ʃɪft ˈmænɪdʒər],Management,Duty period supervisor,Call shift manager.,Advanced
+Operations Manager,Quản lý vận hành,[ˌɑːpəˈreɪʃənz ˈmænɪdʒər],Management,Daily operations head,Operations manager review.,Advanced
+Human Resources,Nhân sự,[ˈhjuːmən ˈriːsɔːrsəz],Management,Staff management,HR department handles hiring.,Advanced
+Training Program,Chương trình đào tạo,[ˈtreɪnɪŋ ˈproʊgræm],Management,Employee education,Mandatory training program.,Advanced
+Performance Review,Đánh giá hiệu suất,[pərˈfɔːrməns rɪˈvjuː],Management,Employee evaluation,Annual performance review.,Advanced
+KPI,Chỉ số hiệu suất chính,[keɪ piː aɪ],Management,Key Performance Indicator,Track monthly KPIs.,Advanced
+SOP,Quy trình vận hành chuẩn,[es oʊ piː],Management,Standard Operating Procedure,Follow SOP guidelines.,Advanced
+Quality Assurance,Đảm bảo chất lượng,[ˈkwɑːləti əˈʃʊrəns],Management,Service standards,Quality assurance audit.,Advanced
+Brand Standards,Tiêu chuẩn thương hiệu,[brænd ˈstændərdz],Management,Company requirements,Maintain brand standards.,Advanced
+Service Recovery,Phục hồi dịch vụ,[ˈsɜːrvɪs rɪˈkʌvəri],Management,Problem resolution,Implement service recovery.,Advanced
+Guest Experience,Trải nghiệm khách hàng,[gest ɪkˈspɪriəns],Management,Customer journey,Enhance guest experience.,Advanced
+Mystery Shopper,Khách hàng bí ẩn,[ˈmɪstəri ˈʃɑːpər],Management,Secret evaluator,Mystery shopper visit.,Advanced
+Audit,Kiểm toán,[ˈɔːdət],Management,Inspection review,Monthly audit results.,Advanced
+Compliance,Tuân thủ,[kəmˈplaɪəns],Management,Rule adherence,Ensure full compliance.,Advanced
+Risk Management,Quản lý rủi ro,[rɪsk ˈmænɪdʒmənt],Management,Hazard control,Risk management protocol.,Advanced
+Crisis Management,Quản lý khủng hoảng,[ˈkraɪsəs ˈmænɪdʒmənt],Management,Emergency response,Crisis management plan.,Advanced
+Succession Planning,Kế hoạch kế nhiệm,[səkˈseʃən ˈplænɪŋ],Management,Leadership development,Succession planning important.,Advanced
+Change Management,Quản lý thay đổi,[tʃeɪndʒ ˈmænɪdʒmənt],Management,Transition leadership,Change management skills.,Advanced
+Stakeholder,Bên liên quan,[ˈsteɪkˌhoʊldər],Management,Interest parties,Inform all stakeholders.,Advanced
+ROI,Tỷ suất sinh lời,[ɑːr oʊ aɪ],Management,Return on Investment,Calculate ROI.,Advanced
+Budget Planning,Lập kế hoạch ngân sách,[ˈbʌdʒət ˈplænɪŋ],Management,Financial forecasting,Annual budget planning.,Advanced
+Cost Control,Kiểm soát chi phí,[kɔːst kənˈtroʊl],Management,Expense management,Implement cost control.,Advanced
+Profit Margin,Biên lợi nhuận,[ˈprɑːfət ˈmɑːrdʒən],Management,Earnings percentage,Improve profit margins.,Advanced
+Benchmarking,So sánh chuẩn,[ˈbentʃmɑːrkɪŋ],Management,Performance comparison,Industry benchmarking.,Advanced
+Innovation,Đổi mới,[ˌɪnəˈveɪʃən],Management,Creative improvement,Drive innovation.,Advanced
+Sustainability,Tính bền vững,[səˌsteɪnəˈbɪləti],Sustainability,Environmental responsibility,Focus on sustainability.,Advanced
+Carbon Footprint,Dấu chân carbon,[ˈkɑːrbən ˈfʊtprɪnt],Sustainability,Environmental impact,Reduce carbon footprint.,Advanced
+Green Certification,Chứng nhận xanh,[griːn sərˌtəfəˈkeɪʃən],Sustainability,Environmental standards,Achieve green certification.,Advanced
+Renewable Energy,Năng lượng tái tạo,[rɪˈnuːəbəl ˈenərdʒi],Sustainability,Clean power sources,Use renewable energy.,Advanced
+Waste Reduction,Giảm chất thải,[weɪst rɪˈdʌkʃən],Sustainability,Minimizing garbage,Implement waste reduction.,Advanced
+Water Conservation,Bảo tồn nước,[ˈwɔːtər ˌkɑːnsərˈveɪʃən],Sustainability,Water saving,Water conservation program.,Advanced
+Biodegradable,Có thể phân hủy sinh học,[ˌbaɪoʊdɪˈgreɪdəbəl],Sustainability,Naturally decomposing,Use biodegradable products.,Advanced
+Zero Waste,Không chất thải,[ˈzɪroʊ weɪst],Sustainability,No garbage goal,Zero waste initiative.,Advanced
+Circular Economy,Kinh tế tuần hoàn,[ˈsɜːrkjələr ɪˈkɑːnəmi],Sustainability,Reuse system,Circular economy model.,Advanced
+ESG,Môi trường - Xã hội - Quản trị,[iː es dʒiː],Sustainability,Environmental Social Governance,ESG compliance important.,Advanced
+K i t c h e n   O p e r a t i o n s , B a s i c , C h e f , B � � � p   t r � � � � xn g , [ � �e f ] , H e a d   c o o k , T h e   c h e f   p r e p a r e s   t h e   m e n u  
+ 

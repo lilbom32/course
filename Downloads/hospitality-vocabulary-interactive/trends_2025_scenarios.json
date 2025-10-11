@@ -1,0 +1,214 @@
+{
+  "trends_2025_scenarios": [
+    {
+      "id": "tech_mobile_checkin_issue",
+      "title": "Sự cố Mobile Check-in",
+      "category": "Tech-driven Service",
+      "level": "Advanced",
+      "scenario": "Khách hàng VIP gặp lỗi khi sử dụng mobile check-in. Ứng dụng không nhận diện được thông tin đăng ký và không tạo được digital key. Khách đang chờ ở sảnh và tỏ ra khó chịu.",
+      "situation": "Bạn là nhân viên lễ tân. Khách VIP đã đặt phòng Presidential Suite và muốn trải nghiệm mobile check-in nhưng gặp sự cố kỹ thuật.",
+      "objectives": [
+        "Giải quyết sự cố mobile check-in ngay lập tức",
+        "Đảm bảo khách VIP có trải nghiệm tốt nhất",
+        "Xác định nguyên nhân và ngăn ngừa tái diễn",
+        "Bù đắp cho sự bất tiện của khách"
+      ],
+      "options": [
+        {
+          "text": "Chuyển sang check-in truyền thống và cung cấp digital key thủ công",
+          "consequences": "Khách hài lòng nhưng không trải nghiệm được công nghệ mới",
+          "points": 15,
+          "feedback": "Giải pháp nhanh chóng nhưng chưa tối ưu. Nên có kế hoạch dự phòng tốt hơn."
+        },
+        {
+          "text": "Gọi IT support để khắc phục ngay và đề xuất chờ trong Executive Lounge",
+          "consequences": "Khách được chăm sóc đặc biệt và vấn đề được giải quyết triệt để",
+          "points": 25,
+          "feedback": "Xuất sắc! Bạn đã xử lý chuyên nghiệp và tạo trải nghiệm tích cực."
+        },
+        {
+          "text": "Yêu cầu khách thử lại và chờ đợi",
+          "consequences": "Khách không hài lòng và có thể phàn nàn",
+          "points": 5,
+          "feedback": "Không phù hợp với dịch vụ VIP. Cần có giải pháp thay thế ngay lập tức."
+        }
+      ],
+      "correct_option": 1,
+      "learning_points": [
+        "Luôn có kế hoạch dự phòng cho công nghệ mới",
+        "Ưu tiên trải nghiệm khách hàng hơn là công nghệ",
+        "Phối hợp chặt chẽ với IT team để giải quyết sự cố",
+        "Bù đắp phù hợp cho sự bất tiện của khách VIP"
+      ],
+      "keywords": ["Mobile Check-in", "Digital Key", "VIP Service", "Technical Support", "Guest Experience"]
+    },
+    {
+      "id": "wellness_sleep_kit_complaint",
+      "title": "Khiếu nại Sleep Kit",
+      "category": "Wellness & Bleisure",
+      "level": "Advanced", 
+      "scenario": "Khách hàng phàn nàn rằng Sleep Kit không đáp ứng được yêu cầu của họ. Họ bị dị ứng với tinh dầu trong máy khuếch tán và memory foam pillow quá cứng. Khách yêu cầu hoàn tiền cho gói Wellness Package.",
+      "situation": "Bạn là Wellness Coordinator. Khách đã đặt gói Wellness & Bleisure 1 tuần nhưng gặp vấn đề với các sản phẩm trong Sleep Kit.",
+      "objectives": [
+        "Giải quyết vấn đề dị ứng và không thoải mái",
+        "Điều chỉnh Sleep Kit phù hợp với khách",
+        "Duy trì trải nghiệm wellness tích cực",
+        "Bảo vệ doanh thu và uy tín dịch vụ"
+      ],
+      "options": [
+        {
+          "text": "Thay thế toàn bộ Sleep Kit với sản phẩm khác phù hợp",
+          "consequences": "Khách hài lòng và tiếp tục sử dụng dịch vụ",
+          "points": 25,
+          "feedback": "Tuyệt vời! Bạn đã cá nhân hóa dịch vụ theo nhu cầu cụ thể của khách."
+        },
+        {
+          "text": "Hoàn tiền một phần và giữ lại các sản phẩm không gây vấn đề",
+          "consequences": "Khách đồng ý nhưng trải nghiệm không hoàn hảo",
+          "points": 15,
+          "feedback": "Giải pháp thỏa hiệp nhưng chưa tối ưu. Nên cá nhân hóa nhiều hơn."
+        },
+        {
+          "text": "Từ chối hoàn tiền và giải thích chính sách",
+          "consequences": "Khách rất không hài lòng và có thể review tiêu cực",
+          "points": 5,
+          "feedback": "Không phù hợp với dịch vụ cao cấp. Cần linh hoạt hơn trong xử lý."
+        }
+      ],
+      "correct_option": 0,
+      "learning_points": [
+        "Cá nhân hóa là chìa khóa của dịch vụ wellness",
+        "Cần thu thập thông tin dị ứng trước khi cung cấp sản phẩm",
+        "Flexibility trong dịch vụ tạo trải nghiệm tích cực",
+        "Đầu tư vào đào tạo nhân viên về các sản phẩm wellness"
+      ],
+      "keywords": ["Sleep Kit", "Allergy Management", "Wellness Service", "Guest Customization", "Product Knowledge"]
+    },
+    {
+      "id": "sustainability_waste_audit",
+      "title": "Kiểm toán Rác thải",
+      "category": "Sustainability",
+      "level": "Advanced",
+      "scenario": "Khách sạn đang chuẩn bị cho chứng nhận Green Key nhưng kết quả kiểm toán rác thải cho thấy tỷ lệ tái chế chỉ đạt 45% thay vì mục tiêu 80%. Ban quản lý yêu cầu cải thiện ngay lập tức.",
+      "situation": "Bạn là Sustainability Manager. Khách sạn cần đạt chứng nhận Green Key trong 3 tháng tới nhưng hiện tại chưa đạt tiêu chuẩn về quản lý rác thải.",
+      "objectives": [
+        "Tăng tỷ lệ tái chế từ 45% lên 80%",
+        "Đào tạo toàn bộ nhân viên về phân loại rác",
+        "Cải thiện hệ thống thu gom rác",
+        "Đạt chứng nhận Green Key đúng hạn"
+      ],
+      "options": [
+        {
+          "text": "Triển khai hệ thống phân loại rác mới và đào tạo nhân viên toàn diện",
+          "consequences": "Tăng tỷ lệ tái chế lên 85% và đạt chứng nhận",
+          "points": 25,
+          "feedback": "Xuất sắc! Bạn đã có kế hoạch toàn diện và thực hiện hiệu quả."
+        },
+        {
+          "text": "Tập trung vào việc giảm thiểu rác thải tại nguồn",
+          "consequences": "Giảm tổng lượng rác nhưng tỷ lệ tái chế vẫn thấp",
+          "points": 15,
+          "feedback": "Tốt nhưng chưa đủ. Cần kết hợp cả giảm thiểu và tái chế."
+        },
+        {
+          "text": "Chỉ cải thiện hệ thống thu gom mà không đào tạo nhân viên",
+          "consequences": "Hệ thống tốt nhưng nhân viên không biết sử dụng",
+          "points": 8,
+          "feedback": "Thiếu sót quan trọng. Nhân viên là yếu tố quyết định thành công."
+        }
+      ],
+      "correct_option": 0,
+      "learning_points": [
+        "Đào tạo nhân viên là yếu tố quan trọng nhất",
+        "Hệ thống phân loại rác cần đơn giản và dễ hiểu",
+        "Giám sát và đo lường thường xuyên để đảm bảo hiệu quả",
+        "Tạo động lực cho nhân viên tham gia chương trình tái chế"
+      ],
+      "keywords": ["Waste Management", "Recycling", "Green Certification", "Staff Training", "Sustainability Goals"]
+    },
+    {
+      "id": "workation_technology_failure",
+      "title": "Sự cố Công nghệ Workation",
+      "category": "Wellness & Bleisure",
+      "level": "Advanced",
+      "scenario": "Nhóm khách Workation (10 người) đang có cuộc họp quan trọng với khách hàng quốc tế qua video conference. Đột nhiên WiFi bị chậm và hệ thống video conference gặp lỗi kỹ thuật. Cuộc họp có thể bị hủy.",
+      "situation": "Bạn là Workation Coordinator. Nhóm khách đang trong gói Extended Workation và có cuộc họp quan trọng với giá trị hợp đồng hàng triệu USD.",
+      "objectives": [
+        "Khôi phục kết nối internet ngay lập tức",
+        "Đảm bảo cuộc họp diễn ra suôn sẻ",
+        "Cung cấp giải pháp dự phòng nếu cần",
+        "Bảo vệ uy tín dịch vụ Workation"
+      ],
+      "options": [
+        {
+          "text": "Chuyển sang phòng họp có kết nối ổn định và cung cấp thiết bị dự phòng",
+          "consequences": "Cuộc họp thành công và khách rất hài lòng",
+          "points": 25,
+          "feedback": "Hoàn hảo! Bạn đã có kế hoạch dự phòng và xử lý chuyên nghiệp."
+        },
+        {
+          "text": "Sử dụng mobile hotspot và hy vọng kết nối ổn định",
+          "consequences": "Cuộc họp có thể bị gián đoạn",
+          "points": 12,
+          "feedback": "Rủi ro cao. Cần có giải pháp đáng tin cậy hơn cho dịch vụ Workation."
+        },
+        {
+          "text": "Yêu cầu khách tạm dừng cuộc họp cho đến khi sửa xong",
+          "consequences": "Khách rất không hài lòng và có thể hủy gói dịch vụ",
+          "points": 5,
+          "feedback": "Không chấp nhận được. Dịch vụ Workation cần đảm bảo kết nối 24/7."
+        }
+      ],
+      "correct_option": 0,
+      "learning_points": [
+        "Dịch vụ Workation cần đảm bảo kết nối internet ổn định",
+        "Luôn có kế hoạch dự phòng cho các sự cố kỹ thuật",
+        "Đầu tư vào cơ sở hạ tầng công nghệ đáng tin cậy",
+        "Đào tạo nhân viên xử lý sự cố nhanh chóng"
+      ],
+      "keywords": ["Workation", "Video Conference", "Technical Support", "Business Continuity", "Guest Satisfaction"]
+    },
+    {
+      "id": "local_sourcing_quality_issue",
+      "title": "Vấn đề Chất lượng Nguồn cung ứng Địa phương",
+      "category": "Sustainability",
+      "level": "Advanced",
+      "scenario": "Nhà cung cấp rau củ địa phương giao hàng không đạt tiêu chuẩn chất lượng. Rau không tươi và một số bị hư hỏng. Đây là nhà cung cấp chính cho chương trình Farm-to-Table và chúng ta đã ký hợp đồng dài hạn.",
+      "situation": "Bạn là Procurement Manager. Khách sạn đang trong quá trình chứng nhận LEED và cần duy trì tiêu chuẩn Local Sourcing nhưng chất lượng sản phẩm không đảm bảo.",
+      "objectives": [
+        "Đảm bảo chất lượng thực phẩm cho khách",
+        "Giữ mối quan hệ tốt với nhà cung cấp địa phương",
+        "Duy trì tiêu chuẩn Farm-to-Table",
+        "Tìm giải pháp bền vững cho vấn đề này"
+      ],
+      "options": [
+        {
+          "text": "Làm việc với nhà cung cấp để cải thiện tiêu chuẩn chất lượng",
+          "consequences": "Chất lượng được cải thiện và mối quan hệ bền vững",
+          "points": 25,
+          "feedback": "Tuyệt vời! Bạn đã xây dựng mối quan hệ đối tác bền vững."
+        },
+        {
+          "text": "Tạm thời chuyển sang nhà cung cấp khác và thông báo cho nhà cung cấp cũ",
+          "consequences": "Đảm bảo chất lượng nhưng có thể mất mối quan hệ",
+          "points": 18,
+          "feedback": "Giải quyết ngắn hạn tốt nhưng cần kế hoạch dài hạn."
+        },
+        {
+          "text": "Chấp nhận chất lượng thấp để duy trì mối quan hệ địa phương",
+          "consequences": "Khách không hài lòng và uy tín nhà hàng bị ảnh hưởng",
+          "points": 8,
+          "feedback": "Không phù hợp. Chất lượng khách hàng phải là ưu tiên hàng đầu."
+        }
+      ],
+      "correct_option": 0,
+      "learning_points": [
+        "Đối tác địa phương cần được hỗ trợ phát triển",
+        "Chất lượng sản phẩm không được thỏa hiệp",
+        "Cần có tiêu chuẩn rõ ràng cho nhà cung cấp",
+        "Đầu tư vào đào tạo và phát triển chuỗi cung ứng địa phương"
+      ],
+      "keywords": ["Local Sourcing", "Quality Control", "Supplier Relationship", "Farm-to-Table", "Sustainability"]
+    }
+  ]
+}

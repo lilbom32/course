@@ -1,0 +1,124 @@
+english,vietnamese,ipa,category,definition,example,level
+Allergy,Dị ứng,[ˈælərdʒi],Allergies & Diet,Adverse reaction to food,Do you have any allergies?,Basic
+Food Allergy,Dị ứng thực phẩm,[fuːd ˈælərdʒi],Allergies & Diet,Immune response to food,Peanut allergy is common.,Basic
+Allergic Reaction,Phản ứng dị ứng,[əˈlɜːrdʒɪk riˈækʃən],Allergies & Diet,Body's response to allergen,Severe allergic reaction.,Basic
+Allergen,Chất gây dị ứng,[ˈælərdʒən],Allergies & Diet,Substance causing allergy,Nuts are common allergens.,Basic
+Peanut Allergy,Dị ứng đậu phộng,[ˈpiːnʌt ˈælərdʒi],Allergies & Diet,Reaction to peanuts,Peanut allergy can be severe.,Basic
+Shellfish Allergy,Dị ứng hải sản,[ˈʃelfɪʃ ˈælərdʒi],Allergies & Diet,Reaction to seafood,Shellfish allergy is common.,Basic
+Dairy Allergy,Dị ứng sữa,[ˈderi ˈælərdʒi],Allergies & Diet,Reaction to milk products,Dairy allergy in children.,Basic
+Gluten Allergy,Dị ứng gluten,[ˈgluːtən ˈælərdʒi],Allergies & Diet,Reaction to wheat protein,Gluten allergy requires special diet.,Basic
+Egg Allergy,Dị ứng trứng,[eg ˈælərdʒi],Allergies & Diet,Reaction to eggs,Egg allergy affects many people.,Basic
+Soy Allergy,Dị ứng đậu nành,[sɔɪ ˈælərdʒi],Allergies & Diet,Reaction to soy products,Soy allergy is increasing.,Basic
+Tree Nut Allergy,Dị ứng hạt cây,[triː nʌt ˈælərdʒi],Allergies & Diet,Reaction to tree nuts,Tree nut allergy is serious.,Basic
+Sesame Allergy,Dị ứng mè,[ˈsesəmi ˈælərdʒi],Allergies & Diet,Reaction to sesame seeds,Sesame allergy is becoming common.,Basic
+Fish Allergy,Dị ứng cá,[fɪʃ ˈælərdʒi],Allergies & Diet,Reaction to fish,Fish allergy can develop later.,Basic
+Wheat Allergy,Dị ứng lúa mì,[wiːt ˈælərdʒi],Allergies & Diet,Reaction to wheat,Wheat allergy vs gluten intolerance.,Basic
+Lactose Intolerance,Không dung nạp lactose,[ˈlæktoʊs ɪnˈtɑːlərəns],Allergies & Diet,Inability to digest milk sugar,Lactose intolerance is common.,Basic
+Gluten Intolerance,Không dung nạp gluten,[ˈgluːtən ɪnˈtɑːlərəns],Allergies & Diet,Sensitivity to gluten,Gluten intolerance symptoms.,Basic
+Food Sensitivity,Nhạy cảm thực phẩm,[fuːd ˌsensəˈtɪvəti],Allergies & Diet,Mild reaction to food,Food sensitivity testing.,Basic
+Cross Contamination,Nhiễm chéo,[krɔːs kənˌtæməˈneɪʃən],Allergies & Diet,Allergen transfer between foods,Avoid cross contamination.,Basic
+Epinephrine,Epinephrine,[ˌepəˈnefrɪn],Allergies & Diet,Emergency allergy medication,Carry epinephrine auto-injector.,Basic
+EpiPen,Bút tiêm epinephrine,[ˈepi pen],Allergies & Diet,Emergency allergy device,Use EpiPen for severe reaction.,Basic
+Anaphylaxis,Sốc phản vệ,[ˌænəfəˈlæksɪs],Allergies & Diet,Severe allergic reaction,Anaphylaxis requires immediate treatment.,Basic
+Emergency,Khẩn cấp,[ɪˈmɜːrdʒənsi],Allergies & Diet,Urgent medical situation,Call emergency services.,Basic
+Medical Alert,Thông báo y tế,[ˈmedɪkəl əˈlɜːrt],Allergies & Diet,Medical warning device,Wear medical alert bracelet.,Basic
+Dietary Restrictions,Hạn chế ăn uống,[ˈdaɪəˌteri rɪˈstrɪkʃənz],Allergies & Diet,Food limitations,Please note dietary restrictions.,Basic
+Special Diet,Chế độ ăn đặc biệt,[ˈspeʃəl ˈdaɪət],Allergies & Diet,Modified eating plan,Special diet requirements.,Basic
+Vegetarian,Ăn chay,[ˌvedʒəˈteriən],Allergies & Diet,No meat diet,Vegetarian options available.,Basic
+Vegan,Ăn thuần chay,[ˈviːgən],Allergies & Diet,No animal products,Vegan menu available.,Basic
+Pescatarian,Ăn chay có cá,[ˌpeskəˈteriən],Allergies & Diet,Vegetarian with fish,Pescatarian diet options.,Basic
+Flexitarian,Ăn chay linh hoạt,[ˌfleksəˈteriən],Allergies & Diet,Mostly vegetarian,Flexitarian lifestyle.,Basic
+Halal,Thực phẩm Halal,[həˈlɑːl],Allergies & Diet,Islamic dietary law,Halal food preparation.,Basic
+Kosher,Thực phẩm Kosher,[ˈkoʊʃər],Allergies & Diet,Jewish dietary law,Kosher kitchen required.,Basic
+Diabetic Diet,Chế độ ăn tiểu đường,[ˌdaɪəˈbetɪk ˈdaɪət],Allergies & Diet,Blood sugar management,Diabetic diet considerations.,Basic
+Low Sodium,Ít muối,[loʊ ˈsoʊdiəm],Allergies & Diet,Reduced salt diet,Low sodium options.,Basic
+Low Fat,Ít béo,[loʊ fæt],Allergies & Diet,Reduced fat diet,Low fat menu items.,Basic
+Low Carb,Ít carbohydrate,[loʊ kɑːrb],Allergies & Diet,Reduced carbohydrate diet,Low carb alternatives.,Basic
+High Protein,Cao đạm,[haɪ ˈproʊtiːn],Allergies & Diet,Increased protein diet,High protein breakfast.,Basic
+Organic,Hữu cơ,[ɔːrˈgænɪk],Allergies & Diet,Naturally grown food,Organic ingredients only.,Basic
+Non-GMO,Không biến đổi gen,[nɑːn dʒiː em oʊ],Allergies & Diet,No genetic modification,Non-GMO certified.,Basic
+Raw Food,Thực phẩm sống,[rɔː fuːd],Allergies & Diet,Uncooked food diet,Raw food preparation.,Basic
+Paleo,Chế độ ăn Paleo,[ˈpeɪlioʊ],Allergies & Diet,Ancient human diet,Paleo diet principles.,Basic
+Keto,Chế độ ăn Keto,[ˈkiːtoʊ],Allergies & Diet,Low carb high fat diet,Keto friendly options.,Basic
+Mediterranean,Chế độ ăn Địa Trung Hải,[ˌmedɪtəˈreɪniən],Allergies & Diet,Mediterranean region diet,Mediterranean diet benefits.,Basic
+DASH Diet,Chế độ ăn DASH,[dæʃ ˈdaɪət],Allergies & Diet,Blood pressure diet,DASH diet guidelines.,Basic
+Anti-Inflammatory,Chống viêm,[ˌænti ɪnˈflæməˌtɔri],Allergies & Diet,Reducing inflammation,Anti-inflammatory foods.,Basic
+Detox,Thanh lọc,[ˈdiːtɑːks],Allergies & Diet,Body cleansing,Detox diet program.,Basic
+Intermittent Fasting,Nhịn ăn gián đoạn,[ˌɪntərˈmɪtənt ˈfæstɪŋ],Allergies & Diet,Cycling eating periods,Intermittent fasting schedule.,Basic
+Food Intolerance,Không dung nạp thực phẩm,[fuːd ɪnˈtɑːlərəns],Allergies & Diet,Digestive reaction to food,Food intolerance testing.,Basic
+Celiac Disease,Bệnh celiac,[ˈsiːliæk dɪˈziːz],Allergies & Diet,Gluten autoimmune disorder,Celiac disease management.,Basic
+IBS,Hội chứng ruột kích thích,[aɪ biː es],Allergies & Diet,Irritable bowel syndrome,IBS dietary modifications.,Basic
+Crohn's Disease,Bệnh Crohn,[kroʊnz dɪˈziːz],Allergies & Diet,Inflammatory bowel disease,Crohn's disease diet.,Basic
+Ulcerative Colitis,Viêm loét đại tràng,[ˌʌlsərətɪv koʊˈlaɪtɪs],Allergies & Diet,Colon inflammation,Ulcerative colitis diet.,Basic
+GERD,Trào ngược dạ dày,[dʒɜːrd],Allergies & Diet,Gastroesophageal reflux,GERD friendly foods.,Basic
+Heart Healthy,Tốt cho tim,[hɑːrt ˈhelθi],Allergies & Diet,Cardiovascular health,Heart healthy menu.,Basic
+Kidney Friendly,Tốt cho thận,[ˈkɪdni ˈfrendli],Allergies & Diet,Renal health diet,Kidney friendly options.,Basic
+Liver Friendly,Tốt cho gan,[ˈlɪvər ˈfrendli],Allergies & Diet,Hepatic health diet,Liver friendly foods.,Basic
+Bone Health,Sức khỏe xương,[boʊn helθ],Allergies & Diet,Osteoporosis prevention,Bone health nutrients.,Basic
+Immune Support,Hỗ trợ miễn dịch,[ɪˈmjuːn səˈpɔːrt],Allergies & Diet,Strengthening immunity,Immune support foods.,Basic
+Weight Management,Quản lý cân nặng,[weɪt ˈmænɪdʒmənt],Allergies & Diet,Controlling body weight,Weight management program.,Basic
+Muscle Building,Xây dựng cơ bắp,[ˈmʌsəl ˈbɪldɪŋ],Allergies & Diet,Increasing muscle mass,Muscle building nutrition.,Basic
+Energy Boost,Tăng năng lượng,[ˈenərdʒi buːst],Allergies & Diet,Increasing vitality,Energy boost foods.,Basic
+Digestive Health,Sức khỏe tiêu hóa,[daɪˈdʒestɪv helθ],Allergies & Diet,Gut health,Digestive health foods.,Basic
+Brain Health,Sức khỏe não bộ,[breɪn helθ],Allergies & Diet,Cognitive function,Brain health nutrients.,Basic
+Skin Health,Sức khỏe da,[skɪn helθ],Allergies & Diet,Dermatological health,Skin health foods.,Basic
+Hair Health,Sức khỏe tóc,[her helθ],Allergies & Diet,Hair growth and strength,Hair health nutrients.,Basic
+Eye Health,Sức khỏe mắt,[aɪ helθ],Allergies & Diet,Vision protection,Eye health foods.,Basic
+Pregnancy Diet,Chế độ ăn mang thai,[ˈpregnənsi ˈdaɪət],Allergies & Diet,Nutrition during pregnancy,Pregnancy diet guidelines.,Basic
+Breastfeeding,Cho con bú,[ˈbrestˌfiːdɪŋ],Allergies & Diet,Nursing nutrition,Breastfeeding diet needs.,Basic
+Child Nutrition,Dinh dưỡng trẻ em,[tʃaɪld nuˈtrɪʃən],Allergies & Diet,Children's dietary needs,Child nutrition requirements.,Basic
+Elderly Nutrition,Dinh dưỡng người cao tuổi,[ˈeldərli nuˈtrɪʃən],Allergies & Diet,Senior dietary needs,Elderly nutrition considerations.,Basic
+Athlete Nutrition,Dinh dưỡng vận động viên,[ˈæθliːt nuˈtrɪʃən],Allergies & Diet,Sports nutrition,Athlete nutrition plan.,Basic
+Recovery Diet,Chế độ ăn phục hồi,[rɪˈkʌvəri ˈdaɪət],Allergies & Diet,Healing nutrition,Recovery diet protocol.,Basic
+Preventive Nutrition,Dinh dưỡng phòng ngừa,[prɪˈventɪv nuˈtrɪʃən],Allergies & Diet,Disease prevention,Preventive nutrition approach.,Basic
+Therapeutic Diet,Chế độ ăn điều trị,[ˌθerəˈpjuːtɪk ˈdaɪət],Allergies & Diet,Medical nutrition therapy,Therapeutic diet prescription.,Basic
+Supplement,Thực phẩm bổ sung,[ˈsʌpləmənt],Allergies & Diet,Nutritional addition,Dietary supplements.,Basic
+Vitamin,Vitamin,[ˈvaɪtəmɪn],Allergies & Diet,Essential nutrient,Vitamin deficiency.,Basic
+Mineral,Khoáng chất,[ˈmɪnərəl],Allergies & Diet,Inorganic nutrient,Mineral supplements.,Basic
+Protein,Đạm,[ˈproʊtiːn],Allergies & Diet,Muscle building nutrient,High protein diet.,Basic
+Carbohydrate,Carbohydrate,[ˌkɑːrboʊˈhaɪdreɪt],Allergies & Diet,Energy source,Complex carbohydrates.,Basic
+Fat,Chất béo,[fæt],Allergies & Diet,Energy storage,Healthy fats.,Basic
+Fiber,Chất xơ,[ˈfaɪbər],Allergies & Diet,Digestive health,High fiber foods.,Basic
+Sugar,Đường,[ˈʃʊgər],Allergies & Diet,Sweetener,Reduced sugar options.,Basic
+Salt,Muối,[sɔːlt],Allergies & Diet,Sodium chloride,Low salt diet.,Basic
+Water,Nước,[ˈwɔːtər],Allergies & Diet,Hydration,Stay hydrated.,Basic
+Calorie,Calo,[ˈkæləri],Allergies & Diet,Energy unit,Calorie counting.,Basic
+Nutrient,Dinh dưỡng,[ˈnuːtriənt],Allergies & Diet,Food component,Essential nutrients.,Basic
+Antioxidant,Chất chống oxy hóa,[ˌæntiˈɑːksədənt],Allergies & Diet,Free radical fighter,Antioxidant rich foods.,Basic
+Probiotic,Probiotic,[ˌproʊbaɪˈɑːtɪk],Allergies & Diet,Beneficial bacteria,Probiotic supplements.,Basic
+Prebiotic,Prebiotic,[ˌpriːbaɪˈɑːtɪk],Allergies & Diet,Gut bacteria food,Prebiotic foods.,Basic
+Enzyme,Enzyme,[ˈenzaɪm],Allergies & Diet,Digestive catalyst,Digestive enzymes.,Basic
+Metabolism,Chuyển hóa,[məˈtæbəlɪzəm],Allergies & Diet,Body's chemical processes,Boost metabolism.,Basic
+Hydration,Cấp nước,[haɪˈdreɪʃən],Allergies & Diet,Water balance,Proper hydration.,Basic
+Electrolyte,Điện giải,[ɪˈlektrəlaɪt],Allergies & Diet,Mineral salts,Electrolyte balance.,Basic
+pH Balance,Cân bằng pH,[piː eɪtʃ ˈbæləns],Allergies & Diet,Acid-base balance,pH balanced diet.,Basic
+Inflammation,Viêm,[ˌɪnfləˈmeɪʃən],Allergies & Diet,Body's healing response,Reduce inflammation.,Basic
+Oxidative Stress,Stress oxy hóa,[ˈɑːksəˌdeɪtɪv stres],Allergies & Diet,Free radical damage,Combat oxidative stress.,Basic
+Free Radicals,Gốc tự do,[friː ˈrædɪkəlz],Allergies & Diet,Unstable molecules,Neutralize free radicals.,Basic
+Toxins,Độc tố,[ˈtɑːksɪnz],Allergies & Diet,Harmful substances,Detox from toxins.,Basic
+Heavy Metals,Kim loại nặng,[ˈhevi ˈmetəlz],Allergies & Diet,Toxic elements,Heavy metal detox.,Basic
+Pesticides,Thuốc trừ sâu,[ˈpestəsaɪdz],Allergies & Diet,Chemical crop protection,Organic without pesticides.,Basic
+Additives,Chất phụ gia,[ˈædətɪvz],Allergies & Diet,Food preservatives,Avoid artificial additives.,Basic
+Preservatives,Chất bảo quản,[prɪˈzɜːrvətɪvz],Allergies & Diet,Food shelf life extenders,Natural preservatives.,Basic
+Artificial Colors,Màu nhân tạo,[ˌɑːrtəˈfɪʃəl ˈkʌlərz],Allergies & Diet,Synthetic food coloring,Avoid artificial colors.,Basic
+Artificial Flavors,Hương vị nhân tạo,[ˌɑːrtəˈfɪʃəl ˈfleɪvərz],Allergies & Diet,Synthetic taste enhancers,Natural flavors only.,Basic
+MSG,Bột ngọt,[em es dʒiː],Allergies & Diet,Monosodium glutamate,MSG sensitivity.,Basic
+Trans Fat,Chất béo chuyển hóa,[trænz fæt],Allergies & Diet,Unhealthy fat,Avoid trans fats.,Basic
+Saturated Fat,Chất béo bão hòa,[ˈsætʃəreɪtɪd fæt],Allergies & Diet,Solid fat,Limit saturated fat.,Basic
+Unsaturated Fat,Chất béo không bão hòa,[ʌnˈsætʃəreɪtɪd fæt],Allergies & Diet,Liquid fat,Healthy unsaturated fats.,Basic
+Omega-3,Omega-3,[oʊˈmeɪgə θriː],Allergies & Diet,Essential fatty acid,Omega-3 supplements.,Basic
+Omega-6,Omega-6,[oʊˈmeɪgə sɪks],Allergies & Diet,Essential fatty acid,Omega-6 balance.,Basic
+Cholesterol,Cholesterol,[kəˈlestərɔːl],Allergies & Diet,Blood fat,Lower cholesterol.,Basic
+Triglycerides,Triglyceride,[traɪˈglɪsəraɪdz],Allergies & Diet,Blood fat,Reduce triglycerides.,Basic
+Blood Sugar,Đường huyết,[blʌd ˈʃʊgər],Allergies & Diet,Glucose levels,Control blood sugar.,Basic
+Insulin,Insulin,[ˈɪnsəlɪn],Allergies & Diet,Blood sugar hormone,Insulin sensitivity.,Basic
+Glycemic Index,Chỉ số đường huyết,[glaɪˈsiːmɪk ˈɪndeks],Allergies & Diet,Carb impact on blood sugar,Low glycemic index foods.,Basic
+Food Journal,Nhật ký ăn uống,[fuːd ˈdʒɜːrnəl],Allergies & Diet,Meal tracking,Keep food journal.,Basic
+Meal Planning,Lập kế hoạch bữa ăn,[miːl ˈplænɪŋ],Allergies & Diet,Preparing meals ahead,Weekly meal planning.,Basic
+Portion Control,Kiểm soát khẩu phần,[ˈpɔːrʃən kənˈtroʊl],Allergies & Diet,Managing serving sizes,Portion control tips.,Basic
+Mindful Eating,Ăn uống có ý thức,[ˈmaɪndfəl ˈiːtɪŋ],Allergies & Diet,Conscious food consumption,Practice mindful eating.,Basic
+Intuitive Eating,Ăn uống trực giác,[ɪnˈtuːətɪv ˈiːtɪŋ],Allergies & Diet,Body-guided eating,Intuitive eating approach.,Basic
+Food Combining,Kết hợp thực phẩm,[fuːd kəmˈbaɪnɪŋ],Allergies & Diet,Optimal food pairing,Food combining principles.,Basic
+Meal Timing,Thời gian bữa ăn,[miːl ˈtaɪmɪŋ],Allergies & Diet,When to eat,Optimal meal timing.,Basic
+Snacking,Ăn vặt,[ˈsnækɪŋ],Allergies & Diet,Between-meal eating,Healthy snacking.,Basic
+Hydration Timing,Thời gian uống nước,[haɪˈdreɪʃən ˈtaɪmɪŋ],Allergies & Diet,When to drink water,Proper hydration timing.,Basic

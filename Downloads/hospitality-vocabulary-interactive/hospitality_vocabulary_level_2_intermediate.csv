@@ -1,0 +1,225 @@
+Phân loại chuyên môn,Cấp độ chuyên môn,Thuật ngữ (English),Tiếng Việt,Phát âm (IPA),Định nghĩa chuyên môn,Ứng dụng thực tế
+Front Office,Intermediate,Walk-in Guest,Khách đến đột xuất,[wɔːk ɪn gest],Guest without reservation,We welcome walk-in guests.
+Front Office,Intermediate,Overbooking,Đặt phòng quá mức,[ˈoʊvərbʊkɪŋ],More reservations than rooms,We have an overbooking situation.
+Front Office,Intermediate,Upgrade,Nâng cấp,[ˈʌpgreɪd],Better room category,We can upgrade your room.
+Front Office,Intermediate,Downgrade,Hạ cấp,[ˈdaʊngreɪd],Lower room category,"Sorry, we must downgrade."
+Front Office,Intermediate,No-show,Không đến,[noʊ ʃoʊ],Guest doesn't arrive,Mark this as a no-show.
+Front Office,Intermediate,Early Arrival,Đến sớm,[ˈɜːrli əˈraɪvəl],Before check-in time,Can you handle early arrival?
+Front Office,Intermediate,Late Checkout,Trả phòng muộn,[leɪt ˈtʃekaʊt],After standard time,Late checkout incurs a fee.
+Front Office,Intermediate,Group Booking,Đặt phòng đoàn,[gruːp ˈbʊkɪŋ],Multiple room reservation,This is a group booking.
+Front Office,Intermediate,VIP Guest,Khách VIP,[viː aɪ piː gest],Very important person,Prepare for VIP guest arrival.
+Front Office,Intermediate,Loyalty Program,Chương trình khách hàng thân thiết,[ˈlɔɪəlti ˈproʊgræm],Rewards system,Are you in our loyalty program?
+Front Office,Intermediate,Points,Điểm tích lũy,[pɔɪnts],Reward credits,You earned 500 points.
+Front Office,Intermediate,Member,Thành viên,[ˈmembər],Program participant,You're a Gold member.
+Front Office,Intermediate,Benefits,Quyền lợi,[ˈbenəfɪts],Member advantages,Enjoy member benefits.
+Front Office,Intermediate,Cancellation,Hủy đặt phòng,[ˌkænsəˈleɪʃən],Booking termination,What's the cancellation policy?
+Front Office,Intermediate,Modification,Thay đổi,[ˌmɑːdəfəˈkeɪʃən],Booking change,I need a modification.
+Front Office,Intermediate,Extension,Gia hạn,[ɪkˈstenʃən],Stay lengthening,Can I get an extension?
+Front Office,Intermediate,Corporate Rate,Giá doanh nghiệp,[ˈkɔːrpərət reɪt],Business discount,Do you qualify for corporate rate?
+Front Office,Intermediate,Package Deal,Gói ưu đãi,[ˈpækɪdʒ diːl],Bundled services,We have a package deal.
+Front Office,Intermediate,Promotion,Khuyến mãi,[prəˈmoʊʃən],Special offer,There's a current promotion.
+Front Office,Intermediate,Discount,Giảm giá,[ˈdɪskaʊnt],Price reduction,You get a 10% discount.
+Front Office,Intermediate,Voucher,Phiếu mua hàng,[ˈvaʊtʃər],Payment certificate,Do you have a voucher?
+Front Office,Intermediate,Folio,Phiếu tính tiền,[ˈfoʊlioʊ],Guest bill,Here's your folio.
+Front Office,Intermediate,Incidentals,Chi phí phát sinh,[ˌɪnsɪˈdentəlz],Extra charges,Incidentals will be charged.
+Front Office,Intermediate,Authorization,Ủy quyền,[ˌɔːθərəˈzeɪʃən],Payment approval,We need card authorization.
+Front Office,Intermediate,Guarantee,Bảo đảm,[ˌgærənˈtiː],Payment security,Credit card guarantee required.
+Front Office,Intermediate,Settlement,Thanh toán,[ˈsetəlmənt],Final payment,Let's proceed with settlement.
+Front Office,Intermediate,Complimentary,Miễn phí,[ˌkɑːmpləˈmentəri],Free of charge,Breakfast is complimentary.
+Front Office,Intermediate,Chargeable,Tính phí,[ˈtʃɑːrdʒəbəl],Fee required,WiFi is chargeable.
+Front Office,Intermediate,Express Checkout,Trả phòng nhanh,[ɪkˈspres ˈtʃekaʊt],Quick departure,Use express checkout.
+Front Office,Intermediate,Mobile Key,Chìa khóa điện tử,[ˈmoʊbaɪl kiː],Smartphone access,Download mobile key app.
+Front Office,Intermediate,Digital Check-in,Nhận phòng điện tử,[ˈdɪdʒətəl tʃek ɪn],Online registration,Complete digital check-in.
+Front Office,Intermediate,Guest Satisfaction,Sự hài lòng của khách,[gest ˌsætɪsˈfækʃən],Customer happiness,Monitor guest satisfaction.
+Front Office,Intermediate,Feedback,Phản hồi,[ˈfiːdbæk],Customer opinion,We value your feedback.
+Front Office,Intermediate,Survey,Khảo sát,[ˈsɜːrveɪ],Opinion questionnaire,Please complete our survey.
+Front Office,Intermediate,Rating,Đánh giá,[ˈreɪtɪŋ],Score or grade,We received a 5-star rating.
+F&B,Intermediate,À la Carte,Gọi món theo thực đơn,[ˌɑː lə ˈkɑːrt],Individual menu items,Choose from à la carte menu.
+F&B,Intermediate,Table d'Hôte,Thực đơn cố định,[ˌtɑːbəl ˈdoʊt],Fixed menu,Try our table d'hôte.
+F&B,Intermediate,Prix Fixe,Giá cố định,[priː fɪks],Set price menu,We offer prix fixe dinner.
+F&B,Intermediate,Tasting Menu,Thực đơn nếm thử,[ˈteɪstɪŋ ˈmenjuː],Multi-course sampling,Try our chef's tasting menu.
+F&B,Intermediate,Wine Pairing,Ghép đôi rượu vang,[waɪn ˈperɪŋ],Wine and food matching,We suggest wine pairing.
+F&B,Intermediate,Sommelier,Chuyên gia rượu vang,[sʌməˈlɪeɪ],Wine expert,Our sommelier will advise.
+F&B,Intermediate,Appetizer,Món khai vị,[ˈæpətaɪzər],Starter course,Would you like an appetizer?
+F&B,Intermediate,Main Course,Món chính,[meɪn kɔːrs],Primary dish,Choose your main course.
+F&B,Intermediate,Dessert,Món tráng miệng,[dɪˈzɜːrt],Sweet course,Save room for dessert.
+F&B,Intermediate,Signature Dish,Món đặc trưng,[ˈsɪgnətʃər dɪʃ],Restaurant specialty,Try our signature dish.
+F&B,Intermediate,Chef's Special,Món đặc biệt của bếp trưởng,[ʃefs ˈspeʃəl],Daily special,Today's chef's special is salmon.
+F&B,Intermediate,Seasonal Menu,Thực đơn theo mùa,[ˈsiːzənəl ˈmenjuː],Menu with seasonal items,Check our seasonal menu.
+F&B,Intermediate,Vegetarian,Ăn chay,[ˌvedʒəˈteriən],No meat diet,Do you have vegetarian options?
+F&B,Intermediate,Vegan,Ăn thuần chay,[ˈviːgən],No animal products,This dish is vegan.
+F&B,Intermediate,Gluten-free,Không chứa gluten,[ˈgluːtən friː],No gluten ingredients,We have gluten-free bread.
+F&B,Intermediate,Allergy,Dị ứng,[ˈælərdʒi],Food sensitivity,Do you have any allergies?
+F&B,Intermediate,Ingredients,Thành phần,[ɪnˈgriːdiənts],Recipe components,Check the ingredients list.
+F&B,Intermediate,Preparation,Chuẩn bị,[ˌprepəˈreɪʃən],Cooking method,How is this preparation done?
+F&B,Intermediate,Reservation,Đặt bàn,[ˌrezərˈveɪʃən],Table booking,Do you have a reservation?
+F&B,Intermediate,Waiting List,Danh sách chờ,[ˈweɪtɪŋ lɪst],Queue for tables,You're on the waiting list.
+F&B,Intermediate,Seating,Chỗ ngồi,[ˈsiːtɪŋ],Table arrangement,Prefer indoor or outdoor seating?
+F&B,Intermediate,Ambiance,Không khí,[ˈæmbiəns],Restaurant atmosphere,Enjoy the romantic ambiance.
+F&B,Intermediate,Service Charge,Phí dịch vụ,[ˈsɜːrvɪs tʃɑːrdʒ],Additional fee,10% service charge applies.
+F&B,Intermediate,Gratuity,Tiền boa,[grəˈtuːəti],Tip money,Gratuity is included.
+F&B,Intermediate,Split Bill,Chia hóa đơn,[splɪt bɪl],Separate payments,Would you like to split the bill?
+F&B,Intermediate,Takeaway,Mang đi,[ˈteɪkəweɪ],Food to go,Is this for here or takeaway?
+F&B,Intermediate,Delivery,Giao hàng,[dɪˈlɪvəri],Food brought to room,We offer room delivery.
+F&B,Intermediate,Bar,Quầy bar,[bɑːr],Drink service area,The bar is open until 2 AM.
+F&B,Intermediate,Bartender,Nhân viên pha chế,[ˈbɑːrˌtendər],Drink mixer,Ask the bartender for recommendations.
+F&B,Intermediate,Cocktail,Cocktail,[ˈkɑːkteɪl],Mixed drink,Try our signature cocktail.
+F&B,Intermediate,Wine List,Danh sách rượu vang,[waɪn lɪst],Wine menu,Here's our wine list.
+F&B,Intermediate,House Wine,Rượu vang của nhà,[haʊs waɪn],Restaurant's wine,Would you like house wine?
+F&B,Intermediate,Fresh,Tươi,[freʃ],Recently prepared,All ingredients are fresh.
+F&B,Intermediate,Organic,Hữu cơ,[ɔːrˈgænɪk],Natural ingredients,We use organic vegetables.
+F&B,Intermediate,Local,Địa phương,[ˈloʊkəl],Regional products,Try our local specialties.
+Housekeeping,Intermediate,Turn down Service,Dịch vụ xếp giường tối,[tɜːrn daʊn ˈsɜːrvɪs],Evening bed preparation,Turndown service includes mints.
+Housekeeping,Intermediate,Deep Cleaning,Dọn dẹp sâu,[diːp ˈkliːnɪŋ],Thorough cleaning,This room needs deep cleaning.
+Housekeeping,Intermediate,Inspection,Kiểm tra,[ɪnˈspekʃən],Quality check,Room failed inspection.
+Housekeeping,Intermediate,Maintenance Request,Yêu cầu bảo trì,[ˈmeɪntənəns rɪˈkwest],Repair needed,Submit maintenance request.
+Housekeeping,Intermediate,Out of Order,Hỏng,[aʊt əv ˈɔːrdər],Not working,The elevator is out of order.
+Housekeeping,Intermediate,Amenity Replenishment,Bổ sung tiện nghi,[əˈmenəti rɪˈplenɪʃmənt],Restocking supplies,Check amenity replenishment.
+Housekeeping,Intermediate,Linen Change,Thay vải lanh,[ˈlɪnən tʃeɪndʒ],Fresh bed sheets,Request linen change.
+Housekeeping,Intermediate,Towel Service,Dịch vụ khăn tắm,[ˈtaʊəl ˈsɜːrvɪs],Fresh towels,Daily towel service provided.
+Housekeeping,Intermediate,Minibar Restocking,Bổ sung minibar,[ˈmɪni bɑːr riːˈstɑːkɪŋ],Refilling minibar,Minibar restocking needed.
+Housekeeping,Intermediate,Room Status,Trạng thái phòng,[ruːm ˈsteɪtəs],Room condition,Check room status.
+Housekeeping,Intermediate,Occupied,Có khách,[ˈɑːkjupaɪd],Guest in room,Room 205 is occupied.
+Housekeeping,Intermediate,Vacant Dirty,Trống chưa dọn,[ˈveɪkənt ˈdɜːrti],Empty needs cleaning,Room is vacant dirty.
+Housekeeping,Intermediate,Vacant Clean,Trống đã dọn,[ˈveɪkənt kliːn],Ready for guest,Room is vacant clean.
+Housekeeping,Intermediate,Do Not Disturb,Xin đừng làm phiền,[duː nɑːt dɪˈstɜːrb],Privacy request,Guest has do not disturb sign.
+Housekeeping,Intermediate,Make Up Room,Dọn phòng,[meɪk ʌp ruːm],Clean and prepare,Please make up room 302.
+Housekeeping,Intermediate,Priority Room,Phòng ưu tiên,[praɪˈɔːrəti ruːm],Clean first,This is a priority room.
+Housekeeping,Intermediate,Housekeeping Cart,Xe dọn phòng,[ˈhaʊskiːpɪŋ kɑːrt],Cleaning supplies cart,Stock the housekeeping cart.
+Housekeeping,Intermediate,Guest Supplies,Đồ dùng khách,[gest səˈplaɪz],Customer amenities,Restock guest supplies.
+Housekeeping,Intermediate,Lost Property,Đồ thất lạc,[lɔːst ˈprɑːpərti],Left behind items,Found lost property in room.
+Housekeeping,Intermediate,Inventory,Kiểm kê,[ˈɪnvənˌtɔːri],Stock count,Complete linen inventory.
+Housekeeping,Intermediate,Chemical Safety,An toàn hóa chất,[ˈkemɪkəl ˈseɪfti],Cleaning product safety,Follow chemical safety procedures.
+Housekeeping,Intermediate,Uniform,Đồng phục,[ˈjuːnəfɔːrm],Work clothes,Wear proper uniform.
+Housekeeping,Intermediate,Schedule,Lịch trình,[ˈskedʒuːl],Work timetable,Check your schedule.
+Housekeeping,Intermediate,Assignment,Phân công,[əˈsaɪnmənt],Work allocation,Here's your room assignment.
+Housekeeping,Intermediate,Quality Control,Kiểm soát chất lượng,[ˈkwɑːləti kənˈtroʊl],Standard checking,Quality control is important.
+Housekeeping,Intermediate,Guest Request,Yêu cầu của khách,[gest rɪˈkwest],Customer need,Handle guest request quickly.
+Housekeeping,Intermediate,Special Instructions,Hướng dẫn đặc biệt,[ˈspeʃəl ɪnˈstrʌkʃənz],Specific requirements,Follow special instructions.
+Housekeeping,Intermediate,Eco-friendly,Thân thiện môi trường,[ˈiːkoʊ ˈfrendli],Environmentally safe,Use eco-friendly products.
+Housekeeping,Intermediate,Green Initiative,Sáng kiến xanh,[griːn ɪˈnɪʃətɪv],Environmental program,Support green initiative.
+Housekeeping,Intermediate,Sustainability,Bền vững,[səˌsteɪnəˈbɪləti],Environmental responsibility,Focus on sustainability.
+Guest Services,Intermediate,Concierge Services,Dịch vụ hỗ trợ khách,[ˈkɑːnsiˌerʒ ˈsɜːrvəsəz],Guest assistance,Our concierge services are free.
+Guest Services,Intermediate,Tourist Information,Thông tin du lịch,[ˈtʊrɪst ˌɪnfərˈmeɪʃən],Travel guidance,Need tourist information?
+Guest Services,Intermediate,Local Attractions,Điểm tham quan địa phương,[ˈloʊkəl əˈtrækʃənz],Nearby sights,Recommend local attractions.
+Guest Services,Intermediate,Transportation,Phương tiện di chuyển,[ˌtrænspərˈteɪʃən],Travel methods,Arrange transportation.
+Guest Services,Intermediate,Airport Transfer,Đưa đón sân bay,[ˈerpɔːrt ˈtrænsfər],Airport transport,Book airport transfer.
+Guest Services,Intermediate,Taxi Service,Dịch vụ taxi,[ˈtæksi ˈsɜːrvɪs],Cab booking,Call taxi service.
+Guest Services,Intermediate,Car Rental,Thuê xe,[kɑːr ˈrentəl],Vehicle hire,Need car rental information?
+Guest Services,Intermediate,Tour Booking,Đặt tour,[tʊr ˈbʊkɪŋ],Trip reservation,Help with tour booking.
+Guest Services,Intermediate,Theater Tickets,Vé xem kịch,[ˈθiətər ˈtɪkəts],Show reservations,Get theater tickets.
+Guest Services,Intermediate,Restaurant Recommendation,Gợi ý nhà hàng,[ˈrestrɑːnt ˌrekəmənˈdeɪʃən],Dining suggestions,Give restaurant recommendations.
+Guest Services,Intermediate,Dining Reservation,Đặt bàn ăn,[ˈdaɪnɪŋ ˌrezərˈveɪʃən],Table booking,Make dining reservation.
+Guest Services,Intermediate,Shopping Guide,Hướng dẫn mua sắm,[ˈʃɑːpɪŋ gaɪd],Shopping advice,Provide shopping guide.
+Guest Services,Intermediate,Currency Exchange,Đổi tiền,[ˈkɜːrənsi ɪksˈtʃeɪndʒ],Money changing,Where's currency exchange?
+Guest Services,Intermediate,Business Services,Dịch vụ doanh nghiệp,[ˈbɪznəs ˈsɜːrvəsəz],Work assistance,Need business services?
+Guest Services,Intermediate,Printing,In ấn,[ˈprɪntɪŋ],Document copying,Printing available at front desk.
+Guest Services,Intermediate,Fax Service,Dịch vụ fax,[fæks ˈsɜːrvɪs],Document transmission,Fax service costs $2 per page.
+Guest Services,Intermediate,Internet Access,Truy cập internet,[ˈɪntərnet ˈækses],Online connection,Free internet access available.
+Guest Services,Intermediate,Meeting Room,Phòng họp,[ˈmiːtɪŋ ruːm],Conference space,Book meeting room.
+Guest Services,Intermediate,Event Planning,Lập kế hoạch sự kiện,[ɪˈvent ˈplænɪŋ],Occasion organizing,We offer event planning.
+Guest Services,Intermediate,Wedding Services,Dịch vụ đám cưới,[ˈwedɪŋ ˈsɜːrvəsəz],Marriage ceremonies,Wedding services available.
+Guest Services,Intermediate,Spa Services,Dịch vụ spa,[spɑː ˈsɜːrvəsəz],Wellness treatments,Book spa services.
+Guest Services,Intermediate,Fitness Center,Trung tâm thể dục,[ˈfɪtnəs ˈsentər],Exercise facility,Fitness center open 24/7.
+Guest Services,Intermediate,Swimming Pool,Hồ bơi,[ˈswɪmɪŋ puːl],Water recreation,Pool closes at 10 PM.
+Guest Services,Intermediate,Babysitting,Trông trẻ,[ˈbeɪbiˌsɪtɪŋ],Child care,Arrange babysitting service.
+Guest Services,Intermediate,Pet Services,Dịch vụ thú cưng,[pet ˈsɜːrvəsəz],Animal care,Pet services available.
+Guest Services,Intermediate,Wake-up Call,Cuộc gọi đánh thức,[weɪk ʌp kɔːl],Morning call,Set wake-up call for 7 AM.
+Guest Services,Intermediate,Newspaper,Báo,[ˈnuːzˌpeɪpər],Daily publication,Complimentary newspaper delivery.
+Guest Services,Intermediate,Mail Service,Dịch vụ thư tín,[meɪl ˈsɜːrvɪs],Postal handling,Mail service at front desk.
+Guest Services,Intermediate,Package Delivery,Giao hàng,[ˈpækɪdʒ dɪˈlɪvəri],Parcel service,Package delivery received.
+Guest Services,Intermediate,Safe Deposit,Hòm két an toàn,[seɪf dɪˈpɑːzət],Valuables storage,Use safe deposit box.
+Guest Services,Intermediate,Umbrella,Ô,[ʌmˈbrelə],Rain protection,Borrow umbrella from front desk.
+Guest Services,Intermediate,First Aid,Sơ cứu,[fɜːrst eɪd],Medical assistance,First aid kit available.
+Guest Services,Intermediate,Emergency,Khẩn cấp,[ɪˈmɜːrdʒənsi],Urgent situation,Call security for emergency.
+Guest Services,Intermediate,Lost and Found,Đồ thất lạc,[lɔːst ænd faʊnd],Missing items,Check lost and found office.
+Guest Services,Intermediate,Guest Relations,Quan hệ khách hàng,[gest rɪˈleɪʃənz],Customer service,Contact guest relations.
+Technology,Intermediate,Mobile App,Ứng dụng di động,[ˈmoʊbaɪl æp],Smartphone application,Download our mobile app.
+Technology,Intermediate,QR Code,Mã QR,[kjuː ɑːr koʊd],Quick response code,Scan QR code for menu.
+Technology,Intermediate,Contactless,Không tiếp xúc,[ˈkɑːntæktləs],Touch-free service,Contactless payment available.
+Technology,Intermediate,Digital Menu,Thực đơn điện tử,[ˈdɪdʒətəl ˈmenjuː],Electronic menu,Use digital menu on tablet.
+Technology,Intermediate,Smart TV,TV thông minh,[smɑːrt tiː viː],Internet-connected TV,Stream Netflix on smart TV.
+Technology,Intermediate,Voice Control,Điều khiển bằng giọng nói,[vɔɪs kənˈtroʊl],Voice-activated system,Use voice control for lights.
+Technology,Intermediate,AI Assistant,Trợ lý AI,[eɪ aɪ əˈsɪstənt],Artificial intelligence helper,Ask AI assistant for help.
+Technology,Intermediate,Streaming,Phát trực tuyến,[ˈstriːmɪŋ],Online content,Streaming services available.
+Technology,Intermediate,Charging Station,Trạm sạc,[ˈtʃɑːrdʒɪŋ ˈsteɪʃən],Device power point,Charging station in lobby.
+Technology,Intermediate,Bluetooth,Bluetooth,[ˈbluːtuːθ],Wireless connection,Connect via Bluetooth.
+Revenue,Intermediate,Revenue,Doanh thu,[ˈrevəˌnuː],Income from business,Hotel revenue increased 15%.
+Revenue,Intermediate,Profit,Lợi nhuận,[ˈprɑːfət],Financial gain,The hotel made good profit.
+Revenue,Intermediate,Loss,Lỗ,[lɔːs],Financial loss,We had a loss this month.
+Revenue,Intermediate,Budget,Ngân sách,[ˈbʌdʒət],Financial plan,Stay within budget.
+Revenue,Intermediate,Cost,Chi phí,[kɔːst],Expense,Reduce operating costs.
+Revenue,Intermediate,Price,Giá,[praɪs],Amount charged,What's the price?
+Revenue,Intermediate,Rate,Tỷ lệ,[reɪt],Price per unit,The room rate is $200.
+Revenue,Intermediate,Fee,Phí,[fiː],Service charge,There's a service fee.
+Revenue,Intermediate,Charge,Tính phí,[tʃɑːrdʒ],Request payment,We charge for parking.
+Revenue,Intermediate,Payment,Thanh toán,[ˈpeɪmənt],Money exchange,How will you pay?
+Revenue,Intermediate,Invoice,Hóa đơn,[ˈɪnvɔɪs],Bill for services,Here's your invoice.
+Revenue,Intermediate,Receipt,Biên lai,[rɪˈsiːt],Payment proof,Keep your receipt.
+Revenue,Intermediate,Refund,Hoàn tiền,[rɪˈfʌnd],Money return,We'll process your refund.
+Revenue,Intermediate,Discount,Giảm giá,[ˈdɪskaʊnt],Price reduction,You get a 10% discount.
+Revenue,Intermediate,Promotion,Khuyến mãi,[prəˈmoʊʃən],Special offer,Check our promotion.
+Revenue,Intermediate,Deal,Ưu đãi,[diːl],Special arrangement,We have a great deal.
+Revenue,Intermediate,Package,Gói,[ˈpækɪdʒ],Bundled services,Book our romance package.
+Revenue,Intermediate,Offer,Đề xuất,[ˈɔːfər],Proposal,We have a special offer.
+Revenue,Intermediate,Special,Đặc biệt,[ˈspeʃəl],Unusual,This is a special rate.
+Revenue,Intermediate,Standard,Chuẩn,[ˈstændərd],Normal level,Standard rate applies.
+Revenue,Intermediate,Premium,Cao cấp,[ˈpriːmiəm],High quality,Premium service available.
+Revenue,Intermediate,Luxury,Xa hoa,[ˈlʌkʃəri],Expensive quality,Luxury accommodation.
+Revenue,Intermediate,Economy,Kinh tế,[ɪˈkɑːnəmi],Budget level,Economy room available.
+Revenue,Intermediate,Deluxe,Sang trọng,[dəˈlʌks],High quality,Deluxe suite available.
+Revenue,Intermediate,Superior,Ưu việt,[suːˈpɪriər],Better quality,Superior room category.
+Revenue,Intermediate,Executive,Điều hành,[ɪgˈzekjətɪv],Management level,Executive floor access.
+Revenue,Intermediate,Presidential,Tổng thống,[ˌprezɪˈdenʃəl],Highest level,Presidential suite.
+Revenue,Intermediate,Royal,Hoàng gia,[ˈrɔɪəl],King level,Royal treatment.
+Revenue,Intermediate,VIP,Quan trọng,[viː aɪ piː],Very important person,VIP service.
+Revenue,Intermediate,Corporate,Doanh nghiệp,[ˈkɔːrpərət],Business related,Corporate rate available.
+Revenue,Intermediate,Group,Đoàn,[gruːp],Multiple people,Group booking discount.
+Revenue,Intermediate,Individual,Cá nhân,[ˌɪndəˈvɪdʒuəl],Single person,Individual rate.
+Revenue,Intermediate,Family,Gia đình,[ˈfæməli],Related people,Family package available.
+Revenue,Intermediate,Business,Kinh doanh,[ˈbɪznəs],Work related,Business traveler rate.
+Revenue,Intermediate,Leisure,Giải trí,[ˈliːʒər],Recreation related,Leisure traveler rate.
+Revenue,Intermediate,Tourist,Du lịch,[ˈtʊrɪst],Vacation traveler,Tourist information available.
+Revenue,Intermediate,Traveler,Du khách,[ˈtrævələr],Person traveling,Welcome traveler.
+Revenue,Intermediate,Guest,Khách,[gest],Customer,Our valued guest.
+Revenue,Intermediate,Customer,Khách hàng,[ˈkʌstəmər],Person buying,Customer service.
+Revenue,Intermediate,Client,Khách hàng,[ˈklaɪənt],Person served,Important client.
+Revenue,Intermediate,Visitor,Khách thăm,[ˈvɪzɪtər],Person visiting,Welcome visitor.
+Revenue,Intermediate,Patron,Khách quen,[ˈpeɪtrən],Regular customer,Valued patron.
+Revenue,Intermediate,Member,Thành viên,[ˈmembər],Program participant,Club member.
+Revenue,Intermediate,Loyalty,Trung thành,[ˈlɔɪəlti],Faithfulness,Loyalty program.
+Revenue,Intermediate,Program,Chương trình,[ˈproʊgræm],Organized plan,Special program.
+Revenue,Intermediate,Service,Dịch vụ,[ˈsɜːrvɪs],Assistance provided,Excellent service.
+Revenue,Intermediate,Quality,Chất lượng,[ˈkwɑːləti],Standard level,High quality.
+Revenue,Intermediate,Standard,Chuẩn,[ˈstændərd],Normal level,Standard service.
+Revenue,Intermediate,Excellent,Xuất sắc,[ˈeksələnt],Very good,Excellent service.
+Revenue,Intermediate,Outstanding,Nổi bật,[aʊtˈstændɪŋ],Very good,Outstanding performance.
+Revenue,Intermediate,Satisfactory,Thỏa mãn,[ˌsætɪsˈfæktəri],Acceptable,Service is satisfactory.
+Revenue,Intermediate,Unsatisfactory,Không thỏa mãn,[ˌʌnsætɪsˈfæktəri],Not acceptable,Unsatisfactory service.
+Revenue,Intermediate,Poor,Kém,[pʊr],Not good,Poor quality.
+Revenue,Intermediate,Terrible,Khủng khiếp,[ˈterəbəl],Very bad,Terrible service.
+Revenue,Intermediate,Awful,Khủng khiếp,[ˈɔːfəl],Very bad,Awful experience.
+Revenue,Intermediate,Disappointing,Thất vọng,[ˌdɪsəˈpɔɪntɪŋ],Not meeting expectations,Disappointing service.
+Revenue,Intermediate,Pleasant,Dễ chịu,[ˈplezənt],Nice,Pleasant experience.
+Revenue,Intermediate,Enjoyable,Thú vị,[ɪnˈdʒɔɪəbəl],Fun,Enjoyable stay.
+Revenue,Intermediate,Memorable,Đáng nhớ,[ˈmemərəbəl],Unforgettable,Memorable experience.
+Revenue,Intermediate,Unforgettable,Không thể quên,[ˌʌnfərˈgetəbəl],Very memorable,Unforgettable stay.
+Revenue,Intermediate,Remarkable,Đáng chú ý,[rɪˈmɑːrkəbəl],Notable,Remarkable service.
+Revenue,Intermediate,Extraordinary,Phi thường,[ɪkˈstrɔːrdəneri],Very unusual,Extraordinary experience.
+Revenue,Intermediate,Unique,Độc đáo,[juːˈniːk],One of a kind,Unique hotel.
+Revenue,Intermediate,Special,Đặc biệt,[ˈspeʃəl],Unusual,Special occasion.
+Revenue,Intermediate,Rare,Hiếm,[rer],Not common,Rare opportunity.
+Revenue,Intermediate,Common,Thường,[ˈkɑːmən],Usual,Common practice.
+Revenue,Intermediate,Normal,Bình thường,[ˈnɔːrməl],Regular,Normal service.
+Revenue,Intermediate,Regular,Thường xuyên,[ˈregjələr],Usual,Regular customer.
+Revenue,Intermediate,Frequent,Thường xuyên,[ˈfriːkwənt],Often,Frequent guest.
+Revenue,Intermediate,Occasional,Thỉnh thoảng,[əˈkeɪʒənəl],Sometimes,Occasional visitor.
+Revenue,Intermediate,Rare,Hiếm,[rer],Not often,Rare occurrence.
+Revenue,Intermediate,Never,Không bao giờ,[ˈnevər],Not ever,Never happened.
+Revenue,Intermediate,Always,Luôn luôn,[ˈɔːlweɪz],Every time,Always available.
+Revenue,Intermediate,Sometimes,Thỉnh thoảng,[ˈsʌmtaɪmz],Occasionally,Sometimes busy.
+Revenue,Intermediate,Often,Thường xuyên,[ˈɔːfən],Frequently,Often requested.
+Revenue,Intermediate,Usually,Thường,[ˈjuːʒuəli],Normally,Usually available.
+Revenue,Intermediate,Rarely,Hiếm khi,[ˈrerli],Not often,Rarely happens.
+Revenue,Intermediate,Never,Không bao giờ,[ˈnevər],Not ever,Never available.
+Revenue,Intermediate,Always,Luôn luôn,[ˈɔːlweɪz],Every time,Always helpful.

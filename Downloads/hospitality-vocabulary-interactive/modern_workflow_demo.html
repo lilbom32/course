@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Workflow Demo - C�m nang ti�ng Anh chuy�n ng�nh</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="dashboard-header">
+            <h1><� Modern Workflow Design Demo</h1>
+            <p>Thi�t k� m�i theo phong c�ch MasterClass, Coursera, Udemy</p>
+        </div>
+
+        <!-- Module Detail Section with New Workflow -->
+        <section class="content-section active">
+            <div class="module-detail-header">
+                <div class="breadcrumb">
+                    <button class="btn btn--outline btn--sm">� Quay l�i</button>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>Nghi�p v� Bu�ng ph�ng</span>
+                </div>
+                <h1>Nghi�p v� Bu�ng ph�ng</h1>
+                <div class="module-meta-info">
+                    <div class="module-duration">
+                        <span class="meta-icon">�</span>
+                        <span>25 ph�t</span>
+                    </div>
+                    <div class="module-level">
+                        <span class="meta-icon">=�</span>
+                        <span>a c�p �</span>
+                    </div>
+                    <div class="module-progress">
+                        <span class="meta-icon">=�</span>
+                        <span>30% ho�n th�nh</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-overview">
+                <h2>T�ng quan</h2>
+                <p>Module t�ng h�p v� qu�n l� bu�ng ph�ng, t� v� sinh c� b�n �n qu�n l� ch�t l��ng n�ng cao. H�c t�p v�i c�c t�nh hu�ng th�c t� v� b�i t�p t��ng t�c.</p>
+            </div>
+
+            <div class="module-lessons">
+                <h2>B�i h�c</h2>
+                <div class="lessons-list" id="moduleLessonsList">
+                    <!-- Lesson 1: Completed -->
+                    <div class="lesson-item completed">
+                        <div class="lesson-icon completed">
+                            =�
+                        </div>
+                        <div class="lesson-thumbnail">
+                            =�
+                        </div>
+                        <div class="lesson-info">
+                            <h4>V� sinh ph�ng ngh� c� b�n</h4>
+                            <div class="lesson-meta">
+                                <div class="lesson-duration">
+                                    <span class="meta-icon">�</span>
+                                    <span>3 ph�t</span>
+                                </div>
+                                <div class="lesson-level">
+                                    <span class="level-badge level-basic">C� B�N</span>
+                                </div>
+                                <div class="lesson-progress-ring" style="background: conic-gradient(var(--color-primary) 360deg, #e2e8f0 0deg);">
+                                    <span class="progress-text">100%</span>
+                                </div>
+                            </div>
+                            <div class="lesson-status completed">
+                                Ho�n th�nh
+                            </div>
+                            <div class="lesson-actions">
+                                <button class="lesson-action-btn lesson-preview-btn" onclick="showPreviewDemo('completed')">
+                                    =A Xem tr��c
+                                </button>
+                                <button class="lesson-action-btn">
+                                    = �n t�p
+                                </button>
+                                <button class="lesson-action-btn">
+                                    = �nh d�u
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 2: Current -->
+                    <div class="lesson-item current">
+                        <div class="lesson-icon current">
+                            =�
+                        </div>
+                        <div class="lesson-thumbnail play-icon">
+                            =�
+                        </div>
+                        <div class="lesson-info">
+                            <h4>Qu�n l� ga g�i</h4>
+                            <div class="lesson-meta">
+                                <div class="lesson-duration">
+                                    <span class="meta-icon">�</span>
+                                    <span>2 ph�t</span>
+                                </div>
+                                <div class="lesson-level">
+                                    <span class="level-badge level-basic">C� B�N</span>
+                                </div>
+                                <div class="lesson-progress-ring" style="background: conic-gradient(var(--color-primary) 90deg, #e2e8f0 0deg);">
+                                    <span class="progress-text">25%</span>
+                                </div>
+                            </div>
+                            <div class="lesson-status current">
+                                ang h�c
+                            </div>
+                            <div class="lesson-actions">
+                                <button class="lesson-action-btn primary">
+                                    � Ti�p t�c
+                                </button>
+                                <button class="lesson-action-btn">
+                                    = �nh d�u
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 3: Locked -->
+                    <div class="lesson-item locked">
+                        <div class="lesson-icon">
+                            ='
+                        </div>
+                        <div class="lesson-thumbnail">
+                            ='
+                        </div>
+                        <div class="lesson-info">
+                            <h4>B�o c�o s�a ch�a</h4>
+                            <div class="lesson-meta">
+                                <div class="lesson-duration">
+                                    <span class="meta-icon">�</span>
+                                    <span>1 ph�t</span>
+                                </div>
+                                <div class="lesson-level">
+                                    <span class="level-badge level-intermediate">TRUNG C�P</span>
+                                </div>
+                                <div class="lesson-progress-ring" style="background: conic-gradient(var(--color-primary) 0deg, #e2e8f0 0deg);">
+                                    <span class="progress-text">0%</span>
+                                </div>
+                            </div>
+                            <div class="lesson-status locked">
+                                Ch�a m� kh�a
+                            </div>
+                            <div class="lesson-actions">
+                                <button class="lesson-action-btn" disabled>
+                                    = Kh�a
+                                </button>
+                                <button class="lesson-action-btn">
+                                    = �nh d�u
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 4: Locked -->
+                    <div class="lesson-item locked">
+                        <div class="lesson-icon">
+                            =�
+                        </div>
+                        <div class="lesson-thumbnail">
+                            =�
+                        </div>
+                        <div class="lesson-info">
+                            <h4>Quy tr�nh an to�n</h4>
+                            <div class="lesson-meta">
+                                <div class="lesson-duration">
+                                    <span class="meta-icon">�</span>
+                                    <span>4 ph�t</span>
+                                </div>
+                                <div class="lesson-level">
+                                    <span class="level-badge level-intermediate">TRUNG C�P</span>
+                                </div>
+                                <div class="lesson-progress-ring" style="background: conic-gradient(var(--color-primary) 0deg, #e2e8f0 0deg);">
+                                    <span class="progress-text">0%</span>
+                                </div>
+                            </div>
+                            <div class="lesson-status locked">
+                                Ch�a m� kh�a
+                            </div>
+                            <div class="lesson-actions">
+                                <button class="lesson-action-btn" disabled>
+                                    = Kh�a
+                                </button>
+                                <button class="lesson-action-btn">
+                                    = �nh d�u
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 5: Locked Advanced -->
+                    <div class="lesson-item locked">
+                        <div class="lesson-icon">
+                            >�
+                        </div>
+                        <div class="lesson-thumbnail">
+                            >�
+                        </div>
+                        <div class="lesson-info">
+                            <h4>V� sinh s�u</h4>
+                            <div class="lesson-meta">
+                                <div class="lesson-duration">
+                                    <span class="meta-icon">�</span>
+                                    <span>5 ph�t</span>
+                                </div>
+                                <div class="lesson-level">
+                                    <span class="level-badge level-advanced">N�NG CAO</span>
+                                </div>
+                                <div class="lesson-progress-ring" style="background: conic-gradient(var(--color-primary) 0deg, #e2e8f0 0deg);">
+                                    <span class="progress-text">0%</span>
+                                </div>
+                            </div>
+                            <div class="lesson-status locked">
+                                Ch�a m� kh�a
+                            </div>
+                            <div class="lesson-actions">
+                                <button class="lesson-action-btn" disabled>
+                                    = Kh�a
+                                </button>
+                                <button class="lesson-action-btn">
+                                    = �nh d�u
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-actions">
+                <button class="btn btn--primary btn--lg">B�t �u Module</button>
+                <button class="btn btn--outline">= �nh d�u</button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="app-footer">
+        <div class="signature">
+            <p>Made by <strong>Ths. Ng� �nh Minh Quang</strong></p>
+        </div>
+    </footer>
+
+    <!-- <� Lesson Preview Modal Demo -->
+    <div class="lesson-preview-modal" id="lessonPreviewModal">
+        <div class="lesson-preview-content">
+            <div class="lesson-preview-header">
+                <button class="lesson-preview-close" onclick="hidePreviewDemo()">�</button>
+                <div class="lesson-preview-thumbnail" id="lessonPreviewThumbnail">
+                    =�
+                </div>
+                <div class="lesson-preview-info">
+                    <h2 class="lesson-preview-title" id="lessonPreviewTitle">V� sinh ph�ng ngh� c� b�n</h2>
+                    <div class="lesson-preview-meta">
+                        <div class="lesson-preview-meta-item">
+                            <span>�</span>
+                            <span id="lessonPreviewDuration">3 ph�t</span>
+                        </div>
+                        <div class="lesson-preview-meta-item">
+                            <span>=�</span>
+                            <span id="lessonPreviewLevel">C� b�n</span>
+                        </div>
+                        <div class="lesson-preview-meta-item">
+                            <span><�</span>
+                            <span id="lessonPreviewType">Video</span>
+                        </div>
+                    </div>
+                    <p class="lesson-preview-description">
+                        B�i h�c video v�i n�i dung chuy�n s�u v� quy tr�nh v� sinh ph�ng ngh� c� b�n, t� vi�c chu�n b� d�ng c� �n c�c b��c th�c hi�n theo ti�u chu�n qu�c t�.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson-preview-body">
+                <div class="lesson-preview-section">
+                    <h3><� M�c ti�u h�c t�p</h3>
+                    <ul class="lesson-preview-objectives">
+                        <li>Hi�u ��c c�c kh�i ni�m c� b�n trong b�i h�c</li>
+                        <li>N�m v�ng c�c thu�t ng� chuy�n m�n</li>
+                        <li>�p d�ng ki�n th�c v�o t�nh hu�ng th�c t�</li>
+                    </ul>
+                </div>
+                
+                <div class="lesson-preview-section">
+                    <h3>=� Y�u c�u tr��c khi h�c</h3>
+                    <div class="lesson-preview-requirements" id="lessonPreviewRequirements">
+                        <h4> S�n s�ng</h4>
+                        <p>B�i h�c n�y � s�n s�ng � b�t �u.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lesson-preview-footer">
+                <button class="lesson-preview-btn lesson-preview-btn--secondary" onclick="toggleBookmarkDemo()">
+                    = �nh d�u
+                </button>
+                <button class="lesson-preview-btn lesson-preview-btn--primary" onclick="startLessonDemo()">
+                    � B�t �u h�c
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Demo specific styles */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+        }
+        
+        .dashboard-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .dashboard-header p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .module-detail-header h1 {
+            font-size: 2.25rem;
+            color: #1e293b;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+        
+        .module-meta-info {
+            display: flex;
+            gap: 24px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .module-meta-info > div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            font-weight: 500;
+            color: #475569;
+        }
+        
+        .module-overview {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 16px;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .module-overview h2 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .module-overview p {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 1.125rem;
+        }
+        
+        .module-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn--primary {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        .btn--primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn--outline {
+            background: transparent;
+            color: #64748b;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .btn--outline:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background: #f8fafc;
+        }
+        
+        .btn--sm {
+            padding: 8px 16px;
+            font-size: 0.875rem;
+        }
+        
+        .btn--lg {
+            padding: 20px 40px;
+            font-size: 1.125rem;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+        
+        .breadcrumb-separator {
+            color: #cbd5e1;
+        }
+        
+        .app-footer {
+            margin-top: 60px;
+            padding: 30px;
+            text-align: center;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .signature {
+            font-size: 0.875rem;
+        }
+        
+        .signature strong {
+            color: var(--color-primary);
+        }
+    </style>
+
+    <script>
+        // Demo JavaScript functionality
+        function showPreviewDemo(type) {
+            const modal = document.getElementById('lessonPreviewModal');
+            
+            // Update content based on lesson type
+            if (type === 'completed') {
+                document.getElementById('lessonPreviewThumbnail').textContent = '=�';
+                document.getElementById('lessonPreviewTitle').textContent = 'V� sinh ph�ng ngh� c� b�n';
+                document.getElementById('lessonPreviewDuration').textContent = '3 ph�t';
+                document.getElementById('lessonPreviewLevel').textContent = 'C� b�n';
+                document.getElementById('lessonPreviewType').textContent = 'Video';
+                
+                const requirements = document.getElementById('lessonPreviewRequirements');
+                requirements.innerHTML = `
+                    <h4> Ho�n th�nh</h4>
+                    <p>B�n � ho�n th�nh b�i h�c n�y. C� th� �n t�p l�i b�t c� l�c n�o.</p>
+                `;
+                requirements.style.background = '#dcfce7';
+                requirements.style.borderColor = '#22c55e';
+                
+                const startBtn = document.querySelector('.lesson-preview-btn--primary');
+                startBtn.innerHTML = '= �n t�p l�i';
+            } else if (type === 'current') {
+                document.getElementById('lessonPreviewThumbnail').textContent = '=�';
+                document.getElementById('lessonPreviewTitle').textContent = 'Qu�n l� ga g�i';
+                document.getElementById('lessonPreviewDuration').textContent = '2 ph�t';
+                document.getElementById('lessonPreviewLevel').textContent = 'C� b�n';
+                document.getElementById('lessonPreviewType').textContent = 'T��ng t�c';
+                
+                const requirements = document.getElementById('lessonPreviewRequirements');
+                requirements.innerHTML = `
+                    <h4>� ang h�c</h4>
+                    <p>B�n ang h�c b�i n�y. Ti�p t�c � ho�n th�nh.</p>
+                `;
+                requirements.style.background = '#dbeafe';
+                requirements.style.borderColor = '#3b82f6';
+                
+                const startBtn = document.querySelector('.lesson-preview-btn--primary');
+                startBtn.innerHTML = '� Ti�p t�c h�c';
+            } else {
+                document.getElementById('lessonPreviewThumbnail').textContent = '='';
+                document.getElementById('lessonPreviewTitle').textContent = 'B�o c�o s�a ch�a';
+                document.getElementById('lessonPreviewDuration').textContent = '1 ph�t';
+                document.getElementById('lessonPreviewLevel').textContent = 'Trung c�p';
+                document.getElementById('lessonPreviewType').textContent = 'T�nh hu�ng';
+                
+                const requirements = document.getElementById('lessonPreviewRequirements');
+                requirements.innerHTML = `
+                    <h4>= Kh�a</h4>
+                    <p>Ho�n th�nh b�i h�c tr��c � � m� kh�a b�i n�y.</p>
+                `;
+                requirements.style.background = '#fee2e2';
+                requirements.style.borderColor = '#f87171';
+                
+                const startBtn = document.querySelector('.lesson-preview-btn--primary');
+                startBtn.innerHTML = '= Ch�a m� kh�a';
+                startBtn.disabled = true;
+                startBtn.style.opacity = '0.6';
+            }
+            
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hidePreviewDemo() {
+            const modal = document.getElementById('lessonPreviewModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+        
+        function toggleBookmarkDemo() {
+            const btn = document.querySelector('.lesson-preview-btn--secondary');
+            const isBookmarked = btn.innerHTML.includes('� �nh d�u');
+            
+            if (isBookmarked) {
+                btn.innerHTML = '= �nh d�u';
+                btn.style.opacity = '1';
+                showNotification('� b� �nh d�u b�i h�c', 'info');
+            } else {
+                btn.innerHTML = '= � �nh d�u';
+                btn.style.opacity = '0.7';
+                showNotification('� �nh d�u b�i h�c', 'success');
+            }
+        }
+        
+        function startLessonDemo() {
+            hidePreviewDemo();
+            showNotification('B�t �u b�i h�c...', 'success');
+        }
+        
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification--${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span class="notification-message">${message}</span>
+                    <button class="notification-close">�</button>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 3000);
+            
+            // Close button
+            notification.querySelector('.notification-close').addEventListener('click', () => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            });
+        }
+        
+        // Close modal on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                hidePreviewDemo();
+            }
+        });
+        
+        // Close modal on overlay click
+        document.getElementById('lessonPreviewModal').addEventListener('click', (e) => {
+            if (e.target.id === 'lessonPreviewModal') {
+                hidePreviewDemo();
+            }
+        });
+    </script>
+
+    <style>
+        /* Notification styles for demo */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification--success {
+            border-left: 4px solid #22c55e;
+        }
+        
+        .notification--info {
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .notification--warning {
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .notification-content {
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .notification-message {
+            flex: 1;
+            font-weight: 500;
+            color: #1e293b;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: #64748b;
+            cursor: pointer;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .notification-close:hover {
+            color: #475569;
+        }
+    </style>
+</body>
+</html>

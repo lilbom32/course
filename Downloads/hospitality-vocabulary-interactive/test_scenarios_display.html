@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Scenarios Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .error { color: red; background: #ffe6e6; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { color: green; background: #e6ffe6; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .info { color: blue; background: #e6f3ff; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .category-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Test Scenarios Display</h1>
+    
+    <div id="status"></div>
+    
+    <h2>Scenario Categories</h2>
+    <div id="categories"></div>
+    
+    <h2>Debug Info</h2>
+    <div id="debug"></div>
+
+    <script src="app.js"></script>
+    <script>
+        const statusDiv = document.getElementById('status');
+        const categoriesDiv = document.getElementById('categories');
+        const debugDiv = document.getElementById('debug');
+        
+        function log(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = type;
+            div.textContent = message;
+            statusDiv.appendChild(div);
+        }
+        
+        try {
+            log('✓ app.js loaded successfully', 'success');
+            
+            // Create app instance
+            const app = new HospitalityApp();
+            log('✓ HospitalityApp instance created', 'success');
+            
+            // Wait for init to complete
+            setTimeout(() => {
+                // Check if scenariosByCategory exists
+                if (app.scenariosByCategory) {
+                    log('✓ scenariosByCategory exists', 'success');
+                    
+                    const categories = Object.keys(app.scenariosByCategory);
+                    log(`✓ Found ${categories.length} categories`, 'success');
+                    
+                    // Display categories
+                    categories.forEach(category => {
+                        const scenarios = app.scenariosByCategory[category];
+                        const card = document.createElement('div');
+                        card.className = 'category-card';
+                        card.innerHTML = `
+                            <h3>${category}</h3>
+                            <p>📝 ${scenarios.length} scenarios</p>
+                        `;
+                        categoriesDiv.appendChild(card);
+                    });
+                    
+                    // Show debug info
+                    debugDiv.innerHTML = '<pre>' + JSON.stringify({
+                        totalCategories: categories.length,
+                        categories: categories,
+                        sampleScenario: app.scenariosByCategory[categories[0]][0]
+                    }, null, 2) + '</pre>';
+                    
+                } else {
+                    log('✗ scenariosByCategory NOT found', 'error');
+                }
+                
+                // Check if loadScenarios method exists
+                if (typeof app.loadScenarios === 'function') {
+                    log('✓ loadScenarios() method exists', 'success');
+                } else {
+                    log('✗ loadScenarios() method NOT found', 'error');
+                }
+                
+                // Check if renderScenarioCategories method exists
+                if (typeof app.renderScenarioCategories === 'function') {
+                    log('✓ renderScenarioCategories() method exists', 'success');
+                } else {
+                    log('✗ renderScenarioCategories() method NOT found', 'error');
+                }
+                
+            }, 1000);
+            
+        } catch (error) {
+            log('✗ Error: ' + error.message, 'error');
+            console.error(error);
+        }
+    </script>
+</body>
+</html>
+

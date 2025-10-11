@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Debug Test</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .result { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .error { background: #ffebee; color: #c62828; }
+        .success { background: #e8f5e8; color: #2e7d32; }
+    </style>
+</head>
+<body>
+    <!-- Watermark -->
+    <div class="watermark"></div>
+    
+    <h1>🔍 Debug Test - Vocabulary Loading</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function debugTest() {
+            const results = document.getElementById('results');
+            let html = '<h2>Testing CSV Files...</h2>';
+            
+            // Test 1: Check if files exist
+            try {
+                const response1 = await fetch('allergies_diet_vocabulary.csv');
+                if (response1.ok) {
+                    html += '<div class="result success">✅ allergies_diet_vocabulary.csv - File exists</div>';
+                } else {
+                    html += '<div class="result error">❌ allergies_diet_vocabulary.csv - File not found</div>';
+                }
+            } catch (error) {
+                html += '<div class="result error">❌ allergies_diet_vocabulary.csv - Error: ' + error.message + '</div>';
+            }
+            
+            try {
+                const response2 = await fetch('table_skills_vocabulary.csv');
+                if (response2.ok) {
+                    html += '<div class="result success">✅ table_skills_vocabulary.csv - File exists</div>';
+                } else {
+                    html += '<div class="result error">❌ table_skills_vocabulary.csv - File not found</div>';
+                }
+            } catch (error) {
+                html += '<div class="result error">❌ table_skills_vocabulary.csv - Error: ' + error.message + '</div>';
+            }
+            
+            // Test 2: Load and parse data
+            try {
+                const response = await fetch('allergies_diet_vocabulary.csv');
+                const text = await response.text();
+                const lines = text.split('\n');
+                const dataLines = lines.filter(line => line.trim() && !line.startsWith('english,'));
+                
+                html += '<div class="result success">✅ Allergies & Diet: ' + dataLines.length + ' data rows loaded</div>';
+                
+                if (dataLines.length > 0) {
+                    const firstLine = dataLines[0];
+                    const parts = firstLine.split(',');
+                    html += '<div class="result">📝 Sample data: ' + parts[0] + ' → ' + parts[1] + '</div>';
+                }
+            } catch (error) {
+                html += '<div class="result error">❌ Error loading allergies data: ' + error.message + '</div>';
+            }
+            
+            try {
+                const response = await fetch('table_skills_vocabulary.csv');
+                const text = await response.text();
+                const lines = text.split('\n');
+                const dataLines = lines.filter(line => line.trim() && !line.startsWith('english,'));
+                
+                html += '<div class="result success">✅ Table Skills: ' + dataLines.length + ' data rows loaded</div>';
+                
+                if (dataLines.length > 0) {
+                    const firstLine = dataLines[0];
+                    const parts = firstLine.split(',');
+                    html += '<div class="result">📝 Sample data: ' + parts[0] + ' → ' + parts[1] + '</div>';
+                }
+            } catch (error) {
+                html += '<div class="result error">❌ Error loading table skills data: ' + error.message + '</div>';
+            }
+            
+            // Test 3: Check main app
+            html += '<h2>Testing Main App...</h2>';
+            try {
+                const response = await fetch('app.js');
+                if (response.ok) {
+                    html += '<div class="result success">✅ app.js - File exists</div>';
+                } else {
+                    html += '<div class="result error">❌ app.js - File not found</div>';
+                }
+            } catch (error) {
+                html += '<div class="result error">❌ app.js - Error: ' + error.message + '</div>';
+            }
+            
+            results.innerHTML = html;
+        }
+        
+        // Run test when page loads
+        window.addEventListener('load', debugTest);
+    </script>
+</body>
+</html>

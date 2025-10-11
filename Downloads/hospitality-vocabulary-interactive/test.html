@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Vocabulary App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .debug-info {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196F3;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #45a049;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Watermark -->
+    <div class="watermark"></div>
+    
+    <div class="container">
+        <h1>🧪 Test Vocabulary App</h1>
+        
+        <div class="debug-info">
+            <h3>🔍 Debug Information</h3>
+            <p>Mở Developer Tools (F12) để xem console log và debug information.</p>
+            <p>Kiểm tra xem dữ liệu có được load đúng không.</p>
+        </div>
+
+        <div class="test-section">
+            <h3>📊 Data Loading Test</h3>
+            <button class="test-button" onclick="testDataLoading()">Test Data Loading</button>
+            <button class="test-button" onclick="testCategories()">Test Categories</button>
+            <button class="test-button" onclick="testFiltering()">Test Filtering</button>
+            <div id="testResults" class="result"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🔗 Links</h3>
+            <p><a href="index.html" target="_blank">📱 Main App</a></p>
+            <p><a href="allergies_diet_vocabulary.csv" target="_blank">📄 Allergies & Diet CSV</a></p>
+            <p><a href="table_skills_vocabulary.csv" target="_blank">📄 Table Skills CSV</a></p>
+        </div>
+    </div>
+
+    <script>
+        let app = null;
+
+        // Initialize app when page loads
+        window.addEventListener('load', () => {
+            // Import the main app
+            const script = document.createElement('script');
+            script.src = 'app.js';
+            script.onload = () => {
+                console.log('App script loaded');
+                // Wait a bit for app to initialize
+                setTimeout(() => {
+                    app = window.hospitalityApp || new HospitalityApp();
+                }, 1000);
+            };
+            document.head.appendChild(script);
+        });
+
+        function testDataLoading() {
+            const results = document.getElementById('testResults');
+            if (!app) {
+                results.innerHTML = '<p style="color: red;">App not loaded yet. Please wait...</p>';
+                return;
+            }
+
+            const totalData = app.csvData ? app.csvData.length : 0;
+            const basicData = app.vocabularyData ? app.vocabularyData.basic.length : 0;
+            const intermediateData = app.vocabularyData ? app.vocabularyData.intermediate.length : 0;
+            const advancedData = app.vocabularyData ? app.vocabularyData.advanced.length : 0;
+
+            results.innerHTML = `
+                <h4>Data Loading Results:</h4>
+                <p><strong>Total CSV Data:</strong> ${totalData}</p>
+                <p><strong>Basic Vocabulary:</strong> ${basicData}</p>
+                <p><strong>Intermediate Vocabulary:</strong> ${intermediateData}</p>
+                <p><strong>Advanced Vocabulary:</strong> ${advancedData}</p>
+                <p><strong>Status:</strong> ${totalData > 0 ? '✅ Data loaded successfully' : '❌ No data loaded'}</p>
+            `;
+        }
+
+        function testCategories() {
+            const results = document.getElementById('testResults');
+            if (!app || !app.csvData) {
+                results.innerHTML = '<p style="color: red;">No data available for testing.</p>';
+                return;
+            }
+
+            const categories = [...new Set(app.csvData.map(term => term.category))];
+            const allergiesDiet = app.csvData.filter(term => term.category === 'Allergies & Diet');
+            const tableSkills = app.csvData.filter(term => term.category === 'Table Skills');
+
+            results.innerHTML = `
+                <h4>Category Test Results:</h4>
+                <p><strong>Total Categories:</strong> ${categories.length}</p>
+                <p><strong>Allergies & Diet Terms:</strong> ${allergiesDiet.length}</p>
+                <p><strong>Table Skills Terms:</strong> ${tableSkills.length}</p>
+                <p><strong>All Categories:</strong> ${categories.join(', ')}</p>
+                <p><strong>Status:</strong> ${allergiesDiet.length > 0 && tableSkills.length > 0 ? '✅ Both new categories found' : '❌ Missing new categories'}</p>
+            `;
+        }
+
+        function testFiltering() {
+            const results = document.getElementById('testResults');
+            if (!app || !app.csvData) {
+                results.innerHTML = '<p style="color: red;">No data available for testing.</p>';
+                return;
+            }
+
+            // Test filtering by category
+            const allergiesDiet = app.csvData.filter(term => term.category === 'Allergies & Diet');
+            const tableSkills = app.csvData.filter(term => term.category === 'Table Skills');
+            const basicLevel = app.csvData.filter(term => app.mapLevelToKey(term.level) === 'basic');
+
+            results.innerHTML = `
+                <h4>Filtering Test Results:</h4>
+                <p><strong>Allergies & Diet Filter:</strong> ${allergiesDiet.length} terms</p>
+                <p><strong>Table Skills Filter:</strong> ${tableSkills.length} terms</p>
+                <p><strong>Basic Level Filter:</strong> ${basicLevel.length} terms</p>
+                <p><strong>Status:</strong> ${allergiesDiet.length > 0 && tableSkills.length > 0 ? '✅ Filtering works correctly' : '❌ Filtering issues detected'}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

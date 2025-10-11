@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Scenarios - Hospitality Vocabulary</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="app-container">
+        <main class="main-content">
+            <!-- Scenarios Section -->
+            <section id="scenarios" class="content-section active">
+                <div class="scenarios-header">
+                    <h1><� Th�c h�nh t�nh hu�ng chuy�n m�n</h1>
+                    <p>Luy�n t�p v�i c�c t�nh hu�ng th�c t� trong 11 l)nh v�c chuy�n m�n kh�ch s�n</p>
+                </div>
+                
+                <!-- Scenario Filters -->
+                <div class="scenario-filters">
+                    <div class="filter-group">
+                        <label for="scenarioCategoryFilter">=� Chuy�n m�c:</label>
+                        <select id="scenarioCategoryFilter">
+                            <option value="all">T�t c� chuy�n m�c</option>
+                            <option value="Allergies & Diet">=� D� �ng & Ch� � n</option>
+                            <option value="Chuy�n m�n � u�ng"><w Chuy�n m�n � u�ng</option>
+                            <option value="D�ch v� kh�ch h�ng">> D�ch v� kh�ch h�ng</option>
+                            <option value="K� thu�t ch� bi�n">=h<s K� thu�t ch� bi�n</option>
+                            <option value="Marketing & Sales">=� Marketing & Sales</option>
+                            <option value="Ph�n lo�i th�c �n">=� Ph�n lo�i th�c �n</option>
+                            <option value="Phong c�ch ph�c v�"><} Phong c�ch ph�c v�</option>
+                            <option value="Qu�n l� kh�ch s�n"><� Qu�n l� kh�ch s�n</option>
+                            <option value="Table Skills">=� K� nng �t b�n</option>
+                            <option value="V�n h�nh b�p">� V�n h�nh b�p</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="scenarioLevelFilter">=0 C�p �:</label>
+                        <select id="scenarioLevelFilter">
+                            <option value="all">T�t c� c�p �</option>
+                            <option value="basic">=� C� b�n</option>
+                            <option value="intermediate">=� Trung c�p</option>
+                            <option value="advanced">=4 N�ng cao</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button class="btn btn--primary" id="applyScenarioFilters">
+                            <span class="btn-icon">=</span>
+                            <span class="btn-text">�p d�ng b� l�c</span>
+                        </button>
+                        <button class="btn btn--outline" id="resetScenarioFilters">
+                            <span class="btn-icon">�</span>
+                            <span class="btn-text">�t l�i</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Scenario Statistics -->
+                <div class="scenario-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalScenarioCount">20</span>
+                        <span class="stat-label">T�ng s� t�nh hu�ng</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="filteredScenarioCount">20</span>
+                        <span class="stat-label">ang hi�n th�</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="completedScenarioCount">0</span>
+                        <span class="stat-label">� ho�n th�nh</span>
+                    </div>
+                </div>
+                
+                <!-- Scenario Categories Grid -->
+                <div class="scenario-categories-grid" id="scenarioCategoriesGrid">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+                
+                <!-- Current Scenario Container -->
+                <div class="scenario-container" id="currentScenarioContainer" style="display: none;">
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <div class="scenario-meta">
+                                <span class="scenario-category" id="currentScenarioCategory">Chuy�n m�c</span>
+                                <span class="scenario-level" id="currentScenarioLevel">C�p �</span>
+                            </div>
+                            <div class="scenario-progress">
+                                <span id="scenarioProgress">1/10</span>
+                            </div>
+                        </div>
+                        
+                        <h3 id="scenarioTitle">T�nh hu�ng</h3>
+                        <p id="scenarioSituation">M� t� t�nh hu�ng...</p>
+                        
+                        <div class="scenario-options">
+                            <h4>B�n s� x� l� nh� th� n�o?</h4>
+                            <div class="scenario-choices">
+                                <button class="scenario-choice" data-choice="0">L�a ch�n 1</button>
+                                <button class="scenario-choice" data-choice="1">L�a ch�n 2</button>
+                                <button class="scenario-choice" data-choice="2">L�a ch�n 3</button>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-feedback hidden" id="scenarioFeedback">
+                            <h4>Ph�n h�i:</h4>
+                            <p id="scenarioExplanation"></p>
+                            <div class="key-phrases" id="keyPhrases">
+                                <h5>Thu�t ng� chuy�n m�n:</h5>
+                                <div class="phrases-list" id="phrasesList"></div>
+                            </div>
+                            <div class="scenario-navigation">
+                                <button class="btn btn--outline" id="prevScenario" disabled>� Tr��c</button>
+                                <button class="btn btn--primary" id="nextScenario">Ti�p theo �</button>
+                                <button class="btn btn--secondary" id="backToCategories">Quay l�i danh m�c</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Simplified Scenario System for Demo
+        class ScenarioDemo {
+            constructor() {
+                this.scenariosByCategory = {
+                    "Allergies & Diet": [
+                        {
+                            title: "Kh�ch d� �ng gluten",
+                            situation: "Kh�ch h�ng h�i v� m�n n kh�ng ch�a gluten v� t� ra lo l�ng v� t�nh tr�ng d� �ng nghi�m tr�ng.",
+                            options: [
+                                "�m b�o v�i kh�ch v� quy tr�nh an to�n v� g�i � m�n ph� h�p",
+                                "Ch� g�i � salad � an to�n nh�t",
+                                "H�i kh�ch mang thu�c ch�ng d� �ng ch�a"
+                            ],
+                            correct: 0,
+                            explanation: "Lu�n �m b�o an to�n tuy�t �i, giao ti�p r� r�ng v� quy tr�nh v� l�a ch�n th�c ph�m.",
+                            level: "basic",
+                            keyPhrases: ["gluten-free", "allergy alert", "safe preparation", "cross-contamination"]
+                        }
+                    ],
+                    "D�ch v� kh�ch h�ng": [
+                        {
+                            title: "Kh�ch ph�n n�n v� th�i gian ch�",
+                            situation: "Kh�ch h�ng ph�n n�n � ch� 30 ph�t m� m�n n ch�a ��c ph�c v�, t� ra b�c b�i.",
+                            options: [
+                                "Xin l�i ch�n th�nh, gi�i th�ch l� do v� �a ra gi�i ph�p b� �p",
+                                "Ch� xin l�i v� h�a m�n s� �n s�m",
+                                "� l�i cho b�p v� kh�ng ch�u tr�ch nhi�m"
+                            ],
+                            correct: 0,
+                            explanation: "Ch�u tr�ch nhi�m, giao ti�p t�ch c�c v� �a ra gi�i ph�p c� th� � kh�i ph�c l�ng tin.",
+                            level: "basic",
+                            keyPhrases: ["sincere apology", "service recovery", "compensation", "customer satisfaction"]
+                        }
+                    ]
+                };
+                
+                this.currentScenarioIndex = 0;
+                this.currentCategory = null;
+                this.filteredScenarios = [];
+                this.completedScenarios = [];
+                
+                this.init();
+            }
+            
+            init() {
+                this.renderScenarioCategories();
+                this.setupEventListeners();
+            }
+            
+            getCategoryIcon(category) {
+                const icons = {
+                    'Allergies & Diet': '=�',
+                    'D�ch v� kh�ch h�ng': '>'
+                };
+                return icons[category] || '=�';
+            }
+            
+            renderScenarioCategories() {
+                const container = document.getElementById('scenarioCategoriesGrid');
+                container.innerHTML = '';
+
+                Object.entries(this.scenariosByCategory).forEach(([category, scenarios]) => {
+                    const categoryCard = document.createElement('div');
+                    categoryCard.className = 'scenario-category-card';
+                    categoryCard.innerHTML = `
+                        <h3>${this.getCategoryIcon(category)} ${category}</h3>
+                        <p>Luy�n t�p ${scenarios.length} t�nh hu�ng th�c t� trong l)nh v�c ${category.toLowerCase()}</p>
+                        <div class="scenario-category-stats">
+                            <span class="scenario-count">${scenarios.length} t�nh hu�ng</span>
+                            <span class="progress">0% ho�n th�nh</span>
+                        </div>
+                    `;
+                    
+                    categoryCard.addEventListener('click', () => {
+                        this.startCategoryScenarios(category);
+                    });
+                    
+                    container.appendChild(categoryCard);
+                });
+            }
+            
+            startCategoryScenarios(category) {
+                this.currentCategory = category;
+                this.filteredScenarios = [...this.scenariosByCategory[category]];
+                this.currentScenarioIndex = 0;
+                
+                document.getElementById('scenarioCategoriesGrid').style.display = 'none';
+                document.getElementById('currentScenarioContainer').style.display = 'block';
+                
+                this.showCurrentScenario();
+            }
+            
+            showCurrentScenario() {
+                if (this.currentScenarioIndex >= this.filteredScenarios.length) {
+                    alert('Ch�c m�ng! B�n � ho�n th�nh t�t c� t�nh hu�ng!');
+                    this.backToCategories();
+                    return;
+                }
+
+                const scenario = this.filteredScenarios[this.currentScenarioIndex];
+                
+                document.getElementById('currentScenarioCategory').textContent = this.currentCategory;
+                document.getElementById('currentScenarioLevel').textContent = this.getLevelLabel(scenario.level);
+                document.getElementById('scenarioProgress').textContent = `${this.currentScenarioIndex + 1}/${this.filteredScenarios.length}`;
+                
+                document.getElementById('scenarioTitle').textContent = scenario.title;
+                document.getElementById('scenarioSituation').textContent = scenario.situation;
+
+                const choices = document.querySelectorAll('.scenario-choice');
+                choices.forEach((choice, index) => {
+                    if (scenario.options[index]) {
+                        choice.textContent = scenario.options[index];
+                        choice.classList.remove('selected');
+                        choice.disabled = false;
+                        choice.style.display = 'block';
+                    } else {
+                        choice.style.display = 'none';
+                    }
+                });
+
+                document.getElementById('scenarioFeedback').classList.add('hidden');
+                document.getElementById('prevScenario').disabled = this.currentScenarioIndex === 0;
+            }
+            
+            getLevelLabel(level) {
+                const labels = {
+                    'basic': '=� C� b�n',
+                    'intermediate': '=� Trung c�p',
+                    'advanced': '=4 N�ng cao'
+                };
+                return labels[level] || '=� C� b�n';
+            }
+            
+            handleScenarioChoice(e) {
+                if (e.target.classList.contains('selected') || e.target.disabled) return;
+                
+                document.querySelectorAll('.scenario-choice').forEach(choice => {
+                    choice.classList.remove('selected');
+                });
+                e.target.classList.add('selected');
+
+                setTimeout(() => {
+                    const scenario = this.filteredScenarios[this.currentScenarioIndex];
+                    const selectedIndex = parseInt(e.target.dataset.choice);
+                    const isCorrect = selectedIndex === scenario.correct;
+
+                    document.querySelectorAll('.scenario-choice').forEach(choice => {
+                        choice.disabled = true;
+                    });
+
+                    const feedback = document.getElementById('scenarioFeedback');
+                    const explanation = document.getElementById('scenarioExplanation');
+                    const phrasesList = document.getElementById('phrasesList');
+
+                    explanation.textContent = scenario.explanation;
+                    
+                    phrasesList.innerHTML = '';
+                    scenario.keyPhrases.forEach(phrase => {
+                        const tag = document.createElement('span');
+                        tag.className = 'phrase-tag';
+                        tag.textContent = phrase;
+                        phrasesList.appendChild(tag);
+                    });
+                    
+                    feedback.classList.remove('hidden');
+                    
+                    alert(isCorrect ? 'Ch�nh x�c! Tuy�t v�i!' : 'Kh�ng �ng, nh�ng �y l� c� h�i h�c h�i!');
+                }, 500);
+            }
+            
+            nextScenario() {
+                this.currentScenarioIndex++;
+                this.showCurrentScenario();
+            }
+            
+            prevScenario() {
+                if (this.currentScenarioIndex > 0) {
+                    this.currentScenarioIndex--;
+                    this.showCurrentScenario();
+                }
+            }
+            
+            backToCategories() {
+                document.getElementById('currentScenarioContainer').style.display = 'none';
+                document.getElementById('scenarioCategoriesGrid').style.display = 'grid';
+                this.currentCategory = null;
+            }
+            
+            setupEventListeners() {
+                document.querySelectorAll('.scenario-choice').forEach(choice => {
+                    choice.addEventListener('click', (e) => this.handleScenarioChoice(e));
+                });
+
+                document.getElementById('nextScenario')?.addEventListener('click', () => this.nextScenario());
+                document.getElementById('prevScenario')?.addEventListener('click', () => this.prevScenario());
+                document.getElementById('backToCategories')?.addEventListener('click', () => this.backToCategories());
+            }
+        }
+        
+        // Initialize demo when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ScenarioDemo();
+        });
+    </script>
+</body>
+</html>

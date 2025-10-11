@@ -1,0 +1,291 @@
+english,vietnamese,ipa,category,definition,example,level
+Check-in,Nhận phòng,[tʃek ɪn],Front Office,Process of registering guest arrival,Check-in time is 3:00 PM.,Basic
+Check-out,Trả phòng,[tʃek aʊt],Front Office,Process of guest departure,Check-out time is 11:00 AM.,Basic
+Reservation,Đặt phòng,[ˌrezərˈveɪʃən],Front Office,Advance booking for accommodation,Your reservation is confirmed.,Basic
+Reception,Lễ tân,[rɪˈsepʃən],Front Office,Front desk area,Please go to reception for assistance.,Basic
+Guest,Khách,[gest],Front Office,Hotel customer,Our guest needs extra towels.,Basic
+Room Key,Chìa khóa phòng,[ruːm kiː],Front Office,Access card for room,Here is your room key.,Basic
+Lobby,Sảnh khách sạn,[ˈlɑːbi],Front Office,Main entrance area,Please wait in the lobby.,Basic
+Receptionist,Nhân viên lễ tân,[rɪˈsepʃənɪst],Front Office,Front desk staff,The receptionist will help you.,Basic
+Luggage,Hành lý,[ˈlʌgɪdʒ],Front Office,Guest's bags,Where is your luggage?,Basic
+Porter,Nhân viên khuân vác,[ˈpɔːrtər],Front Office,Staff who carries luggage,The porter will help with bags.,Basic
+Concierge,Nhân viên hỗ trợ,[ˈkɑːnsiˌerʒ],Front Office,Guest assistance staff,Ask the concierge for directions.,Basic
+Registration,Đăng ký,[ˌredʒɪˈstreɪʃən],Front Office,Check-in process,Please complete registration.,Basic
+Identification,Giấy tờ tùy thân,[aɪˌdentɪfɪˈkeɪʃən],Front Office,ID document,May I see your identification?,Basic
+Credit Card,Thẻ tín dụng,[ˈkredɪt kɑːrd],Front Office,Payment card,We need a credit card for deposit.,Basic
+Deposit,Tiền đặt cọc,[dɪˈpɑːzɪt],Front Office,Security payment,A deposit is required.,Basic
+Bill,Hóa đơn,[bɪl],Front Office,Invoice for services,Here is your bill.,Basic
+Payment,Thanh toán,[ˈpeɪmənt],Front Office,Money for services,How would you like to make payment?,Basic
+Cash,Tiền mặt,[kæʃ],Front Office,Physical money,Do you accept cash?,Basic
+Receipt,Biên lai,[rɪˈsiːt],Front Office,Payment proof,Keep your receipt.,Basic
+Information,Thông tin,[ˌɪnfərˈmeɪʃən],Front Office,Details or data,Do you need any information?,Basic
+Address,Địa chỉ,[ˈædres],Front Office,Location details,What is your home address?,Basic
+Phone Number,Số điện thoại,[foʊn ˈnʌmbər],Front Office,Contact number,May I have your phone number?,Basic
+Email,Thư điện tử,[ˈiːmeɪl],Front Office,Electronic mail,We'll send confirmation to your email.,Basic
+Confirmation,Xác nhận,[ˌkɑːnfərˈmeɪʃən],Front Office,Verification,Here is your confirmation number.,Basic
+Arrival,Đến,[əˈraɪvəl],Front Office,Coming to hotel,What is your arrival date?,Basic
+Departure,Khởi hành,[dɪˈpɑːrtʃər],Front Office,Leaving hotel,Your departure is tomorrow.,Basic
+Stay,Lưu trú,[steɪ],Front Office,Time at hotel,How long is your stay?,Basic
+Night,Đêm,[naɪt],Front Office,24-hour period,You booked for three nights.,Basic
+Welcome,Chào mừng,[ˈwelkəm],Front Office,Greeting,Welcome to our hotel.,Basic
+Thank you,Cảm ơn,[θæŋk juː],Front Office,Expression of gratitude,Thank you for choosing us.,Basic
+Single Room,Phòng đơn,[ˈsɪŋgəl ruːm],Rooms,Room for one person,I need a single room.,Basic
+Double Room,Phòng đôi,[ˈdʌbəl ruːm],Rooms,Room for two people,We have a double room available.,Basic
+Twin Room,Phòng hai giường đơn,[twɪn ruːm],Rooms,Room with two single beds,Would you prefer a twin room?,Basic
+Suite,Phòng suite,[swiːt],Rooms,Luxury room with living area,The presidential suite is available.,Basic
+Bedroom,Phòng ngủ,[ˈbedruːm],Rooms,Sleeping area,The bedroom has a king bed.,Basic
+Bathroom,Phòng tắm,[ˈbæθruːm],Rooms,Washing facilities,The bathroom has a shower.,Basic
+Bed,Giường,[bed],Rooms,Sleeping furniture,The bed is very comfortable.,Basic
+Pillow,Gối,[ˈpɪloʊ],Rooms,Head rest,Would you like extra pillows?,Basic
+Blanket,Chăn,[ˈblæŋkɪt],Rooms,Bed covering,There are extra blankets in the closet.,Basic
+Towel,Khăn tắm,[ˈtaʊəl],Rooms,Drying cloth,Fresh towels are provided daily.,Basic
+Shower,Vòi sen,[ˈʃaʊər],Rooms,Washing facility,The shower has hot water.,Basic
+Television,Tivi,[ˈteləˌvɪʒən],Rooms,TV set,The television has cable channels.,Basic
+Air Conditioning,Máy lạnh,[er kənˈdɪʃənɪŋ],Rooms,Climate control,Please adjust the air conditioning.,Basic
+Heating,Sưởi ấm,[ˈhiːtɪŋ],Rooms,Warmth system,The heating can be controlled.,Basic
+Window,Cửa sổ,[ˈwɪndoʊ],Rooms,Glass opening,The window has a city view.,Basic
+Balcony,Ban công,[ˈbælkəni],Rooms,Outdoor platform,The room has a private balcony.,Basic
+View,Tầm nhìn,[vjuː],Rooms,Scenic outlook,You have an ocean view.,Basic
+Closet,Tủ quần áo,[ˈklɑːzət],Rooms,Storage space,Hang your clothes in the closet.,Basic
+Safe,Két sắt,[seɪf],Rooms,Security box,Valuables go in the safe.,Basic
+Mini Bar,Tủ lạnh nhỏ,[ˈmɪni bɑːr],Rooms,Small refrigerator,The mini bar is stocked.,Basic
+Phone,Điện thoại,[foʊn],Rooms,Communication device,Use the phone to call reception.,Basic
+Internet,Internet,[ˈɪntərnet],Rooms,Online connection,Free internet is available.,Basic
+WiFi,WiFi,[ˈwaɪfaɪ],Rooms,Wireless internet,The WiFi password is provided.,Basic
+Key Card,Thẻ từ,[kiː kɑːrd],Rooms,Electronic room key,Use your key card to enter.,Basic
+Room Service,Dịch vụ phòng,[ruːm ˈsɜːrvɪs],Rooms,In-room dining,Room service is available 24/7.,Basic
+Housekeeping,Bộ phận dọn phòng,[ˈhaʊskiːpɪŋ],Housekeeping,Room cleaning service,Housekeeping will clean your room.,Basic
+Clean,Dọn dẹp,[kliːn],Housekeeping,Make tidy,We clean rooms daily.,Basic
+Dirty,Bẩn,[ˈdɜːrti],Housekeeping,Not clean,Please replace dirty towels.,Basic
+Fresh,Tươi mới,[freʃ],Housekeeping,New and clean,Fresh linens are provided.,Basic
+Change,Thay đổi,[tʃeɪndʒ],Housekeeping,Replace with new,Please change the sheets.,Basic
+Replace,Thay thế,[rɪˈpleɪs],Housekeeping,Put new instead,We'll replace the towels.,Basic
+Vacuum,Hút bụi,[ˈvækjuːm],Housekeeping,Clean carpet,Please vacuum the carpet.,Basic
+Dust,Lau bụi,[dʌst],Housekeeping,Remove dust particles,Dust the furniture daily.,Basic
+Polish,Đánh bóng,[ˈpɑːlɪʃ],Housekeeping,Make shiny,Polish the mirrors.,Basic
+Soap,Xà phòng,[soʊp],Housekeeping,Cleaning agent,There's soap in the bathroom.,Basic
+Shampoo,Dầu gội,[ʃæmˈpuː],Housekeeping,Hair washing product,Complimentary shampoo is provided.,Basic
+Amenities,Tiện nghi,[əˈmenətiz],Housekeeping,Guest supplies,All amenities are restocked.,Basic
+Laundry,Giặt ủi,[ˈlɔːndri],Housekeeping,Washing clothes,Laundry service is available.,Basic
+Iron,Bàn ủi,[ˈaɪərn],Housekeeping,Clothing presser,An iron is in the closet.,Basic
+Hanger,Móc treo,[ˈhæŋər],Housekeeping,Clothes holder,Extra hangers are available.,Basic
+Tissue,Giấy ăn,[ˈtɪʃuː],Housekeeping,Paper towel,Tissues are by the bed.,Basic
+Toilet Paper,Giấy vệ sinh,[ˈtɔɪlət ˌpeɪpər],Housekeeping,Bathroom tissue,We need more toilet paper.,Basic
+Trash,Rác,[træʃ],Housekeeping,Waste material,Empty the trash bin.,Basic
+Lost and Found,Đồ thất lạc,[lɔːst ænd faʊnd],Housekeeping,Missing items office,Check lost and found.,Basic
+Maintenance,Bảo trì,[ˈmeɪntənəns],Housekeeping,Repair service,Call maintenance for repairs.,Basic
+Restaurant,Nhà hàng,[ˈrestrɑːnt],F&B,Dining establishment,Our restaurant serves breakfast.,Basic
+Menu,Thực đơn,[ˈmenjuː],F&B,Food list,Here is the menu.,Basic
+Order,Đặt món,[ˈɔːrdər],F&B,Request food,Are you ready to order?,Basic
+Food,Đồ ăn,[fuːd],F&B,Edible items,The food is delicious.,Basic
+Drink,Đồ uống,[drɪŋk],F&B,Beverage,What would you like to drink?,Basic
+Water,Nước,[ˈwɔːtər],F&B,Clear liquid,Would you like still or sparkling water?,Basic
+Coffee,Cà phê,[ˈkɔːfi],F&B,Hot beverage,Coffee is served all day.,Basic
+Tea,Trà,[tiː],F&B,Leaf beverage,We have various teas.,Basic
+Breakfast,Bữa sáng,[ˈbrekfəst],F&B,Morning meal,Breakfast is from 6-10 AM.,Basic
+Lunch,Bữa trưa,[lʌntʃ],F&B,Midday meal,Lunch is served until 3 PM.,Basic
+Dinner,Bữa tối,[ˈdɪnər],F&B,Evening meal,Dinner starts at 6 PM.,Basic
+Buffet,Tiệc buffet,[bəˈfeɪ],F&B,Self-service meal,We have a breakfast buffet.,Basic
+Table,Bàn,[ˈteɪbəl],F&B,Dining surface,Your table is ready.,Basic
+Chair,Ghế,[tʃer],F&B,Seating furniture,Please take a seat on this chair.,Basic
+Waiter,Nhân viên phục vụ nam,[ˈweɪtər],F&B,Male server,Your waiter will take your order.,Basic
+Waitress,Nhân viên phục vụ nữ,[ˈweɪtrəs],F&B,Female server,The waitress is very helpful.,Basic
+Plate,Đĩa,[pleɪt],F&B,Food dish,Clean plates are provided.,Basic
+Cup,Tách,[kʌp],F&B,Drink container,Would you like a cup of coffee?,Basic
+Glass,Ly,[glæs],F&B,Drink vessel,Here's a glass of water.,Basic
+Fork,Dĩa,[fɔːrk],F&B,Eating utensil,You need a fork for salad.,Basic
+Knife,Dao,[naɪf],F&B,Cutting utensil,Use the knife to cut meat.,Basic
+Spoon,Thìa,[spuːn],F&B,Scooping utensil,Here's a spoon for soup.,Basic
+Napkin,Khăn ăn,[ˈnæpkɪn],F&B,Cleaning cloth,Use your napkin.,Basic
+Salt,Muối,[sɔːlt],F&B,Seasoning,Would you like salt and pepper?,Basic
+Pepper,Tiêu,[ˈpepər],F&B,Spice,Black pepper is on the table.,Basic
+Service,Dịch vụ,[ˈsɜːrvɪs],Service,Assistance provided,We provide excellent service.,Basic
+Help,Giúp đỡ,[help],Service,Assistance,How can I help you?,Basic
+Please,Làm ơn,[pliːz],Service,Polite request,Please wait a moment.,Basic
+Excuse me,Xin lỗi,[ɪkˈskjuːz miː],Service,Polite attention getter,"Excuse me, could you help?",Basic
+Sorry,Xin lỗi,[ˈsɔːri],Service,Apology,Sorry for the inconvenience.,Basic
+Problem,Vấn đề,[ˈprɑːbləm],Service,Issue or difficulty,Is there a problem?,Basic
+Solution,Giải pháp,[səˈluːʃən],Service,Answer to problem,We have a solution.,Basic
+Complain,Phù nàn,[kəmˈpleɪn],Service,Express dissatisfaction,The guest wants to complain.,Basic
+Satisfied,Hài lòng,[ˈsætɪsfaɪd],Service,Content with service,Are you satisfied?,Basic
+Comfortable,Thoải mái,[ˈkʌmftəbəl],Service,At ease,Is your room comfortable?,Basic
+Quality,Chất lượng,[ˈkwɑːləti],Service,Standard of service,We maintain high quality.,Basic
+Fast,Nhanh,[fæst],Service,Quick speed,We provide fast service.,Basic
+Slow,Chậm,[sloʊ],Service,Not quick,Service seems slow today.,Basic
+Busy,Bận,[ˈbɪzi],Service,Occupied with work,We're busy tonight.,Basic
+Available,Có sẵn,[əˈveɪləbəl],Service,Ready for use,A room is available.,Basic
+Wait,Chờ đợi,[weɪt],Service,Stay until ready,Please wait here.,Basic
+Ready,Sẵn sàng,[ˈredi],Service,Prepared,Your room is ready.,Basic
+Finished,Hoàn thành,[ˈfɪnɪʃt],Service,Completed,Are you finished eating?,Basic
+Urgent,Khẩn cấp,[ˈɜːrdʒənt],Service,Needs immediate attention,This is urgent.,Basic
+Important,Quan trọng,[ɪmˈpɔːrtənt],Service,Significant,This is important information.,Basic
+Question,Câu hỏi,[ˈkwestʃən],Service,Inquiry,Do you have any questions?,Basic
+Answer,Trả lời,[ˈænsər],Service,Response,I can answer that.,Basic
+Understand,Hiểu,[ˌʌndərˈstænd],Service,Comprehend,Do you understand?,Basic
+Repeat,Lặp lại,[rɪˈpiːt],Service,Say again,Could you repeat that?,Basic
+Speak,Nói,[spiːk],Service,Talk,Do you speak English?,Basic
+Time,Thời gian,[taɪm],Basic,Duration or moment,What time is it?,Basic
+Hour,Giờ,[aʊər],Basic,60 minutes,It's one hour to dinner.,Basic
+Minute,Phút,[ˈmɪnɪt],Basic,60 seconds,Wait five minutes.,Basic
+Morning,Buổi sáng,[ˈmɔːrnɪŋ],Basic,Early day,Good morning!,Basic
+Afternoon,Buổi chiều,[ˌæftərˈnuːn],Basic,After noon,See you this afternoon.,Basic
+Evening,Buổi tối,[ˈiːvnɪŋ],Basic,Late day,Good evening!,Basic
+Today,Hôm nay,[təˈdeɪ],Basic,This day,Today is busy.,Basic
+Tomorrow,Ngày mai,[təˈmɑːroʊ],Basic,Next day,See you tomorrow.,Basic
+Yesterday,Hôm qua,[ˈjestərdeɪ],Basic,Previous day,You arrived yesterday.,Basic
+Week,Tuần,[wiːk],Basic,Seven days,Stay for one week.,Basic
+Left,Trái,[left],Basic,Left side,Turn left here.,Basic
+Right,Phải,[raɪt],Basic,Right side,The elevator is on the right.,Basic
+Straight,Thẳng,[streɪt],Basic,Direct path,Go straight ahead.,Basic
+Up,Lên,[ʌp],Basic,Higher direction,Go up to the third floor.,Basic
+Down,Xuống,[daʊn],Basic,Lower direction,Come down to the lobby.,Basic
+Near,Gần,[nɪr],Basic,Close distance,The restaurant is near.,Basic
+Far,Xa,[fɑːr],Basic,Long distance,The airport is far.,Basic
+Here,Đây,[hɪr],Basic,This place,Wait here please.,Basic
+There,Đó,[ðer],Basic,That place,The restaurant is over there.,Basic
+Where,Đâu,[wer],Basic,What place,Where is the bathroom?,Basic
+Floor,Tầng,[flɔːr],Basic,Building level,Your room is on the 5th floor.,Basic
+Elevator,Thang máy,[ˈeləˌveɪtər],Basic,Lift,Take the elevator up.,Basic
+Stairs,Cầu thang,[sterz],Basic,Steps,The stairs are by the elevator.,Basic
+Exit,Lối ra,[ˈegzɪt],Basic,Way out,The exit is this way.,Basic
+Entrance,Lối vào,[ˈentrəns],Basic,Way in,Use the main entrance.,Basic
+Hotel,Khách sạn,[hoʊˈtel],Basic,Accommodation building,Welcome to our hotel.,Basic
+Motel,Khách sạn ven đường,[moʊˈtel],Basic,Highway accommodation,The motel is near the highway.,Basic
+Resort,Khu nghỉ dưỡng,[rɪˈzɔːrt],Basic,Luxury vacation place,This resort has a spa.,Basic
+Hostel,Nhà trọ,[ˈhɑːstəl],Basic,Budget accommodation,The hostel has shared rooms.,Basic
+Inn,Quán trọ,[ɪn],Basic,Small hotel,The old inn is charming.,Basic
+Lodge,Nhà nghỉ,[lɑːdʒ],Basic,Country accommodation,The mountain lodge is cozy.,Basic
+Villa,Biệt thự,[ˈvɪlə],Basic,Luxury house,The beach villa is beautiful.,Basic
+Apartment,Căn hộ,[əˈpɑːrtmənt],Basic,Self-contained unit,The apartment has a kitchen.,Basic
+Studio,Phòng studio,[ˈstuːdioʊ],Basic,One-room unit,The studio is perfect for one person.,Basic
+Penthouse,Căn penthouse,[ˈpenthaʊs],Basic,Top floor luxury,The penthouse has great views.,Basic
+Rooftop,Sân thượng,[ˈruːftɑːp],Basic,Top of building,The rooftop bar is open.,Basic
+Garden,Vườn,[ˈgɑːrdən],Basic,Outdoor plant area,The hotel has a beautiful garden.,Basic
+Pool,Hồ bơi,[puːl],Basic,Swimming area,The pool is open until 10 PM.,Basic
+Spa,Spa,[spɑː],Basic,Wellness center,Book a spa treatment.,Basic
+Gym,Phòng gym,[dʒɪm],Basic,Exercise room,The gym is open 24/7.,Basic
+Library,Thư viện,[ˈlaɪbreri],Basic,Book room,The library is quiet.,Basic
+Lounge,Phòng chờ,[laʊndʒ],Basic,Relaxation area,Wait in the lounge.,Basic
+Bar,Quầy bar,[bɑːr],Basic,Drink service area,The bar serves cocktails.,Basic
+Restaurant,Nhà hàng,[ˈrestrɑːnt],Basic,Dining place,The restaurant is on the second floor.,Basic
+Café,Quán cà phê,[kæˈfeɪ],Basic,Coffee shop,The café serves breakfast.,Basic
+Shop,Cửa hàng,[ʃɑːp],Basic,Retail store,The gift shop is in the lobby.,Basic
+Bank,Ngân hàng,[bæŋk],Basic,Financial institution,There's a bank nearby.,Basic
+ATM,Máy rút tiền,[eɪ tiː em],Basic,Cash machine,The ATM is in the lobby.,Basic
+Pharmacy,Hiệu thuốc,[ˈfɑːrməsi],Basic,Medicine store,The pharmacy is open 24/7.,Basic
+Hospital,Bệnh viện,[ˈhɑːspɪtəl],Basic,Medical center,The hospital is 5 minutes away.,Basic
+Police,Cảnh sát,[pəˈliːs],Basic,Law enforcement,Call the police if needed.,Basic
+Fire Department,Cứu hỏa,[faɪər dɪˈpɑːrtmənt],Basic,Emergency service,Call fire department for emergency.,Basic
+Taxi,Taxi,[ˈtæksi],Basic,Cab service,Call a taxi from reception.,Basic
+Bus,Xe buýt,[bʌs],Basic,Public transport,The bus stop is outside.,Basic
+Train,Xe lửa,[treɪn],Basic,Rail transport,The train station is nearby.,Basic
+Airport,Sân bay,[ˈerpɔːrt],Basic,Air transport hub,The airport is 30 minutes away.,Basic
+Station,Ga,[ˈsteɪʃən],Basic,Transport hub,The train station is close.,Basic
+Parking,Bãi đỗ xe,[ˈpɑːrkɪŋ],Basic,Car storage area,Valet parking is available.,Basic
+Valet,Dịch vụ đỗ xe,[væˈleɪ],Basic,Parking service,Valet parking costs $20.,Basic
+Garage,Nhà để xe,[gəˈrɑːʒ],Basic,Car storage building,The garage is underground.,Basic
+Lift,Thang máy,[lɪft],Basic,Elevator,Take the lift to your floor.,Basic
+Stairs,Cầu thang,[sterz],Basic,Steps,Use the stairs for exercise.,Basic
+Corridor,Hành lang,[ˈkɔːrɪdɔːr],Basic,Hallway,Your room is down the corridor.,Basic
+Hall,Sảnh,[hɔːl],Basic,Large room,The wedding hall is beautiful.,Basic
+Meeting Room,Phòng họp,[ˈmiːtɪŋ ruːm],Basic,Conference space,Book a meeting room.,Basic
+Conference,Hội nghị,[ˈkɑːnfərəns],Basic,Professional meeting,The conference starts at 9 AM.,Basic
+Event,Sự kiện,[ɪˈvent],Basic,Special occasion,We host many events.,Basic
+Wedding,Đám cưới,[ˈwedɪŋ],Basic,Marriage ceremony,The wedding is tomorrow.,Basic
+Party,Tiệc,[ˈpɑːrti],Basic,Celebration,The birthday party is tonight.,Basic
+Birthday,Sinh nhật,[ˈbɜːrθdeɪ],Basic,Anniversary of birth,Happy birthday!,Basic
+Anniversary,Kỷ niệm,[ˌænɪˈvɜːrsəri],Basic,Yearly celebration,Happy anniversary!,Basic
+Celebration,Lễ kỷ niệm,[ˌseləˈbreɪʃən],Basic,Special event,Join our celebration.,Basic
+Holiday,Ngày lễ,[ˈhɑːlədeɪ],Basic,Special day,Happy holidays!,Basic
+Vacation,Kỳ nghỉ,[vəˈkeɪʃən],Basic,Time off,Enjoy your vacation.,Basic
+Trip,Chuyến đi,[trɪp],Basic,Journey,Have a good trip.,Basic
+Journey,Hành trình,[ˈdʒɜːrni],Basic,Travel,Safe journey.,Basic
+Travel,Du lịch,[ˈtrævəl],Basic,Going places,Travel safely.,Basic
+Tour,Tham quan,[tʊr],Basic,Guided visit,Join our city tour.,Basic
+Guide,Hướng dẫn viên,[gaɪd],Basic,Tour leader,The guide is very knowledgeable.,Basic
+Map,Bản đồ,[mæp],Basic,Location chart,Here's a city map.,Basic
+Direction,Hướng,[dəˈrekʃən],Basic,Way to go,Which direction?,Basic
+Location,Vị trí,[loʊˈkeɪʃən],Basic,Place,What's your location?,Basic
+Address,Địa chỉ,[ˈædres],Basic,Location details,What's your address?,Basic
+City,Thành phố,[ˈsɪti],Basic,Urban area,This is a beautiful city.,Basic
+Town,Thị trấn,[taʊn],Basic,Small city,The town is charming.,Basic
+Village,Làng,[ˈvɪlɪdʒ],Basic,Small community,The village is peaceful.,Basic
+Country,Quốc gia,[ˈkʌntri],Basic,Nation,Which country are you from?,Basic
+State,Tiểu bang,[steɪt],Basic,Region,What state are you from?,Basic
+Province,Tỉnh,[ˈprɑːvɪns],Basic,Administrative area,Which province?,Basic
+District,Quận,[ˈdɪstrɪkt],Basic,City area,Which district?,Basic
+Street,Đường,[striːt],Basic,Road,What street?,Basic
+Avenue,Đại lộ,[ˈævənuː],Basic,Wide street,Walk down the avenue.,Basic
+Road,Đường,[roʊd],Basic,Path for vehicles,The road is busy.,Basic
+Bridge,Cầu,[brɪdʒ],Basic,Water crossing,Cross the bridge.,Basic
+River,Sông,[ˈrɪvər],Basic,Water body,The river is beautiful.,Basic
+Lake,Hồ,[leɪk],Basic,Water body,The lake is calm.,Basic
+Ocean,Đại dương,[ˈoʊʃən],Basic,Sea,The ocean is vast.,Basic
+Sea,Biển,[siː],Basic,Water body,The sea is blue.,Basic
+Mountain,Núi,[ˈmaʊntən],Basic,High land,The mountain is tall.,Basic
+Hill,Đồi,[hɪl],Basic,Small mountain,The hill is green.,Basic
+Forest,Rừng,[ˈfɔːrəst],Basic,Tree area,The forest is dense.,Basic
+Park,Công viên,[pɑːrk],Basic,Green space,The park is lovely.,Basic
+Beach,Bãi biển,[biːtʃ],Basic,Sandy shore,The beach is clean.,Basic
+Island,Đảo,[ˈaɪlənd],Basic,Land in water,The island is tropical.,Basic
+Desert,Sa mạc,[ˈdezərt],Basic,Dry land,The desert is hot.,Basic
+Weather,Thời tiết,[ˈweðər],Basic,Climate condition,How's the weather?,Basic
+Sun,Mặt trời,[sʌn],Basic,Star,The sun is shining.,Basic
+Moon,Mặt trăng,[muːn],Basic,Satellite,The moon is full.,Basic
+Star,Ngôi sao,[stɑːr],Basic,Celestial body,The stars are bright.,Basic
+Rain,Mưa,[reɪn],Basic,Water from sky,It's raining.,Basic
+Snow,Tuyết,[snoʊ],Basic,Frozen water,It's snowing.,Basic
+Wind,Gió,[wɪnd],Basic,Air movement,The wind is strong.,Basic
+Cloud,Mây,[klaʊd],Basic,Sky vapor,The clouds are white.,Basic
+Hot,Nóng,[hɑːt],Basic,High temperature,It's hot today.,Basic
+Cold,Lạnh,[koʊld],Basic,Low temperature,It's cold today.,Basic
+Warm,Ấm,[wɔːrm],Basic,Comfortable heat,It's warm inside.,Basic
+Cool,Mát,[kuːl],Basic,Comfortable cold,It's cool outside.,Basic
+Dry,Khô,[draɪ],Basic,No moisture,The air is dry.,Basic
+Wet,Ướt,[wet],Basic,With moisture,The ground is wet.,Basic
+Light,Ánh sáng,[laɪt],Basic,Brightness,Turn on the light.,Basic
+Dark,Tối,[dɑːrk],Basic,No light,It's dark outside.,Basic
+Big,Lớn,[bɪg],Basic,Large size,The room is big.,Basic
+Small,Nhỏ,[smɔːl],Basic,Small size,The room is small.,Basic
+New,Mới,[nuː],Basic,Recent,This is a new hotel.,Basic
+Old,Cũ,[oʊld],Basic,Not new,This is an old building.,Basic
+Clean,Sạch,[kliːn],Basic,Not dirty,The room is clean.,Basic
+Dirty,Bẩn,[ˈdɜːrti],Basic,Not clean,The room is dirty.,Basic
+Good,Tốt,[gʊd],Basic,Positive quality,The service is good.,Basic
+Bad,Xấu,[bæd],Basic,Negative quality,The service is bad.,Basic
+Nice,Đẹp,[naɪs],Basic,Pleasant,The hotel is nice.,Basic
+Beautiful,Đẹp,[ˈbjuːtəfəl],Basic,Very attractive,The view is beautiful.,Basic
+Ugly,Xấu,[ˈʌgli],Basic,Not attractive,The building is ugly.,Basic
+Expensive,Đắt,[ɪkˈspensɪv],Basic,High cost,The room is expensive.,Basic
+Cheap,Rẻ,[tʃiːp],Basic,Low cost,The room is cheap.,Basic
+Free,Miễn phí,[friː],Basic,No cost,WiFi is free.,Basic
+Paid,Trả phí,[peɪd],Basic,With cost,This service is paid.,Basic
+Open,Mở,[ˈoʊpən],Basic,Not closed,The restaurant is open.,Basic
+Closed,Đóng,[kloʊzd],Basic,Not open,The restaurant is closed.,Basic
+Full,Đầy,[fʊl],Basic,No space,The hotel is full.,Basic
+Empty,Trống,[ˈempti],Basic,No contents,The room is empty.,Basic
+Available,Có sẵn,[əˈveɪləbəl],Basic,Ready to use,A room is available.,Basic
+Unavailable,Không có,[ˌʌnəˈveɪləbəl],Basic,Not ready,The room is unavailable.,Basic
+Easy,Dễ,[ˈiːzi],Basic,Not difficult,This is easy.,Basic
+Difficult,Khó,[ˈdɪfɪkəlt],Basic,Not easy,This is difficult.,Basic
+Fast,Nhanh,[fæst],Basic,Quick speed,The service is fast.,Basic
+Slow,Chậm,[sloʊ],Basic,Not fast,The service is slow.,Basic
+Early,Sớm,[ˈɜːrli],Basic,Before time,Check-in is early.,Basic
+Late,Muộn,[leɪt],Basic,After time,Check-out is late.,Basic
+Now,Bây giờ,[naʊ],Basic,At this time,Do it now.,Basic
+Later,Sau,[ˈleɪtər],Basic,After this time,Do it later.,Basic
+Before,Trước,[bɪˈfɔːr],Basic,Earlier than,Before dinner.,Basic
+After,Sau,[ˈæftər],Basic,Later than,After breakfast.,Basic
+Today,Hôm nay,[təˈdeɪ],Basic,This day,What's today?,Basic
+Tomorrow,Ngày mai,[təˈmɑːroʊ],Basic,Next day,See you tomorrow.,Basic
+Yesterday,Hôm qua,[ˈjestərdeɪ],Basic,Previous day,You arrived yesterday.,Basic
+Week,Tuần,[wiːk],Basic,Seven days,Stay for one week.,Basic
+Month,Tháng,[mʌnθ],Basic,30 days,Stay for one month.,Basic
+Year,Năm,[jɪr],Basic,365 days,Happy new year!,Basic
+Monday,Thứ hai,[ˈmʌndeɪ],Basic,First day,See you Monday.,Basic
+Tuesday,Thứ ba,[ˈtuːzdeɪ],Basic,Second day,See you Tuesday.,Basic
+Wednesday,Thứ tư,[ˈwenzdeɪ],Basic,Third day,See you Wednesday.,Basic
+Thursday,Thứ năm,[ˈθɜːrzdeɪ],Basic,Fourth day,See you Thursday.,Basic
+Friday,Thứ sáu,[ˈfraɪdeɪ],Basic,Fifth day,See you Friday.,Basic
+Saturday,Thứ bảy,[ˈsætərdeɪ],Basic,Sixth day,See you Saturday.,Basic
+Sunday,Chủ nhật,[ˈsʌndeɪ],Basic,Seventh day,See you Sunday.,Basic
