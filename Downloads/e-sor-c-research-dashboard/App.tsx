@@ -217,6 +217,32 @@ const TRANSLATIONS = {
 
 
 
+    // Intro tab
+    tabIntro: "GIỚI THIỆU",
+    inHero: "Tại sao có người mua, có người không?",
+    inHeroSub: "Nghiên cứu 12 phỏng vấn sâu tại 6 tỉnh ĐBSCL tìm ra câu trả lời.",
+    inHeroDesc: "Hai du khách cùng đứng trước một sản phẩm — một người móc ví ngay, người kia lắc đầu bỏ đi. Điều gì tạo ra sự khác biệt đó? Mô hình E-SOR-C giải thích cơ chế tâm lý đằng sau quyết định mua quà lưu niệm.",
+    inModelTitle: "Mô hình hoạt động như thế nào?",
+    inS: "Kích thích (S)",
+    inSDesc: "Những gì khách nhìn thấy và nghe thấy: câu chuyện HDV kể, sản phẩm trưng bày, không gian cửa hàng, giá niêm yết.",
+    inO: "Cảm xúc bên trong (O)",
+    inODesc: "Phản ứng tâm lý: cảm thấy hứng thú, vui vẻ, và quan trọng nhất — tin tưởng hay không tin tưởng.",
+    inR: "Hành động (R)",
+    inRDesc: "Kết quả cuối cùng: mua, không mua, hoặc chia sẻ với bạn bè.",
+    inC: "Bối cảnh (C)",
+    inCDesc: "Đi tour đoàn hay đi lẻ? Có bao nhiêu thời gian? Những yếu tố này khuếch đại hoặc làm yếu phản ứng cảm xúc.",
+    inFindTitle: "3 Phát hiện quan trọng nhất",
+    inF1Title: "Câu chuyện quan trọng hơn giá tiền",
+    inF1Desc: "Khách quốc tế sẵn sàng chi tiền — nhưng họ không mua vì không ai giải thích sản phẩm là gì.",
+    inF1Quote: "Không phải người ta không có tiền mua đâu. Người ta không mua vì người ta không biết cái đó là cái gì.",
+    inF2Title: "Niềm tin là cánh cửa duy nhất",
+    inF2Desc: "Khi thấy 'Made in China', khách đặt xuống ngay và không quay lại — dù sản phẩm đẹp đến đâu.",
+    inF2Quote: "Nhìn thấy made in China là tôi dứt khoát không mua, dù nó đẹp cỡ nào.",
+    inF3Title: "Tour đoàn khuếch đại hiệu ứng ×2.25",
+    inF3Desc: "Khi 5 người dừng lại xem, cả đoàn xúm vào. Áp lực xã hội tích cực thúc đẩy quyết định mua nhanh hơn.",
+    inF3Quote: "Một đoàn xe 10 khách... chỉ cần 5–7 khách đứng lại mua thôi là đã khác rồi.",
+    inCTA: "Khám phá Dashboard",
+
     // Footer
     footer: "E-SOR-C Dashboard · Nghiên cứu sinh Phan Thị Thúy Phượng · ĐH Nguyễn Tất Thành · 2026"
   },
@@ -409,6 +435,32 @@ const TRANSLATIONS = {
     narBalDesc: "Result depends on subtle adjustments of variables.",
 
 
+
+    // Intro tab
+    tabIntro: "INTRO",
+    inHero: "Why do some tourists buy while others don't?",
+    inHeroSub: "12 in-depth interviews across 6 Mekong Delta provinces reveal the answer.",
+    inHeroDesc: "Two tourists stand before the same product — one reaches for their wallet immediately, the other walks away. What creates that difference? The E-SOR-C model explains the psychological mechanism behind souvenir buying decisions.",
+    inModelTitle: "How does the model work?",
+    inS: "Stimulus (S)",
+    inSDesc: "Everything guests see and hear: the guide's storytelling, displayed products, store atmosphere, listed prices.",
+    inO: "Inner Emotion (O)",
+    inODesc: "Psychological reactions: feeling excited, happy, and most critically — trusting or not trusting.",
+    inR: "Action (R)",
+    inRDesc: "The final outcome: buy, don't buy, or share with friends.",
+    inC: "Context (C)",
+    inCDesc: "Group tour or solo travel? How much time is available? These factors amplify or dampen emotional responses.",
+    inFindTitle: "3 Key Research Findings",
+    inF1Title: "Story matters more than price",
+    inF1Desc: "International tourists are willing to spend — but they don't buy because no one explains what the product is.",
+    inF1Quote: "It's not that they don't have money. They don't buy because they don't know what it is or what makes it special.",
+    inF2Title: "Trust is the only gate",
+    inF2Desc: "When guests see \"Made in China\", they put it down immediately and don't come back — no matter how beautiful the product.",
+    inF2Quote: "Once I see 'Made in China' I absolutely won't buy, no matter how pretty it is.",
+    inF3Title: "Tour groups amplify the effect ×2.25",
+    inF3Desc: "When 5 people stop to look, the whole group gathers. Positive social pressure drives faster buying decisions.",
+    inF3Quote: "A bus of 10 guests... you only need 5–7 to stop and buy and it all changes.",
+    inCTA: "Explore Dashboard",
 
     footer: "E-SOR-C Dashboard · PhD Candidate Phan Thi Thuy Phuong · Nguyen Tat Thanh University · 2026"
   }
@@ -799,6 +851,165 @@ const ModelExplainer = ({ lang }: { lang: Lang }) => {
   );
 };
 
+
+// --- INTRO VIEW ---
+
+const IntroView = ({ lang, onStart }: { lang: Lang; onStart: () => void }) => {
+  const t = TRANSLATIONS[lang];
+
+  const MODEL_STEPS = [
+    {
+      letter: 'S',
+      color: 'blue',
+      bg: 'bg-blue-500/10 border-blue-500/30',
+      textColor: 'text-blue-400',
+      title: t.inS,
+      desc: t.inSDesc,
+      icon: <Zap size={22} />,
+    },
+    {
+      letter: 'O',
+      color: 'purple',
+      bg: 'bg-purple-500/10 border-purple-500/30',
+      textColor: 'text-purple-400',
+      title: t.inO,
+      desc: t.inODesc,
+      icon: <BrainCircuit size={22} />,
+    },
+    {
+      letter: 'R',
+      color: 'green',
+      bg: 'bg-green-500/10 border-green-500/30',
+      textColor: 'text-green-400',
+      title: t.inR,
+      desc: t.inRDesc,
+      icon: <ShoppingCart size={22} />,
+    },
+    {
+      letter: 'C',
+      color: 'amber',
+      bg: 'bg-amber-500/10 border-amber-500/30 border-dashed',
+      textColor: 'text-amber-400',
+      title: t.inC,
+      desc: t.inCDesc,
+      icon: <Users size={22} />,
+    },
+  ];
+
+  const FINDINGS = [
+    {
+      num: '01',
+      icon: <MessageCircle size={20} />,
+      color: 'blue',
+      bg: 'bg-blue-500/5 border-blue-500/20',
+      badgeColor: 'bg-blue-500/15 text-blue-400',
+      title: t.inF1Title,
+      desc: t.inF1Desc,
+      quote: t.inF1Quote,
+      attribution: 'HDV Trần Minh Luyện',
+    },
+    {
+      num: '02',
+      icon: <ShieldAlert size={20} />,
+      color: 'red',
+      bg: 'bg-red-500/5 border-red-500/20',
+      badgeColor: 'bg-red-500/15 text-red-400',
+      title: t.inF2Title,
+      desc: t.inF2Desc,
+      quote: t.inF2Quote,
+      attribution: 'HDV Ngô Đình Minh Quang',
+    },
+    {
+      num: '03',
+      icon: <Users size={20} />,
+      color: 'amber',
+      bg: 'bg-amber-500/5 border-amber-500/20',
+      badgeColor: 'bg-amber-500/15 text-amber-400',
+      title: t.inF3Title,
+      desc: t.inF3Desc,
+      quote: t.inF3Quote,
+      attribution: 'HDV La Phi Long',
+    },
+  ];
+
+  return (
+    <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in duration-500 py-4">
+
+      {/* Hero */}
+      <div className="text-center space-y-4 py-8 px-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-2">
+          <Info size={12} /> E-SOR-C Model
+        </div>
+        <h1 className="text-3xl md:text-4xl font-black text-text leading-tight">
+          {t.inHero}
+        </h1>
+        <p className="text-sm font-semibold text-blue-400">{t.inHeroSub}</p>
+        <p className="text-sm text-text2 leading-relaxed max-w-2xl mx-auto">{t.inHeroDesc}</p>
+      </div>
+
+      {/* Model Steps */}
+      <section>
+        <h2 className="text-xs font-bold uppercase tracking-widest text-text3 mb-5 text-center">{t.inModelTitle}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {MODEL_STEPS.map((step, i) => (
+            <div key={step.letter} className="relative">
+              <div className={`p-5 rounded-2xl border h-full flex flex-col gap-3 ${step.bg}`}>
+                <div className="flex items-center gap-3">
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg ${step.textColor} bg-surface border border-current/20 shrink-0`}>
+                    {step.letter}
+                  </div>
+                  <div className={`p-2 rounded-lg bg-surface/60 ${step.textColor}`}>{step.icon}</div>
+                </div>
+                <div>
+                  <h3 className={`text-sm font-bold ${step.textColor} mb-1`}>{step.title}</h3>
+                  <p className="text-xs text-text2 leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+              {/* Arrow between steps (desktop) */}
+              {i < 3 && (
+                <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-text3">
+                  <ArrowRight size={16} />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3 Key Findings */}
+      <section>
+        <h2 className="text-xs font-bold uppercase tracking-widest text-text3 mb-5 text-center">{t.inFindTitle}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {FINDINGS.map((f) => (
+            <div key={f.num} className={`p-5 rounded-2xl border flex flex-col gap-3 ${f.bg}`}>
+              <div className="flex items-center gap-2">
+                <span className={`text-[10px] font-black px-2 py-0.5 rounded-full ${f.badgeColor}`}>{f.num}</span>
+                <div className={`text-${f.color}-400`}>{f.icon}</div>
+              </div>
+              <h3 className={`text-sm font-bold text-${f.color}-400 leading-snug`}>{f.title}</h3>
+              <p className="text-xs text-text2 leading-relaxed flex-1">{f.desc}</p>
+              <blockquote className={`border-l-2 border-${f.color}-500/40 pl-3`}>
+                <p className="text-[11px] italic text-text2 leading-relaxed">"{f.quote}"</p>
+                <footer className={`text-[10px] font-semibold text-${f.color}-400 mt-1`}>— {f.attribution}</footer>
+              </blockquote>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <div className="flex justify-center pb-8">
+        <button
+          onClick={onStart}
+          className="flex items-center gap-2 px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all hover:scale-105 hover:shadow-blue-500/30"
+        >
+          {t.inCTA} <ArrowRight size={18} />
+        </button>
+      </div>
+
+    </div>
+  );
+};
 
 // --- DASHBOARD COMPONENTS ---
 
@@ -2210,7 +2421,7 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
 // --- MAIN APP ---
 
 const App: React.FC = () => {
-  const [tab, setTab] = useState<'dashboard' | 'simulator' | 'formulas' | 'infographic'>('dashboard');
+  const [tab, setTab] = useState<'intro' | 'dashboard' | 'simulator' | 'formulas' | 'infographic'>('intro');
   const [lang, setLang] = useState<Lang>('vi');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
@@ -2290,6 +2501,15 @@ const App: React.FC = () => {
           {/* Desktop Tabs */}
           <div className="hidden md:flex gap-1 bg-surface2 p-1 rounded-lg border border-border" role="tablist">
             <button
+              onClick={() => setTab('intro')}
+              aria-selected={tab === 'intro'}
+              role="tab"
+              id="tab-intro"
+              className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${tab === 'intro' ? 'bg-green-600 text-white shadow-sm' : 'text-text3 hover:text-text2'}`}
+            >
+              <span className="flex items-center gap-1.5"><Info size={14} /> {t.tabIntro}</span>
+            </button>
+            <button
               onClick={() => setTab('dashboard')}
               aria-selected={tab === 'dashboard'}
               role="tab"
@@ -2331,6 +2551,7 @@ const App: React.FC = () => {
 
       {/* Mobile Tabs */}
       <nav className="flex md:hidden sticky top-[73px] z-40 bg-bg border-b border-border p-2 gap-2" role="tablist">
+        <button onClick={() => setTab('intro')} aria-selected={tab === 'intro'} role="tab" id="tab-intro-mobile" className={`flex-1 py-2 text-xs font-bold rounded-md border ${tab === 'intro' ? 'bg-green-500/10 border-green-500 text-green-400' : 'bg-surface border-border text-text3'}`}><Info size={14} className="mx-auto mb-1" />{t.tabIntro}</button>
         <button onClick={() => setTab('dashboard')} aria-selected={tab === 'dashboard'} role="tab" id="tab-dashboard-mobile" className={`flex-1 py-2 text-xs font-bold rounded-md border ${tab === 'dashboard' ? 'bg-blue-500/10 border-blue-500 text-blue-400' : 'bg-surface border-border text-text3'}`}>{t.tabDashboard}</button>
         <button onClick={() => setTab('simulator')} aria-selected={tab === 'simulator'} role="tab" id="tab-simulator-mobile" className={`flex-1 py-2 text-xs font-bold rounded-md border ${tab === 'simulator' ? 'bg-purple-500/10 border-purple-500 text-purple-400' : 'bg-surface border-border text-text3'}`}>{t.tabSimulator}</button>
         <button onClick={() => setTab('formulas')} aria-selected={tab === 'formulas'} role="tab" id="tab-formulas-mobile" className={`flex-1 py-2 text-xs font-bold rounded-md border ${tab === 'formulas' ? 'bg-teal-500/10 border-teal-500 text-teal-400' : 'bg-surface border-border text-text3'}`}><Calculator size={14} className="mx-auto mb-1" />{t.tabFormulas}</button>
@@ -2339,6 +2560,9 @@ const App: React.FC = () => {
 
       <main className="max-w-[1400px] mx-auto p-5 md:p-10 relative" role="main">
         <ErrorBoundary>
+          <div style={{ display: tab === 'intro' ? 'block' : 'none' }} role="tabpanel" aria-labelledby="tab-intro">
+            <IntroView lang={lang} onStart={() => setTab('dashboard')} />
+          </div>
           <div style={{ display: tab === 'dashboard' ? 'block' : 'none' }} role="tabpanel" aria-labelledby="tab-dashboard">
             <DashboardView lang={lang} />
           </div>
