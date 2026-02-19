@@ -8,7 +8,7 @@ import {
 import {
   Activity, BrainCircuit, ShoppingCart, Search,
   AlertTriangle, CheckCircle2, Minus,
-  Zap, ArrowRight, Sun, Moon, Globe,
+  Zap, ArrowRight, ArrowDown, Sun, Moon, Globe,
   Download, Printer, Heart,
   Users, MessageCircle, Package, MapPin, ShieldAlert, Ban, Info, LayoutTemplate,
   Calculator, Share2, Footprints, Lightbulb
@@ -630,169 +630,243 @@ class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { has
 
 // --- COMPONENT: ESORC DIAGRAM (SVG) ---
 const ESORCDiagram = () => {
-  // ViewBox: 1200 × 640. Three zones: S(10–255), O(265–785), R(795–1110). Bottom row: H8 note + O_Attitude + [C] Context
-  // x/y helpers map SVG coords → % for HTML node positioning
-  const xp = (v: number) => `${(v / 1200) * 100}%`;
-  const yp = (v: number) => `${(v / 640) * 100}%`;
+  // ── Layout constants (viewBox 1280 × 500) ──────────────────────────────────
+  // Zones: S 20–280 | gap | O 320–780 | gap | R 820–1110
+  // Rows (node centres): r1=120, r2=230, r3=340, r4=430 (O_Attitude, inside O)
+  // Node dims: S/R nodes 240×76 | O nodes 210×76 | O_Attitude 200×62
+  // H10 feedback arc at y=12 (very top, above zone border)
+  const W = 1280, H = 500;
+  const xp = (v: number) => `${(v / W) * 100}%`;
+  const yp = (v: number) => `${(v / H) * 100}%`;
+
+  // Pill-shaped H-badge in SVG
+  const HBadgeSVG = ({ x, y, label, fill, stroke, textFill }:
+    { x:number; y:number; label:string; fill:string; stroke:string; textFill:string }) => (
+    <g>
+      <rect x={x-16} y={y-9} width={32} height={18} rx={6}
+        fill={fill} stroke={stroke} strokeWidth={1.2} />
+      <text x={x} y={y+5} textAnchor="middle"
+        fill={textFill} fontSize={10} fontWeight={700}>{label}</text>
+    </g>
+  );
 
   const Node = ({ l, t, w, h, bg, border, title, sub, titleColor, subColor, dashed = false }: any) => {
     const isHexBg = bg.startsWith('#');
     const isHexBorder = border.startsWith('#');
     return (
       <div
-        className={`absolute z-20 flex flex-col items-center justify-center rounded-xl border-2 shadow-sm transition-transform hover:scale-105 ${dashed ? 'border-dashed' : ''} ${!isHexBg ? bg : ''} ${!isHexBorder ? border : ''}`}
+        className={`absolute z-20 flex flex-col items-center justify-center rounded-xl border-2 shadow-sm
+          ${dashed ? 'border-dashed' : ''}
+          ${!isHexBg ? bg : ''} ${!isHexBorder ? border : ''}`}
         style={{
           left: xp(l), top: yp(t), width: xp(w), height: yp(h),
           backgroundColor: isHexBg ? bg : undefined,
           borderColor: isHexBorder ? border : undefined,
         }}
       >
-        <div className={`font-bold text-sm sm:text-base text-center leading-tight px-2 ${titleColor}`} style={{ color: titleColor.startsWith('#') ? titleColor : undefined }}>{title}</div>
-        <div className={`text-[9px] sm:text-[11px] text-center mt-1 leading-tight px-2 ${subColor}`} style={{ color: subColor.startsWith('#') ? subColor : undefined }}>{sub}</div>
+        <div
+          className={`font-bold text-[13px] sm:text-[15px] text-center leading-tight px-2 ${titleColor}`}
+          style={{ color: titleColor.startsWith('#') ? titleColor : undefined }}
+        >{title}</div>
+        <div
+          className={`text-[9px] sm:text-[11px] text-center mt-1 leading-tight px-2 ${subColor}`}
+          style={{ color: subColor.startsWith('#') ? subColor : undefined }}
+        >{sub}</div>
       </div>
     );
   };
 
+  // Node geometry (l=left, t=top, w=width, h=height — all in SVG px)
+  // S column: l=20, w=240
+  const sL=20, sW=240, sH=76;
+  const sR = sL+sW; // right edge = 260
+
+  // O column: l=320, w=210
+  const oL=320, oW=210, oH=76;
+  const oR = oL+oW; // right edge = 530
+
+  // O_Attitude: inside O zone, bottom
+  const attL=330, attW=200, attH=62;
+
+  // R column: l=820, w=240
+  const rL=820, rW=240, rH=76;
+
+  // Row centres
+  const r1=120, r2=230, r3=340; // S + R rows
+  const oArousalY=105, oPleasureY=220; // O_Arousal top=67, O_Pleasure top=182
+  const attTop=380; // O_Attitude top
+
+  // Mid-points for arrows
+  const sRightR1 = sR;      // S row1 right = 260
+  const oLeftAr  = oL;      // O_Arousal left = 320
+  const oLeftPl  = oL;      // O_Pleasure left = 320
+  const oRightAr = oR;      // O right = 530
+  const oRightPl = oR;
+  const rLeft    = rL;      // R left = 820
+
   return (
-    <div className="relative w-full select-none bg-surface2/30 rounded-xl border border-border overflow-hidden" style={{ aspectRatio: '1200/640', minHeight: 420 }}>
-      {/* ── SVG: background zones + all connectors ── */}
-      <svg viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full z-[5] pointer-events-none">
+    <div
+      className="relative w-full select-none bg-[#0b1120] rounded-xl border border-border overflow-hidden"
+      style={{ aspectRatio: `${W}/${H}`, minHeight: 360 }}
+    >
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        xmlns="http://www.w3.org/2000/svg"
+        className="absolute inset-0 w-full h-full z-[5] pointer-events-none"
+      >
         <defs>
-          <marker id="arr-pu"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a855f7"/></marker>
-          <marker id="arr-cy"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#06b6d4"/></marker>
-          <marker id="arr-gr"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/></marker>
-          <marker id="arr-am"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f59e0b"/></marker>
-          <marker id="arr-re"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/></marker>
-          <marker id="arr-te"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#14b8a6"/></marker>
-          <marker id="arr-sl"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+          {/* Arrow markers — one per colour */}
+          {([
+            ['pu','#a855f7'],['cy','#06b6d4'],['gr','#22c55e'],
+            ['am','#f59e0b'],['re','#ef4444'],['te','#14b8a6'],['sl','#64748b'],
+          ] as [string,string][]).map(([id, c]) => (
+            <marker key={id} id={`d-${id}`} markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L7,3 z" fill={c} />
+            </marker>
+          ))}
         </defs>
 
-        {/* ── Zone backgrounds ── */}
-        {/* S zone: x 10–255, full height minus bottom row */}
-        <rect x="10"  y="25" width="245" height="440" rx="14" fill="none" stroke="#3b82f6" strokeWidth="1" strokeDasharray="5,4" opacity="0.4"/>
-        <text x="132" y="47" textAnchor="middle" fill="#60a5fa" fontWeight="800" fontSize="13" letterSpacing="2">STIMULUS [S]</text>
+        {/* ── Zone outlines ─────────────────────────────────────────── */}
+        {/* S zone */}
+        <rect x={sL-2} y="30" width={sW+4} height="420" rx="14"
+          fill="none" stroke="#3b82f6" strokeWidth="1" strokeDasharray="6,4" opacity="0.35" />
+        <text x={sL+sW/2} y="52" textAnchor="middle"
+          fill="#60a5fa" fontWeight="800" fontSize="11" letterSpacing="2" opacity="0.9">STIMULUS [S]</text>
 
-        {/* O zone: x 265–785, full height minus bottom row */}
-        <rect x="265" y="25" width="520" height="440" rx="14" fill="none" stroke="#a855f7" strokeWidth="1" strokeDasharray="5,4" opacity="0.4"/>
-        <text x="525" y="47" textAnchor="middle" fill="#c084fc" fontWeight="800" fontSize="13" letterSpacing="2">ORGANISM [O]</text>
+        {/* O zone */}
+        <rect x={oL-10} y="30" width={oW+20} height="420" rx="14"
+          fill="none" stroke="#a855f7" strokeWidth="1" strokeDasharray="6,4" opacity="0.35" />
+        <text x={oL+oW/2} y="52" textAnchor="middle"
+          fill="#c084fc" fontWeight="800" fontSize="11" letterSpacing="2" opacity="0.9">ORGANISM [O]</text>
 
-        {/* R zone: x 795–1110 */}
-        <rect x="795" y="25" width="315" height="440" rx="14" fill="none" stroke="#22c55e" strokeWidth="1" strokeDasharray="5,4" opacity="0.4"/>
-        <text x="952" y="47" textAnchor="middle" fill="#4ade80" fontWeight="800" fontSize="13" letterSpacing="2">RESPONSE [R]</text>
+        {/* R zone */}
+        <rect x={rL-10} y="30" width={rW+20} height="420" rx="14"
+          fill="none" stroke="#22c55e" strokeWidth="1" strokeDasharray="6,4" opacity="0.35" />
+        <text x={rL+rW/2} y="52" textAnchor="middle"
+          fill="#4ade80" fontWeight="800" fontSize="11" letterSpacing="2" opacity="0.9">RESPONSE [R]</text>
 
-        {/* ── Bottom row separator label ── */}
-        <text x="600" y="488" textAnchor="middle" fill="#64748b" fontSize="10" fontStyle="italic" opacity="0.7">Moderators &amp; context</text>
-        <line x1="10" y1="477" x2="1190" y2="477" stroke="#334155" strokeWidth="1" strokeDasharray="3,4" opacity="0.5"/>
+        {/* ── H10 feedback arc: R_Recommend top → S_Social top ─────── */}
+        <path
+          d={`M ${rL+rW/2},${r3-38} L ${rL+rW/2},12 L ${sL+sW/2},12 L ${sL+sW/2},${r2-38}`}
+          fill="none" stroke="#475569" strokeWidth="1.5" strokeDasharray="8,4"
+          markerEnd="url(#d-sl)" opacity="0.6"
+        />
+        <text x={(rL+rW/2+sL+sW/2)/2} y="9" textAnchor="middle"
+          fill="#64748b" fontSize="9" fontStyle="italic" opacity="0.8">H10: vòng lặp xã hội</text>
 
-        {/* ══════════════════════════════════════════
-            S → O  connections
-        ══════════════════════════════════════════ */}
-
-        {/* S_Product → O_Arousal (no label, faint) */}
-        <path d="M255,100 C310,100 310,110 380,110" fill="none" stroke="#a855f7" strokeWidth="1.8" markerEnd="url(#arr-pu)" opacity="0.4"/>
-
+        {/* ── S → O connections ─────────────────────────────────────── */}
+        {/* S_Product → O_Arousal (faint, no badge) */}
+        <path
+          d={`M ${sR},${r1} C ${sR+30},${r1} ${oL-30},${oArousalY+38} ${oL},${oArousalY+38}`}
+          fill="none" stroke="#a855f7" strokeWidth="1.5" markerEnd="url(#d-pu)" opacity="0.25"
+        />
         {/* S_Social → O_Arousal  H6 */}
-        <path d="M255,200 C310,200 310,115 380,115" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arr-pu)" opacity="0.75"/>
-        <rect x="258" y="147" width="30" height="18" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1.5"/>
-        <text x="273" y="160" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H6</text>
+        <path
+          d={`M ${sR},${r2} C ${sR+40},${r2} ${oL-40},${oArousalY+38} ${oL},${oArousalY+38}`}
+          fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#d-pu)" opacity="0.8"
+        />
+        <HBadgeSVG x={sR+52} y={r2-18} label="H6" fill="#1e1b4b" stroke="#a855f7" textFill="#c4b5fd" />
 
         {/* S_Cultural → O_Arousal  H1 */}
-        <path d="M255,300 C310,300 310,120 380,120" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arr-pu)" opacity="0.75"/>
-        <rect x="258" y="240" width="30" height="18" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1.5"/>
-        <text x="273" y="253" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H1</text>
+        <path
+          d={`M ${sR},${r3} C ${sR+40},${r3} ${oL-40},${oArousalY+38} ${oL},${oArousalY+38}`}
+          fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#d-pu)" opacity="0.8"
+        />
+        <HBadgeSVG x={sR+52} y={r3-20} label="H1" fill="#1e1b4b" stroke="#a855f7" textFill="#c4b5fd" />
 
         {/* S_Cultural → O_Pleasure  H3 */}
-        <path d="M255,300 C310,300 310,230 380,230" fill="none" stroke="#06b6d4" strokeWidth="2" markerEnd="url(#arr-cy)" opacity="0.75"/>
-        <rect x="278" y="278" width="30" height="18" rx="3" fill="#082f49" stroke="#06b6d4" strokeWidth="1.5"/>
-        <text x="293" y="291" textAnchor="middle" fill="#67e8f9" fontSize="10" fontWeight="700">H3</text>
+        <path
+          d={`M ${sR},${r3} C ${sR+60},${r3} ${oL-60},${oPleasureY+38} ${oL},${oPleasureY+38}`}
+          fill="none" stroke="#06b6d4" strokeWidth="2" markerEnd="url(#d-cy)" opacity="0.8"
+        />
+        <HBadgeSVG x={sR+80} y={r3+10} label="H3" fill="#082f49" stroke="#06b6d4" textFill="#67e8f9" />
 
-        {/* S_Place/Price → O_Arousal (faint atmospheric) */}
-        <path d="M255,400 C310,400 310,130 380,130" fill="none" stroke="#a855f7" strokeWidth="1.5" markerEnd="url(#arr-pu)" opacity="0.3"/>
+        {/* H8: S_Cultural → O_Attitude (dashed amber, clean arc below O_Pleasure) */}
+        <path
+          d={`M ${sR},${r3} C ${sR+80},${r3+60} ${attL-60},${attTop+31} ${attL},${attTop+31}`}
+          fill="none" stroke="#f59e0b" strokeWidth="1.8" strokeDasharray="6,3"
+          markerEnd="url(#d-am)" opacity="0.75"
+        />
+        <HBadgeSVG x={sR+90} y={r3+70} label="H8" fill="#1c1003" stroke="#f59e0b" textFill="#fcd34d" />
 
-        {/* ══════════════════════════════════════════
-            H8: Thiếu câu chuyện → O_Attitude giảm
-            Path: S_Cultural right edge → RIGHT side, down to O_Attitude
-            Keeps entirely to the RIGHT of S zone so nothing is covered
-        ══════════════════════════════════════════ */}
-        <path d="M255,300 L255,540 L430,540 L430,530" fill="none" stroke="#f59e0b" strokeWidth="1.8" strokeDasharray="6,3" markerEnd="url(#arr-am)" opacity="0.8"/>
-        {/* H8 label floats at right-edge of S zone, below S_Cultural */}
-        <rect x="258" y="355" width="90" height="40" rx="5" fill="#1c1003" stroke="#f59e0b" strokeWidth="1.5" opacity="0.95"/>
-        <text x="303" y="371" textAnchor="middle" fill="#fcd34d" fontSize="10" fontWeight="700">H8</text>
-        <text x="303" y="385" textAnchor="middle" fill="#fbbf24" fontSize="9" fontStyle="italic">Thiếu story → Att.↓</text>
-
-        {/* ══════════════════════════════════════════
-            O → R  connections
-        ══════════════════════════════════════════ */}
-
+        {/* ── O → R connections ─────────────────────────────────────── */}
         {/* O_Arousal → R_Buy  H2 */}
-        <path d="M580,110 L795,105" fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#arr-gr)"/>
-        <rect x="666" y="95" width="32" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1.5"/>
-        <text x="682" y="109" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H2</text>
+        <path
+          d={`M ${oR},${oArousalY+38} L ${rLeft},${r1-10}`}
+          fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#d-gr)"
+        />
+        <HBadgeSVG x={(oR+rLeft)/2} y={oArousalY+20} label="H2" fill="#052e16" stroke="#22c55e" textFill="#86efac" />
 
         {/* O_Pleasure → R_Buy  H4 */}
-        <path d="M580,230 L795,120" fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#arr-gr)"/>
-        <rect x="666" y="163" width="32" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1.5"/>
-        <text x="682" y="177" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H4</text>
+        <path
+          d={`M ${oR},${oPleasureY+38} L ${rLeft},${r1+10}`}
+          fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#d-gr)"
+        />
+        <HBadgeSVG x={(oR+rLeft)/2} y={oPleasureY+20} label="H4" fill="#052e16" stroke="#22c55e" textFill="#86efac" />
 
-        {/* ══════════════════════════════════════════
-            H5: O_Attitude (bottom row) → R_NoBuy
-            Clear straight diagonal, label above the line
-        ══════════════════════════════════════════ */}
-        <path d="M580,515 L795,260" fill="none" stroke="#ef4444" strokeWidth="1.8" strokeDasharray="6,4" markerEnd="url(#arr-re)" opacity="0.9"/>
-        <rect x="644" y="370" width="90" height="20" rx="4" fill="#450a0a" stroke="#ef4444" strokeWidth="1.5"/>
-        <text x="689" y="384" textAnchor="middle" fill="#fca5a5" fontSize="10" fontWeight="700">H5 · Gate→Block</text>
+        {/* H5: O_Attitude → R_NoBuy (dashed red) */}
+        <path
+          d={`M ${attL+attW},${attTop+31} C ${attL+attW+80},${attTop+31} ${rLeft-60},${r2+38} ${rLeft},${r2+38}`}
+          fill="none" stroke="#ef4444" strokeWidth="1.8" strokeDasharray="6,4"
+          markerEnd="url(#d-re)" opacity="0.9"
+        />
+        <HBadgeSVG x={attL+attW+80} y={attTop+14} label="H5" fill="#450a0a" stroke="#ef4444" textFill="#fca5a5" />
 
-        {/* ══════════════════════════════════════════
-            H7: [C] Context (bottom row) modulates H6
-            Dashed vertical from [C] Context up to arrow intersection
-            × symbol at intersection point on S_Social→O_Arousal path
-        ══════════════════════════════════════════ */}
-        {/* [C] Context centre ≈ x=720, y=515. H6 path passes near x=305,y=155 */}
-        <path d="M720,495 L720,155" fill="none" stroke="#64748b" strokeWidth="1.5" strokeDasharray="5,4" opacity="0.7"/>
-        <circle cx="720" cy="155" r="9" fill="#1e293b" stroke="#94a3b8" strokeWidth="1.5"/>
-        <text x="720" y="159" textAnchor="middle" fill="#e2e8f0" fontSize="12" fontWeight="800">×</text>
-        <rect x="694" y="300" width="52" height="34" rx="4" fill="#0f172a" stroke="#64748b" strokeWidth="1" opacity="0.9"/>
-        <text x="720" y="314" textAnchor="middle" fill="#cbd5e1" fontSize="10" fontWeight="700">H7</text>
-        <text x="720" y="328" textAnchor="middle" fill="#94a3b8" fontSize="9">Tour ×2.25</text>
+        {/* ── H9: R_Buy → R_Recommend (right side bracket) ─────────── */}
+        <path
+          d={`M ${rL+rW+8},${r1} L ${rL+rW+36},${r1} L ${rL+rW+36},${r3} L ${rL+rW+8},${r3}`}
+          fill="none" stroke="#14b8a6" strokeWidth="1.8" strokeDasharray="5,3"
+          markerEnd="url(#d-te)"
+        />
+        <HBadgeSVG x={rL+rW+36} y={(r1+r3)/2} label="H9" fill="#0f172a" stroke="#14b8a6" textFill="#14b8a6" />
 
-        {/* ══════════════════════════════════════════
-            H9: R_Buy → R_Recommend  (right bracket)
-        ══════════════════════════════════════════ */}
-        <path d="M1110,105 L1140,105 L1140,390 L1110,390" fill="none" stroke="#14b8a6" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#arr-te)"/>
-        <rect x="1118" y="235" width="34" height="18" rx="4" fill="#0f172a" stroke="#14b8a6" strokeWidth="1.5"/>
-        <text x="1135" y="248" textAnchor="middle" fill="#14b8a6" fontSize="11" fontWeight="700">H9</text>
+        {/* ── H7: [C] Context pill → × on H6 path ─────────────────── */}
+        {/* [C] Context pill at bottom-centre of O zone */}
+        {/* H7 dashed line from context pill up to a junction circle on H6 arc */}
+        {/* H6 arc midpoint approx x=310, y=r2 = 230 */}
+        <path
+          d={`M 470,460 L 470,${r2}`}
+          fill="none" stroke="#64748b" strokeWidth="1.3" strokeDasharray="5,4" opacity="0.6"
+        />
+        <circle cx="470" cy={r2} r="8" fill="#1e293b" stroke="#94a3b8" strokeWidth="1.3" />
+        <text x="470" y={r2+4} textAnchor="middle" fill="#e2e8f0" fontSize="11" fontWeight="800">×</text>
+        {/* H7 label */}
+        <rect x="476" y={r2-10} width="56" height="24" rx="5" fill="#0f172a" stroke="#64748b" strokeWidth="1" opacity="0.9" />
+        <text x="504" y={r2+2} textAnchor="middle" fill="#cbd5e1" fontSize="9" fontWeight="700">H7 ×2.25</text>
 
-        {/* ══════════════════════════════════════════
-            H10: R_Recommend → S_Social  (top feedback arc)
-            Visible cyan-gray dashed arc along very top
-        ══════════════════════════════════════════ */}
-        <path d="M952,370 L952,14 L132,14 L132,58" fill="none" stroke="#64748b" strokeWidth="1.8" strokeDasharray="7,4" markerEnd="url(#arr-sl)" opacity="0.75"/>
-        <rect x="420" y="3" width="264" height="19" rx="4" fill="#0f172a" stroke="#475569" strokeWidth="1"/>
-        <text x="552" y="16" textAnchor="middle" fill="#94a3b8" fontSize="10" fontStyle="italic">H10: R_Recommend → S_Social (vòng lặp)</text>
       </svg>
 
       {/* ── HTML Nodes ── */}
 
-      {/* S column — 4 nodes, evenly spaced top area */}
-      <Node l={18}  t={58}  w={237} h={72} bg="bg-surface dark:bg-[#0f172a]" border="border-blue-500" title="S_Product"    titleColor="text-blue-300"  sub="Đặc điểm sản phẩm · 16 mã"     subColor="text-blue-500"/>
-      <Node l={18}  t={158} w={237} h={72} bg="bg-surface dark:bg-[#0f172a]" border="border-blue-500" title="S_Social"     titleColor="text-blue-300"  sub="Ảnh hưởng xã hội · 5 mã"       subColor="text-blue-500"/>
-      <Node l={18}  t={258} w={237} h={72} bg="bg-surface dark:bg-[#0f172a]" border="border-blue-500" title="S_Cultural"   titleColor="text-blue-300"  sub="Bản sắc văn hóa · 7 mã"        subColor="text-blue-500"/>
-      <Node l={18}  t={358} w={237} h={72} bg="bg-surface dark:bg-[#0f172a]" border="border-blue-500" title="S_Place/Price" titleColor="text-blue-300" sub="Không gian · Giá · Promo"        subColor="text-blue-500"/>
+      {/* S column: l=20, spacing: t = r-38 (centre to top = 38 = h/2) */}
+      <Node l={sL}   t={r1-38} w={sW} h={sH}  bg="#0d1e38" border="#3b82f6"
+        title="S_Product"    titleColor="#93c5fd" sub="Đặc điểm sản phẩm · 16 mã" subColor="#60a5fa" />
+      <Node l={sL}   t={r2-38} w={sW} h={sH}  bg="#0d1e38" border="#3b82f6"
+        title="S_Social"     titleColor="#93c5fd" sub="Ảnh hưởng xã hội · 5 mã"  subColor="#60a5fa" />
+      <Node l={sL}   t={r3-38} w={sW} h={sH}  bg="#0d1e38" border="#3b82f6"
+        title="S_Cultural"   titleColor="#93c5fd" sub="Bản sắc văn hóa · 7 mã"   subColor="#60a5fa" />
 
-      {/* O column — Arousal + Pleasure (top), Attitude moved to BOTTOM ROW */}
-      <Node l={380} t={68}  w={200} h={72} bg="#2e1065" border="#a855f7" title="O_Arousal"  titleColor="#e9d5ff" sub="Hứng thú tức thì"    subColor="#c084fc"/>
-      <Node l={380} t={188} w={200} h={72} bg="#083344" border="#06b6d4" title="O_Pleasure" titleColor="#a5f3fc" sub="Cảm xúc lâu dài"     subColor="#67e8f9"/>
+      {/* O_Arousal + O_Pleasure — vertically centred in O zone */}
+      <Node l={oL}   t={oArousalY}  w={oW} h={oH}  bg="#2e1065" border="#a855f7"
+        title="O_Arousal"    titleColor="#e9d5ff" sub="Hứng thú tức thì"          subColor="#c084fc" />
+      <Node l={oL}   t={oPleasureY} w={oW} h={oH}  bg="#083344" border="#06b6d4"
+        title="O_Pleasure"   titleColor="#a5f3fc" sub="Cảm xúc lâu dài"           subColor="#67e8f9" />
 
-      {/* O_Attitude — bottom row, left of [C] Context */}
-      <Node l={280} t={490} w={220} h={72} bg="#431407" border="#f59e0b" dashed={true} title="O_Attitude" titleColor="#fdba74" sub="BỘ LỌC / CỔNG NIỀM TIN"   subColor="#fb923c"/>
+      {/* O_Attitude — inside O zone, bottom row */}
+      <Node l={attL} t={attTop}     w={attW} h={attH} bg="#431407" border="#f59e0b" dashed={true}
+        title="O_Attitude"   titleColor="#fdba74" sub="Cổng niềm tin"             subColor="#fb923c" />
 
-      {/* [C] Context — bottom row, centre */}
-      <Node l={560} t={490} w={210} h={72} bg="bg-surface dark:bg-[#0f172a]" border="#64748b" dashed={true} title="[C] Context" titleColor="text-text2" sub="Tour đoàn / Đi lẻ · Thời gian" subColor="text-text3"/>
+      {/* [C] Context pill — below O_Attitude */}
+      <Node l={oL+10} t={462} w={oW-20} h={30} bg="#0f1e2e" border="#475569" dashed={true}
+        title="[C] Bối cảnh: Tour đoàn · Thời gian" titleColor="#94a3b8" sub="" subColor="" />
 
-      {/* R column — 3 nodes */}
-      <Node l={800} t={68}  w={225} h={72} bg="#052e16" border="#22c55e" title="R_Buy"       titleColor="#86efac" sub="Mua xung · Mua nhiều · Lan truyền" subColor="#4ade80"/>
-      <Node l={800} t={218} w={225} h={72} bg="#450a0a" border="#ef4444" title="R_NoBuy"     titleColor="#fca5a5" sub="Mất tin · Khó vận chuyển · Không rõ" subColor="#f87171"/>
-      <Node l={800} t={368} w={225} h={72} bg="#042f2e" border="#14b8a6" title="R_Recommend" titleColor="#5eead4" sub="SNS · WOM · Khách quay lại"          subColor="#2dd4bf"/>
+      {/* R column */}
+      <Node l={rL}   t={r1-38} w={rW} h={rH}  bg="#052e16" border="#22c55e"
+        title="R_Buy"        titleColor="#86efac" sub="Mua xung · Mua nhiều · Lan truyền" subColor="#4ade80" />
+      <Node l={rL}   t={r2-38} w={rW} h={rH}  bg="#450a0a" border="#ef4444"
+        title="R_NoBuy"      titleColor="#fca5a5" sub="Mất tin · Không rõ sản phẩm"      subColor="#f87171" />
+      <Node l={rL}   t={r3-38} w={rW} h={rH}  bg="#042f2e" border="#14b8a6"
+        title="R_Recommend"  titleColor="#5eead4" sub="SNS · WOM · Khách quay lại"       subColor="#2dd4bf" />
     </div>
   );
 };
@@ -826,264 +900,172 @@ const ModelExplainer = ({ lang }: { lang: Lang }) => {
         </div>
       </div>
 
-      <div className="p-5 lg:p-6">
-        {/* ═══════════════════════════════════════════════════════
-            LAYOUT: flow column (left) + callout column (right)
-        ════════════════════════════════════════════════════════ */}
-        <div className="flex flex-col lg:flex-row gap-5">
+      <div className="p-6 space-y-8">
 
-          {/* ── LEFT: vertical S → O → R flow ── */}
-          <div className="flex-1 min-w-0">
+        {/* ── Vertical Flow S → O → R → C (Redesigned & Cleaned) ── */}
+        <div className="relative flex flex-col items-center gap-8 max-w-2xl mx-auto py-6">
 
-            {/* ── [S] Stimulus ── */}
-            <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-4">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-[18px] font-black text-blue-300 leading-none w-6 shrink-0">[S]</span>
-                <span className="text-[13px] font-extrabold text-blue-200">
-                  {isVi ? 'Kích thích từ bên ngoài' : 'External Stimulus'}
-                </span>
+          {/* [S] STIMULUS */}
+          <div className="w-full relative p-6 rounded-2xl bg-blue-500/5 border border-blue-500/20 text-center">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-surface border border-blue-500/30 rounded-full text-xs font-black text-blue-500 uppercase tracking-widest shadow-sm z-10">
+              [S] {isVi ? 'Kích thích' : 'Stimulus'}
+            </div>
+            <div className="mt-2 text-xl font-bold text-text">S_Product · S_Cultural · HDV</div>
+            <div className="text-sm text-text3 mt-1 italic opacity-80">{isVi ? 'Câu chuyện · Yếu tố đầu vào' : 'Story · Input Factors'}</div>
+          </div>
+
+          {/* Arrow S->O */}
+          <div className="relative flex flex-col items-center -my-4 z-0 opacity-80">
+            <ArrowDown size={32} className="text-blue-400/50" />
+            <div className="absolute top-1/2 left-10 -translate-y-1/2 flex gap-1.5">
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-surface border border-border text-text3" title="Hypothesis 1">H1</span>
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-surface border border-border text-text3" title="Hypothesis 3">H3</span>
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-surface border border-border text-text3" title="Hypothesis 6">H6</span>
+            </div>
+          </div>
+
+          {/* [O] ORGANISM */}
+          <div className="w-full relative p-6 rounded-2xl bg-purple-500/5 border border-purple-500/20 text-center">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-surface border border-purple-500/30 rounded-full text-xs font-black text-purple-500 uppercase tracking-widest shadow-sm z-10">
+              [O] {isVi ? 'Cảm xúc & Niềm tin' : 'Organism'}
+            </div>
+
+            <div className="flex flex-col gap-4 mt-1">
+              <div className="flex items-center justify-center gap-4">
+                <div className="px-4 py-2 rounded-xl bg-purple-500/10 border border-purple-500/20 text-sm font-bold text-text">O_Arousal</div>
+                <ArrowRight size={18} className="text-purple-400/50" />
+                <div className="px-4 py-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-sm font-bold text-text">O_Pleasure</div>
               </div>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { name: isVi ? 'Câu chuyện HDV' : 'Guide story',       sub: isVi ? 'S_Cultural · H1 H3' : 'S_Cultural · H1 H3',    hs: [{ id:'H1', c:'bg-purple-500/20 text-purple-300' },{ id:'H3', c:'bg-cyan-500/20 text-cyan-300' }] },
-                  { name: isVi ? 'Ảnh hưởng đoàn' : 'Social influence', sub: isVi ? 'S_Social · H6' : 'S_Social · H6',              hs: [{ id:'H6', c:'bg-purple-500/20 text-purple-300' }] },
-                  { name: isVi ? 'Sản phẩm trưng bày' : 'Product display', sub: isVi ? 'S_Product' : 'S_Product',                  hs: [] },
-                  { name: isVi ? 'Không gian · Giá' : 'Space · Price',  sub: isVi ? 'S_Place / S_Price' : 'S_Place / S_Price',      hs: [] },
-                ].map(n => (
-                  <div key={n.name} className="rounded-lg bg-blue-500/8 border border-blue-500/15 px-3 py-2">
-                    <p className="text-[11px] font-bold text-blue-200 leading-snug">{n.name}</p>
-                    <div className="flex items-center gap-1 mt-1 flex-wrap">
-                      <span className="text-[9px] text-blue-400/70">{n.sub.split('·')[0].trim()}</span>
-                      {n.hs.map(h => <HBadge key={h.id} id={h.id} color={h.c} />)}
-                    </div>
-                  </div>
-                ))}
+
+              <div className="w-full h-px bg-purple-500/10"></div>
+
+              <div className="py-2.5 px-5 bg-surface/50 rounded-xl border border-red-500/20 inline-flex items-center justify-center gap-2 mx-auto">
+                <ShieldAlert size={16} className="text-red-500" />
+                <span className="text-sm font-bold text-red-500">O_Attitude (Gate → Block)</span>
+                <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-red-500 text-white shadow-sm">H5</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow O->R */}
+          <div className="relative flex flex-col items-center -my-4 z-0 opacity-80">
+            <ArrowDown size={32} className="text-purple-400/50" />
+            <div className="absolute top-1/2 left-10 -translate-y-1/2 flex gap-1.5">
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-surface border border-border text-text3" title="Hypothesis 2">H2</span>
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-surface border border-border text-text3" title="Hypothesis 4">H4</span>
+            </div>
+          </div>
+
+          {/* [R] RESPONSE (Split) */}
+          <div className="w-full grid grid-cols-2 gap-6">
+            {/* R_Buy - Green */}
+            <div className="relative p-6 rounded-2xl bg-green-500/5 border border-green-500/20 text-center hover:bg-green-500/10 transition-colors group">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-surface border border-green-500/30 rounded-full text-[10px] font-black text-green-600 uppercase tracking-widest flex items-center gap-1.5 shadow-sm z-10 group-hover:scale-105 transition-transform">
+                <CheckCircle2 size={13} strokeWidth={3} /> {isVi ? 'Mua' : 'Buy'}
+              </div>
+              <div className="mt-3 flex flex-col gap-1.5">
+                <div className="text-base font-black text-text group-hover:text-green-500 transition-colors">{isVi ? 'R_Buy' : 'R_Buy'}</div>
+                <div className="text-xs text-text2 leading-relaxed opacity-80">{isVi ? 'Mua · Lan truyền' : 'Buy · Recommend'}</div>
               </div>
             </div>
 
-            {/* ── Arrow S→O with H-badges ── */}
-            <div className="flex items-center gap-2 py-1.5 pl-5">
-              <div className="flex flex-col items-center gap-0.5">
-                <div className="w-px h-3 bg-border" />
-                <div className="text-text3 text-base leading-none">↓</div>
+            {/* R_NoBuy - Red */}
+            <div className="relative p-6 rounded-2xl bg-red-500/5 border border-red-500/20 text-center hover:bg-red-500/10 transition-colors group">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-surface border border-red-500/30 rounded-full text-[10px] font-black text-red-600 uppercase tracking-widest flex items-center gap-1.5 shadow-sm z-10 group-hover:scale-105 transition-transform">
+                <Ban size={13} strokeWidth={3} /> {isVi ? 'Không mua' : 'NoBuy'}
               </div>
-              <div className="flex gap-1 flex-wrap">
-                <HBadge id="H1" color="bg-purple-500/20 text-purple-300" />
-                <HBadge id="H3" color="bg-cyan-500/20 text-cyan-300" />
-                <HBadge id="H6" color="bg-purple-500/20 text-purple-300" />
-                <HBadge id="H8" color="bg-amber-500/20 text-amber-300" />
-              </div>
-              <span className="text-[10px] text-text3 italic">
-                {isVi ? 'S_Cultural → O_Arousal / O_Attitude' : 'S_Cultural → O_Arousal / O_Attitude'}
-              </span>
-            </div>
-
-            {/* ── [O] Organism ── */}
-            <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-4">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-[18px] font-black text-purple-300 leading-none w-6 shrink-0">[O]</span>
-                <span className="text-[13px] font-extrabold text-purple-200">
-                  {isVi ? 'Cảm xúc & bộ lọc bên trong' : 'Inner Emotions & Filter'}
-                </span>
-              </div>
-              <div className="space-y-2">
-                {/* O_Arousal + O_Pleasure side by side */}
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="rounded-lg bg-purple-500/10 border border-purple-500/20 px-3 py-2.5">
-                    <p className="text-[10px] font-extrabold text-purple-300 mb-0.5">O_Arousal</p>
-                    <p className="text-[11px] text-text2">{isVi ? 'Hứng thú tức thì — muốn cầm lên ngay' : 'Instant excitement — urge to pick it up'}</p>
-                  </div>
-                  <div className="rounded-lg bg-cyan-500/10 border border-cyan-500/20 px-3 py-2.5">
-                    <p className="text-[10px] font-extrabold text-cyan-300 mb-0.5">O_Pleasure</p>
-                    <p className="text-[11px] text-text2">{isVi ? 'Cảm xúc lâu dài — muốn giữ làm kỷ niệm' : 'Lasting feeling — wants to keep it'}</p>
-                  </div>
-                </div>
-                {/* O_Attitude — gate, full width, amber */}
-                <div className="rounded-lg bg-amber-500/8 border border-amber-500/25 border-dashed px-3 py-2.5 flex items-center gap-3">
-                  <div className="shrink-0">
-                    <p className="text-[10px] font-extrabold text-amber-300">O_Attitude</p>
-                    <div className="flex gap-1 mt-0.5">
-                      <HBadge id="H5" color="bg-red-500/20 text-red-300" />
-                      <HBadge id="H8" color="bg-amber-500/20 text-amber-300" />
-                    </div>
-                  </div>
-                  <div className="flex-1 border-l border-amber-500/20 pl-3">
-                    <p className="text-[11px] text-amber-100/80 leading-snug">
-                      {isVi
-                        ? 'Niềm tin — cánh cửa duy nhất. Nếu tụt dưới ngưỡng 40 → H5 kích hoạt → chặn hoàn toàn, không mua dù giá tốt.'
-                        : 'Trust — the only gate. Falls below 40 → H5 activates → total block, no buy even at a good price.'}
-                    </p>
-                  </div>
-                </div>
+              <div className="mt-3 flex flex-col gap-1.5">
+                <div className="text-base font-black text-text group-hover:text-red-500 transition-colors">{isVi ? 'R_NoBuy' : 'R_NoBuy'}</div>
+                <div className="text-xs text-text2 leading-relaxed opacity-80">{isVi ? 'Mất tin · Từ chối' : 'Distrust · Reject'}</div>
               </div>
             </div>
+          </div>
 
-            {/* ── Arrow O→R with H-badges, branching ── */}
-            <div className="flex items-center gap-2 py-1.5 pl-5">
-              <div className="flex flex-col items-center gap-0.5">
-                <div className="w-px h-3 bg-border" />
-                <div className="text-text3 text-base leading-none">↓</div>
-              </div>
-              <div className="flex gap-1 flex-wrap">
-                <HBadge id="H2" color="bg-green-500/20 text-green-300" />
-                <HBadge id="H4" color="bg-cyan-500/20 text-cyan-300" />
-                <HBadge id="H5" color="bg-red-500/20 text-red-300" />
-              </div>
-              <span className="text-[10px] text-text3 italic">
-                {isVi ? 'O_Arousal/Pleasure → R_Buy · O_Attitude↓ → R_NoBuy' : 'O_Arousal/Pleasure → R_Buy · O_Attitude↓ → R_NoBuy'}
-              </span>
+          {/* [C] CONTEXT (Modifier) */}
+          <div className="mt-4 flex flex-col items-center">
+            <div className="h-8 w-px bg-dashed border-l border-slate-500/30 mb-2"></div>
+            <div className="relative px-8 py-4 rounded-xl border border-dashed border-slate-500/40 bg-slate-500/5 flex items-center gap-4">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-surface border border-slate-500/40 flex items-center justify-center text-xs font-bold text-slate-500 shadow-sm z-10">⊕</div>
+              <div className="text-sm font-bold text-slate-500">[C] {isVi ? 'Bối cảnh điều tiết' : 'Context Moderator'}</div>
+              <div className="h-6 w-px bg-slate-500/20"></div>
+              <div className="text-xs text-text3">{isVi ? 'Tour đoàn ×2.25 · Thời gian' : 'Group Tour ×2.25 · Time'}</div>
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-surface border border-border shadow-sm text-text3" title="Hypothesis 7">H7</span>
             </div>
+          </div>
 
-            {/* ── [R] Response — 2 parallel branches ── */}
-            <div className="rounded-xl border border-border bg-surface2/30 p-4">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-[18px] font-black text-text2 leading-none w-6 shrink-0">[R]</span>
-                <span className="text-[13px] font-extrabold text-text">
-                  {isVi ? 'Hành vi — 2 nhánh song song' : 'Response — 2 parallel branches'}
-                </span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* R_Buy */}
-                <div className="rounded-lg bg-green-500/8 border border-green-500/25 p-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-green-400 text-base leading-none">✅</span>
-                    <p className="text-[11px] font-extrabold text-green-300">R_Buy</p>
-                    <div className="flex gap-1 ml-auto">
-                      <HBadge id="H2" color="bg-green-500/20 text-green-300" />
-                      <HBadge id="H4" color="bg-cyan-500/20 text-cyan-300" />
-                      <HBadge id="H9" color="bg-teal-500/20 text-teal-300" />
-                    </div>
-                  </div>
-                  <p className="text-[11px] text-text2 leading-relaxed">
-                    {isVi
-                      ? 'Mua xung · Mua nhiều (5–10 cái) · Đăng mạng → vòng lặp H9–H10'
-                      : 'Impulse buy · Buy in bulk (5–10) · Share online → H9–H10 loop'}
-                  </p>
-                  <p className="text-[10px] text-green-400 font-bold mt-2">~85–95% {isVi ? 'khi HDV + niềm tin ổn' : 'when guide + trust OK'}</p>
-                </div>
-                {/* R_NoBuy */}
-                <div className="rounded-lg bg-red-500/8 border border-red-500/25 p-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-red-400 text-base leading-none">❌</span>
-                    <p className="text-[11px] font-extrabold text-red-300">R_NoBuy</p>
-                    <div className="flex gap-1 ml-auto">
-                      <HBadge id="H5" color="bg-red-500/20 text-red-300" />
-                    </div>
-                  </div>
-                  <p className="text-[11px] text-text2 leading-relaxed">
-                    {isVi
-                      ? 'Cửa niềm tin đóng → rời đi · không hỏi thêm · không chia sẻ'
-                      : 'Trust gate shut → walks away · no questions · no share'}
-                  </p>
-                  <p className="text-[10px] text-red-400 font-bold mt-2">~61% {isVi ? 'khi không có HDV / thấy Made in China' : 'no guide / sees Made in China'}</p>
-                </div>
-              </div>
-              {/* R_Recommend */}
-              <div className="mt-2 rounded-lg bg-teal-500/5 border border-teal-500/20 px-3 py-2 flex items-center gap-3">
-                <div>
-                  <p className="text-[10px] font-extrabold text-teal-300 flex items-center gap-1">
-                    R_Recommend <HBadge id="H9" color="bg-teal-500/20 text-teal-300" /> <HBadge id="H10" color="bg-slate-500/20 text-slate-300" />
-                  </p>
-                </div>
-                <p className="text-[11px] text-text2 border-l border-teal-500/20 pl-3">
-                  {isVi ? 'Sau khi mua: đăng Facebook / kể bạn bè → tạo S_Social cho đoàn kế tiếp (vòng lặp H10)' : 'After buying: posts / tells friends → creates S_Social for next tour (H10 loop)'}
-                </p>
-              </div>
+        </div>
+
+        {/* ── 3 bold findings (Preserved) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-border pt-6 mt-2">
+
+          {/* Finding 1 */}
+          <div className="rounded-xl bg-purple-500/5 border border-purple-500/20 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="p-1.5 rounded-lg bg-purple-500/15"><MessageCircle size={15} className="text-purple-400" /></div>
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-purple-400">{isVi ? 'Phát hiện 1' : 'Finding 1'}</span>
             </div>
-
-            {/* ── [C] Context moderator — below, dashed border ── */}
-            <div className="mt-3 rounded-xl border border-dashed border-slate-500/30 bg-slate-500/5 px-4 py-3 flex items-start gap-3">
-              <div className="shrink-0 mt-0.5">
-                <span className="text-[15px] font-black text-slate-300">⊕ [C]</span>
-              </div>
-              <div className="flex-1">
-                <p className="text-[11px] font-extrabold text-slate-200 mb-1">
-                  {isVi ? 'Bối cảnh điều tiết — không thuộc S/O/R nhưng khuếch đại tất cả' : 'Context moderator — outside S/O/R but amplifies everything'}
-                </p>
-                <div className="flex flex-wrap gap-x-4 gap-y-1">
-                  <span className="text-[11px] text-slate-300 flex items-center gap-1">
-                    <HBadge id="H7" color="bg-slate-500/25 text-slate-300" />
-                    {isVi ? 'Tour đoàn ×2.25 so với đi lẻ' : 'Group tour ×2.25 vs solo'}
-                  </span>
-                  <span className="text-[11px] text-slate-400">
-                    {isVi ? '· Thời gian tiếp xúc · HDV có mặt hay không' : '· Contact time · Guide present or not'}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-          </div>{/* end left column */}
-
-          {/* ── RIGHT: key insight cards (desktop sidebar) ── */}
-          <div className="lg:w-64 xl:w-72 shrink-0 flex flex-col gap-4">
-
-            {/* Insight 1 */}
-            <div className="rounded-xl bg-purple-500/5 border border-purple-500/20 p-4">
-              <p className="text-[10px] font-extrabold uppercase tracking-widest text-purple-400 mb-2">
-                {isVi ? '💬 Câu chuyện > Giá cả' : '💬 Story beats price'}
+            <p className="text-[22px] font-black text-purple-300 leading-none mb-1">H1–H2</p>
+            <p className="text-[13px] font-extrabold text-text leading-snug mb-3">
+              {isVi ? 'Nghe kể là muốn mua ngay' : 'Hear the story, want to buy'}
+            </p>
+            <p className="text-[12px] text-text2 leading-relaxed mb-4">
+              {isVi
+                ? 'HDV kể "Người nông dân làm 3 ngày mới ra một cái bình dừa" → khách Ý mắt sáng lên ngay, tay với sản phẩm trước khi hỏi giá.'
+                : 'Guide says "A farmer spends 3 days making one coconut thermos" → Italian guest\'s eyes light up, hand reaches for it before asking the price.'}
+            </p>
+            <blockquote className="border-l-2 border-purple-500/40 pl-3">
+              <p className="text-[11px] text-purple-200/60 italic">
+                {isVi ? '"Nghe kể xong là muốn mua ngay, không cần nghĩ nhiều."' : '"After hearing the story, I just wanted to buy it."'}
               </p>
-              <p className="text-[12px] text-text2 leading-relaxed mb-3">
-                {isVi
-                  ? 'HDV kể "Nông dân làm 3 ngày" → khách Ý với tay lấy trước khi hỏi giá. Không cần discount.'
-                  : '"Farmer spends 3 days" → Italian guest reaches before asking price. No discount needed.'}
-              </p>
-              <blockquote className="border-l-2 border-purple-500/35 pl-2.5">
-                <p className="text-[10px] text-purple-200/60 italic">{isVi ? '"Nghe kể xong là muốn mua ngay."' : '"After the story, I just wanted it."'}</p>
-              </blockquote>
+            </blockquote>
+          </div>
+
+          {/* Finding 2 */}
+          <div className="rounded-xl bg-red-500/5 border border-red-500/20 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="p-1.5 rounded-lg bg-red-500/15"><ShieldAlert size={15} className="text-red-400" /></div>
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-red-400">{isVi ? 'Phát hiện 2' : 'Finding 2'}</span>
             </div>
+            <p className="text-[22px] font-black text-red-300 leading-none mb-1">H8 → H5</p>
+            <p className="text-[13px] font-extrabold text-text leading-snug mb-3">
+              {isVi ? 'Thiếu câu chuyện → niềm tin sụp → cửa đóng' : 'No story → trust drops → gate shuts'}
+            </p>
+            <p className="text-[12px] text-text2 leading-relaxed mb-4">
+              {isVi
+                ? 'Không ai giải thích sản phẩm là gì (H8) → niềm tin rơi xuống dưới ngưỡng 40. Khi đó H5 kích hoạt — cửa niềm tin đóng sập, từ chối hoàn toàn, dù sau đó có HDV giỏi cũng không cứu được.'
+                : 'Nobody explains the product (H8) → trust falls below threshold 40. That triggers H5 — the trust gate slams shut. Total refusal. Even a skilled guide arriving later cannot save the sale.'}
+            </p>
+            <blockquote className="border-l-2 border-red-500/40 pl-3">
+              <p className="text-[11px] text-red-200/60 italic">
+                {isVi ? '"Thấy Made in China là để xuống ngay, không hỏi thêm."' : '"Saw Made in China — put it down immediately, no more questions."'}
+              </p>
+            </blockquote>
+          </div>
 
-            {/* Insight 2 */}
-            <div className="rounded-xl bg-red-500/5 border border-red-500/20 p-4">
-              <p className="text-[10px] font-extrabold uppercase tracking-widest text-red-400 mb-2">
-                {isVi ? '🏷️ Made in China → cửa đóng' : '🏷️ Made in China → gate shut'}
-              </p>
-              <p className="text-[12px] text-text2 leading-relaxed mb-3">
-                {isVi
-                  ? 'H8 làm niềm tin tụt → H5 kích hoạt. Lúc này dù HDV giỏi đến cũng không cứu được quyết định.'
-                  : 'H8 drops trust → H5 activates. Even a skilled guide arriving now cannot reverse the decision.'}
-              </p>
-              <blockquote className="border-l-2 border-red-500/35 pl-2.5">
-                <p className="text-[10px] text-red-200/60 italic">{isVi ? '"Thấy là để xuống ngay, không hỏi thêm."' : '"Saw it — put it down, no more questions."'}</p>
-              </blockquote>
+          {/* Finding 3 */}
+          <div className="rounded-xl bg-slate-500/5 border border-slate-500/20 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="p-1.5 rounded-lg bg-slate-500/15"><Users size={15} className="text-slate-400" /></div>
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">{isVi ? 'Phát hiện 3' : 'Finding 3'}</span>
             </div>
-
-            {/* Insight 3 */}
-            <div className="rounded-xl bg-slate-500/5 border border-slate-500/20 p-4">
-              <p className="text-[10px] font-extrabold uppercase tracking-widest text-slate-300 mb-2">
-                {isVi ? '👥 Đoàn là máy nhân × 2.25' : '👥 Group = ×2.25 multiplier'}
+            <p className="text-[22px] font-black text-slate-300 leading-none mb-1">H7 ×2.25</p>
+            <p className="text-[13px] font-extrabold text-text leading-snug mb-3">
+              {isVi ? 'Sức mạnh bầy đàn của tour đoàn' : 'The herd power of group tours'}
+            </p>
+            <p className="text-[12px] text-text2 leading-relaxed mb-4">
+              {isVi
+                ? 'Đoàn khách 20 người mua gấp 2.25 lần so với khách lẻ, nhờ hiệu ứng lan truyền (S_Social). Một người dừng lại mua, cả đoàn xúm vào.'
+                : 'A 20-person group buys 2.25× more than solo travelers, thanks to contagion effects (S_Social). One stops to buy, the whole group follows.'}
+            </p>
+            <blockquote className="border-l-2 border-slate-500/40 pl-3">
+              <p className="text-[11px] text-slate-200/60 italic">
+                {isVi ? '"Thấy người ta mua là mình cũng muốn mua theo."' : '"Seeing others buy made me want to buy too."'}
               </p>
-              <p className="text-[12px] text-text2 leading-relaxed mb-3">
-                {isVi
-                  ? '1 người dừng → 5 người dừng → cả đoàn 20 người xúm vào. Cùng HDV, cùng sản phẩm — đoàn mua gấp 2.25 lần đi lẻ.'
-                  : '1 stops → 5 stop → whole 20-person group crowds in. Same guide, same product — group buys 2.25× more than solo.'}
-              </p>
-              <blockquote className="border-l-2 border-slate-500/35 pl-2.5">
-                <p className="text-[10px] text-slate-200/60 italic">{isVi ? '"Thấy người ta mua là mình cũng muốn mua theo."' : '"Seeing everyone buying made me want to buy too."'}</p>
-              </blockquote>
-            </div>
+            </blockquote>
+          </div>
 
-            {/* ⚡ Paradox */}
-            <div className="rounded-xl bg-amber-500/5 border border-amber-500/25 p-4">
-              <p className="text-[10px] font-extrabold uppercase tracking-widest text-amber-400 mb-2">⚡ {isVi ? 'Nghịch lý' : 'The paradox'}</p>
-              <p className="text-[12px] text-text2 leading-relaxed mb-2.5">
-                {isVi
-                  ? 'Người ta không mua vì không biết sản phẩm là gì — không phải vì đắt.'
-                  : 'They don\'t buy because they don\'t understand the product — not because it\'s expensive.'}
-              </p>
-              <blockquote className="border-l-2 border-amber-500/40 pl-2.5 mb-2">
-                <p className="text-[10px] text-amber-200/70 italic">
-                  {isVi ? '"Không phải không có tiền. Không biết cái đó là cái gì."' : '"Not that they can\'t afford it. They don\'t know what it is."'}
-                </p>
-                <footer className="text-[9px] text-amber-400 font-semibold mt-0.5">— HDV Trần Minh Luyện</footer>
-              </blockquote>
-              <p className="text-[11px] font-bold text-amber-400">
-                {isVi ? '→ Kể chuyện = đòn bẩy ROI cao nhất' : '→ Storytelling = highest-ROI lever'}
-              </p>
-            </div>
+        </div>
 
-          </div>{/* end right column */}
-
-        </div>{/* end flex row */}
       </div>
     </div>
   );
