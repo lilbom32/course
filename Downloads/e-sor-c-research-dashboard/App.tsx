@@ -14,6 +14,8 @@ import {
   Calculator, Share2, Footprints, Lightbulb
 } from 'lucide-react';
 
+import uniLogo from './assets/university_logo.png';
+
 // --- I18N DICTIONARY ---
 const TRANSLATIONS = {
   vi: {
@@ -1759,25 +1761,109 @@ const FormulasView = ({ lang }: { lang: Lang }) => {
   const isVi = lang === 'vi';
 
   const HYPS_DATA = [
-    { id: 'H1', rel: 'S_Cultural → O_Arousal (+)', formula: 'S_Cultural × 0.85', note: isVi ? 'Storytelling tạo hứng thú trực tiếp' : 'Storytelling directly creates excitement', color: 'blue' },
-    { id: 'H2', rel: 'O_Arousal → R_Buy_Impulse (+)', formula: 'Arousal × 0.9', note: isVi ? 'Hứng thú cao → mua ngẫu hứng' : 'High arousal → impulse purchase', color: 'purple' },
-    { id: 'H3', rel: 'S_Cultural → O_Pleasure (+)', formula: 'S_Cultural × 0.75 + S_Product × 0.25', note: isVi ? 'Bản sắc văn hóa tạo ký ức' : 'Cultural identity creates memories', color: 'blue' },
-    { id: 'H4', rel: 'O_Pleasure → R_Buy_Volume (+)', formula: 'Pleasure × 0.85', note: isVi ? 'Cảm xúc lâu dài → mua nhiều' : 'Lasting emotion → volume purchase', color: 'purple' },
-    { id: 'H5', rel: isVi ? 'O_Attitude điều tiết S→R' : 'O_Attitude moderates S→R', formula: 'gate = Attitude / 100', note: isVi ? 'BỘ LỌC: < 40 = chặn, ≥ 70 = mở' : 'GATE: < 40 = blocked, ≥ 70 = open', color: 'amber' },
-    { id: 'H6', rel: 'S_Social → O_Arousal (+)', formula: 'S_Social × 0.9 × (tour ? 1.3 : 0.7)', note: isVi ? 'Tour boost: ×1.3 vs Lẻ: ×0.7' : 'Tour boost: ×1.3 vs Solo: ×0.7', color: 'blue' },
-    { id: 'H7', rel: isVi ? 'S_Social × Đoàn/Lẻ' : 'S_Social × Group/Solo', formula: 'tour ? S_Social × 1.4 : S_Social × 0.5', note: isVi ? 'Bối cảnh khuếch đại hiệu ứng xã hội' : 'Context amplifies social effect', color: 'amber' },
-    { id: 'H8', rel: isVi ? 'Thiếu S_Promo → O_Attitude (−) → R_NoBuy' : 'Low S_Promo → O_Attitude (−) → R_NoBuy', formula: '(100 − S_Promotion) × 0.8', note: isVi ? 'Không Storytelling/HDV → giảm niềm tin → NoBuy' : 'No Storytelling/Guide → trust drops → NoBuy', color: 'red' },
-    { id: 'H9', rel: 'R_Buy → R_Recommend', formula: 'Arousal × 0.7', note: isVi ? 'Mua hàng tạo truyền miệng' : 'Purchase triggers word-of-mouth', color: 'green' },
-    { id: 'H10', rel: 'Feedback Loop R → S_Social', formula: 'Arousal × 0.5 × tourFactor', note: isVi ? 'Vòng lặp phản hồi: lây lan trong đoàn' : 'Feedback loop: spreads within group', color: 'teal' },
+    {
+      id: 'H1',
+      rel: isVi ? 'Câu chuyện văn hóa → Hứng thú (+)' : 'Cultural story → Arousal (+)',
+      formula: isVi ? 'Câu chuyện văn hóa × 0.85 → Hứng thú' : 'Cultural Story × 0.85 → Arousal',
+      note: isVi ? 'Nghe câu chuyện hay → khách bắt đầu hứng thú ngay lập tức' : 'Hearing a good story → immediate excitement spike',
+      color: 'blue'
+    },
+    {
+      id: 'H2',
+      rel: isVi ? 'Hứng thú tức thì → Mua ngay (+)' : 'Arousal → Impulse Buy (+)',
+      formula: isVi ? 'Hứng thú × 0.9 → Xác suất mua ngẫu hứng' : 'Arousal × 0.9 → Impulse buy probability',
+      note: isVi ? 'Hứng thú càng cao → khách móc ví càng nhanh, không cần suy nghĩ lâu' : 'Higher arousal → faster wallet-opening, less deliberation',
+      color: 'purple'
+    },
+    {
+      id: 'H3',
+      rel: isVi ? 'Câu chuyện văn hóa → Niềm vui lâu dài (+)' : 'Cultural story → Lasting Pleasure (+)',
+      formula: isVi ? 'Văn hóa × 0.75 + Sản phẩm × 0.25 → Niềm vui' : 'Culture × 0.75 + Product × 0.25 → Pleasure',
+      note: isVi ? 'Sản phẩm mang bản sắc địa phương tạo ký ức — khách muốn mua để kỷ niệm' : 'Locally-rooted products create memories — buying as keepsake',
+      color: 'blue'
+    },
+    {
+      id: 'H4',
+      rel: isVi ? 'Niềm vui lâu dài → Mua nhiều (+)' : 'Lasting Pleasure → Volume Purchase (+)',
+      formula: isVi ? 'Niềm vui × 0.85 → Số lượng mua' : 'Pleasure × 0.85 → Purchase volume',
+      note: isVi ? 'Cảm xúc bền vững → mua số lượng lớn, mua làm quà cho người thân' : 'Sustained emotion → bulk purchase, gifting behavior',
+      color: 'purple'
+    },
+    {
+      id: 'H5',
+      rel: isVi ? 'Niềm tin điều tiết toàn bộ quyết định' : 'Trust moderates all decisions',
+      formula: isVi ? 'Cổng = Niềm tin ÷ 100  (từ 0.0 đến 1.0)' : 'Gate = Trust ÷ 100  (0.0 to 1.0)',
+      note: isVi ? 'Cổng kiểm soát: Niềm tin < 40 → chặn hoàn toàn dù kích thích mạnh đến đâu' : 'Trust gatekeeper: < 40 → fully blocked regardless of stimuli',
+      color: 'amber'
+    },
+    {
+      id: 'H6',
+      rel: isVi ? 'Ảnh hưởng xã hội → Hứng thú (+)' : 'Social influence → Arousal (+)',
+      formula: isVi ? 'Đi đoàn: ×1.3 · Đi lẻ: ×0.7' : 'Tour: ×1.3 · Solo: ×0.7',
+      note: isVi ? 'HDV và người xung quanh khuếch đại cảm xúc — mạnh hơn khi đi tour' : 'Guide & crowd amplify emotion — stronger in tour context',
+      color: 'blue'
+    },
+    {
+      id: 'H7',
+      rel: isVi ? 'Bối cảnh tour/lẻ khuếch đại xã hội' : 'Tour/solo context amplifies social',
+      formula: isVi ? 'Tour đoàn: × 1.4 · Khách lẻ: × 0.5' : 'Tour group: × 1.4 · Solo: × 0.5',
+      note: isVi ? 'Tổng hệ số khuếch đại: 1.4 ÷ 0.5 = 2.8× — tour đoàn mạnh gấp 2.8 lần' : 'Total multiplier: 1.4 ÷ 0.5 = 2.8× — tour context is 2.8× stronger',
+      color: 'amber'
+    },
+    {
+      id: 'H8',
+      rel: isVi ? 'Thiếu câu chuyện → Mất niềm tin → Không mua' : 'No storytelling → Trust drop → No buy',
+      formula: isVi ? 'Rủi ro = (100 − Kể chuyện) × 0.8' : 'Risk score = (100 − Storytelling) × 0.8',
+      note: isVi ? 'Không ai giải thích sản phẩm là gì → khách nghi ngờ → bỏ đi' : 'No product explanation → doubt → walk away',
+      color: 'red'
+    },
+    {
+      id: 'H9',
+      rel: isVi ? 'Mua hàng → Giới thiệu bạn bè (+)' : 'Purchase → Word-of-mouth (+)',
+      formula: isVi ? 'Hứng thú × 0.7 → Xác suất chia sẻ' : 'Arousal × 0.7 → Sharing probability',
+      note: isVi ? 'Khách hứng thú mua xong → quay ra kéo bạn đồng hành cùng xem' : 'Excited buyer → pulls travel companions over to see',
+      color: 'green'
+    },
+    {
+      id: 'H10',
+      rel: isVi ? 'Hiệu ứng lan truyền trong đoàn' : 'In-group contagion effect',
+      formula: isVi ? 'Hứng thú × 0.5 × (hệ số đoàn/lẻ)' : 'Arousal × 0.5 × (tour/solo factor)',
+      note: isVi ? '5–7 người mua → cả đoàn xúm vào: phản ứng mua "lây" như domino' : '5–7 buyers → whole group joins: buying behavior spreads like domino',
+      color: 'teal'
+    },
   ];
 
   const SCENARIOS_TABLE = [
-    { name: isVi ? 'Lý tưởng' : 'Ideal', key: 'sCu:90 sSo:80 sPr:85 oAt:80 ctx:80', buy: '~95%', noBuy: '~0%', und: '~5%' },
-    { name: isVi ? 'Thiếu Story' : 'No Story', key: 'sCu:10 sSo:50 sPr:60 oAt:70 ctx:70', buy: '~27%', noBuy: '~44%', und: '~29%' },
-    { name: 'Made in China', key: 'sCu:70 sSo:60 sPr:30 oAt:20 ctx:70', buy: '~14%', noBuy: '~61%', und: '~25%' },
-    { name: isVi ? 'Tour đoàn' : 'Tour Group', key: 'sCu:70 sSo:90 sPr:65 oAt:70 ctx:95', buy: '~69%', noBuy: '~12%', und: '~19%' },
-    { name: isVi ? 'Khách lẻ' : 'Solo', key: 'sCu:65 sSo:20 sPr:70 oAt:75 ctx:10', buy: '~64%', noBuy: '~0%', und: '~36%' },
-    { name: isVi ? 'Chỉ bán sỉ' : 'Wholesale', key: 'sCu:60 sSo:50 sPr:70 oAt:65 ctx:60', buy: '~49%', noBuy: '~15%', und: '~36%' },
+    {
+      name: isVi ? '🌟 Lý tưởng' : '🌟 Ideal',
+      key: isVi ? 'Câu chuyện hay · HDV giỏi · Sản phẩm chất lượng · Khách tin tưởng · Tour đoàn' : 'Great story · Skilled guide · Quality product · High trust · Tour group',
+      buy: '~95%', noBuy: '~0%', und: '~5%'
+    },
+    {
+      name: isVi ? '📭 Thiếu câu chuyện' : '📭 No Story',
+      key: isVi ? 'Không ai kể chuyện · Khách không hiểu sản phẩm · Không có lý do để mua' : 'No storytelling · Customers don\'t understand product · No reason to buy',
+      buy: '~27%', noBuy: '~44%', und: '~29%'
+    },
+    {
+      name: isVi ? '🚫 Hàng Trung Quốc' : '🚫 Counterfeit Goods',
+      key: isVi ? 'Mất niềm tin hoàn toàn · Dù câu chuyện hay, khách vẫn từ chối' : 'Complete trust breakdown · Even good stories can\'t overcome it',
+      buy: '~14%', noBuy: '~61%', und: '~25%'
+    },
+    {
+      name: isVi ? '🚌 Tour đoàn' : '🚌 Tour Group',
+      key: isVi ? 'HDV nhiệt tình · Đoàn đông · Hiệu ứng lan truyền mạnh · Áp lực xã hội tích cực' : 'Enthusiastic guide · Large group · Strong contagion effect · Positive social pressure',
+      buy: '~69%', noBuy: '~12%', und: '~19%'
+    },
+    {
+      name: isVi ? '🎒 Khách lẻ' : '🎒 Solo Traveler',
+      key: isVi ? 'Tự quyết định · Không có HDV · Phụ thuộc vào câu chuyện và chất lượng sản phẩm' : 'Self-directed · No guide · Depends on story quality and product',
+      buy: '~64%', noBuy: '~0%', und: '~36%'
+    },
+    {
+      name: isVi ? '🏢 Chỉ bán sỉ' : '🏢 Wholesale Only',
+      key: isVi ? 'Không bán lẻ cho khách du lịch · Kênh phân phối sai mục tiêu · Khó tiếp cận' : 'Doesn\'t sell retail to tourists · Wrong distribution channel · Hard to access',
+      buy: '~49%', noBuy: '~15%', und: '~36%'
+    },
   ];
 
   return (
@@ -2031,25 +2117,61 @@ const FormulasView = ({ lang }: { lang: Lang }) => {
           </InteractiveFormula>
         </div>
 
-        <div className="overflow-x-auto mb-6">
+        <div className="overflow-x-auto mb-6 rounded-xl border border-border bg-surface">
           <table className="w-full text-xs">
             <thead>
-              <tr className="border-b border-border">
-                <th className="py-2 text-left text-text3 font-bold uppercase">{t.fmCondition}</th>
-                <th className="py-2 text-center text-text3 font-bold uppercase">{t.fmThreshold}</th>
-                <th className="py-2 text-center text-text3 font-bold uppercase">{t.fmPenalty}</th>
+              <tr className="border-b border-border bg-surface2/60">
+                <th className="py-2.5 px-4 text-left text-text3 font-bold uppercase">{t.fmCondition}</th>
+                <th className="py-2.5 px-3 text-center text-text3 font-bold uppercase">{t.fmPenalty}</th>
+                <th className="py-2.5 px-4 text-left text-text3 font-bold uppercase">{isVi ? 'Ý nghĩa thực tế' : 'What it means'}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-border/30 font-mono">
-              <tr><td className="py-2 text-amber-400">Attitude &lt; 40</td><td className="py-2 text-center font-bold text-red-400">+60</td><td className="py-2 text-center text-text3">{isVi ? 'Chặn hoàn toàn' : 'Full block'}</td></tr>
-              <tr><td className="py-2 text-amber-400">Attitude &lt; 55</td><td className="py-2 text-center font-bold text-amber-400">+25</td><td className="py-2 text-center text-text3">{isVi ? 'Nghi ngờ cao' : 'High doubt'}</td></tr>
-              <tr><td className="py-2 text-amber-400">Attitude &lt; 70</td><td className="py-2 text-center font-bold text-amber-300">+8</td><td className="py-2 text-center text-text3">{isVi ? 'Nhẹ' : 'Mild'}</td></tr>
-              <tr><td className="py-2 text-blue-400">S_Cultural &lt; 30</td><td className="py-2 text-center font-bold text-red-400">+30</td><td className="py-2 text-center text-text3">{isVi ? 'Không hiểu giá trị' : 'No value understanding'}</td></tr>
-              <tr><td className="py-2 text-blue-400">S_Cultural &lt; 50</td><td className="py-2 text-center font-bold text-amber-400">+12</td><td className="py-2 text-center text-text3">{isVi ? 'Story yếu' : 'Weak story'}</td></tr>
-              <tr><td className="py-2 text-blue-400">S_Price &lt; 40</td><td className="py-2 text-center font-bold text-red-400">+20</td><td className="py-2 text-center text-text3">{isVi ? 'Giá mập mờ' : 'Price opacity'}</td></tr>
-              <tr><td className="py-2 text-blue-400">S_Price &lt; 55</td><td className="py-2 text-center font-bold text-amber-300">+5</td><td className="py-2 text-center text-text3">{isVi ? 'Giá chưa rõ' : 'Price unclear'}</td></tr>
-              <tr><td className="py-2 text-blue-400">S_Promo &lt; 30</td><td className="py-2 text-center font-bold text-red-400">+25</td><td className="py-2 text-center text-text3">{isVi ? 'Không Story/HDV — H8' : 'No Story/Guide — H8'}</td></tr>
-              <tr><td className="py-2 text-blue-400">S_Promo &lt; 50</td><td className="py-2 text-center font-bold text-amber-400">+10</td><td className="py-2 text-center text-text3">{isVi ? 'Story yếu — H8' : 'Weak Story — H8'}</td></tr>
+            <tbody className="divide-y divide-border/30">
+              <tr className="hover:bg-red-500/5">
+                <td className="py-2.5 px-4 font-medium text-amber-300">{isVi ? 'Niềm tin rất thấp (dưới 40)' : 'Very low trust (below 40)'}</td>
+                <td className="py-2.5 px-3 text-center font-black text-red-400">+60</td>
+                <td className="py-2.5 px-4 text-text3">{isVi ? 'Thấy hàng Trung Quốc, giá loạn → đặt xuống ngay, không thương lượng' : 'Fake goods or chaotic pricing → put it down immediately, no negotiation'}</td>
+              </tr>
+              <tr className="hover:bg-amber-500/5">
+                <td className="py-2.5 px-4 font-medium text-amber-400">{isVi ? 'Niềm tin thấp (40–54)' : 'Low trust (40–54)'}</td>
+                <td className="py-2.5 px-3 text-center font-black text-amber-400">+25</td>
+                <td className="py-2.5 px-4 text-text3">{isVi ? 'Còn nghi ngờ về xuất xứ hoặc giá cả → do dự, hỏi nhiều rồi bỏ đi' : 'Doubtful about origin or price → hesitates, asks questions, often leaves'}</td>
+              </tr>
+              <tr className="hover:bg-amber-500/5">
+                <td className="py-2.5 px-4 font-medium text-amber-300">{isVi ? 'Niềm tin trung bình (55–69)' : 'Moderate trust (55–69)'}</td>
+                <td className="py-2.5 px-3 text-center font-bold text-amber-300">+8</td>
+                <td className="py-2.5 px-4 text-text3">{isVi ? 'Chưa hoàn toàn tin tưởng nhưng vẫn cân nhắc mua' : 'Not fully convinced but still considering purchase'}</td>
+              </tr>
+              <tr className="hover:bg-blue-500/5">
+                <td className="py-2.5 px-4 font-medium text-blue-300">{isVi ? 'Không có câu chuyện nào (dưới 30)' : 'No cultural story (below 30)'}</td>
+                <td className="py-2.5 px-3 text-center font-black text-red-400">+30</td>
+                <td className="py-2.5 px-4 text-text3">{isVi ? 'Khách không hiểu sản phẩm là gì → không thấy giá trị → không mua' : 'Customer doesn\'t understand what it is → no perceived value → no buy'}</td>
+              </tr>
+              <tr className="hover:bg-blue-500/5">
+                <td className="py-2.5 px-4 font-medium text-blue-400">{isVi ? 'Câu chuyện văn hóa yếu (30–49)' : 'Weak cultural story (30–49)'}</td>
+                <td className="py-2.5 px-3 text-center font-bold text-amber-400">+12</td>
+                <td className="py-2.5 px-4 text-text3">{isVi ? 'Câu chuyện sơ sài, không đủ hấp dẫn để tạo ra cảm xúc' : 'Story too thin to generate emotional engagement'}</td>
+              </tr>
+              <tr className="hover:bg-purple-500/5">
+                <td className="py-2.5 px-4 font-medium text-purple-300">{isVi ? 'Giá không minh bạch (dưới 40)' : 'Price opacity (below 40)'}</td>
+                <td className="py-2.5 px-3 text-center font-black text-red-400">+20</td>
+                <td className="py-2.5 px-4 text-text3">{isVi ? 'Giá không niêm yết hoặc mỗi nơi một giá → khách sợ bị lừa → không dám mua' : 'No price tag or inconsistent pricing → fear of being cheated → won\'t buy'}</td>
+              </tr>
+              <tr className="hover:bg-purple-500/5">
+                <td className="py-2.5 px-4 font-medium text-purple-400">{isVi ? 'Giá chưa rõ ràng (40–54)' : 'Unclear pricing (40–54)'}</td>
+                <td className="py-2.5 px-3 text-center font-bold text-amber-300">+5</td>
+                <td className="py-2.5 px-4 text-text3">{isVi ? 'Giá hơi mập mờ, khách hơi phân vân nhưng không đến mức bỏ đi' : 'Slightly unclear pricing, minor hesitation but won\'t necessarily leave'}</td>
+              </tr>
+              <tr className="hover:bg-red-500/5">
+                <td className="py-2.5 px-4 font-medium text-red-300">{isVi ? 'Không có HDV hoặc kể chuyện (dưới 30)' : 'No guide or storytelling (below 30)'}</td>
+                <td className="py-2.5 px-3 text-center font-black text-red-400">+25</td>
+                <td className="py-2.5 px-4 text-text3">{isVi ? 'Không ai hướng dẫn, không ai kể chuyện → mất niềm tin nghiêm trọng (H8)' : 'No guide, no story → severe trust drop — the H8 effect'}</td>
+              </tr>
+              <tr className="hover:bg-red-500/5">
+                <td className="py-2.5 px-4 font-medium text-red-400">{isVi ? 'Kể chuyện yếu (30–49)' : 'Weak storytelling (30–49)'}</td>
+                <td className="py-2.5 px-3 text-center font-bold text-amber-400">+10</td>
+                <td className="py-2.5 px-4 text-text3">{isVi ? 'HDV giới thiệu sơ sài → thiếu thuyết phục, khách nghe mà không cảm' : 'Shallow guide introduction → unconvincing, customer hears but doesn\'t feel'}</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -2132,8 +2254,8 @@ const FormulasView = ({ lang }: { lang: Lang }) => {
       </section>
 
       {/* Footer */}
-      <div className="text-center text-[10px] text-text3 uppercase tracking-widest opacity-50">
-        E-SOR-C Formula System — Mehrabian & Russell (1974) Extended
+      <div className="text-center text-[10px] text-text3 uppercase tracking-widest opacity-40">
+        {t.footer}
       </div>
 
     </div>
@@ -2507,7 +2629,7 @@ const App: React.FC = () => {
       <header className="sticky top-0 z-50 flex items-center justify-between px-4 py-4 border-b bg-bg/80 border-border backdrop-blur-xl md:px-10" role="banner">
         <div className="flex items-center gap-3">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHLBm0N0WHs3Vl-eBlFyYHVtVqm9HroGnwAw&s"
+            src={uniLogo}
             alt="University Logo"
             className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-full"
           />
