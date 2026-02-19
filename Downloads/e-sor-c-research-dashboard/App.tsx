@@ -676,61 +676,75 @@ const ESORCDiagram = () => {
         <rect x="800" y="20" width="290" height="520" rx="16" className="fill-surface2/50 stroke-green-500/50" strokeWidth="1" strokeDasharray="4,4" />
         <text x="945" y="45" textAnchor="middle" fill="#4ade80" fontWeight="800" fontSize="13" letterSpacing="2">RESPONSE [R]</text>
 
-        {/* ═══ S → O Connections (H1, H3, H6) ═══ */}
-        {/* S_Product → O_Arousal */}
-        <path d="M220,91 C290,91 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.6" />
+        {/* ═══ S → O Connections ═══ */}
 
-        {/* S_Social → O_Arousal (H6) */}
-        <path d="M220,191 C290,191 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.6" />
-        <rect x="228" y="163" width="24" height="16" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1" opacity="0.95" />
-        <text x="240" y="175" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H6</text>
+        {/* S_Product → O_Arousal (unlabeled, background path) */}
+        <path d="M220,91 C290,91 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.5" />
 
-        {/* S_Cultural → O_Arousal (H1) */}
-        <path d="M220,291 C290,291 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.6" />
-        <rect x="228" y="240" width="24" height="16" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1" opacity="0.95" />
-        <text x="240" y="252" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H1</text>
+        {/* S_Social → O_Arousal (H6: social influence drives excitement) */}
+        <path d="M220,191 C290,191 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.7" />
+        <rect x="226" y="130" width="28" height="18" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1.5" />
+        <text x="240" y="143" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H6</text>
 
-        {/* S_Cultural → O_Pleasure (H3) */}
-        <path d="M220,291 C290,291 290,211 360,211" fill="none" stroke="#06b6d4" strokeWidth="2" markerEnd="url(#arrow-cyan)" opacity="0.6" />
-        <rect x="252" y="284" width="24" height="16" rx="3" fill="#082f49" stroke="#06b6d4" strokeWidth="1" opacity="0.95" />
-        <text x="264" y="296" textAnchor="middle" fill="#67e8f9" fontSize="10" fontWeight="700">H3</text>
+        {/* S_Cultural → O_Arousal (H1: cultural story drives excitement) */}
+        <path d="M220,291 C290,291 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.7" />
+        <rect x="226" y="230" width="28" height="18" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1.5" />
+        <text x="240" y="243" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H1</text>
 
-        {/* S_Place/Price → O_Arousal (atmospheric stimuli → excitement) */}
-        <path d="M220,391 C290,391 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.5" />
+        {/* S_Cultural → O_Pleasure (H3: cultural identity creates lasting emotion) */}
+        <path d="M220,291 C290,291 290,211 360,211" fill="none" stroke="#06b6d4" strokeWidth="2" markerEnd="url(#arrow-cyan)" opacity="0.7" />
+        <rect x="250" y="270" width="28" height="18" rx="3" fill="#082f49" stroke="#06b6d4" strokeWidth="1.5" />
+        <text x="264" y="283" textAnchor="middle" fill="#67e8f9" fontSize="10" fontWeight="700">H3</text>
 
-        {/* S_Place/Price → O_Attitude (H8: thiếu S_Promotion → O_Attitude âm → R_NoBuy) */}
-        <path d="M220,391 C260,391 270,446 290,446" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4,2" markerEnd="url(#arrow-amber)" opacity="0.6" />
-        <rect x="228" y="358" width="24" height="16" rx="3" fill="#1c1003" stroke="#f59e0b" strokeWidth="1" opacity="0.95" />
-        <text x="240" y="370" textAnchor="middle" fill="#fcd34d" fontSize="10" fontWeight="700">H8</text>
+        {/* S_Place/Price → O_Arousal (atmospheric cue, minor path) */}
+        <path d="M220,391 C290,391 290,130 360,130" fill="none" stroke="#a855f7" strokeWidth="1.5" markerEnd="url(#arrow-purple)" opacity="0.35" />
 
-        {/* O_Arousal → R_Buy (H2) — đường thẳng */}
+        {/* ═══ H8: Thiếu S_Cultural/Promo → O_Attitude giảm (đường đứt nét amber) ═══ */}
+        {/* Xuất phát từ S_Cultural (thiếu câu chuyện) xuống O_Attitude */}
+        <path d="M120,327 L120,490 L290,490 L290,482" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="5,3" markerEnd="url(#arrow-amber)" opacity="0.7" />
+        <rect x="80" y="390" width="28" height="18" rx="3" fill="#1c1003" stroke="#f59e0b" strokeWidth="1.5" />
+        <text x="94" y="403" textAnchor="middle" fill="#fcd34d" fontSize="10" fontWeight="700">H8</text>
+        <text x="60" y="418" fill="#fbbf24" fontSize="9" fontStyle="italic">Thiếu</text>
+        <text x="60" y="430" fill="#fbbf24" fontSize="9" fontStyle="italic">story →</text>
+        <text x="60" y="442" fill="#fbbf24" fontSize="9" fontStyle="italic">Att. ↓</text>
+
+        {/* ═══ O → R Connections ═══ */}
+
+        {/* O_Arousal → R_Buy (H2) */}
         <path d="M560,96 L840,91" fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#arrow-green)" />
-        <rect x="680" y="81" width="30" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1" />
-        <text x="695" y="95" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H2</text>
+        <rect x="678" y="79" width="32" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1.5" />
+        <text x="694" y="93" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H2</text>
 
-        {/* O_Pleasure → R_Buy (H4) — đường thẳng chéo */}
+        {/* O_Pleasure → R_Buy (H4) */}
         <path d="M560,211 L840,110" fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#arrow-green)" />
-        <rect x="680" y="150" width="30" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1" />
-        <text x="695" y="164" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H4</text>
+        <rect x="678" y="148" width="32" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1.5" />
+        <text x="694" y="162" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H4</text>
 
-        {/* H5: O_Attitude thấp → R_NoBuy — right-angle path */}
-        <path d="M490,446 L820,446 L820,236 L840,236" fill="none" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="5,5" markerEnd="url(#arrow-red)" opacity="0.85" />
-        <text x="660" y="462" textAnchor="middle" fill="#fb923c" fontSize="10" fontWeight="700">H5 (Att. Blocks → NoBuy)</text>
+        {/* ═══ H5: O_Attitude thấp → chặn → R_NoBuy ═══ */}
+        {/* Đường từ O_Attitude sang phải tới R_NoBuy, đi ở giữa tránh [C] Context */}
+        <path d="M490,446 L490,380 L840,236" fill="none" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="5,4" markerEnd="url(#arrow-red)" opacity="0.9" />
+        <rect x="452" y="370" width="76" height="20" rx="4" fill="#450a0a" stroke="#ef4444" strokeWidth="1.5" />
+        <text x="490" y="384" textAnchor="middle" fill="#fca5a5" fontSize="10" fontWeight="700">H5 · Blocks</text>
 
-        {/* H9: R_Buy → R_Recommend — bracket thẳng cạnh phải, tránh R_NoBuy */}
-        <path d="M1060,127 L1083,127 L1083,345 L1060,345" fill="none" stroke="#14b8a6" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#arrow-teal)" />
-        <rect x="1063" y="223" width="28" height="18" rx="4" fill="#0f172a" stroke="#14b8a6" strokeWidth="1" />
-        <text x="1077" y="236" textAnchor="middle" fill="#14b8a6" fontSize="11" fontWeight="700">H9</text>
+        {/* ═══ H7: [C] Context điều tiết H6 (S_Social × tour/solo → O_Arousal) ═══ */}
+        {/* Đường từ [C] Context lên cắt đường S_Social→O_Arousal với ký hiệu × */}
+        <path d="M615,410 L615,191" fill="none" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="4,3" markerEnd="url(#arrow-gray)" opacity="0.8" />
+        <circle cx="615" cy="191" r="8" fill="#1e293b" stroke="#94a3b8" strokeWidth="1.5" />
+        <text x="615" y="195" textAnchor="middle" fill="#e2e8f0" fontSize="11" fontWeight="700">×</text>
+        <rect x="590" y="280" width="50" height="32" rx="4" fill="#0f172a" stroke="#64748b" strokeWidth="1" opacity="0.9" />
+        <text x="615" y="293" textAnchor="middle" fill="#cbd5e1" fontSize="10" fontWeight="700">H7</text>
+        <text x="615" y="306" textAnchor="middle" fill="#94a3b8" fontSize="8.5">Tour×2.25</text>
 
-        <path d="M840,381 C120,381 120,381 120,227" fill="none" stroke="#64748b" strokeWidth="1.5" strokeDasharray="5,5" markerEnd="url(#arrow-gray)" opacity="0.5" />
-        <text x="480" y="530" textAnchor="middle" fill="#94a3b8" fontSize="11" fontStyle="italic">Feedback Loop (H10): R_Recommend → S_Social</text>
+        {/* ═══ H9: R_Buy → R_Recommend (tác động mua → giới thiệu) ═══ */}
+        <path d="M1060,91 L1100,91 L1100,381 L1060,381" fill="none" stroke="#14b8a6" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#arrow-teal)" />
+        <rect x="1075" y="224" width="34" height="18" rx="4" fill="#0f172a" stroke="#14b8a6" strokeWidth="1.5" />
+        <text x="1092" y="237" textAnchor="middle" fill="#14b8a6" fontSize="11" fontWeight="700">H9</text>
 
-        {/* [C] Context: đường thẳng đứng cắt qua H2 & H4 — standard moderator notation */}
-        {/* H7: Context moderates S_Social × O_Arousal (tour vs solo amplification) */}
-        <path d="M720,410 L720,75" fill="none" stroke="#64748b" strokeWidth="1.5" strokeDasharray="4,3" markerEnd="url(#arrow-gray)" opacity="0.75" />
-        <text x="736" y="253" fill="#94a3b8" fontSize="10" fontStyle="italic">C mod.</text>
-        <rect x="730" y="257" width="24" height="16" rx="3" fill="#1e293b" stroke="#64748b" strokeWidth="1" opacity="0.9" />
-        <text x="742" y="269" textAnchor="middle" fill="#cbd5e1" fontSize="10" fontWeight="700">H7</text>
+        {/* ═══ H10: R_Recommend → S_Social (feedback loop, vòng trên cùng) ═══ */}
+        {/* Đường vòng ra phía trên, dễ thấy hơn */}
+        <path d="M945,345 L945,12 L130,12 L130,55" fill="none" stroke="#64748b" strokeWidth="1.5" strokeDasharray="6,4" markerEnd="url(#arrow-gray)" opacity="0.7" />
+        <rect x="450" y="1" width="180" height="17" rx="4" fill="#0f172a" stroke="#475569" strokeWidth="1" />
+        <text x="540" y="13" textAnchor="middle" fill="#94a3b8" fontSize="9" fontStyle="italic">H10: R_Recommend → S_Social</text>
       </svg>
 
       {/* HTML Nodes - Z-Index 20 */}
@@ -2363,129 +2377,129 @@ const InfoCard = ({ icon, title, sub, color, type = 'driver', codeCount, hypothe
 // ─── CODEBOOK DATA ──────────────────────────────────────────────────────────
 const CODEBOOK_DATA = [
   // ── S_Product (16 codes) ──
-  { id:'SP-01', group:'S', sub:'S_Product', topic:'Sản phẩm đồng nhất giữa các tỉnh', topicEn:'Homogeneous products across provinces', def:'Quà lưu niệm ĐBSCL thiếu tính đặc trưng riêng từng tỉnh, sản phẩm tương đồng giữa các điểm đến; khách không phân biệt được xuất xứ.', quote:'"Đến đây mua, đến kia mua, mua ở đâu cũng vậy hết"', src:'HDV, CG' },
-  { id:'SP-02', group:'S', sub:'S_Product', topic:'Bao bì, mẫu mã kém', topicEn:'Poor packaging & design', def:'Bao bì và thiết kế sản phẩm chưa đạt tiêu chuẩn thẩm mỹ cao cấp, chưa đủ sức thu hút khách mua quà biếu tặng.', quote:'"Mẫu mã chưa ấn tượng, chưa xứng tầm quà tặng"', src:'CG' },
-  { id:'SP-03', group:'S', sub:'S_Product', topic:'Thiếu phân khúc cao cấp', topicEn:'Missing premium segment', def:'Vắng bóng sản phẩm quà lưu niệm phân khúc cao cấp (premium/luxury gift), thiếu lựa chọn cho khách có nhu cầu tặng quà sang trọng.', quote:'"Không có gì để cảm thấy xứng đáng với tầm quà cao cấp"', src:'CG' },
-  { id:'SP-04', group:'S', sub:'S_Product', topic:'Nghịch lý Made in China', topicEn:'Made-in-China paradox', def:'Sản phẩm mang chủ đề Việt Nam nhưng được sản xuất tại Trung Quốc, làm mất tính xác thực và bản sắc địa phương.', quote:'"Lật ra thấy Made in China là khách đặt xuống không mua nữa"', src:'HDV' },
-  { id:'SP-05', group:'S', sub:'S_Product', topic:'Hai thái cực thiết kế', topicEn:'Design extremes', def:'Thiết kế sản phẩm phân cực: hoặc quá sặc sỡ hoặc quá đơn giản, thiếu điểm hài hòa phù hợp thị hiếu đa dạng.', quote:'"Phải có cái gì đó ở giữa, không phải quá sặc sỡ, không phải quá đơn giản"', src:'HDV' },
-  { id:'SP-06', group:'S', sub:'S_Product', topic:'Nguyên liệu tự nhiên địa phương', topicEn:'Local natural materials', def:'Sản phẩm từ nguyên liệu tự nhiên đặc trưng vùng (dừa, sen, lục bình, mướp) có tiềm năng hấp dẫn vì tính địa phương cao.', quote:'"Sản phẩm địa phương từ dừa, xơ dừa, từ mướp — đồ lưu niệm"', src:'HDV, HKD' },
-  { id:'SP-07', group:'S', sub:'S_Product', topic:'Tính tiện lợi vận chuyển', topicEn:'Transport convenience', def:'Khả năng mang về dễ dàng (nhỏ, nhẹ, không vỡ, bền) là tiêu chí lựa chọn hàng đầu của người mua quà lưu niệm.', quote:'"Khách hay hỏi: có bể không, có để được lâu không"', src:'HDV' },
-  { id:'SP-08', group:'S', sub:'S_Product', topic:'Nón lá — sản phẩm bán chạy nhất', topicEn:'Conical hat — best seller', def:'Nón lá là mặt hàng được khách quốc tế mua nhiều nhất: vừa mang biểu tượng văn hóa, vừa tiện dùng ngay tại chỗ.', quote:'"Khách Tây hay mua nón lá nhất, mua 5–7 cái, cả chục cái về tặng"', src:'HDV' },
-  { id:'SP-09', group:'S', sub:'S_Product', topic:'Artisan cá nhân hóa', topicEn:'Personalized artisan products', def:'Sản phẩm thủ công được cá nhân hóa (khắc tên, vẽ theo yêu cầu) bán tốt tại phân khúc khách sạn 4–5 sao và doanh nghiệp.', quote:'"Khách sạn đặt tranh nhỏ tặng khách VIP — bán được giá hơn vì unique"', src:'HKD' },
-  { id:'SP-10', group:'S', sub:'S_Product', topic:'Xu hướng eco-friendly', topicEn:'Eco-friendly trend', def:'Sản phẩm thân thiện môi trường đang được người mua ở mọi độ tuổi quan tâm và hỏi mua tại cơ sở sản xuất.', quote:'"Từ bạn trẻ đến người lớn tuổi đều hỏi đồ nào làm bằng tự nhiên"', src:'HKD' },
-  { id:'SP-11', group:'S', sub:'S_Product', topic:'Thiếu nhãn mác, chứng nhận', topicEn:'Missing labels & certifications', def:'Sản phẩm thiếu nhãn mác, thông tin xuất xứ, quy trình sản xuất và chứng nhận chất lượng, khiến khách không có cơ sở đánh giá.', quote:'"Không có chữ dấu hay dấu ấn gì để khách nước ngoài họ biết"', src:'HDV, CG' },
-  { id:'SP-12', group:'S', sub:'S_Product', topic:'Artisan vs đại trà', topicEn:'Artisan vs mass-produced', def:'Phân biệt sản xuất thủ công nghề nhân (unique, chất lượng cao, giá trị cao) và sản xuất hàng loạt (giá rẻ, kém đặc sắc).', quote:'"Làm thủ công thì mỗi cái một khác — giá trị mà máy không làm được"', src:'HKD' },
-  { id:'SP-13', group:'S', sub:'S_Product', topic:'Tiềm năng văn hóa chưa khai thác', topicEn:'Untapped cultural potential', def:'Một số sản phẩm văn hóa vật thể (chiếu Định Yên, áo bà ba) có tiềm năng lớn trở thành quà lưu niệm nhưng chưa được phát triển.', quote:'"Chiếu Định Yên nổi tiếng như vậy nhưng không ai làm thành quà để bán"', src:'HDV' },
-  { id:'SP-14', group:'S', sub:'S_Product', topic:'Quà thực phẩm được ưa chuộng hơn', topicEn:'Food souvenirs preferred by locals', def:'Khách nội địa ưa mua đồ ăn/thực phẩm đặc sản (kẹo dừa Bến Tre, bánh pía Sóc Trăng) hơn thủ công mỹ nghệ.', quote:'"Khách mình hay mua đồ ăn hơn, mang về biểu thấy hợp lý"', src:'HDV' },
-  { id:'SP-15', group:'S', sub:'S_Product', topic:'Hình ảnh miền Tây trên sản phẩm', topicEn:'Mekong imagery on products', def:'Sản phẩm gợi hình ảnh đặc trưng miền Tây (chim cò, sông nước, áo bà ba) thu hút và được khách quốc tế sẵn sàng mua.', quote:'"Túi xách có hình chim cò theo kiểu miền Tây — khách Tây thích và dễ mua"', src:'HDV' },
-  { id:'SP-16', group:'S', sub:'S_Product', topic:'Vắng bóng quà lưu niệm nhiều tỉnh', topicEn:'Souvenir gaps across provinces', def:'Nhiều tỉnh ĐBSCL gần như không có điểm bán quà lưu niệm chuyên biệt, thiếu hụt cung ứng nghiêm trọng.', quote:'"Nhiều tỉnh đi gần như không thấy chỗ nào bán quà lưu niệm hết"', src:'HDV' },
+  { id: 'SP-01', group: 'S', sub: 'S_Product', topic: 'Sản phẩm đồng nhất giữa các tỉnh', topicEn: 'Homogeneous products across provinces', def: 'Quà lưu niệm ĐBSCL thiếu tính đặc trưng riêng từng tỉnh, sản phẩm tương đồng giữa các điểm đến; khách không phân biệt được xuất xứ.', quote: '"Đến đây mua, đến kia mua, mua ở đâu cũng vậy hết"', src: 'HDV, CG' },
+  { id: 'SP-02', group: 'S', sub: 'S_Product', topic: 'Bao bì, mẫu mã kém', topicEn: 'Poor packaging & design', def: 'Bao bì và thiết kế sản phẩm chưa đạt tiêu chuẩn thẩm mỹ cao cấp, chưa đủ sức thu hút khách mua quà biếu tặng.', quote: '"Mẫu mã chưa ấn tượng, chưa xứng tầm quà tặng"', src: 'CG' },
+  { id: 'SP-03', group: 'S', sub: 'S_Product', topic: 'Thiếu phân khúc cao cấp', topicEn: 'Missing premium segment', def: 'Vắng bóng sản phẩm quà lưu niệm phân khúc cao cấp (premium/luxury gift), thiếu lựa chọn cho khách có nhu cầu tặng quà sang trọng.', quote: '"Không có gì để cảm thấy xứng đáng với tầm quà cao cấp"', src: 'CG' },
+  { id: 'SP-04', group: 'S', sub: 'S_Product', topic: 'Nghịch lý Made in China', topicEn: 'Made-in-China paradox', def: 'Sản phẩm mang chủ đề Việt Nam nhưng được sản xuất tại Trung Quốc, làm mất tính xác thực và bản sắc địa phương.', quote: '"Lật ra thấy Made in China là khách đặt xuống không mua nữa"', src: 'HDV' },
+  { id: 'SP-05', group: 'S', sub: 'S_Product', topic: 'Hai thái cực thiết kế', topicEn: 'Design extremes', def: 'Thiết kế sản phẩm phân cực: hoặc quá sặc sỡ hoặc quá đơn giản, thiếu điểm hài hòa phù hợp thị hiếu đa dạng.', quote: '"Phải có cái gì đó ở giữa, không phải quá sặc sỡ, không phải quá đơn giản"', src: 'HDV' },
+  { id: 'SP-06', group: 'S', sub: 'S_Product', topic: 'Nguyên liệu tự nhiên địa phương', topicEn: 'Local natural materials', def: 'Sản phẩm từ nguyên liệu tự nhiên đặc trưng vùng (dừa, sen, lục bình, mướp) có tiềm năng hấp dẫn vì tính địa phương cao.', quote: '"Sản phẩm địa phương từ dừa, xơ dừa, từ mướp — đồ lưu niệm"', src: 'HDV, HKD' },
+  { id: 'SP-07', group: 'S', sub: 'S_Product', topic: 'Tính tiện lợi vận chuyển', topicEn: 'Transport convenience', def: 'Khả năng mang về dễ dàng (nhỏ, nhẹ, không vỡ, bền) là tiêu chí lựa chọn hàng đầu của người mua quà lưu niệm.', quote: '"Khách hay hỏi: có bể không, có để được lâu không"', src: 'HDV' },
+  { id: 'SP-08', group: 'S', sub: 'S_Product', topic: 'Nón lá — sản phẩm bán chạy nhất', topicEn: 'Conical hat — best seller', def: 'Nón lá là mặt hàng được khách quốc tế mua nhiều nhất: vừa mang biểu tượng văn hóa, vừa tiện dùng ngay tại chỗ.', quote: '"Khách Tây hay mua nón lá nhất, mua 5–7 cái, cả chục cái về tặng"', src: 'HDV' },
+  { id: 'SP-09', group: 'S', sub: 'S_Product', topic: 'Artisan cá nhân hóa', topicEn: 'Personalized artisan products', def: 'Sản phẩm thủ công được cá nhân hóa (khắc tên, vẽ theo yêu cầu) bán tốt tại phân khúc khách sạn 4–5 sao và doanh nghiệp.', quote: '"Khách sạn đặt tranh nhỏ tặng khách VIP — bán được giá hơn vì unique"', src: 'HKD' },
+  { id: 'SP-10', group: 'S', sub: 'S_Product', topic: 'Xu hướng eco-friendly', topicEn: 'Eco-friendly trend', def: 'Sản phẩm thân thiện môi trường đang được người mua ở mọi độ tuổi quan tâm và hỏi mua tại cơ sở sản xuất.', quote: '"Từ bạn trẻ đến người lớn tuổi đều hỏi đồ nào làm bằng tự nhiên"', src: 'HKD' },
+  { id: 'SP-11', group: 'S', sub: 'S_Product', topic: 'Thiếu nhãn mác, chứng nhận', topicEn: 'Missing labels & certifications', def: 'Sản phẩm thiếu nhãn mác, thông tin xuất xứ, quy trình sản xuất và chứng nhận chất lượng, khiến khách không có cơ sở đánh giá.', quote: '"Không có chữ dấu hay dấu ấn gì để khách nước ngoài họ biết"', src: 'HDV, CG' },
+  { id: 'SP-12', group: 'S', sub: 'S_Product', topic: 'Artisan vs đại trà', topicEn: 'Artisan vs mass-produced', def: 'Phân biệt sản xuất thủ công nghề nhân (unique, chất lượng cao, giá trị cao) và sản xuất hàng loạt (giá rẻ, kém đặc sắc).', quote: '"Làm thủ công thì mỗi cái một khác — giá trị mà máy không làm được"', src: 'HKD' },
+  { id: 'SP-13', group: 'S', sub: 'S_Product', topic: 'Tiềm năng văn hóa chưa khai thác', topicEn: 'Untapped cultural potential', def: 'Một số sản phẩm văn hóa vật thể (chiếu Định Yên, áo bà ba) có tiềm năng lớn trở thành quà lưu niệm nhưng chưa được phát triển.', quote: '"Chiếu Định Yên nổi tiếng như vậy nhưng không ai làm thành quà để bán"', src: 'HDV' },
+  { id: 'SP-14', group: 'S', sub: 'S_Product', topic: 'Quà thực phẩm được ưa chuộng hơn', topicEn: 'Food souvenirs preferred by locals', def: 'Khách nội địa ưa mua đồ ăn/thực phẩm đặc sản (kẹo dừa Bến Tre, bánh pía Sóc Trăng) hơn thủ công mỹ nghệ.', quote: '"Khách mình hay mua đồ ăn hơn, mang về biểu thấy hợp lý"', src: 'HDV' },
+  { id: 'SP-15', group: 'S', sub: 'S_Product', topic: 'Hình ảnh miền Tây trên sản phẩm', topicEn: 'Mekong imagery on products', def: 'Sản phẩm gợi hình ảnh đặc trưng miền Tây (chim cò, sông nước, áo bà ba) thu hút và được khách quốc tế sẵn sàng mua.', quote: '"Túi xách có hình chim cò theo kiểu miền Tây — khách Tây thích và dễ mua"', src: 'HDV' },
+  { id: 'SP-16', group: 'S', sub: 'S_Product', topic: 'Vắng bóng quà lưu niệm nhiều tỉnh', topicEn: 'Souvenir gaps across provinces', def: 'Nhiều tỉnh ĐBSCL gần như không có điểm bán quà lưu niệm chuyên biệt, thiếu hụt cung ứng nghiêm trọng.', quote: '"Nhiều tỉnh đi gần như không thấy chỗ nào bán quà lưu niệm hết"', src: 'HDV' },
 
   // ── S_Price (3 codes) ──
-  { id:'SPr-01', group:'S', sub:'S_Price', topic:'Giá không đồng nhất', topicEn:'Inconsistent pricing', def:'Giá cả thiếu nhất quán giữa các quầy kế nhau gây hoang mang, mất niềm tin vào người bán và chuỗi bán lẻ.', quote:'"Hai quầy kế nhau bán cùng hàng giá khác nhau, khách không dám mua"', src:'HDV, CG' },
-  { id:'SPr-02', group:'S', sub:'S_Price', topic:'Giá không phải rào cản (quốc tế)', topicEn:'Price not a barrier for intl tourists', def:'Với khách nước ngoài, mức giá sản phẩm quà lưu niệm ĐBSCL không phải yếu tố ngăn cản mua do chênh lệch thu nhập.', quote:'"Vài đồng đến 50 đồng — không quá cao so với thu nhập khách Tây"', src:'HDV' },
-  { id:'SPr-03', group:'S', sub:'S_Price', topic:'Thiếu storytelling mới là rào cản', topicEn:'Lack of story is the real barrier', def:'Không phải mức giá mà chính sự thiếu thông tin và câu chuyện về sản phẩm là nguyên nhân thực sự khiến khách không mua.', quote:'"Không phải không có tiền — không biết cái đó là gì, có gì đặc biệt"', src:'HDV' },
+  { id: 'SPr-01', group: 'S', sub: 'S_Price', topic: 'Giá không đồng nhất', topicEn: 'Inconsistent pricing', def: 'Giá cả thiếu nhất quán giữa các quầy kế nhau gây hoang mang, mất niềm tin vào người bán và chuỗi bán lẻ.', quote: '"Hai quầy kế nhau bán cùng hàng giá khác nhau, khách không dám mua"', src: 'HDV, CG' },
+  { id: 'SPr-02', group: 'S', sub: 'S_Price', topic: 'Giá không phải rào cản (quốc tế)', topicEn: 'Price not a barrier for intl tourists', def: 'Với khách nước ngoài, mức giá sản phẩm quà lưu niệm ĐBSCL không phải yếu tố ngăn cản mua do chênh lệch thu nhập.', quote: '"Vài đồng đến 50 đồng — không quá cao so với thu nhập khách Tây"', src: 'HDV' },
+  { id: 'SPr-03', group: 'S', sub: 'S_Price', topic: 'Thiếu storytelling mới là rào cản', topicEn: 'Lack of story is the real barrier', def: 'Không phải mức giá mà chính sự thiếu thông tin và câu chuyện về sản phẩm là nguyên nhân thực sự khiến khách không mua.', quote: '"Không phải không có tiền — không biết cái đó là gì, có gì đặc biệt"', src: 'HDV' },
 
   // ── S_Place (8 codes) ──
-  { id:'SPl-01', group:'S', sub:'S_Place', topic:'Trưng bày lộn xộn như tạp hóa', topicEn:'Cluttered display like a grocery', def:'Không gian trưng bày thiếu đầu tư, lộn xộn, không phân loại, không có điểm nhấn — giống cửa hàng tạp hóa hơn điểm bán quà.', quote:'"Trưng bày như cái tạp hóa, cái gì cũng có, để lung tung, không có gì nổi bật"', src:'HDV, CG' },
-  { id:'SPl-02', group:'S', sub:'S_Place', topic:'Thiếu shop quà chuyên biệt', topicEn:'No dedicated souvenir shops', def:'Không có cửa hàng quà lưu niệm chuyên biệt tại nhiều tỉnh ĐBSCL, khách không biết đi đâu để mua.', quote:'"Nhiều tỉnh không có chỗ bán quà lưu niệm riêng"', src:'HDV' },
-  { id:'SPl-03', group:'S', sub:'S_Place', topic:'Bày chung với quầy thực ăn', topicEn:'Mixed with food stalls', def:'Quà lưu niệm không có không gian riêng, thường trưng bày lẫn với quầy đồ ăn thức uống, gây nhầm lẫn.', quote:'"Quà lưu niệm với đồ ăn để chung hết, không biết đâu là khu quà"', src:'HDV' },
-  { id:'SPl-04', group:'S', sub:'S_Place', topic:'Thiếu phân loại và nhãn dán', topicEn:'No categorization or labeling', def:'Không có phân loại hàng hóa, không có nhãn dán, không có thuyết minh sản phẩm, khách tự mò mẫm.', quote:'"Không có nhãn dán, không giới thiệu cái này làm bằng gì — hoàn toàn là không có"', src:'HDV' },
-  { id:'SPl-05', group:'S', sub:'S_Place', topic:'Thời gian dừng tham quan ngắn', topicEn:'Short dwell time', def:'Khách chỉ dừng lại tại điểm bán trong thời gian rất ngắn, đòi hỏi trưng bày phải tạo ấn tượng ngay lập tức.', quote:'"Khách lướt qua rất nhanh, không ở đến vài ba tiếng để tìm hiểu"', src:'HDV' },
-  { id:'SPl-06', group:'S', sub:'S_Place', topic:'Gallery tranh đồng quê thu hút khách', topicEn:'Rural art gallery attracts tourists', def:'Gallery tranh phong cảnh đồng quê quy mô nhỏ tại điểm tham quan có khả năng thu hút sự chú ý của khách quốc tế.', quote:'"Gallery nhỏ giới thiệu tranh cảnh đồng quê — khách nước ngoài lại thích"', src:'HDV' },
-  { id:'SPl-07', group:'S', sub:'S_Place', topic:'Mô hình bán sỉ — không bán lẻ', topicEn:'Wholesale only — no retail', def:'Cơ sở sản xuất chỉ bán sỉ cho đại lý, không bán lẻ cho du khách, tạo khoảng cách cung–cầu thực sự.', quote:'"Bán sỉ cho đại lý thôi, khách du lịch hỏi mua một cái thì không bán"', src:'HKD' },
-  { id:'SPl-08', group:'S', sub:'S_Place', topic:'Cần kênh online và hội chợ', topicEn:'Need online & trade fair channels', def:'Nhu cầu mở rộng qua kênh bán online và tham gia hội chợ thương mại để tiếp cận khách hàng mới.', quote:'"Phải lên mạng, phải đi hội chợ — ngồi đây chờ khách thì không có ai vào"', src:'HKD' },
+  { id: 'SPl-01', group: 'S', sub: 'S_Place', topic: 'Trưng bày lộn xộn như tạp hóa', topicEn: 'Cluttered display like a grocery', def: 'Không gian trưng bày thiếu đầu tư, lộn xộn, không phân loại, không có điểm nhấn — giống cửa hàng tạp hóa hơn điểm bán quà.', quote: '"Trưng bày như cái tạp hóa, cái gì cũng có, để lung tung, không có gì nổi bật"', src: 'HDV, CG' },
+  { id: 'SPl-02', group: 'S', sub: 'S_Place', topic: 'Thiếu shop quà chuyên biệt', topicEn: 'No dedicated souvenir shops', def: 'Không có cửa hàng quà lưu niệm chuyên biệt tại nhiều tỉnh ĐBSCL, khách không biết đi đâu để mua.', quote: '"Nhiều tỉnh không có chỗ bán quà lưu niệm riêng"', src: 'HDV' },
+  { id: 'SPl-03', group: 'S', sub: 'S_Place', topic: 'Bày chung với quầy thực ăn', topicEn: 'Mixed with food stalls', def: 'Quà lưu niệm không có không gian riêng, thường trưng bày lẫn với quầy đồ ăn thức uống, gây nhầm lẫn.', quote: '"Quà lưu niệm với đồ ăn để chung hết, không biết đâu là khu quà"', src: 'HDV' },
+  { id: 'SPl-04', group: 'S', sub: 'S_Place', topic: 'Thiếu phân loại và nhãn dán', topicEn: 'No categorization or labeling', def: 'Không có phân loại hàng hóa, không có nhãn dán, không có thuyết minh sản phẩm, khách tự mò mẫm.', quote: '"Không có nhãn dán, không giới thiệu cái này làm bằng gì — hoàn toàn là không có"', src: 'HDV' },
+  { id: 'SPl-05', group: 'S', sub: 'S_Place', topic: 'Thời gian dừng tham quan ngắn', topicEn: 'Short dwell time', def: 'Khách chỉ dừng lại tại điểm bán trong thời gian rất ngắn, đòi hỏi trưng bày phải tạo ấn tượng ngay lập tức.', quote: '"Khách lướt qua rất nhanh, không ở đến vài ba tiếng để tìm hiểu"', src: 'HDV' },
+  { id: 'SPl-06', group: 'S', sub: 'S_Place', topic: 'Gallery tranh đồng quê thu hút khách', topicEn: 'Rural art gallery attracts tourists', def: 'Gallery tranh phong cảnh đồng quê quy mô nhỏ tại điểm tham quan có khả năng thu hút sự chú ý của khách quốc tế.', quote: '"Gallery nhỏ giới thiệu tranh cảnh đồng quê — khách nước ngoài lại thích"', src: 'HDV' },
+  { id: 'SPl-07', group: 'S', sub: 'S_Place', topic: 'Mô hình bán sỉ — không bán lẻ', topicEn: 'Wholesale only — no retail', def: 'Cơ sở sản xuất chỉ bán sỉ cho đại lý, không bán lẻ cho du khách, tạo khoảng cách cung–cầu thực sự.', quote: '"Bán sỉ cho đại lý thôi, khách du lịch hỏi mua một cái thì không bán"', src: 'HKD' },
+  { id: 'SPl-08', group: 'S', sub: 'S_Place', topic: 'Cần kênh online và hội chợ', topicEn: 'Need online & trade fair channels', def: 'Nhu cầu mở rộng qua kênh bán online và tham gia hội chợ thương mại để tiếp cận khách hàng mới.', quote: '"Phải lên mạng, phải đi hội chợ — ngồi đây chờ khách thì không có ai vào"', src: 'HKD' },
 
   // ── S_Promotion (5 codes) ──
-  { id:'SPro-01', group:'S', sub:'S_Promotion', topic:'HDV là yếu tố chuyển đổi mua', topicEn:'Guide is the conversion factor', def:'Lời giới thiệu của HDV là yếu tố chuyển đổi ý định mua quan trọng nhất trong bối cảnh tour du lịch có tổ chức.', quote:'"Chỉ khi HDV nhiệt tình giới thiệu thì khách thích thú hơn và sẽ mua"', src:'HDV' },
-  { id:'SPro-02', group:'S', sub:'S_Promotion', topic:'Thiếu storytelling — rào cản lớn nhất', topicEn:'No storytelling — biggest barrier', def:'Thiếu câu chuyện về nguồn gốc, quy trình sản xuất và ý nghĩa văn hóa của sản phẩm là rào cản quan trọng nhất ngăn cản hành vi mua.', quote:'"Không phải người ta không có tiền mua đâu. Người ta không mua vì người ta không biết cái đó là cái gì."', src:'HDV, CG' },
-  { id:'SPro-03', group:'S', sub:'S_Promotion', topic:'Cần chứng nhận chất lượng', topicEn:'Quality certification needed', def:'Chứng nhận "Hàng Việt Nam chất lượng cao" hoặc nhãn an toàn tăng niềm tin và giảm rào cản mua.', quote:'"Có nhãn HVNCLC thì khách mua không cần suy nghĩ nhiều"', src:'HDV' },
-  { id:'SPro-04', group:'S', sub:'S_Promotion', topic:'Mạng xã hội là động lực mua', topicEn:'Social media as purchase driver', def:'Mong muốn có nội dung ảnh đẹp để đăng mạng xã hội là một động lực mua sản phẩm đặc sắc.', quote:'"Mua không chỉ để dùng — mua để chụp hình đăng lên mạng"', src:'HDV' },
-  { id:'SPro-05', group:'S', sub:'S_Promotion', topic:'Hỗ trợ hội chợ thương mại', topicEn:'Trade fair support', def:'Sự hỗ trợ từ nhà nước để tham gia hội chợ là kênh quảng bá B2B quan trọng nhất với cơ sở sản xuất nhỏ.', quote:'"Nhà nước hỗ trợ đi hội chợ, được cấp gian hàng — cách quảng bá tốt nhất"', src:'HKD' },
+  { id: 'SPro-01', group: 'S', sub: 'S_Promotion', topic: 'HDV là yếu tố chuyển đổi mua', topicEn: 'Guide is the conversion factor', def: 'Lời giới thiệu của HDV là yếu tố chuyển đổi ý định mua quan trọng nhất trong bối cảnh tour du lịch có tổ chức.', quote: '"Chỉ khi HDV nhiệt tình giới thiệu thì khách thích thú hơn và sẽ mua"', src: 'HDV' },
+  { id: 'SPro-02', group: 'S', sub: 'S_Promotion', topic: 'Thiếu storytelling — rào cản lớn nhất', topicEn: 'No storytelling — biggest barrier', def: 'Thiếu câu chuyện về nguồn gốc, quy trình sản xuất và ý nghĩa văn hóa của sản phẩm là rào cản quan trọng nhất ngăn cản hành vi mua.', quote: '"Không phải người ta không có tiền mua đâu. Người ta không mua vì người ta không biết cái đó là cái gì."', src: 'HDV, CG' },
+  { id: 'SPro-03', group: 'S', sub: 'S_Promotion', topic: 'Cần chứng nhận chất lượng', topicEn: 'Quality certification needed', def: 'Chứng nhận "Hàng Việt Nam chất lượng cao" hoặc nhãn an toàn tăng niềm tin và giảm rào cản mua.', quote: '"Có nhãn HVNCLC thì khách mua không cần suy nghĩ nhiều"', src: 'HDV' },
+  { id: 'SPro-04', group: 'S', sub: 'S_Promotion', topic: 'Mạng xã hội là động lực mua', topicEn: 'Social media as purchase driver', def: 'Mong muốn có nội dung ảnh đẹp để đăng mạng xã hội là một động lực mua sản phẩm đặc sắc.', quote: '"Mua không chỉ để dùng — mua để chụp hình đăng lên mạng"', src: 'HDV' },
+  { id: 'SPro-05', group: 'S', sub: 'S_Promotion', topic: 'Hỗ trợ hội chợ thương mại', topicEn: 'Trade fair support', def: 'Sự hỗ trợ từ nhà nước để tham gia hội chợ là kênh quảng bá B2B quan trọng nhất với cơ sở sản xuất nhỏ.', quote: '"Nhà nước hỗ trợ đi hội chợ, được cấp gian hàng — cách quảng bá tốt nhất"', src: 'HKD' },
 
   // ── S_Social (5 codes) ──
-  { id:'SSo-01', group:'S', sub:'S_Social', topic:'Lời giới thiệu người bán', topicEn:'Seller introduction', def:'Lời giới thiệu trực tiếp của người bán hàng là yếu tố then chốt giúp khách chuyển từ phân vân sang quyết định mua.', quote:'"Người bán biết cách kể chuyện thì khách chắc chắn sẽ mua"', src:'HDV' },
-  { id:'SSo-02', group:'S', sub:'S_Social', topic:'HDV là cầu nối', topicEn:'Guide as bridge', def:'HDV đóng vai trò cầu nối quan trọng giữa khách du lịch và sản phẩm/văn hóa địa phương, ảnh hưởng trực tiếp đến quyết định mua.', quote:'"HDV thích và giới thiệu cái gì hay thì khách cũng theo. Mình là cái cầu nối đó."', src:'HDV' },
-  { id:'SSo-03', group:'S', sub:'S_Social', topic:'FOMO trong nhóm du lịch', topicEn:'Group FOMO effect', def:'Hiệu ứng sợ bỏ lỡ (FOMO) khi thấy người cùng nhóm quan tâm đến sản phẩm, kéo người khác lại xem và có thể mua theo.', quote:'"Thấy người ta cầm lên xem là mình cũng muốn biết cái đó là gì"', src:'HDV' },
-  { id:'SSo-04', group:'S', sub:'S_Social', topic:'Hiệu ứng dây chuyền', topicEn:'Chain reaction effect', def:'Hiệu ứng lan truyền hành vi trong đoàn: một người dừng lại mua tạo chuỗi kích thích cho nhiều người khác mua theo.', quote:'"Chỉ cần 5–7 khách dừng lại mua thôi là đã khác rồi"', src:'HDV' },
-  { id:'SSo-05', group:'S', sub:'S_Social', topic:'Đoàn doanh nghiệp mua tập thể', topicEn:'Corporate group bulk buying', def:'Đoàn team-building doanh nghiệp có hành vi mua đồng loạt cùng một loại sản phẩm, tạo doanh thu lớn trong thời gian ngắn.', quote:'"Đoàn công ty hay mua cùng loại hàng về tặng nhau — mua cả đoàn"', src:'HDV' },
+  { id: 'SSo-01', group: 'S', sub: 'S_Social', topic: 'Lời giới thiệu người bán', topicEn: 'Seller introduction', def: 'Lời giới thiệu trực tiếp của người bán hàng là yếu tố then chốt giúp khách chuyển từ phân vân sang quyết định mua.', quote: '"Người bán biết cách kể chuyện thì khách chắc chắn sẽ mua"', src: 'HDV' },
+  { id: 'SSo-02', group: 'S', sub: 'S_Social', topic: 'HDV là cầu nối', topicEn: 'Guide as bridge', def: 'HDV đóng vai trò cầu nối quan trọng giữa khách du lịch và sản phẩm/văn hóa địa phương, ảnh hưởng trực tiếp đến quyết định mua.', quote: '"HDV thích và giới thiệu cái gì hay thì khách cũng theo. Mình là cái cầu nối đó."', src: 'HDV' },
+  { id: 'SSo-03', group: 'S', sub: 'S_Social', topic: 'FOMO trong nhóm du lịch', topicEn: 'Group FOMO effect', def: 'Hiệu ứng sợ bỏ lỡ (FOMO) khi thấy người cùng nhóm quan tâm đến sản phẩm, kéo người khác lại xem và có thể mua theo.', quote: '"Thấy người ta cầm lên xem là mình cũng muốn biết cái đó là gì"', src: 'HDV' },
+  { id: 'SSo-04', group: 'S', sub: 'S_Social', topic: 'Hiệu ứng dây chuyền', topicEn: 'Chain reaction effect', def: 'Hiệu ứng lan truyền hành vi trong đoàn: một người dừng lại mua tạo chuỗi kích thích cho nhiều người khác mua theo.', quote: '"Chỉ cần 5–7 khách dừng lại mua thôi là đã khác rồi"', src: 'HDV' },
+  { id: 'SSo-05', group: 'S', sub: 'S_Social', topic: 'Đoàn doanh nghiệp mua tập thể', topicEn: 'Corporate group bulk buying', def: 'Đoàn team-building doanh nghiệp có hành vi mua đồng loạt cùng một loại sản phẩm, tạo doanh thu lớn trong thời gian ngắn.', quote: '"Đoàn công ty hay mua cùng loại hàng về tặng nhau — mua cả đoàn"', src: 'HDV' },
 
   // ── S_Cultural (7 codes) ──
-  { id:'SCu-01', group:'S', sub:'S_Cultural', topic:'Câu chuyện làng quê miệt vườn', topicEn:'Rural Mekong storytelling', def:'Câu chuyện và hình ảnh về vùng làng quê, miệt vườn sông nước ĐBSCL là điểm hút mạnh đặc biệt với khách nước ngoài.', quote:'"Khách nước ngoài thích câu chuyện làng quê — hiện đại thì ở Sài Gòn họ mua rồi"', src:'HDV' },
-  { id:'SCu-02', group:'S', sub:'S_Cultural', topic:'"Hồn" quà lưu niệm', topicEn:'Soul of the souvenir', def:'Giá trị văn hóa tinh thần ("hồn") của sản phẩm — khả năng đại diện cho bản sắc địa phương — tạo nên sự khác biệt với hàng hóa thông thường.', quote:'"Quà lưu niệm phải có hồn, thể hiện được nơi người ta đã đến"', src:'HDV' },
-  { id:'SCu-03', group:'S', sub:'S_Cultural', topic:'Quyền lực mềm / ngoại giao nhân dân', topicEn:'Soft power / people diplomacy', def:'Quà lưu niệm như công cụ ngoại giao nhân dân, lan tỏa hình ảnh và văn hóa Việt Nam qua mạng lưới người thân của khách.', quote:'"Mang về nước kể chuyện bạn bè — đó là cách quảng bá Việt Nam miễn phí"', src:'HDV' },
-  { id:'SCu-04', group:'S', sub:'S_Cultural', topic:'Đa tộc người ĐBSCL — tài sản chưa khai thác', topicEn:'Multi-ethnic heritage untapped', def:'Sự đa dạng văn hóa của các tộc người ĐBSCL (Kinh, Hoa, Khmer, Chăm) là tài nguyên độc đáo chưa được chuyển hóa thành quà lưu niệm.', quote:'"ĐBSCL có nhiều tộc người — kho báu nhưng chưa ai làm thành quà lưu niệm"', src:'CG' },
-  { id:'SCu-05', group:'S', sub:'S_Cultural', topic:'Câu chuyện đặc sản chưa được kể', topicEn:'Untold local specialty stories', def:'Câu chuyện nguồn gốc, lịch sử và ý nghĩa của các đặc sản địa phương (bánh pía, kẹo dừa...) chưa được truyền đạt đến khách.', quote:'"Nguồn gốc bánh pía ở Sóc Trăng không ai kể — người ta chỉ biết nó ngon thôi"', src:'HDV' },
-  { id:'SCu-06', group:'S', sub:'S_Cultural', topic:'Nguy cơ mai một nghề thủ công', topicEn:'Craft heritage at risk', def:'Nghề thủ công truyền thống đang có nguy cơ mai một do thiếu người kế thừa và thu nhập không ổn định, đe dọa chuỗi cung ứng.', quote:'"Con cháu không ai chịu học — sợ sau này không còn ai làm"', src:'HKD' },
-  { id:'SCu-07', group:'S', sub:'S_Cultural', topic:'Thương hiệu địa phương per tỉnh', topicEn:'Province-specific local brand', def:'Thương hiệu tự nhiên gắn kết đặc sản với tên tỉnh (bánh pía = Sóc Trăng) là tài sản cần phát huy và bảo vệ.', quote:'"Nói bánh pía là người ta biết Sóc Trăng — thương hiệu tự nhiên"', src:'HDV' },
+  { id: 'SCu-01', group: 'S', sub: 'S_Cultural', topic: 'Câu chuyện làng quê miệt vườn', topicEn: 'Rural Mekong storytelling', def: 'Câu chuyện và hình ảnh về vùng làng quê, miệt vườn sông nước ĐBSCL là điểm hút mạnh đặc biệt với khách nước ngoài.', quote: '"Khách nước ngoài thích câu chuyện làng quê — hiện đại thì ở Sài Gòn họ mua rồi"', src: 'HDV' },
+  { id: 'SCu-02', group: 'S', sub: 'S_Cultural', topic: '"Hồn" quà lưu niệm', topicEn: 'Soul of the souvenir', def: 'Giá trị văn hóa tinh thần ("hồn") của sản phẩm — khả năng đại diện cho bản sắc địa phương — tạo nên sự khác biệt với hàng hóa thông thường.', quote: '"Quà lưu niệm phải có hồn, thể hiện được nơi người ta đã đến"', src: 'HDV' },
+  { id: 'SCu-03', group: 'S', sub: 'S_Cultural', topic: 'Quyền lực mềm / ngoại giao nhân dân', topicEn: 'Soft power / people diplomacy', def: 'Quà lưu niệm như công cụ ngoại giao nhân dân, lan tỏa hình ảnh và văn hóa Việt Nam qua mạng lưới người thân của khách.', quote: '"Mang về nước kể chuyện bạn bè — đó là cách quảng bá Việt Nam miễn phí"', src: 'HDV' },
+  { id: 'SCu-04', group: 'S', sub: 'S_Cultural', topic: 'Đa tộc người ĐBSCL — tài sản chưa khai thác', topicEn: 'Multi-ethnic heritage untapped', def: 'Sự đa dạng văn hóa của các tộc người ĐBSCL (Kinh, Hoa, Khmer, Chăm) là tài nguyên độc đáo chưa được chuyển hóa thành quà lưu niệm.', quote: '"ĐBSCL có nhiều tộc người — kho báu nhưng chưa ai làm thành quà lưu niệm"', src: 'CG' },
+  { id: 'SCu-05', group: 'S', sub: 'S_Cultural', topic: 'Câu chuyện đặc sản chưa được kể', topicEn: 'Untold local specialty stories', def: 'Câu chuyện nguồn gốc, lịch sử và ý nghĩa của các đặc sản địa phương (bánh pía, kẹo dừa...) chưa được truyền đạt đến khách.', quote: '"Nguồn gốc bánh pía ở Sóc Trăng không ai kể — người ta chỉ biết nó ngon thôi"', src: 'HDV' },
+  { id: 'SCu-06', group: 'S', sub: 'S_Cultural', topic: 'Nguy cơ mai một nghề thủ công', topicEn: 'Craft heritage at risk', def: 'Nghề thủ công truyền thống đang có nguy cơ mai một do thiếu người kế thừa và thu nhập không ổn định, đe dọa chuỗi cung ứng.', quote: '"Con cháu không ai chịu học — sợ sau này không còn ai làm"', src: 'HKD' },
+  { id: 'SCu-07', group: 'S', sub: 'S_Cultural', topic: 'Thương hiệu địa phương per tỉnh', topicEn: 'Province-specific local brand', def: 'Thương hiệu tự nhiên gắn kết đặc sản với tên tỉnh (bánh pía = Sóc Trăng) là tài sản cần phát huy và bảo vệ.', quote: '"Nói bánh pía là người ta biết Sóc Trăng — thương hiệu tự nhiên"', src: 'HDV' },
 
   // ── O_Pleasure (4 codes) ──
-  { id:'OP-01', group:'O', sub:'O_Pleasure', topic:'"Vật chất hóa ký ức" (academic framing)', topicEn:'Memory materialization', def:'Khái niệm học thuật về quà lưu niệm: là vật thể hóa ký ức của chuyến đi, mỗi lần nhìn vào kích hoạt lại trải nghiệm đã qua.', quote:'"Quà lưu niệm là hiện vật hóa ký ức của chuyến đi"', src:'CG' },
-  { id:'OP-02', group:'O', sub:'O_Pleasure', topic:'Thích thú tiếp xúc sản phẩm thủ công', topicEn:'Delight in touching handcraft', def:'Cảm xúc thích thú, vui vẻ khi lần đầu tiếp xúc với sản phẩm thủ công lạ lẫm — giai đoạn khởi đầu cho quyết định mua.', quote:'"Khách cầm lên, thấy lạ lẫm, họ cười, họ thử — phản ứng đó phải nắm bắt ngay"', src:'HDV' },
-  { id:'OP-03', group:'O', sub:'O_Pleasure', topic:'Niềm vui gifting', topicEn:'Gifting joy', def:'Niềm vui được tặng quà cho nhiều người thân, bạn bè là động lực thúc đẩy hành vi mua số lượng lớn.', quote:'"Có nhiều người mua một lần 5–7 cái, cả chục cái về tặng bạn bè"', src:'HDV' },
-  { id:'OP-04', group:'O', sub:'O_Pleasure', topic:'Quà lưu niệm = ký ức du lịch', topicEn:'Souvenir = travel memory', def:'Động lực mua cốt lõi: mua quà lưu niệm để lưu giữ ký ức chuyến đi — được xác nhận bởi cả 3 nhóm phỏng vấn.', quote:'"Ai đi chơi về cũng muốn có gì đó để nhìn vào nhớ lại chuyến đi"', src:'HDV, CG, HKD' },
+  { id: 'OP-01', group: 'O', sub: 'O_Pleasure', topic: '"Vật chất hóa ký ức" (academic framing)', topicEn: 'Memory materialization', def: 'Khái niệm học thuật về quà lưu niệm: là vật thể hóa ký ức của chuyến đi, mỗi lần nhìn vào kích hoạt lại trải nghiệm đã qua.', quote: '"Quà lưu niệm là hiện vật hóa ký ức của chuyến đi"', src: 'CG' },
+  { id: 'OP-02', group: 'O', sub: 'O_Pleasure', topic: 'Thích thú tiếp xúc sản phẩm thủ công', topicEn: 'Delight in touching handcraft', def: 'Cảm xúc thích thú, vui vẻ khi lần đầu tiếp xúc với sản phẩm thủ công lạ lẫm — giai đoạn khởi đầu cho quyết định mua.', quote: '"Khách cầm lên, thấy lạ lẫm, họ cười, họ thử — phản ứng đó phải nắm bắt ngay"', src: 'HDV' },
+  { id: 'OP-03', group: 'O', sub: 'O_Pleasure', topic: 'Niềm vui gifting', topicEn: 'Gifting joy', def: 'Niềm vui được tặng quà cho nhiều người thân, bạn bè là động lực thúc đẩy hành vi mua số lượng lớn.', quote: '"Có nhiều người mua một lần 5–7 cái, cả chục cái về tặng bạn bè"', src: 'HDV' },
+  { id: 'OP-04', group: 'O', sub: 'O_Pleasure', topic: 'Quà lưu niệm = ký ức du lịch', topicEn: 'Souvenir = travel memory', def: 'Động lực mua cốt lõi: mua quà lưu niệm để lưu giữ ký ức chuyến đi — được xác nhận bởi cả 3 nhóm phỏng vấn.', quote: '"Ai đi chơi về cũng muốn có gì đó để nhìn vào nhớ lại chuyến đi"', src: 'HDV, CG, HKD' },
 
   // ── O_Arousal (4 codes) ──
-  { id:'OA-01', group:'O', sub:'O_Arousal', topic:'FOMO — tò mò nhóm', topicEn:'FOMO — group curiosity', def:'Trạng thái tò mò và sợ bỏ lỡ khi thấy người cùng nhóm quan tâm đến sản phẩm, kéo người quan sát lại xem theo.', quote:'"Thấy người ta cầm lên xem là mình cũng muốn biết cái đó là gì"', src:'HDV' },
-  { id:'OA-02', group:'O', sub:'O_Arousal', topic:'Hứng thú cao độ từ câu chuyện sản phẩm', topicEn:'High arousal from product story', def:'Trạng thái hứng thú cao độ khi được nghe câu chuyện độc đáo về sản phẩm, thường dẫn trực tiếp đến hành vi mua tức thì.', quote:'"Extremely interesting! — khách á thốt lên sau khi nghe chuyện bánh giữ nhiệt dừa rồi mua ngay"', src:'HDV' },
-  { id:'OA-03', group:'O', sub:'O_Arousal', topic:'Tò mò khám phá sản phẩm lạ', topicEn:'Curiosity about unfamiliar items', def:'Hứng thú muốn khám phá sản phẩm chưa quen, biểu hiện qua hành động cầm lên thử — cửa sổ thời gian quan trọng để chuyển đổi.', quote:'"Khách cầm gì gì chơi, thấy lạ thì thử — không hiểu công năng ra sao"', src:'HDV' },
-  { id:'OA-04', group:'O', sub:'O_Arousal', topic:'Kích thích qua mạng xã hội', topicEn:'Social media arousal', def:'Mong muốn có ảnh đẹp để đăng mạng xã hội tạo ra trạng thái kích thích, thúc đẩy mua sản phẩm có tính thị giác cao.', quote:'"Đi du lịch không chụp ảnh đăng mạng thì như chưa đi"', src:'HDV' },
+  { id: 'OA-01', group: 'O', sub: 'O_Arousal', topic: 'FOMO — tò mò nhóm', topicEn: 'FOMO — group curiosity', def: 'Trạng thái tò mò và sợ bỏ lỡ khi thấy người cùng nhóm quan tâm đến sản phẩm, kéo người quan sát lại xem theo.', quote: '"Thấy người ta cầm lên xem là mình cũng muốn biết cái đó là gì"', src: 'HDV' },
+  { id: 'OA-02', group: 'O', sub: 'O_Arousal', topic: 'Hứng thú cao độ từ câu chuyện sản phẩm', topicEn: 'High arousal from product story', def: 'Trạng thái hứng thú cao độ khi được nghe câu chuyện độc đáo về sản phẩm, thường dẫn trực tiếp đến hành vi mua tức thì.', quote: '"Extremely interesting! — khách á thốt lên sau khi nghe chuyện bánh giữ nhiệt dừa rồi mua ngay"', src: 'HDV' },
+  { id: 'OA-03', group: 'O', sub: 'O_Arousal', topic: 'Tò mò khám phá sản phẩm lạ', topicEn: 'Curiosity about unfamiliar items', def: 'Hứng thú muốn khám phá sản phẩm chưa quen, biểu hiện qua hành động cầm lên thử — cửa sổ thời gian quan trọng để chuyển đổi.', quote: '"Khách cầm gì gì chơi, thấy lạ thì thử — không hiểu công năng ra sao"', src: 'HDV' },
+  { id: 'OA-04', group: 'O', sub: 'O_Arousal', topic: 'Kích thích qua mạng xã hội', topicEn: 'Social media arousal', def: 'Mong muốn có ảnh đẹp để đăng mạng xã hội tạo ra trạng thái kích thích, thúc đẩy mua sản phẩm có tính thị giác cao.', quote: '"Đi du lịch không chụp ảnh đăng mạng thì như chưa đi"', src: 'HDV' },
 
   // ── O_Attitude (10 codes) ──
-  { id:'OAt-01', group:'O', sub:'O_Attitude', topic:'Nghi ngờ vì Made in China', topicEn:'Distrust due to Made in China', def:'Thái độ nghi ngờ và mất niềm tin tức thì khi phát hiện sản phẩm mang chủ đề Việt Nam lại sản xuất tại Trung Quốc.', quote:'"Khách lật ra thấy Made in China là họ đặt xuống liền, họ không mua nữa đâu"', src:'HDV' },
-  { id:'OAt-02', group:'O', sub:'O_Attitude', topic:'Lo ngại hải quan nước ngoài', topicEn:'Foreign customs concern', def:'Thái độ lo lắng về quy định hải quan nhập khẩu khi mang sản phẩm về nước — rào cản tâm lý lớn với khách quốc tế.', quote:'"Họ lan man không biết có hợp chuẩn để mang về không"', src:'HDV' },
-  { id:'OAt-03', group:'O', sub:'O_Attitude', topic:'Lo ngại độ ẩm hủy hoại sản phẩm', topicEn:'Humidity damage concern', def:'Khách miền Bắc lo ngại độ ẩm cao của ĐBSCL và trong quá trình vận chuyển sẽ làm hỏng sản phẩm (tranh gạo, gỗ...).', quote:'"Khách Bắc sợ tranh gạo bị ẩm, bị mốc khi mang về miền Bắc"', src:'HKD' },
-  { id:'OAt-04', group:'O', sub:'O_Attitude', topic:'Khách trung niên mua nhiều hơn', topicEn:'Middle-aged tourists buy more', def:'Khách ở độ tuổi trung niên (40–50+) có thái độ mua hàng tích cực và sẵn sàng chi tiêu nhiều hơn so với giới trẻ.', quote:'"Khách lớn tuổi 40–50+ mua nhiều hơn. Giới trẻ thì chụp hình là chính"', src:'HDV' },
-  { id:'OAt-05', group:'O', sub:'O_Attitude', topic:'Khách Tây ưa hình ảnh làng quê', topicEn:'Western tourists prefer rural imagery', def:'Khách quốc tế tìm kiếm sự khác biệt khi đến ĐBSCL, không ưa sản phẩm hiện đại vì đã có sẵn ở nước họ.', quote:'"Khách Tây đến đây tìm cái khác với ở nhà — hiện đại thì ở Sài Gòn mua rồi"', src:'HDV' },
-  { id:'OAt-06', group:'O', sub:'O_Attitude', topic:'Đánh giá cao chứng nhận an toàn', topicEn:'Positive attitude toward safety certs', def:'Khách nước ngoài đặc biệt đánh giá cao và sẵn sàng mua hơn khi sản phẩm có chứng nhận an toàn, không hóa chất.', quote:'"Làm rõ không hóa chất, an toàn thì họ sẽ cởi mở và mua nhiều hơn"', src:'HDV' },
-  { id:'OAt-07', group:'O', sub:'O_Attitude', topic:'Mất tin vì giá không nhất quán', topicEn:'Trust loss from inconsistent prices', def:'Giá không đồng nhất giữa các quầy tạo ra thái độ tiêu cực, mất niềm tin vào sự minh bạch của người bán.', quote:'"Hai quầy giá khác nhau — khách không biết tin ai, thôi không mua luôn"', src:'HDV' },
-  { id:'OAt-08', group:'O', sub:'O_Attitude', topic:'Nhận thức thiếu bản sắc riêng', topicEn:'Perception of no local identity', def:'Nhận thức của người mua rằng quà lưu niệm ĐBSCL thiếu bản sắc riêng từng tỉnh, không đại diện được địa phương.', quote:'"Tiền Giang hay Vĩnh Long mua cũng y chang nhau — không biết đặc trưng là gì"', src:'HDV, CG' },
-  { id:'OAt-09', group:'O', sub:'O_Attitude', topic:'Tích cực với sản phẩm eco-friendly', topicEn:'Positive attitude toward eco products', def:'Thái độ tích cực, sẵn lòng mua và chi tiêu cao hơn cho sản phẩm thân thiện môi trường và nguyên liệu tự nhiên.', quote:'"Mọi độ tuổi đều hỏi đồ nào làm bằng tự nhiên"', src:'HKD' },
-  { id:'OAt-10', group:'O', sub:'O_Attitude', topic:'Khách doanh nghiệp > khách lẻ', topicEn:'Corporate clients > individual tourists', def:'Nhận thức của cơ sở sản xuất: khách doanh nghiệp có khả năng chi tiêu và mua số lượng lớn hơn khách lẻ du lịch.', quote:'"Khách lẻ mua ít, ngại giá. Công ty đặt thì mua cả trăm cái"', src:'HKD' },
+  { id: 'OAt-01', group: 'O', sub: 'O_Attitude', topic: 'Nghi ngờ vì Made in China', topicEn: 'Distrust due to Made in China', def: 'Thái độ nghi ngờ và mất niềm tin tức thì khi phát hiện sản phẩm mang chủ đề Việt Nam lại sản xuất tại Trung Quốc.', quote: '"Khách lật ra thấy Made in China là họ đặt xuống liền, họ không mua nữa đâu"', src: 'HDV' },
+  { id: 'OAt-02', group: 'O', sub: 'O_Attitude', topic: 'Lo ngại hải quan nước ngoài', topicEn: 'Foreign customs concern', def: 'Thái độ lo lắng về quy định hải quan nhập khẩu khi mang sản phẩm về nước — rào cản tâm lý lớn với khách quốc tế.', quote: '"Họ lan man không biết có hợp chuẩn để mang về không"', src: 'HDV' },
+  { id: 'OAt-03', group: 'O', sub: 'O_Attitude', topic: 'Lo ngại độ ẩm hủy hoại sản phẩm', topicEn: 'Humidity damage concern', def: 'Khách miền Bắc lo ngại độ ẩm cao của ĐBSCL và trong quá trình vận chuyển sẽ làm hỏng sản phẩm (tranh gạo, gỗ...).', quote: '"Khách Bắc sợ tranh gạo bị ẩm, bị mốc khi mang về miền Bắc"', src: 'HKD' },
+  { id: 'OAt-04', group: 'O', sub: 'O_Attitude', topic: 'Khách trung niên mua nhiều hơn', topicEn: 'Middle-aged tourists buy more', def: 'Khách ở độ tuổi trung niên (40–50+) có thái độ mua hàng tích cực và sẵn sàng chi tiêu nhiều hơn so với giới trẻ.', quote: '"Khách lớn tuổi 40–50+ mua nhiều hơn. Giới trẻ thì chụp hình là chính"', src: 'HDV' },
+  { id: 'OAt-05', group: 'O', sub: 'O_Attitude', topic: 'Khách Tây ưa hình ảnh làng quê', topicEn: 'Western tourists prefer rural imagery', def: 'Khách quốc tế tìm kiếm sự khác biệt khi đến ĐBSCL, không ưa sản phẩm hiện đại vì đã có sẵn ở nước họ.', quote: '"Khách Tây đến đây tìm cái khác với ở nhà — hiện đại thì ở Sài Gòn mua rồi"', src: 'HDV' },
+  { id: 'OAt-06', group: 'O', sub: 'O_Attitude', topic: 'Đánh giá cao chứng nhận an toàn', topicEn: 'Positive attitude toward safety certs', def: 'Khách nước ngoài đặc biệt đánh giá cao và sẵn sàng mua hơn khi sản phẩm có chứng nhận an toàn, không hóa chất.', quote: '"Làm rõ không hóa chất, an toàn thì họ sẽ cởi mở và mua nhiều hơn"', src: 'HDV' },
+  { id: 'OAt-07', group: 'O', sub: 'O_Attitude', topic: 'Mất tin vì giá không nhất quán', topicEn: 'Trust loss from inconsistent prices', def: 'Giá không đồng nhất giữa các quầy tạo ra thái độ tiêu cực, mất niềm tin vào sự minh bạch của người bán.', quote: '"Hai quầy giá khác nhau — khách không biết tin ai, thôi không mua luôn"', src: 'HDV' },
+  { id: 'OAt-08', group: 'O', sub: 'O_Attitude', topic: 'Nhận thức thiếu bản sắc riêng', topicEn: 'Perception of no local identity', def: 'Nhận thức của người mua rằng quà lưu niệm ĐBSCL thiếu bản sắc riêng từng tỉnh, không đại diện được địa phương.', quote: '"Tiền Giang hay Vĩnh Long mua cũng y chang nhau — không biết đặc trưng là gì"', src: 'HDV, CG' },
+  { id: 'OAt-09', group: 'O', sub: 'O_Attitude', topic: 'Tích cực với sản phẩm eco-friendly', topicEn: 'Positive attitude toward eco products', def: 'Thái độ tích cực, sẵn lòng mua và chi tiêu cao hơn cho sản phẩm thân thiện môi trường và nguyên liệu tự nhiên.', quote: '"Mọi độ tuổi đều hỏi đồ nào làm bằng tự nhiên"', src: 'HKD' },
+  { id: 'OAt-10', group: 'O', sub: 'O_Attitude', topic: 'Khách doanh nghiệp > khách lẻ', topicEn: 'Corporate clients > individual tourists', def: 'Nhận thức của cơ sở sản xuất: khách doanh nghiệp có khả năng chi tiêu và mua số lượng lớn hơn khách lẻ du lịch.', quote: '"Khách lẻ mua ít, ngại giá. Công ty đặt thì mua cả trăm cái"', src: 'HKD' },
 
   // ── R_Buy (7 codes) ──
-  { id:'RB-01', group:'R', sub:'R_Buy', topic:'Mua ngay sau storytelling', topicEn:'Impulse buy after story', def:'Hành vi mua tức thì ngay sau khi được HDV hoặc người bán kể câu chuyện thú vị về sản phẩm — phản ứng impulse rõ nhất.', quote:'"Extremely interesting! — mua ngay sau khi nghe chuyện bánh dừa"', src:'HDV' },
-  { id:'RB-02', group:'R', sub:'R_Buy', topic:'Mua tập thể đoàn doanh nghiệp', topicEn:'Corporate group purchase', def:'Hành vi mua đồng loạt của cả đoàn team-building, thường là cùng một loại sản phẩm biểu tượng (khăn rằn, nón lá...).', quote:'"Đoàn công ty mua khăn rằn về tặng nhau — mua cả đoàn"', src:'HDV' },
-  { id:'RB-03', group:'R', sub:'R_Buy', topic:'Mua gifting số lượng lớn', topicEn:'Bulk gifting purchase', def:'Mua nhiều cùng một loại sản phẩm để về tặng người thân, bạn bè — hành vi gifting volume lớn tại một lần mua.', quote:'"Nón lá mua một lần 5–7 cái, cả chục cái về tặng bạn bè"', src:'HDV' },
-  { id:'RB-04', group:'R', sub:'R_Buy', topic:'Mua artisan cá nhân hóa', topicEn:'Personalized artisan purchase', def:'Mua sản phẩm thủ công được cá nhân hóa với giá cao qua kênh khách sạn cao cấp hoặc đặt hàng doanh nghiệp.', quote:'"Khách sạn 4–5 sao đặt tranh nhỏ tặng khách VIP — bán được giá hơn"', src:'HKD' },
-  { id:'RB-05', group:'R', sub:'R_Buy', topic:'Mua theo hiệu ứng dây chuyền', topicEn:'Chain-reaction buying', def:'Hành vi mua được lan truyền trong đoàn khi thấy người cùng nhóm dừng lại mua — không cần thêm kích thích từ người bán.', quote:'"5–7 khách dừng mua ở cả đoàn kéo đến mua tiếp theo"', src:'HDV' },
-  { id:'RB-06', group:'R', sub:'R_Buy', topic:'Mua sản phẩm eco-friendly', topicEn:'Eco-friendly purchase', def:'Hành vi mua sản phẩm thân thiện môi trường như là lựa chọn có ý thức phù hợp với xu hướng tiêu dùng xanh.', quote:'"Khách hỏi đồ tự nhiên và mua eco-friendly nhiều"', src:'HKD' },
-  { id:'RB-07', group:'R', sub:'R_Buy', topic:'Mua và dùng ngay tại chỗ', topicEn:'Buy and use on the spot', def:'Mua sản phẩm có thể sử dụng ngay tại điểm tham quan — nón lá đội trên ghe, quạt trên sông — tăng giá trị trải nghiệm.', quote:'"Nón lá đội được luôn trên ghe — khách mua và dùng ngay"', src:'HDV' },
+  { id: 'RB-01', group: 'R', sub: 'R_Buy', topic: 'Mua ngay sau storytelling', topicEn: 'Impulse buy after story', def: 'Hành vi mua tức thì ngay sau khi được HDV hoặc người bán kể câu chuyện thú vị về sản phẩm — phản ứng impulse rõ nhất.', quote: '"Extremely interesting! — mua ngay sau khi nghe chuyện bánh dừa"', src: 'HDV' },
+  { id: 'RB-02', group: 'R', sub: 'R_Buy', topic: 'Mua tập thể đoàn doanh nghiệp', topicEn: 'Corporate group purchase', def: 'Hành vi mua đồng loạt của cả đoàn team-building, thường là cùng một loại sản phẩm biểu tượng (khăn rằn, nón lá...).', quote: '"Đoàn công ty mua khăn rằn về tặng nhau — mua cả đoàn"', src: 'HDV' },
+  { id: 'RB-03', group: 'R', sub: 'R_Buy', topic: 'Mua gifting số lượng lớn', topicEn: 'Bulk gifting purchase', def: 'Mua nhiều cùng một loại sản phẩm để về tặng người thân, bạn bè — hành vi gifting volume lớn tại một lần mua.', quote: '"Nón lá mua một lần 5–7 cái, cả chục cái về tặng bạn bè"', src: 'HDV' },
+  { id: 'RB-04', group: 'R', sub: 'R_Buy', topic: 'Mua artisan cá nhân hóa', topicEn: 'Personalized artisan purchase', def: 'Mua sản phẩm thủ công được cá nhân hóa với giá cao qua kênh khách sạn cao cấp hoặc đặt hàng doanh nghiệp.', quote: '"Khách sạn 4–5 sao đặt tranh nhỏ tặng khách VIP — bán được giá hơn"', src: 'HKD' },
+  { id: 'RB-05', group: 'R', sub: 'R_Buy', topic: 'Mua theo hiệu ứng dây chuyền', topicEn: 'Chain-reaction buying', def: 'Hành vi mua được lan truyền trong đoàn khi thấy người cùng nhóm dừng lại mua — không cần thêm kích thích từ người bán.', quote: '"5–7 khách dừng mua ở cả đoàn kéo đến mua tiếp theo"', src: 'HDV' },
+  { id: 'RB-06', group: 'R', sub: 'R_Buy', topic: 'Mua sản phẩm eco-friendly', topicEn: 'Eco-friendly purchase', def: 'Hành vi mua sản phẩm thân thiện môi trường như là lựa chọn có ý thức phù hợp với xu hướng tiêu dùng xanh.', quote: '"Khách hỏi đồ tự nhiên và mua eco-friendly nhiều"', src: 'HKD' },
+  { id: 'RB-07', group: 'R', sub: 'R_Buy', topic: 'Mua và dùng ngay tại chỗ', topicEn: 'Buy and use on the spot', def: 'Mua sản phẩm có thể sử dụng ngay tại điểm tham quan — nón lá đội trên ghe, quạt trên sông — tăng giá trị trải nghiệm.', quote: '"Nón lá đội được luôn trên ghe — khách mua và dùng ngay"', src: 'HDV' },
 
   // ── R_NoBuy (7 codes) ──
-  { id:'RNB-01', group:'R', sub:'R_NoBuy', topic:'Không mua vì không hiểu sản phẩm', topicEn:'No buy: product not understood', def:'Không mua vì không biết sản phẩm là gì, dùng để làm gì — khoảng trống thông tin loại bỏ cả Arousal lẫn Pleasure.', quote:'"Cầm gì gì chơi — không hiểu công năng ra sao, thôi bỏ xuống"', src:'HDV' },
-  { id:'RNB-02', group:'R', sub:'R_NoBuy', topic:'Không mua vì lo hải quan', topicEn:'No buy: customs concern', def:'Không mua sản phẩm (đồ gỗ, thực phẩm...) vì lo ngại không qua được kiểm tra hải quan của nước nhà.', quote:'"Thấy đồ gỗ không có xác nhận hợp chuẩn — họ không mua"', src:'HDV' },
-  { id:'RNB-03', group:'R', sub:'R_NoBuy', topic:'Không mua vì thiếu chứng nhận an toàn', topicEn:'No buy: missing safety cert', def:'Không mua sản phẩm dùng cho cơ thể (xà bông, kem...) vì thiếu chứng nhận an toàn vệ sinh.', quote:'"Xà bông không có chứng chỉ — họ không dám mua"', src:'HDV' },
-  { id:'RNB-04', group:'R', sub:'R_NoBuy', topic:'Không mua vì giá không minh bạch', topicEn:'No buy: price not transparent', def:'Không mua vì phát hiện giá không đồng nhất giữa các quầy kế nhau, gây mất niềm tin vào toàn bộ chuỗi bán hàng.', quote:'"Hai quầy giá khác nhau — không biết tin ai, thôi không mua luôn"', src:'HDV' },
-  { id:'RNB-05', group:'R', sub:'R_NoBuy', topic:'Không mua vì sản phẩm na ná', topicEn:'No buy: generic products', def:'Không mua vì sản phẩm giống nhau ở khắp nơi, không có lý do đặc biệt để mua tại địa phương đó.', quote:'"Tiền Giang hay Vĩnh Long mua cũng y chang — không có đặc trưng để mua"', src:'HDV, CG' },
-  { id:'RNB-06', group:'R', sub:'R_NoBuy', topic:'Không mua được vì kênh bán sỉ', topicEn:'No buy: wholesale only channel', def:'Không thể mua vì cơ sở sản xuất chỉ bán sỉ cho đại lý, không có kênh bán lẻ trực tiếp cho du khách.', quote:'"Khách du lịch hỏi mua một cái — không bán lẻ"', src:'HKD' },
-  { id:'RNB-07', group:'R', sub:'R_NoBuy', topic:'Không mua vì lo hư hỏng', topicEn:'No buy: damage concern', def:'Không mua vì lo ngại sản phẩm nhạy cảm (tranh gạo, giấy...) sẽ bị hỏng do độ ẩm trong quá trình vận chuyển.', quote:'"Khách Bắc sợ tranh gạo bị ẩm, bị mốc — không mua"', src:'HKD' },
+  { id: 'RNB-01', group: 'R', sub: 'R_NoBuy', topic: 'Không mua vì không hiểu sản phẩm', topicEn: 'No buy: product not understood', def: 'Không mua vì không biết sản phẩm là gì, dùng để làm gì — khoảng trống thông tin loại bỏ cả Arousal lẫn Pleasure.', quote: '"Cầm gì gì chơi — không hiểu công năng ra sao, thôi bỏ xuống"', src: 'HDV' },
+  { id: 'RNB-02', group: 'R', sub: 'R_NoBuy', topic: 'Không mua vì lo hải quan', topicEn: 'No buy: customs concern', def: 'Không mua sản phẩm (đồ gỗ, thực phẩm...) vì lo ngại không qua được kiểm tra hải quan của nước nhà.', quote: '"Thấy đồ gỗ không có xác nhận hợp chuẩn — họ không mua"', src: 'HDV' },
+  { id: 'RNB-03', group: 'R', sub: 'R_NoBuy', topic: 'Không mua vì thiếu chứng nhận an toàn', topicEn: 'No buy: missing safety cert', def: 'Không mua sản phẩm dùng cho cơ thể (xà bông, kem...) vì thiếu chứng nhận an toàn vệ sinh.', quote: '"Xà bông không có chứng chỉ — họ không dám mua"', src: 'HDV' },
+  { id: 'RNB-04', group: 'R', sub: 'R_NoBuy', topic: 'Không mua vì giá không minh bạch', topicEn: 'No buy: price not transparent', def: 'Không mua vì phát hiện giá không đồng nhất giữa các quầy kế nhau, gây mất niềm tin vào toàn bộ chuỗi bán hàng.', quote: '"Hai quầy giá khác nhau — không biết tin ai, thôi không mua luôn"', src: 'HDV' },
+  { id: 'RNB-05', group: 'R', sub: 'R_NoBuy', topic: 'Không mua vì sản phẩm na ná', topicEn: 'No buy: generic products', def: 'Không mua vì sản phẩm giống nhau ở khắp nơi, không có lý do đặc biệt để mua tại địa phương đó.', quote: '"Tiền Giang hay Vĩnh Long mua cũng y chang — không có đặc trưng để mua"', src: 'HDV, CG' },
+  { id: 'RNB-06', group: 'R', sub: 'R_NoBuy', topic: 'Không mua được vì kênh bán sỉ', topicEn: 'No buy: wholesale only channel', def: 'Không thể mua vì cơ sở sản xuất chỉ bán sỉ cho đại lý, không có kênh bán lẻ trực tiếp cho du khách.', quote: '"Khách du lịch hỏi mua một cái — không bán lẻ"', src: 'HKD' },
+  { id: 'RNB-07', group: 'R', sub: 'R_NoBuy', topic: 'Không mua vì lo hư hỏng', topicEn: 'No buy: damage concern', def: 'Không mua vì lo ngại sản phẩm nhạy cảm (tranh gạo, giấy...) sẽ bị hỏng do độ ẩm trong quá trình vận chuyển.', quote: '"Khách Bắc sợ tranh gạo bị ẩm, bị mốc — không mua"', src: 'HKD' },
 
   // ── R_Recommend (4 codes) ──
-  { id:'RRec-01', group:'R', sub:'R_Recommend', topic:'Chụp ảnh chia sẻ mạng xã hội', topicEn:'Photo sharing on social media', def:'Chụp ảnh và chia sẻ sản phẩm lên mạng xã hội sau khi mua, tạo hiệu ứng lan tỏa viral đến mạng lưới bạn bè.', quote:'"Mua để chụp hình đăng lên mạng — bạn bè thấy rồi cũng muốn"', src:'HDV' },
-  { id:'RRec-02', group:'R', sub:'R_Recommend', topic:'Mua nhiều để tặng — word of mouth', topicEn:'Bulk buying for gifting — WOM', def:'Mua số lượng lớn về tặng người thân, bạn bè — sản phẩm lan tỏa đến người không trực tiếp tham gia tour.', quote:'"Mua 5–7 cái nón lá về tặng bạn bè — họ lại hỏi mua ở đâu"', src:'HDV' },
-  { id:'RRec-03', group:'R', sub:'R_Recommend', topic:'HDV tái giới thiệu điểm bán', topicEn:'Guide re-recommends to next groups', def:'HDV ghi nhớ và chủ động giới thiệu điểm bán tốt cho các đoàn khách tiếp theo — kênh word-of-mouth B2B đặc thù.', quote:'"Chỗ nào bán tốt là nhớ, đoàn sau đến dẫn đến chỗ đó"', src:'HDV' },
-  { id:'RRec-04', group:'R', sub:'R_Recommend', topic:'Quay lại mua lần sau', topicEn:'Repeat purchase', def:'Hành vi quay lại mua lần tiếp theo hoặc dẫn người thân đến nếu sản phẩm và dịch vụ tốt — customer loyalty.', quote:'"Lần đầu mua ưng thì lần sau tìm lại, thậm chí dẫn bạn bè đến"', src:'CG' },
+  { id: 'RRec-01', group: 'R', sub: 'R_Recommend', topic: 'Chụp ảnh chia sẻ mạng xã hội', topicEn: 'Photo sharing on social media', def: 'Chụp ảnh và chia sẻ sản phẩm lên mạng xã hội sau khi mua, tạo hiệu ứng lan tỏa viral đến mạng lưới bạn bè.', quote: '"Mua để chụp hình đăng lên mạng — bạn bè thấy rồi cũng muốn"', src: 'HDV' },
+  { id: 'RRec-02', group: 'R', sub: 'R_Recommend', topic: 'Mua nhiều để tặng — word of mouth', topicEn: 'Bulk buying for gifting — WOM', def: 'Mua số lượng lớn về tặng người thân, bạn bè — sản phẩm lan tỏa đến người không trực tiếp tham gia tour.', quote: '"Mua 5–7 cái nón lá về tặng bạn bè — họ lại hỏi mua ở đâu"', src: 'HDV' },
+  { id: 'RRec-03', group: 'R', sub: 'R_Recommend', topic: 'HDV tái giới thiệu điểm bán', topicEn: 'Guide re-recommends to next groups', def: 'HDV ghi nhớ và chủ động giới thiệu điểm bán tốt cho các đoàn khách tiếp theo — kênh word-of-mouth B2B đặc thù.', quote: '"Chỗ nào bán tốt là nhớ, đoàn sau đến dẫn đến chỗ đó"', src: 'HDV' },
+  { id: 'RRec-04', group: 'R', sub: 'R_Recommend', topic: 'Quay lại mua lần sau', topicEn: 'Repeat purchase', def: 'Hành vi quay lại mua lần tiếp theo hoặc dẫn người thân đến nếu sản phẩm và dịch vụ tốt — customer loyalty.', quote: '"Lần đầu mua ưng thì lần sau tìm lại, thậm chí dẫn bạn bè đến"', src: 'CG' },
 ];
 
 // ─── CODEBOOK VIEW ───────────────────────────────────────────────────────────
 const CodebookView = ({ lang }: { lang: Lang }) => {
   const t = TRANSLATIONS[lang];
   const isVi = lang === 'vi';
-  const [filter, setFilter] = React.useState<'ALL'|'S'|'O'|'R'>('ALL');
+  const [filter, setFilter] = React.useState<'ALL' | 'S' | 'O' | 'R'>('ALL');
   const [search, setSearch] = React.useState('');
 
   const SUB_LABELS: Record<string, string> = {
-    S_Product:   isVi ? t.cbSubProduct   : t.cbSubProduct,
-    S_Price:     isVi ? t.cbSubPrice     : t.cbSubPrice,
-    S_Place:     isVi ? t.cbSubPlace     : t.cbSubPlace,
-    S_Promotion: isVi ? t.cbSubPromo     : t.cbSubPromo,
-    S_Social:    isVi ? t.cbSubSocial    : t.cbSubSocial,
-    S_Cultural:  isVi ? t.cbSubCultural  : t.cbSubCultural,
-    O_Pleasure:  isVi ? t.cbSubPleasure  : t.cbSubPleasure,
-    O_Arousal:   isVi ? t.cbSubArousal   : t.cbSubArousal,
-    O_Attitude:  isVi ? t.cbSubAttitude  : t.cbSubAttitude,
-    R_Buy:       isVi ? t.cbSubBuy       : t.cbSubBuy,
-    R_NoBuy:     isVi ? t.cbSubNoBuy     : t.cbSubNoBuy,
+    S_Product: isVi ? t.cbSubProduct : t.cbSubProduct,
+    S_Price: isVi ? t.cbSubPrice : t.cbSubPrice,
+    S_Place: isVi ? t.cbSubPlace : t.cbSubPlace,
+    S_Promotion: isVi ? t.cbSubPromo : t.cbSubPromo,
+    S_Social: isVi ? t.cbSubSocial : t.cbSubSocial,
+    S_Cultural: isVi ? t.cbSubCultural : t.cbSubCultural,
+    O_Pleasure: isVi ? t.cbSubPleasure : t.cbSubPleasure,
+    O_Arousal: isVi ? t.cbSubArousal : t.cbSubArousal,
+    O_Attitude: isVi ? t.cbSubAttitude : t.cbSubAttitude,
+    R_Buy: isVi ? t.cbSubBuy : t.cbSubBuy,
+    R_NoBuy: isVi ? t.cbSubNoBuy : t.cbSubNoBuy,
     R_Recommend: isVi ? t.cbSubRecommend : t.cbSubRecommend,
   };
 
@@ -2494,10 +2508,10 @@ const CodebookView = ({ lang }: { lang: Lang }) => {
   };
 
   const SUB_COLOR: Record<string, string> = {
-    S_Product:'blue', S_Price:'sky', S_Place:'teal', S_Promotion:'cyan',
-    S_Social:'violet', S_Cultural:'indigo',
-    O_Pleasure:'pink', O_Arousal:'purple', O_Attitude:'amber',
-    R_Buy:'emerald', R_NoBuy:'red', R_Recommend:'lime',
+    S_Product: 'blue', S_Price: 'sky', S_Place: 'teal', S_Promotion: 'cyan',
+    S_Social: 'violet', S_Cultural: 'indigo',
+    O_Pleasure: 'pink', O_Arousal: 'purple', O_Attitude: 'amber',
+    R_Buy: 'emerald', R_NoBuy: 'red', R_Recommend: 'lime',
   };
 
   const q = search.toLowerCase();
@@ -2542,7 +2556,7 @@ const CodebookView = ({ lang }: { lang: Lang }) => {
         ].map(item => (
           <button
             key={item.g}
-            onClick={() => setFilter(filter === item.g ? 'ALL' : item.g as 'S'|'O'|'R')}
+            onClick={() => setFilter(filter === item.g ? 'ALL' : item.g as 'S' | 'O' | 'R')}
             className={`rounded-xl p-4 text-center border transition-all cursor-pointer
               ${filter === item.g
                 ? `bg-${item.color}-500/20 border-${item.color}-500/60`
@@ -2565,7 +2579,7 @@ const CodebookView = ({ lang }: { lang: Lang }) => {
           className="flex-1 px-4 py-2.5 rounded-xl bg-surface border border-border text-sm text-text placeholder:text-text3 focus:outline-none focus:border-indigo-500/50"
         />
         <div className="flex gap-2">
-          {(['ALL','S','O','R'] as const).map(g => (
+          {(['ALL', 'S', 'O', 'R'] as const).map(g => (
             <button
               key={g}
               onClick={() => setFilter(g)}
@@ -2573,8 +2587,8 @@ const CodebookView = ({ lang }: { lang: Lang }) => {
                 ${filter === g
                   ? g === 'ALL' ? 'bg-text text-bg'
                     : g === 'S' ? 'bg-blue-500 text-white'
-                    : g === 'O' ? 'bg-purple-500 text-white'
-                    : 'bg-green-500 text-white'
+                      : g === 'O' ? 'bg-purple-500 text-white'
+                        : 'bg-green-500 text-white'
                   : 'bg-surface border border-border text-text3 hover:text-text'}`}
             >
               {g === 'ALL' ? t.cbFilterAll : `[${g}]`}
