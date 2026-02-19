@@ -2205,8 +2205,8 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
             { l: t.igKey1, v: "12", i: <MessageCircle size={14} /> },
             { l: t.igKey2, v: "80", i: <Search size={14} /> },
             { l: t.igKey3, v: "10", i: <Lightbulb size={14} /> },
-            { l: t.igKey4, v: "3",  i: <Users size={14} /> },
-            { l: t.igKey5, v: "6",  i: <MapPin size={14} /> },
+            { l: t.igKey4, v: "3", i: <Users size={14} /> },
+            { l: t.igKey5, v: "6", i: <MapPin size={14} /> },
           ].map((item, idx) => (
             <div key={idx} className="flex flex-col items-center justify-center text-center">
               <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 mb-1">{item.v}</div>
@@ -2262,25 +2262,28 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
 
         {/* Flow: always flex — column on mobile, row on md+ */}
         <div className="relative">
-          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2">
+          {/* items-stretch makes all 3 blocks the same height */}
+          <div className="flex flex-col md:flex-row items-stretch gap-2">
 
-            {/* S Block */}
-            <div className="flex-1 rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 text-center">
+            {/* S Block — justify-center vertically so content sits in the middle */}
+            <div className="flex-1 rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 text-center flex flex-col justify-center">
               <div className="text-xs font-black uppercase tracking-widest text-blue-400 mb-1">[S]</div>
               <div className="text-base font-bold text-text mb-1">{t.igFlowS}</div>
               <div className="text-[11px] text-text3">{t.igFlowSDesc}</div>
             </div>
 
             {/* Arrow */}
-            <div className="flex justify-center shrink-0">
+            <div className="flex items-center justify-center shrink-0 py-1 md:py-0">
               <ArrowRight size={20} className="text-border rotate-90 md:rotate-0" />
             </div>
 
-            {/* O Block */}
-            <div className="flex-1 rounded-xl bg-purple-500/10 border border-purple-500/30 p-4 text-center">
-              <div className="text-xs font-black uppercase tracking-widest text-purple-400 mb-1">[O]</div>
-              <div className="text-base font-bold text-text mb-1">{t.igFlowO}</div>
-              <div className="text-[11px] text-text3">{t.igFlowODesc}</div>
+            {/* O Block — main content top, gate badge bottom */}
+            <div className="flex-1 rounded-xl bg-purple-500/10 border border-purple-500/30 p-4 text-center flex flex-col justify-between">
+              <div>
+                <div className="text-xs font-black uppercase tracking-widest text-purple-400 mb-1">[O]</div>
+                <div className="text-base font-bold text-text mb-1">{t.igFlowO}</div>
+                <div className="text-[11px] text-text3">{t.igFlowODesc}</div>
+              </div>
               <div className="mt-3 pt-3 border-t border-purple-500/20">
                 <div className="inline-flex items-center gap-1.5 text-[10px] font-bold text-red-400 bg-red-500/10 rounded-full px-2 py-1">
                   <ShieldAlert size={10} /> {t.igFlowGate}
@@ -2290,15 +2293,17 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
             </div>
 
             {/* Arrow */}
-            <div className="flex justify-center shrink-0">
+            <div className="flex items-center justify-center shrink-0 py-1 md:py-0">
               <ArrowRight size={20} className="text-border rotate-90 md:rotate-0" />
             </div>
 
-            {/* R Block */}
-            <div className="flex-1 rounded-xl bg-green-500/10 border border-green-500/30 p-4 text-center">
-              <div className="text-xs font-black uppercase tracking-widest text-green-400 mb-1">[R]</div>
-              <div className="text-base font-bold text-text mb-2">{t.igFlowR}</div>
-              <div className="space-y-1.5">
+            {/* R Block — title top, outcomes bottom (mirrors O layout) */}
+            <div className="flex-1 rounded-xl bg-green-500/10 border border-green-500/30 p-4 text-center flex flex-col justify-between">
+              <div>
+                <div className="text-xs font-black uppercase tracking-widest text-green-400 mb-1">[R]</div>
+                <div className="text-base font-bold text-text mb-1">{t.igFlowR}</div>
+              </div>
+              <div className="mt-3 pt-3 border-t border-green-500/20 space-y-1.5">
                 <div className="flex items-center justify-center gap-1.5 text-[11px] font-bold text-emerald-400">
                   <CheckCircle2 size={12} /> {t.igFlowBuy}
                 </div>
@@ -2334,11 +2339,11 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
           <div className="absolute top-8 left-4 right-4 h-0.5 bg-gradient-to-r from-slate-200 via-blue-200 to-green-200 dark:from-slate-800 dark:via-blue-900 dark:to-green-900 -z-10 hidden md:block" />
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
-              { icon: <MapPin size={22} />,       title: t.igJ1, sub: t.igJ1Sub, color: 'slate' },
-              { icon: <Zap size={22} />,           title: t.igJ2, sub: t.igJ2Sub, color: 'blue' },
-              { icon: <BrainCircuit size={22} />,  title: t.igJ3, sub: t.igJ3Sub, color: 'purple' },
-              { icon: <Users size={22} />,         title: t.igJ4, sub: t.igJ4Sub, color: 'amber' },
-              { icon: <Share2 size={22} />,        title: t.igJ5, sub: t.igJ5Sub, color: 'green' },
+              { icon: <MapPin size={22} />, title: t.igJ1, sub: t.igJ1Sub, color: 'slate' },
+              { icon: <Zap size={22} />, title: t.igJ2, sub: t.igJ2Sub, color: 'blue' },
+              { icon: <BrainCircuit size={22} />, title: t.igJ3, sub: t.igJ3Sub, color: 'purple' },
+              { icon: <Users size={22} />, title: t.igJ4, sub: t.igJ4Sub, color: 'amber' },
+              { icon: <Share2 size={22} />, title: t.igJ5, sub: t.igJ5Sub, color: 'green' },
             ].map((item, index) => (
               <div key={index} className="relative flex flex-col items-center text-center group">
                 <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-3 bg-surface border-4 border-${item.color}-500/20 text-${item.color}-500 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:border-${item.color}-500`}>
@@ -2365,11 +2370,11 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
           </div>
           <div className="space-y-2">
             {[
-              { icon: <BrainCircuit size={16} />, title: t.igD1, sub: t.igD1Sub, pct: 44, color: 'blue',   gi: lang === 'vi' ? "Kích thích hứng thú và niềm vui" : "Triggers arousal and pleasure" },
-              { icon: <Users size={16} />,        title: t.igD2, sub: t.igD2Sub, pct: 31, color: 'purple', gi: lang === 'vi' ? "Khuếch đại cảm xúc ×2,25 trong tour" : "Amplifies emotion ×2.25 in tours" },
-              { icon: <Package size={16} />,      title: t.igD3, sub: t.igD3Sub, pct: 100,color: 'cyan',   gi: lang === 'vi' ? "Điều kiện cần để tạo niềm vui" : "Necessary condition for pleasure" },
-              { icon: <MessageCircle size={16} />,title: t.igD4, sub: t.igD4Sub, pct: 31, color: 'amber',  gi: lang === 'vi' ? "Tâm lý sợ bỏ lỡ khuếch đại mua" : "Fear-of-missing-out amplifies buying" },
-              { icon: <LayoutTemplate size={16} />,title: t.igD5, sub: t.igD5Sub, pct: 50, color: 'teal',  gi: lang === 'vi' ? "Ấn tượng đầu tiên quyết định" : "First impression is decisive" },
+              { icon: <BrainCircuit size={16} />, title: t.igD1, sub: t.igD1Sub, pct: 44, color: 'blue', gi: lang === 'vi' ? "Kích thích hứng thú và niềm vui" : "Triggers arousal and pleasure" },
+              { icon: <Users size={16} />, title: t.igD2, sub: t.igD2Sub, pct: 31, color: 'purple', gi: lang === 'vi' ? "Khuếch đại cảm xúc ×2,25 trong tour" : "Amplifies emotion ×2.25 in tours" },
+              { icon: <Package size={16} />, title: t.igD3, sub: t.igD3Sub, pct: 100, color: 'cyan', gi: lang === 'vi' ? "Điều kiện cần để tạo niềm vui" : "Necessary condition for pleasure" },
+              { icon: <MessageCircle size={16} />, title: t.igD4, sub: t.igD4Sub, pct: 31, color: 'amber', gi: lang === 'vi' ? "Tâm lý sợ bỏ lỡ khuếch đại mua" : "Fear-of-missing-out amplifies buying" },
+              { icon: <LayoutTemplate size={16} />, title: t.igD5, sub: t.igD5Sub, pct: 50, color: 'teal', gi: lang === 'vi' ? "Ấn tượng đầu tiên quyết định" : "First impression is decisive" },
             ].map((d, i) => (
               <div key={i} className={`flex items-start gap-3 p-3 rounded-xl bg-surface border border-${d.color}-500/15 hover:border-${d.color}-500/40 transition-colors`}>
                 <div className={`p-1.5 rounded-lg bg-${d.color}-500/10 text-${d.color}-400 shrink-0 mt-0.5`}>{d.icon}</div>
@@ -2398,8 +2403,8 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
             <div className="space-y-2">
               {[
                 { icon: <ShieldAlert size={16} />, title: t.igB1, sub: lang === 'vi' ? "Rào cản lớn nhất — chặn đứng mọi giao dịch" : "Biggest barrier — stops all transactions", color: 'red' },
-                { icon: <Package size={16} />,     title: t.igB2, sub: lang === 'vi' ? "Sợ hải quan, vỡ vụn, cồng kềnh" : "Customs fear, fragility, bulkiness", color: 'amber' },
-                { icon: <Info size={16} />,        title: t.igB3, sub: lang === 'vi' ? "Không hiểu = không mua" : "Don't understand = won't buy", color: 'slate' },
+                { icon: <Package size={16} />, title: t.igB2, sub: lang === 'vi' ? "Sợ hải quan, vỡ vụn, cồng kềnh" : "Customs fear, fragility, bulkiness", color: 'amber' },
+                { icon: <Info size={16} />, title: t.igB3, sub: lang === 'vi' ? "Không hiểu = không mua" : "Don't understand = won't buy", color: 'slate' },
               ].map((b, i) => (
                 <div key={i} className={`flex items-start gap-3 p-3 rounded-xl bg-surface border border-${b.color}-500/15`}>
                   <div className={`p-1.5 rounded-lg bg-${b.color}-500/10 text-${b.color}-400 shrink-0 mt-0.5`}>{b.icon}</div>
@@ -2502,9 +2507,9 @@ const App: React.FC = () => {
       <header className="sticky top-0 z-50 flex items-center justify-between px-4 py-4 border-b bg-bg/80 border-border backdrop-blur-xl md:px-10" role="banner">
         <div className="flex items-center gap-3">
           <img
-            src="https://static.wixstatic.com/media/c0d3eb_68f1734ea8f248af8479955d34772667~mv2.png/v1/fill/w_706,h_706,al_c/Logo%20tr%C6%B0%E1%BB%9Dng%20%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20(layout%20tr%C3%B2n)-18.png"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHLBm0N0WHs3Vl-eBlFyYHVtVqm9HroGnwAw&s"
             alt="University Logo"
-            className="w-10 h-10 md:w-12 md:h-12 object-contain"
+            className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-full"
           />
           <div>
             <h1 className="text-lg md:text-xl font-bold text-text transition-colors">{t.title}</h1>
