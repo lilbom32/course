@@ -243,6 +243,34 @@ const TRANSLATIONS = {
     inF3Quote: "Một đoàn xe 10 khách... chỉ cần 5–7 khách đứng lại mua thôi là đã khác rồi.",
     inCTA: "Khám phá Dashboard",
 
+    // Infographic redesign extras
+    igFlowTitle: "Luồng quyết định mua hàng",
+    igFlowSub: "Từ kích thích bên ngoài đến hành động cuối cùng",
+    igFlowS: "Kích thích",
+    igFlowSDesc: "Câu chuyện · Sản phẩm · Không gian · Giá cả",
+    igFlowO: "Cảm xúc",
+    igFlowODesc: "Hứng thú · Niềm vui · Niềm tin",
+    igFlowGate: "Cổng niềm tin",
+    igFlowGateDesc: "Niềm tin < 40 → chặn hoàn toàn",
+    igFlowR: "Hành động",
+    igFlowBuy: "Mua",
+    igFlowNoBuy: "Không mua",
+    igFlowUndecided: "Chưa quyết định",
+    igAmplTitle: "Phát hiện độc đáo",
+    igAmplStat: "×2,25",
+    igAmplDesc: "Tour đoàn khuếch đại hiệu ứng xã hội gấp 2,25 lần so với khách đi lẻ",
+    igAmplDetail: "Chỉ cần 5–7 người dừng lại → cả đoàn xúm vào",
+    igTrustTitle: "Câu chuyện là chìa khóa",
+    igTrustStat: "55%",
+    igTrustDesc: "số mã hóa thuộc nhóm kích thích — câu chuyện văn hóa dẫn đầu",
+    igTrustDetail: "\"Không phải người ta không có tiền. Người ta không biết cái đó là gì.\"",
+    igGateTitle: "Niềm tin là cánh cửa",
+    igGateStat: "< 40",
+    igGateDesc: "điểm niềm tin → chặn mọi nỗ lực marketing, dù sản phẩm hấp dẫn đến đâu",
+    igGateDetail: "\"Nhìn thấy hàng Trung Quốc là tôi dứt khoát không mua, dù nó đẹp cỡ nào.\"",
+    igContextDetail: "Tour đoàn · Khách quốc tế · Thời gian tiếp xúc",
+    igInsightTitle: "3 Con số cần nhớ",
+
     // Footer
     footer: "E-SOR-C Dashboard · Nghiên cứu sinh Phan Thị Thúy Phượng · ĐH Nguyễn Tất Thành · 2026"
   },
@@ -461,6 +489,34 @@ const TRANSLATIONS = {
     inF3Desc: "When 5 people stop to look, the whole group gathers. Positive social pressure drives faster buying decisions.",
     inF3Quote: "A bus of 10 guests... you only need 5–7 to stop and buy and it all changes.",
     inCTA: "Explore Dashboard",
+
+    // Infographic redesign extras
+    igFlowTitle: "Purchase Decision Flow",
+    igFlowSub: "From external stimulus to final action",
+    igFlowS: "Stimulus",
+    igFlowSDesc: "Story · Product · Space · Price",
+    igFlowO: "Organism",
+    igFlowODesc: "Arousal · Pleasure · Attitude",
+    igFlowGate: "Trust Gate",
+    igFlowGateDesc: "Attitude < 40 → complete block",
+    igFlowR: "Response",
+    igFlowBuy: "Buy",
+    igFlowNoBuy: "No Buy",
+    igFlowUndecided: "Undecided",
+    igAmplTitle: "Key Finding",
+    igAmplStat: "×2.25",
+    igAmplDesc: "Tour group amplifies social influence 2.25× compared to solo travelers",
+    igAmplDetail: "Just 5–7 people stop to buy → the whole group joins in",
+    igTrustTitle: "Story is the Key",
+    igTrustStat: "55%",
+    igTrustDesc: "of all codes belong to stimulus — cultural storytelling leads",
+    igTrustDetail: "\"It's not that they don't have money. They don't know what it is.\"",
+    igGateTitle: "Trust is the Door",
+    igGateStat: "< 40",
+    igGateDesc: "trust score → blocks all marketing effort, no matter how attractive the product",
+    igGateDetail: "\"The moment I see it's made in China, I put it down. No matter how pretty.\"",
+    igContextDetail: "Tour group · International visitors · Contact time",
+    igInsightTitle: "3 Numbers to Remember",
 
     footer: "E-SOR-C Dashboard · PhD Candidate Phan Thi Thuy Phuong · Nguyen Tat Thanh University · 2026"
   }
@@ -2132,7 +2188,7 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
   return (
     <div className="space-y-10 animate-in fade-in duration-500 max-w-5xl mx-auto">
 
-      {/* Header Section */}
+      {/* ── HEADER ── */}
       <div className="text-center space-y-2 py-5">
         <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
           {t.igTitle}
@@ -2140,278 +2196,252 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
         <p className="text-text2 font-medium">{t.igSub}</p>
       </div>
 
-      {/* Journey Section (New) */}
+      {/* ── ROW 1: Key Numbers + 3 Insight Callouts ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        {/* Key Numbers bar */}
+        <div className="lg:col-span-3 grid grid-cols-5 gap-3 py-5 px-6 bg-slate-900 text-white rounded-2xl shadow-inner">
+          {[
+            { l: t.igKey1, v: "12", i: <MessageCircle size={14} /> },
+            { l: t.igKey2, v: "80", i: <Search size={14} /> },
+            { l: t.igKey3, v: "10", i: <Lightbulb size={14} /> },
+            { l: t.igKey4, v: "3",  i: <Users size={14} /> },
+            { l: t.igKey5, v: "6",  i: <MapPin size={14} /> },
+          ].map((item, idx) => (
+            <div key={idx} className="flex flex-col items-center justify-center text-center">
+              <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 mb-1">{item.v}</div>
+              <div className="text-[9px] uppercase font-bold tracking-wider opacity-70 flex gap-1 items-center justify-center">
+                {item.i} {item.l.replace(/^\d+\s/, '')}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Callout 1 — ×2.25 */}
+        <div className="rounded-2xl border border-purple-500/30 bg-purple-500/5 p-5 flex flex-col gap-3">
+          <div className="flex items-center gap-2 text-purple-400">
+            <Users size={18} />
+            <span className="text-xs font-bold uppercase tracking-widest">{t.igAmplTitle}</span>
+          </div>
+          <div className="text-5xl font-black text-purple-400 leading-none">{t.igAmplStat}</div>
+          <p className="text-xs text-text2 leading-relaxed">{t.igAmplDesc}</p>
+          <p className="text-[11px] italic text-text3 border-l-2 border-purple-500/40 pl-3">{t.igAmplDetail}</p>
+        </div>
+
+        {/* Callout 2 — 55% Story */}
+        <div className="rounded-2xl border border-blue-500/30 bg-blue-500/5 p-5 flex flex-col gap-3">
+          <div className="flex items-center gap-2 text-blue-400">
+            <BrainCircuit size={18} />
+            <span className="text-xs font-bold uppercase tracking-widest">{t.igTrustTitle}</span>
+          </div>
+          <div className="text-5xl font-black text-blue-400 leading-none">{t.igTrustStat}</div>
+          <p className="text-xs text-text2 leading-relaxed">{t.igTrustDesc}</p>
+          <p className="text-[11px] italic text-text3 border-l-2 border-blue-500/40 pl-3">{t.igTrustDetail}</p>
+        </div>
+
+        {/* Callout 3 — <40 Gate */}
+        <div className="rounded-2xl border border-red-500/30 bg-red-500/5 p-5 flex flex-col gap-3">
+          <div className="flex items-center gap-2 text-red-400">
+            <ShieldAlert size={18} />
+            <span className="text-xs font-bold uppercase tracking-widest">{t.igGateTitle}</span>
+          </div>
+          <div className="text-5xl font-black text-red-400 leading-none">{t.igGateStat}</div>
+          <p className="text-xs text-text2 leading-relaxed">{t.igGateDesc}</p>
+          <p className="text-[11px] italic text-text3 border-l-2 border-red-500/40 pl-3">{t.igGateDetail}</p>
+        </div>
+      </div>
+
+      {/* ── ROW 2: S→O→R Flow Diagram ── */}
       <section>
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-5">
+          <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500"><Activity size={20} /></div>
+          <h3 className="text-lg font-bold uppercase tracking-widest text-text">{t.igFlowTitle}</h3>
+          <div className="h-px flex-1 bg-border" />
+          <span className="text-xs text-text3">{t.igFlowSub}</span>
+        </div>
+
+        {/* Flow: Desktop horizontal, Mobile vertical */}
+        <div className="relative">
+          {/* Desktop connector line */}
+          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-green-500/30 -translate-y-1/2 -z-10" />
+
+          <div className="grid grid-cols-1 md:grid-cols-7 gap-2 items-center">
+
+            {/* S Block */}
+            <div className="md:col-span-2 rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 text-center">
+              <div className="text-xs font-black uppercase tracking-widest text-blue-400 mb-1">[S]</div>
+              <div className="text-base font-bold text-text mb-1">{t.igFlowS}</div>
+              <div className="text-[11px] text-text3">{t.igFlowSDesc}</div>
+            </div>
+
+            {/* Arrow */}
+            <div className="flex justify-center"><ArrowRight size={22} className="text-border rotate-90 md:rotate-0" /></div>
+
+            {/* O Block */}
+            <div className="md:col-span-2 rounded-xl bg-purple-500/10 border border-purple-500/30 p-4 text-center">
+              <div className="text-xs font-black uppercase tracking-widest text-purple-400 mb-1">[O]</div>
+              <div className="text-base font-bold text-text mb-1">{t.igFlowO}</div>
+              <div className="text-[11px] text-text3">{t.igFlowODesc}</div>
+              {/* Gate indicator inside O */}
+              <div className="mt-3 pt-3 border-t border-purple-500/20">
+                <div className="inline-flex items-center gap-1.5 text-[10px] font-bold text-red-400 bg-red-500/10 rounded-full px-2 py-1">
+                  <ShieldAlert size={10} /> {t.igFlowGate}
+                </div>
+                <p className="text-[10px] text-text3 mt-1">{t.igFlowGateDesc}</p>
+              </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="flex justify-center"><ArrowRight size={22} className="text-border rotate-90 md:rotate-0" /></div>
+
+            {/* R Block */}
+            <div className="md:col-span-2 rounded-xl bg-green-500/10 border border-green-500/30 p-4 text-center">
+              <div className="text-xs font-black uppercase tracking-widest text-green-400 mb-1">[R]</div>
+              <div className="text-base font-bold text-text mb-2">{t.igFlowR}</div>
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-center gap-1.5 text-[11px] font-bold text-emerald-400">
+                  <CheckCircle2 size={12} /> {t.igFlowBuy}
+                </div>
+                <div className="flex items-center justify-center gap-1.5 text-[11px] font-bold text-red-400">
+                  <Ban size={12} /> {t.igFlowNoBuy}
+                </div>
+                <div className="flex items-center justify-center gap-1.5 text-[11px] font-bold text-amber-400">
+                  <Minus size={12} /> {t.igFlowUndecided}
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Context modifier bar */}
+          <div className="mt-4 flex items-center gap-3 px-4 py-3 rounded-xl bg-surface2/50 border border-border">
+            <Globe size={15} className="text-teal-500 shrink-0" />
+            <span className="text-xs font-bold uppercase tracking-wider text-teal-500">[C] {t.igContext}</span>
+            <span className="text-xs text-text3">{t.igContextDetail}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ROW 3: Customer Journey ── */}
+      <section>
+        <div className="flex items-center gap-3 mb-5">
           <div className="p-2 rounded-lg bg-teal-500/10 text-teal-500"><Footprints size={20} /></div>
           <h3 className="text-lg font-bold uppercase tracking-widest text-text">{t.igJourneyTitle}</h3>
           <div className="h-px flex-1 bg-border" />
         </div>
 
         <div className="relative px-4">
-          {/* Connecting Line (Desktop) */}
           <div className="absolute top-8 left-4 right-4 h-0.5 bg-gradient-to-r from-slate-200 via-blue-200 to-green-200 dark:from-slate-800 dark:via-blue-900 dark:to-green-900 -z-10 hidden md:block" />
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
-              { icon: <MapPin size={24} />, title: t.igJ1, sub: t.igJ1Sub, color: 'slate' },
-              { icon: <Zap size={24} />, title: t.igJ2, sub: t.igJ2Sub, color: 'blue' },
-              { icon: <BrainCircuit size={24} />, title: t.igJ3, sub: t.igJ3Sub, color: 'purple' },
-              { icon: <Users size={24} />, title: t.igJ4, sub: t.igJ4Sub, color: 'amber' },
-              { icon: <Share2 size={24} />, title: t.igJ5, sub: t.igJ5Sub, color: 'green' },
+              { icon: <MapPin size={22} />,       title: t.igJ1, sub: t.igJ1Sub, color: 'slate' },
+              { icon: <Zap size={22} />,           title: t.igJ2, sub: t.igJ2Sub, color: 'blue' },
+              { icon: <BrainCircuit size={22} />,  title: t.igJ3, sub: t.igJ3Sub, color: 'purple' },
+              { icon: <Users size={22} />,         title: t.igJ4, sub: t.igJ4Sub, color: 'amber' },
+              { icon: <Share2 size={22} />,        title: t.igJ5, sub: t.igJ5Sub, color: 'green' },
             ].map((item, index) => (
               <div key={index} className="relative flex flex-col items-center text-center group">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 bg-surface border-4 border-${item.color}-500/20 text-${item.color}-500 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:border-${item.color}-500 group-hover:shadow-${item.color}-500/30`}>
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-3 bg-surface border-4 border-${item.color}-500/20 text-${item.color}-500 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:border-${item.color}-500`}>
                   {item.icon}
                 </div>
-                <div className="bg-surface/80 backdrop-blur-sm px-2 py-1 rounded-xl">
-                  <h4 className={`text-sm font-bold uppercase mb-1 text-${item.color}-500`}>{item.title}</h4>
-                  <p className="text-xs text-text2 leading-tight font-medium">{item.sub}</p>
-                </div>
-                {/* Arrow for mobile */}
-                {index < 4 && (
-                  <div className="md:hidden mt-4 text-border">
-                    <ArrowRight size={20} className="rotate-90" />
-                  </div>
-                )}
+                <h4 className={`text-xs font-bold uppercase mb-1 text-${item.color}-500`}>{item.title}</h4>
+                <p className="text-[11px] text-text2 leading-tight">{item.sub}</p>
+                {index < 4 && <div className="md:hidden mt-3 text-border"><ArrowRight size={18} className="rotate-90" /></div>}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Key Numbers Section (New) */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 py-6 px-6 bg-slate-900 text-white rounded-2xl shadow-inner">
-        {[
-          { l: t.igKey1, v: "12", i: <MessageCircle size={16} /> },
-          { l: t.igKey2, v: "80", i: <Search size={16} /> },
-          { l: t.igKey3, v: "10", i: <Lightbulb size={16} /> },
-          { l: t.igKey4, v: "3", i: <Users size={16} /> },
-          { l: t.igKey5, v: "6", i: <MapPin size={16} /> },
-        ].map((item, idx) => (
-          <div key={idx} className="flex flex-col items-center justify-center text-center p-2">
-            <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 mb-1">{item.v}</div>
-            <div className="text-[10px] uppercase font-bold tracking-wider opacity-80 flex gap-1 items-center justify-center">
-              {item.i} {item.l.replace(/^\d+\s/, '')}
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* ── ROW 4: Drivers + Barriers side by side ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-      {/* Drivers Section */}
-      <section>
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500"><Zap size={20} /></div>
-          <h3 className="text-lg font-bold uppercase tracking-widest text-text">{t.igDrivers}</h3>
-          <div className="h-px flex-1 bg-border" />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          <InfoCard
-            icon={<BrainCircuit size={20} />}
-            title={t.igD1}
-            sub={t.igD1Sub}
-            color="blue"
-            codeCount={7}
-            hypothesis="H1, H3"
-            insight={lang === 'vi' ? "Yếu tố cốt lõi kích thích cả O_Arousal và O_Pleasure." : "Core factor stimulating both O_Arousal and O_Pleasure."}
-          />
-          <InfoCard
-            icon={<Users size={20} />}
-            title={t.igD2}
-            sub={t.igD2Sub}
-            color="purple"
-            codeCount={5}
-            hypothesis="H6, H7"
-            insight={lang === 'vi' ? "Người dẫn truyện đóng vai trò khuếch đại cảm xúc (Moderator)." : "Storyteller acts as an emotional amplifier (Moderator)."}
-          />
-          <InfoCard
-            icon={<Package size={20} />}
-            title={t.igD3}
-            sub={t.igD3Sub}
-            color="cyan"
-            codeCount={16}
-            hypothesis="H3"
-            insight={lang === 'vi' ? "Đặc tính 'Độc - Lạ' là điều kiện cần để tạo ra Pleasure." : "'Unique' feature is a necessary condition for Pleasure."}
-          />
-          <InfoCard
-            icon={<MessageCircle size={20} />}
-            title={t.igD4}
-            sub={t.igD4Sub}
-            color="amber"
-            codeCount={5}
-            hypothesis="H10"
-            insight={lang === 'vi' ? "Hiệu ứng đám đông tạo áp lực tâm lý tích cực (FOMO)." : "Crowd effect creates positive psychological pressure (FOMO)."}
-          />
-          <InfoCard
-            icon={<LayoutTemplate size={20} />}
-            title={t.igD5}
-            sub={t.igD5Sub}
-            color="teal"
-            codeCount={8}
-            hypothesis="S_Place"
-            insight={lang === 'vi' ? "Không gian trưng bày phải kể được câu chuyện văn hóa." : "Display space must tell the cultural story."}
-          />
-        </div>
-      </section>
-
-      {/* Deep Dive: Information Dynamics (New Section) */}
-      <section className="p-6 rounded-2xl bg-amber-500/5 border border-amber-500/20">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="p-2 rounded-lg bg-amber-500/10 text-amber-500"><Lightbulb size={20} /></div>
-          <h3 className="text-lg font-bold uppercase tracking-widest text-text">
-            {lang === 'vi' ? "Cơ chế Thông tin & Niềm tin" : "Information & Trust Dynamics"}
-          </h3>
-          <div className="h-px flex-1 bg-amber-500/20" />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h4 className="text-sm font-bold text-amber-400 mb-2 uppercase">
-              {lang === 'vi' ? "Vai trò của Thông tin (S_Promotion)" : "Role of Information (S_Promotion)"}
-            </h4>
-            <p className="text-xs text-text2 leading-relaxed mb-3">
-              {lang === 'vi'
-                ? "Thông tin không chỉ là mô tả sản phẩm, mà là 'ngòi nổ' cho cảm xúc. Thiếu thông tin (S_Promotion thấp) dẫn đến sự nghi ngờ về giá trị thực của sản phẩm."
-                : "Information is not just product description, but a 'trigger' for emotion. Lack of information (low S_Promotion) leads to doubt about the product's real value."}
-            </p>
-            <div className="flex gap-2 text-[10px] font-mono text-text3">
-              <span className="bg-surface px-2 py-1 rounded border border-border">H8: Info ↓ → Trust ↓</span>
-              <span className="bg-surface px-2 py-1 rounded border border-border">OA-02: Story → Arousal</span>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-bold text-amber-400 mb-2 uppercase">
-              {lang === 'vi' ? "Niềm tin là Bộ lọc (O_Attitude)" : "Trust as a Filter (O_Attitude)"}
-            </h4>
-            <p className="text-xs text-text2 leading-relaxed mb-3">
-              {lang === 'vi'
-                ? "Khác với các mô hình truyền thống, E-SOR-C xác định Attitude là một 'Cổng kiểm soát' (Gatekeeper). Nếu niềm tin không đủ (Attitude < 40), mọi nỗ lực marketing đều vô nghĩa."
-                : "Unlike traditional models, E-SOR-C defines Attitude as a 'Gatekeeper'. If trust is insufficient (Attitude < 40), all marketing efforts are futile."}
-            </p>
-            <div className="flex gap-2 text-[10px] font-mono text-text3">
-              <span className="bg-surface px-2 py-1 rounded border border-border">H5: Attitude Gate</span>
-              <span className="bg-surface px-2 py-1 rounded border border-border">R_NoBuy: Trust Breakdown</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mechanism & Barriers Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-        {/* Mechanism (The Engine) */}
-        <section className="flex flex-col h-full">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 rounded-lg bg-purple-500/10 text-purple-500"><Activity size={20} /></div>
-            <h3 className="text-lg font-bold uppercase tracking-widest text-text">{t.igMechanism}</h3>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-
-          <div className="flex-1 bg-surface border border-border rounded-2xl p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent" />
-
-            <div className="relative space-y-6">
-              {/* Step 1 */}
-              <div className="flex items-start gap-4 group">
-                <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm shadow-md z-10 group-hover:scale-110 transition-transform">1</div>
-                <div className="flex-1 pt-1">
-                  <div className="flex justify-between">
-                    <h4 className="text-sm font-bold text-blue-400 uppercase mb-1">{t.igM1}</h4>
-                    <span className="text-[9px] font-mono text-blue-500/50 border border-blue-500/20 px-1.5 rounded">H2, H6</span>
-                  </div>
-                  <p className="text-xs text-text2">{t.igM1Sub}</p>
-                </div>
-              </div>
-
-              {/* Connector */}
-              <div className="absolute left-4 top-8 bottom-8 w-0.5 bg-border -z-0" />
-
-              {/* Step 2 */}
-              <div className="flex items-start gap-4 group">
-                <div className="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold text-sm shadow-md z-10 group-hover:scale-110 transition-transform">2</div>
-                <div className="flex-1 pt-1">
-                  <div className="flex justify-between">
-                    <h4 className="text-sm font-bold text-purple-400 uppercase mb-1">{t.igM2}</h4>
-                    <span className="text-[9px] font-mono text-purple-500/50 border border-purple-500/20 px-1.5 rounded">H3, H4</span>
-                  </div>
-                  <p className="text-xs text-text2">{t.igM2Sub}</p>
-                </div>
-              </div>
-
-              {/* Step 3 */}
-              <div className="flex items-start gap-4 group">
-                <div className="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm shadow-md z-10 group-hover:scale-110 transition-transform">3</div>
-                <div className="flex-1 pt-1">
-                  <div className="flex justify-between">
-                    <h4 className="text-sm font-bold text-amber-400 uppercase mb-1">{t.igM3}</h4>
-                    <span className="text-[9px] font-mono text-amber-500/50 border border-amber-500/20 px-1.5 rounded">H5 Gate</span>
-                  </div>
-                  <p className="text-xs text-text2">{t.igM3Sub}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-6 p-4 rounded-xl bg-surface2/50 border border-border">
-              <div className="flex items-center gap-2 mb-2">
-                <Globe size={16} className="text-green-500" />
-                <span className="text-xs font-bold uppercase text-text">{t.igContext}</span>
-              </div>
-              <p className="text-[11px] text-text2">
-                Tour vs Solo • International vs Local • Time Pressure
-              </p>
-            </div>
-
-          </div>
-        </section>
-
-        {/* Barriers (The Wall) */}
+        {/* Drivers */}
         <section>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 rounded-lg bg-red-500/10 text-red-500"><Ban size={20} /></div>
-            <h3 className="text-lg font-bold uppercase tracking-widest text-text">{t.igBarriers}</h3>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500"><Zap size={18} /></div>
+            <h3 className="text-base font-bold uppercase tracking-widest text-text">{t.igDrivers}</h3>
             <div className="h-px flex-1 bg-border" />
           </div>
-
-          <div className="space-y-3">
-            <InfoCard
-              icon={<ShieldAlert size={20} />}
-              title={t.igB1}
-              sub={t.igB1Sub}
-              color="red"
-              type="barrier"
-              codeCount="28%"
-              hypothesis="R_NoBuy"
-              insight={lang === 'vi' ? "Rào cản lớn nhất: Mất niềm tin vào xuất xứ & giá cả." : "Biggest barrier: Loss of trust in origin & price."}
-            />
-            <InfoCard
-              icon={<Package size={20} />}
-              title={t.igB2}
-              sub={t.igB2Sub}
-              color="amber"
-              type="barrier"
-              codeCount="28%"
-              hypothesis="R_NoBuy"
-              insight={lang === 'vi' ? "Rào cản vật lý: Kích thước, vận chuyển, hư hỏng." : "Physical barrier: Size, transport, damage."}
-            />
-            <InfoCard
-              icon={<Info size={20} />}
-              title={t.igB3}
-              sub={t.igB3Sub}
-              color="slate"
-              type="barrier"
-              codeCount="28%"
-              hypothesis="R_NoBuy"
-              insight={lang === 'vi' ? "Khoảng trống thông tin: Khách không hiểu -> Không mua." : "Information gap: Don't understand -> Don't buy."}
-            />
+          <div className="space-y-2">
+            {[
+              { icon: <BrainCircuit size={16} />, title: t.igD1, sub: t.igD1Sub, pct: 44, color: 'blue',   gi: lang === 'vi' ? "Kích thích hứng thú và niềm vui" : "Triggers arousal and pleasure" },
+              { icon: <Users size={16} />,        title: t.igD2, sub: t.igD2Sub, pct: 31, color: 'purple', gi: lang === 'vi' ? "Khuếch đại cảm xúc ×2,25 trong tour" : "Amplifies emotion ×2.25 in tours" },
+              { icon: <Package size={16} />,      title: t.igD3, sub: t.igD3Sub, pct: 100,color: 'cyan',   gi: lang === 'vi' ? "Điều kiện cần để tạo niềm vui" : "Necessary condition for pleasure" },
+              { icon: <MessageCircle size={16} />,title: t.igD4, sub: t.igD4Sub, pct: 31, color: 'amber',  gi: lang === 'vi' ? "Tâm lý sợ bỏ lỡ khuếch đại mua" : "Fear-of-missing-out amplifies buying" },
+              { icon: <LayoutTemplate size={16} />,title: t.igD5, sub: t.igD5Sub, pct: 50, color: 'teal',  gi: lang === 'vi' ? "Ấn tượng đầu tiên quyết định" : "First impression is decisive" },
+            ].map((d, i) => (
+              <div key={i} className={`flex items-start gap-3 p-3 rounded-xl bg-surface border border-${d.color}-500/15 hover:border-${d.color}-500/40 transition-colors`}>
+                <div className={`p-1.5 rounded-lg bg-${d.color}-500/10 text-${d.color}-400 shrink-0 mt-0.5`}>{d.icon}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between gap-2 mb-0.5">
+                    <span className={`text-xs font-bold text-${d.color}-400 uppercase`}>{d.title}</span>
+                    <span className="text-[9px] font-mono text-text3 shrink-0">{d.pct} {lang === 'vi' ? 'mã' : 'codes'}</span>
+                  </div>
+                  <p className="text-[11px] text-text3 leading-snug">{d.gi}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
+        {/* Barriers + Mechanism stacked */}
+        <div className="space-y-6">
+
+          {/* Barriers */}
+          <section>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 rounded-lg bg-red-500/10 text-red-500"><Ban size={18} /></div>
+              <h3 className="text-base font-bold uppercase tracking-widest text-text">{t.igBarriers}</h3>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+            <div className="space-y-2">
+              {[
+                { icon: <ShieldAlert size={16} />, title: t.igB1, sub: lang === 'vi' ? "Rào cản lớn nhất — chặn đứng mọi giao dịch" : "Biggest barrier — stops all transactions", color: 'red' },
+                { icon: <Package size={16} />,     title: t.igB2, sub: lang === 'vi' ? "Sợ hải quan, vỡ vụn, cồng kềnh" : "Customs fear, fragility, bulkiness", color: 'amber' },
+                { icon: <Info size={16} />,        title: t.igB3, sub: lang === 'vi' ? "Không hiểu = không mua" : "Don't understand = won't buy", color: 'slate' },
+              ].map((b, i) => (
+                <div key={i} className={`flex items-start gap-3 p-3 rounded-xl bg-surface border border-${b.color}-500/15`}>
+                  <div className={`p-1.5 rounded-lg bg-${b.color}-500/10 text-${b.color}-400 shrink-0 mt-0.5`}>{b.icon}</div>
+                  <div>
+                    <div className={`text-xs font-bold text-${b.color}-400 uppercase mb-0.5`}>{b.title}</div>
+                    <p className="text-[11px] text-text3">{b.sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Mechanism */}
+          <section>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 rounded-lg bg-purple-500/10 text-purple-500"><Activity size={18} /></div>
+              <h3 className="text-base font-bold uppercase tracking-widest text-text">{t.igMechanism}</h3>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+            <div className="bg-surface border border-border rounded-xl p-4 space-y-3">
+              {[
+                { n: '1', label: t.igM1, sub: t.igM1Sub, color: 'blue' },
+                { n: '2', label: t.igM2, sub: t.igM2Sub, color: 'purple' },
+                { n: '3', label: t.igM3, sub: t.igM3Sub, color: 'amber' },
+              ].map((m) => (
+                <div key={m.n} className="flex items-start gap-3">
+                  <div className={`w-6 h-6 rounded-full bg-${m.color}-500 text-white flex items-center justify-center font-bold text-xs shrink-0`}>{m.n}</div>
+                  <div>
+                    <div className={`text-xs font-bold text-${m.color}-400 uppercase mb-0.5`}>{m.label}</div>
+                    <p className="text-[11px] text-text3">{m.sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+        </div>
       </div>
 
-      {/* Footer Note */}
-      <div className="text-center text-[10px] text-text3 uppercase tracking-widest opacity-50">
-        E-SOR-C Model - 2026 Research Findings
+      {/* ── FOOTER ── */}
+      <div className="text-center text-[10px] text-text3 uppercase tracking-widest opacity-40">
+        {t.footer}
       </div>
 
     </div>
@@ -2470,9 +2500,16 @@ const App: React.FC = () => {
     <div className="min-h-screen pb-12 font-sans bg-bg text-text transition-colors duration-300">
       {/* Header */}
       <header className="sticky top-0 z-50 flex items-center justify-between px-4 py-4 border-b bg-bg/80 border-border backdrop-blur-xl md:px-10" role="banner">
-        <div>
-          <h1 className="text-lg md:text-xl font-bold text-text transition-colors">{t.title}</h1>
-          <p className="mt-1 text-[10px] md:text-xs text-text2">{t.subtitle}</p>
+        <div className="flex items-center gap-3">
+          <img
+            src="https://static.wixstatic.com/media/c0d3eb_68f1734ea8f248af8479955d34772667~mv2.png/v1/fill/w_706,h_706,al_c/Logo%20tr%C6%B0%E1%BB%9Dng%20%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20(layout%20tr%C3%B2n)-18.png"
+            alt="University Logo"
+            className="w-10 h-10 md:w-12 md:h-12 object-contain"
+          />
+          <div>
+            <h1 className="text-lg md:text-xl font-bold text-text transition-colors">{t.title}</h1>
+            <p className="mt-1 text-[10px] md:text-xs text-text2">{t.subtitle}</p>
+          </div>
         </div>
 
         <div className="flex items-center gap-3">
