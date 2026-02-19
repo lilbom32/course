@@ -630,8 +630,8 @@ class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { has
 
 // --- COMPONENT: ESORC DIAGRAM (SVG) ---
 const ESORCDiagram = () => {
-  // Helper for % conversion based on 1100x560 viewBox to ensure responsive scaling matches SVG
-  const x = (v: number) => `${(v / 1100) * 100}%`;
+  // Helper for % conversion based on 1150x560 viewBox to ensure responsive scaling matches SVG
+  const x = (v: number) => `${(v / 1150) * 100}%`;
   const y = (v: number) => `${(v / 560) * 100}%`;
 
   const Node = ({ l, t, w, h, bg, border, title, sub, titleColor, subColor, dashed = false }: any) => {
@@ -653,9 +653,9 @@ const ESORCDiagram = () => {
   };
 
   return (
-    <div className="relative w-full aspect-[1100/560] select-none bg-surface2/30 rounded-xl border border-border overflow-visible min-h-[520px]">
+    <div className="relative w-full aspect-[1150/560] select-none bg-surface2/30 rounded-xl border border-border overflow-hidden min-h-[480px]">
       {/* SVG Layer for Connections & Background - z-index 5 */}
-      <svg viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full z-[5] pointer-events-none">
+      <svg viewBox="0 0 1150 560" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full z-[5] pointer-events-none">
         <defs>
           <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#3b82f6" /></marker>
           <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a855f7" /></marker>
@@ -668,13 +668,13 @@ const ESORCDiagram = () => {
         </defs>
         {/* Background Zones */}
         <rect x="10" y="20" width="240" height="520" rx="16" className="fill-surface2/50 stroke-blue-500/50" strokeWidth="1" strokeDasharray="4,4" />
-        <text x="130" y="45" textAnchor="middle" className="fill-blue-400 dark:fill-blue-400 font-extrabold tracking-widest text-base">STIMULUS [S]</text>
+        <text x="130" y="45" textAnchor="middle" fill="#60a5fa" fontWeight="800" fontSize="13" letterSpacing="2">STIMULUS [S]</text>
 
         <rect x="270" y="20" width="510" height="520" rx="16" className="fill-surface2/50 stroke-purple-500/50" strokeWidth="1" strokeDasharray="4,4" />
-        <text x="525" y="45" textAnchor="middle" className="fill-purple-400 dark:fill-purple-400 font-extrabold tracking-widest text-base">ORGANISM [O]</text>
+        <text x="525" y="45" textAnchor="middle" fill="#c084fc" fontWeight="800" fontSize="13" letterSpacing="2">ORGANISM [O]</text>
 
         <rect x="800" y="20" width="290" height="520" rx="16" className="fill-surface2/50 stroke-green-500/50" strokeWidth="1" strokeDasharray="4,4" />
-        <text x="945" y="45" textAnchor="middle" className="fill-green-400 dark:fill-green-400 font-extrabold tracking-widest text-base">RESPONSE [R]</text>
+        <text x="945" y="45" textAnchor="middle" fill="#4ade80" fontWeight="800" fontSize="13" letterSpacing="2">RESPONSE [R]</text>
 
         {/* ═══ S → O Connections (H1, H3, H6) ═══ */}
         {/* S_Product → O_Arousal */}
@@ -683,17 +683,17 @@ const ESORCDiagram = () => {
         {/* S_Social → O_Arousal (H6) */}
         <path d="M220,191 C290,191 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.6" />
         <rect x="228" y="163" width="24" height="16" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1" opacity="0.95" />
-        <text x="240" y="175" textAnchor="middle" className="fill-violet-300 text-[10px] font-bold">H6</text>
+        <text x="240" y="175" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H6</text>
 
         {/* S_Cultural → O_Arousal (H1) */}
         <path d="M220,291 C290,291 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.6" />
         <rect x="228" y="240" width="24" height="16" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1" opacity="0.95" />
-        <text x="240" y="252" textAnchor="middle" className="fill-violet-300 text-[10px] font-bold">H1</text>
+        <text x="240" y="252" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H1</text>
 
         {/* S_Cultural → O_Pleasure (H3) */}
         <path d="M220,291 C290,291 290,211 360,211" fill="none" stroke="#06b6d4" strokeWidth="2" markerEnd="url(#arrow-cyan)" opacity="0.6" />
         <rect x="252" y="284" width="24" height="16" rx="3" fill="#082f49" stroke="#06b6d4" strokeWidth="1" opacity="0.95" />
-        <text x="264" y="296" textAnchor="middle" className="fill-cyan-300 text-[10px] font-bold">H3</text>
+        <text x="264" y="296" textAnchor="middle" fill="#67e8f9" fontSize="10" fontWeight="700">H3</text>
 
         {/* S_Place/Price → O_Arousal (atmospheric stimuli → excitement) */}
         <path d="M220,391 C290,391 290,96 360,96" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow-purple)" opacity="0.5" />
@@ -701,36 +701,36 @@ const ESORCDiagram = () => {
         {/* S_Place/Price → O_Attitude (H8: thiếu S_Promotion → O_Attitude âm → R_NoBuy) */}
         <path d="M220,391 C260,391 270,446 290,446" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4,2" markerEnd="url(#arrow-amber)" opacity="0.6" />
         <rect x="228" y="358" width="24" height="16" rx="3" fill="#1c1003" stroke="#f59e0b" strokeWidth="1" opacity="0.95" />
-        <text x="240" y="370" textAnchor="middle" className="fill-amber-300 text-[10px] font-bold">H8</text>
+        <text x="240" y="370" textAnchor="middle" fill="#fcd34d" fontSize="10" fontWeight="700">H8</text>
 
         {/* O_Arousal → R_Buy (H2) — đường thẳng */}
         <path d="M560,96 L840,91" fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#arrow-green)" />
-        <rect x="680" y="81" width="30" height="20" rx="4" className="fill-surface stroke-green-500" />
-        <text x="695" y="95" textAnchor="middle" className="fill-green-500 text-[11px] font-bold">H2</text>
+        <rect x="680" y="81" width="30" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1" />
+        <text x="695" y="95" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H2</text>
 
         {/* O_Pleasure → R_Buy (H4) — đường thẳng chéo */}
         <path d="M560,211 L840,110" fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#arrow-green)" />
-        <rect x="680" y="150" width="30" height="20" rx="4" className="fill-surface stroke-green-500" />
-        <text x="695" y="164" textAnchor="middle" className="fill-green-500 text-[11px] font-bold">H4</text>
+        <rect x="680" y="150" width="30" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1" />
+        <text x="695" y="164" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H4</text>
 
         {/* H5: O_Attitude thấp → R_NoBuy — right-angle path */}
         <path d="M490,446 L820,446 L820,236 L840,236" fill="none" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="5,5" markerEnd="url(#arrow-red)" opacity="0.85" />
-        <text x="660" y="462" textAnchor="middle" className="fill-amber-400 text-[10px] font-bold">H5 (Att. Blocks → NoBuy)</text>
+        <text x="660" y="462" textAnchor="middle" fill="#fb923c" fontSize="10" fontWeight="700">H5 (Att. Blocks → NoBuy)</text>
 
         {/* H9: R_Buy → R_Recommend — bracket thẳng cạnh phải, tránh R_NoBuy */}
         <path d="M1060,127 L1083,127 L1083,345 L1060,345" fill="none" stroke="#14b8a6" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#arrow-teal)" />
-        <rect x="1063" y="223" width="28" height="18" rx="4" className="fill-surface stroke-teal-500" />
-        <text x="1077" y="236" textAnchor="middle" className="fill-teal-500 text-[11px] font-bold">H9</text>
+        <rect x="1063" y="223" width="28" height="18" rx="4" fill="#0f172a" stroke="#14b8a6" strokeWidth="1" />
+        <text x="1077" y="236" textAnchor="middle" fill="#14b8a6" fontSize="11" fontWeight="700">H9</text>
 
         <path d="M840,381 C120,381 120,381 120,227" fill="none" stroke="#64748b" strokeWidth="1.5" strokeDasharray="5,5" markerEnd="url(#arrow-gray)" opacity="0.5" />
-        <text x="480" y="530" textAnchor="middle" className="fill-text3 text-[11px] italic">Feedback Loop (H10): R_Recommend → S_Social</text>
+        <text x="480" y="530" textAnchor="middle" fill="#94a3b8" fontSize="11" fontStyle="italic">Feedback Loop (H10): R_Recommend → S_Social</text>
 
         {/* [C] Context: đường thẳng đứng cắt qua H2 & H4 — standard moderator notation */}
         {/* H7: Context moderates S_Social × O_Arousal (tour vs solo amplification) */}
         <path d="M720,410 L720,75" fill="none" stroke="#64748b" strokeWidth="1.5" strokeDasharray="4,3" markerEnd="url(#arrow-gray)" opacity="0.75" />
-        <text x="736" y="253" className="fill-slate-400 text-[10px] italic">C mod.</text>
+        <text x="736" y="253" fill="#94a3b8" fontSize="10" fontStyle="italic">C mod.</text>
         <rect x="730" y="257" width="24" height="16" rx="3" fill="#1e293b" stroke="#64748b" strokeWidth="1" opacity="0.9" />
-        <text x="742" y="269" textAnchor="middle" className="fill-slate-300 text-[10px] font-bold">H7</text>
+        <text x="742" y="269" textAnchor="middle" fill="#cbd5e1" fontSize="10" fontWeight="700">H7</text>
       </svg>
 
       {/* HTML Nodes - Z-Index 20 */}
