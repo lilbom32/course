@@ -1052,44 +1052,59 @@ const IntroView = ({ lang, onStart }: { lang: Lang; onStart: () => void }) => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in duration-500 py-4">
+    <div className="max-w-5xl mx-auto space-y-10 animate-in fade-in duration-500 py-2">
 
       {/* Hero */}
-      <div className="text-center space-y-4 py-8 px-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-2">
+      <div className="text-center space-y-3 pt-6 pb-2 px-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
           <Info size={12} /> E-SOR-C Model
         </div>
         <h1 className="text-3xl md:text-4xl font-black text-text leading-tight">
           {t.inHero}
         </h1>
         <p className="text-sm font-semibold text-blue-400">{t.inHeroSub}</p>
-        <p className="text-sm text-text2 leading-relaxed max-w-2xl mx-auto text-balance">{t.inHeroDesc}</p>
+        <p className="text-sm text-text2 leading-relaxed max-w-xl mx-auto">{t.inHeroDesc}</p>
       </div>
 
       {/* Model Steps */}
       <section>
-        <h2 className="text-xs font-bold uppercase tracking-widest text-text3 mb-5 text-center">{t.inModelTitle}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <h2 className="text-xs font-bold uppercase tracking-widest text-text3 mb-4 text-center">{t.inModelTitle}</h2>
+        {/* Arrow connector row — desktop only */}
+        <div className="hidden lg:flex items-stretch justify-center gap-0 mb-0">
           {MODEL_STEPS.map((step, i) => (
-            <div key={step.letter} className="relative">
-              <div className={`p-5 rounded-2xl border h-full flex flex-col gap-3 ${step.bg}`}>
+            <React.Fragment key={step.letter}>
+              <div className={`flex-1 max-w-[220px] p-5 rounded-2xl border flex flex-col gap-3 ${step.bg}`}>
                 <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg ${step.textColor} bg-surface border border-current/20 shrink-0`}>
+                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-black text-base ${step.textColor} bg-surface border border-current/20 shrink-0`}>
                     {step.letter}
                   </div>
-                  <div className={`p-2 rounded-lg bg-surface/60 ${step.textColor}`}>{step.icon}</div>
+                  <div className={`p-1.5 rounded-lg bg-surface/60 ${step.textColor}`}>{step.icon}</div>
                 </div>
                 <div>
                   <h3 className={`text-sm font-bold ${step.textColor} mb-1`}>{step.title}</h3>
                   <p className="text-xs text-text2 leading-relaxed">{step.desc}</p>
                 </div>
               </div>
-              {/* Arrow between steps (desktop) */}
-              {i < 3 && (
-                <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-text3">
-                  <ArrowRight size={16} />
+              {i < MODEL_STEPS.length - 1 && (
+                <div className="flex items-center justify-center w-7 shrink-0 self-center text-text3/40">
+                  <ArrowRight size={14} />
                 </div>
               )}
+            </React.Fragment>
+          ))}
+        </div>
+        {/* Mobile: 2-col grid */}
+        <div className="grid grid-cols-2 gap-3 lg:hidden">
+          {MODEL_STEPS.map((step) => (
+            <div key={step.letter} className={`p-4 rounded-2xl border flex flex-col gap-2 ${step.bg}`}>
+              <div className="flex items-center gap-2">
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm ${step.textColor} bg-surface border border-current/20 shrink-0`}>
+                  {step.letter}
+                </div>
+                <div className={`p-1.5 rounded-lg bg-surface/60 ${step.textColor}`}>{step.icon}</div>
+              </div>
+              <h3 className={`text-xs font-bold ${step.textColor}`}>{step.title}</h3>
+              <p className="text-[11px] text-text2 leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -1097,17 +1112,17 @@ const IntroView = ({ lang, onStart }: { lang: Lang; onStart: () => void }) => {
 
       {/* 3 Key Findings */}
       <section>
-        <h2 className="text-xs font-bold uppercase tracking-widest text-text3 mb-5 text-center">{t.inFindTitle}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <h2 className="text-xs font-bold uppercase tracking-widest text-text3 mb-4 text-center">{t.inFindTitle}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {FINDINGS.map((f) => (
-            <div key={f.num} className={`p-5 rounded-2xl border flex flex-col gap-3 ${f.bg}`}>
+            <div key={f.num} className={`p-5 rounded-2xl border flex flex-col gap-3 h-full ${f.bg}`}>
               <div className="flex items-center gap-2">
                 <span className={`text-[10px] font-black px-2 py-0.5 rounded-full ${f.badgeColor}`}>{f.num}</span>
                 <div className={`text-${f.color}-400`}>{f.icon}</div>
               </div>
               <h3 className={`text-sm font-bold text-${f.color}-400 leading-snug`}>{f.title}</h3>
               <p className="text-xs text-text2 leading-relaxed flex-1">{f.desc}</p>
-              <blockquote className={`border-l-2 border-${f.color}-500/40 pl-3`}>
+              <blockquote className={`border-l-2 border-${f.color}-500/40 pl-3 mt-auto`}>
                 <p className="text-[11px] italic text-text2 leading-relaxed">"{f.quote}"</p>
                 <footer className={`text-[10px] font-semibold text-${f.color}-400 mt-1`}>— {f.attribution}</footer>
               </blockquote>
@@ -1117,12 +1132,12 @@ const IntroView = ({ lang, onStart }: { lang: Lang; onStart: () => void }) => {
       </section>
 
       {/* CTA */}
-      <div className="flex justify-center pb-8">
+      <div className="flex justify-center pt-2 pb-6">
         <button
           onClick={onStart}
-          className="flex items-center gap-2 px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all hover:scale-105 hover:shadow-blue-500/30"
+          className="flex items-center gap-2 px-7 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all hover:scale-105 hover:shadow-blue-500/30"
         >
-          {t.inCTA} <ArrowRight size={18} />
+          {t.inCTA} <ArrowRight size={16} />
         </button>
       </div>
 
