@@ -800,6 +800,13 @@ const ESORCDiagram = () => {
 
 // --- MODEL EXPLAINER ---
 
+// Small H-badge chip, same visual as diagram labels
+const HBadge = ({ id, color }: { id: string; color: string }) => (
+  <span className={`inline-flex items-center justify-center text-[9px] font-extrabold px-1.5 py-0.5 rounded leading-none ${color}`}>
+    {id}
+  </span>
+);
+
 const ModelExplainer = ({ lang }: { lang: Lang }) => {
   const isVi = lang === 'vi';
 
@@ -814,198 +821,269 @@ const ModelExplainer = ({ lang }: { lang: Lang }) => {
             {isVi ? 'Đọc mô hình trong 60 giây' : 'Read the Model in 60 Seconds'}
           </h2>
           <p className="text-[11px] text-text3 mt-0.5">
-            {isVi ? 'Dữ liệu từ 12 phỏng vấn sâu · 6 tỉnh ĐBSCL · không jargon' : '12 in-depth interviews · 6 Mekong Delta provinces · no jargon'}
+            {isVi ? 'Minimap của sơ đồ E-SOR-C · màu sắc đồng nhất · giả thuyết đúng chỗ' : 'Minimap of the E-SOR-C diagram · matching colors · hypotheses in place'}
           </p>
         </div>
       </div>
 
-      <div className="p-6 space-y-7">
+      <div className="p-5 lg:p-6">
+        {/* ═══════════════════════════════════════════════════════
+            LAYOUT: flow column (left) + callout column (right)
+        ════════════════════════════════════════════════════════ */}
+        <div className="flex flex-col lg:flex-row gap-5">
 
-        {/* ── S → O → R flow strip ── */}
-        <div className="flex items-stretch gap-1.5 text-center">
-          {[
-            { letter:'S', label: isVi?'Kích thích':'Stimulus',   sub: isVi?'câu chuyện · sản phẩm · HDV':'story · product · guide',         bg:'bg-blue-500/10',   border:'border-blue-500/30',  text:'text-blue-300',  sub2:'text-blue-500/80' },
-            { letter:'→', label:'', sub:'', bg:'bg-transparent', border:'border-transparent', text:'text-text3', sub2:'' },
-            { letter:'O', label: isVi?'Cảm xúc':'Organism',      sub: isVi?'hứng thú · niềm vui · niềm tin':'excitement · pleasure · trust',  bg:'bg-purple-500/10', border:'border-purple-500/30', text:'text-purple-300',sub2:'text-purple-500/80' },
-            { letter:'→', label:'', sub:'', bg:'bg-transparent', border:'border-transparent', text:'text-text3', sub2:'' },
-            { letter:'R', label: isVi?'Hành vi':'Response',       sub: isVi?'mua · không mua · giới thiệu':'buy · skip · recommend',          bg:'bg-green-500/10',  border:'border-green-500/30', text:'text-green-300', sub2:'text-green-500/80' },
-          ].map((b, i) => b.letter === '→'
-            ? <div key={i} className="flex items-center text-text3 text-xl font-light px-1 shrink-0">→</div>
-            : (
-              <div key={i} className={`flex-1 rounded-xl border py-4 px-3 ${b.bg} ${b.border}`}>
-                <div className={`text-2xl font-black ${b.text}`}>{b.letter}</div>
-                <div className={`text-[12px] font-bold mt-1 ${b.text}`}>{b.label}</div>
-                <div className={`text-[10px] mt-1 leading-snug ${b.sub2}`}>{b.sub}</div>
+          {/* ── LEFT: vertical S → O → R flow ── */}
+          <div className="flex-1 min-w-0">
+
+            {/* ── [S] Stimulus ── */}
+            <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[18px] font-black text-blue-300 leading-none w-6 shrink-0">[S]</span>
+                <span className="text-[13px] font-extrabold text-blue-200">
+                  {isVi ? 'Kích thích từ bên ngoài' : 'External Stimulus'}
+                </span>
               </div>
-            )
-          )}
-          <div className="hidden sm:flex items-center text-text3 text-xl font-light px-1 shrink-0">⊕</div>
-          <div className="hidden sm:flex flex-1 rounded-xl border border-dashed border-slate-500/30 bg-slate-500/5 py-4 px-3 text-center items-center justify-center">
-            <div>
-              <div className="text-2xl font-black text-slate-300">C</div>
-              <div className="text-[12px] font-bold mt-1 text-slate-300">{isVi ? 'Bối cảnh' : 'Context'}</div>
-              <div className="text-[10px] mt-1 text-slate-500/80 leading-snug">{isVi ? 'tour đoàn · thời gian' : 'group tour · time'}</div>
-            </div>
-          </div>
-        </div>
-
-        {/* ── 3 bold findings ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-
-          {/* Finding 1 */}
-          <div className="rounded-xl bg-purple-500/5 border border-purple-500/20 p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="p-1.5 rounded-lg bg-purple-500/15"><MessageCircle size={15} className="text-purple-400" /></div>
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-purple-400">{isVi ? 'Phát hiện 1' : 'Finding 1'}</span>
-            </div>
-            <p className="text-[22px] font-black text-purple-300 leading-none mb-1">H1–H2</p>
-            <p className="text-[13px] font-extrabold text-text leading-snug mb-3">
-              {isVi ? 'Nghe kể là muốn mua ngay' : 'Hear the story, want to buy'}
-            </p>
-            <p className="text-[12px] text-text2 leading-relaxed mb-4">
-              {isVi
-                ? 'HDV kể "Người nông dân làm 3 ngày mới ra một cái bình dừa" → khách Ý mắt sáng lên ngay, tay với sản phẩm trước khi hỏi giá.'
-                : 'Guide says "A farmer spends 3 days making one coconut thermos" → Italian guest\'s eyes light up, hand reaches for it before asking the price.'}
-            </p>
-            <blockquote className="border-l-2 border-purple-500/40 pl-3">
-              <p className="text-[11px] text-purple-200/60 italic">
-                {isVi ? '"Nghe kể xong là muốn mua ngay, không cần nghĩ nhiều."' : '"After hearing the story, I just wanted to buy it."'}
-              </p>
-            </blockquote>
-          </div>
-
-          {/* Finding 2 */}
-          <div className="rounded-xl bg-red-500/5 border border-red-500/20 p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="p-1.5 rounded-lg bg-red-500/15"><ShieldAlert size={15} className="text-red-400" /></div>
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-red-400">{isVi ? 'Phát hiện 2' : 'Finding 2'}</span>
-            </div>
-            <p className="text-[22px] font-black text-red-300 leading-none mb-1">H8 → H5</p>
-            <p className="text-[13px] font-extrabold text-text leading-snug mb-3">
-              {isVi ? 'Thiếu câu chuyện → niềm tin sụp → cửa đóng' : 'No story → trust drops → gate shuts'}
-            </p>
-            <p className="text-[12px] text-text2 leading-relaxed mb-4">
-              {isVi
-                ? 'Không ai giải thích sản phẩm là gì (H8) → niềm tin rơi xuống dưới ngưỡng 40. Khi đó H5 kích hoạt — cửa niềm tin đóng sập, từ chối hoàn toàn, dù sau đó có HDV giỏi cũng không cứu được.'
-                : 'Nobody explains the product (H8) → trust falls below threshold 40. That triggers H5 — the trust gate slams shut. Total refusal. Even a skilled guide arriving later cannot save the sale.'}
-            </p>
-            <blockquote className="border-l-2 border-red-500/40 pl-3">
-              <p className="text-[11px] text-red-200/60 italic">
-                {isVi ? '"Thấy Made in China là để xuống ngay, không hỏi thêm."' : '"Saw Made in China — put it down immediately, no more questions."'}
-              </p>
-            </blockquote>
-          </div>
-
-          {/* Finding 3 */}
-          <div className="rounded-xl bg-slate-500/5 border border-slate-500/20 p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="p-1.5 rounded-lg bg-slate-500/15"><Users size={15} className="text-slate-300" /></div>
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">{isVi ? 'Phát hiện 3' : 'Finding 3'}</span>
-            </div>
-            <p className="text-[22px] font-black text-slate-300 leading-none mb-1">×2.25</p>
-            <p className="text-[13px] font-extrabold text-text leading-snug mb-3">
-              {isVi ? 'Tour đoàn khuếch đại mọi thứ' : 'Group tour amplifies everything'}
-            </p>
-            <p className="text-[12px] text-text2 leading-relaxed mb-4">
-              {isVi
-                ? '1 người dừng mua → 5 người dừng → cả đoàn 20 người xúm vào. Cùng HDV đó, cùng sản phẩm đó — nhưng đi đoàn thì mua nhiều hơn đi lẻ 2.25 lần.'
-                : '1 person stops → 5 stop → the whole 20-person group gathers. Same guide, same product — but group tour buys 2.25× more than solo travel.'}
-            </p>
-            <blockquote className="border-l-2 border-slate-500/40 pl-3">
-              <p className="text-[11px] text-slate-200/60 italic">
-                {isVi ? '"Thấy người ta mua nhiều quá là mình cũng muốn mua theo."' : '"Seeing everyone buying made me want to buy too."'}
-              </p>
-            </blockquote>
-          </div>
-
-        </div>
-
-        {/* ── 2 scenarios ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-          {/* Buy scenario */}
-          <div className="rounded-xl border border-green-500/20 overflow-hidden">
-            <div className="px-5 py-3.5 bg-green-500/10 flex items-center justify-between">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-text3">{isVi ? 'Khi mọi thứ đúng chỗ' : 'When everything clicks'}</p>
-                <p className="text-[16px] font-extrabold text-green-300 mt-0.5">{isVi ? 'Khách MUA' : 'Customer BUYS'}</p>
-              </div>
-              <span className="text-[11px] font-extrabold bg-green-500/10 border border-green-500/30 text-green-300 px-2.5 py-1.5 rounded-lg">~85–95%</span>
-            </div>
-            <div className="p-5 space-y-3">
-              {[
-                { dot:'bg-blue-500',    text: isVi?'HDV cầm bình dừa lên, kể: "Nông dân làm 3 ngày mới ra một cái." Câu chuyện thật.':'Guide holds up coconut thermos: "A farmer spends 3 days on just one." A real story.' },
-                { dot:'bg-purple-500',  text: isVi?'Khách Ý: "Extremely interesting!" — hứng thú bùng lên tức thì.':'Italian guest: "Extremely interesting!" — excitement surges immediately.' },
-                { dot:'bg-amber-500',   text: isVi?'Không tem Trung Quốc, giá niêm yết rõ ràng 150k → niềm tin giữ nguyên, cửa mở.':'No China label, clear price tag 150k → trust holds, the gate opens.' },
-                { dot:'bg-blue-400',    text: isVi?'5 người dừng → cả đoàn 20 người xúm vào. Hiệu ứng đoàn ×2.25.':'5 stop → whole 20-person group gathers. The ×2.25 group effect kicks in.' },
-                { dot:'bg-green-500',   text: isVi?'Mua 3 cái tặng, đăng Facebook → tạo ảnh hưởng xã hội cho đoàn kế tiếp.':'Buys 3 as gifts, posts on Facebook → social proof for the next tour group.' },
-              ].map((s, i, arr) => (
-                <div key={i} className="flex gap-3 items-start">
-                  <div className="flex flex-col items-center shrink-0 pt-1">
-                    <div className={`w-2 h-2 rounded-full ${s.dot}`} />
-                    {i < arr.length - 1 && <div className="w-px flex-1 bg-border mt-1 min-h-[14px]" />}
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { name: isVi ? 'Câu chuyện HDV' : 'Guide story',       sub: isVi ? 'S_Cultural · H1 H3' : 'S_Cultural · H1 H3',    hs: [{ id:'H1', c:'bg-purple-500/20 text-purple-300' },{ id:'H3', c:'bg-cyan-500/20 text-cyan-300' }] },
+                  { name: isVi ? 'Ảnh hưởng đoàn' : 'Social influence', sub: isVi ? 'S_Social · H6' : 'S_Social · H6',              hs: [{ id:'H6', c:'bg-purple-500/20 text-purple-300' }] },
+                  { name: isVi ? 'Sản phẩm trưng bày' : 'Product display', sub: isVi ? 'S_Product' : 'S_Product',                  hs: [] },
+                  { name: isVi ? 'Không gian · Giá' : 'Space · Price',  sub: isVi ? 'S_Place / S_Price' : 'S_Place / S_Price',      hs: [] },
+                ].map(n => (
+                  <div key={n.name} className="rounded-lg bg-blue-500/8 border border-blue-500/15 px-3 py-2">
+                    <p className="text-[11px] font-bold text-blue-200 leading-snug">{n.name}</p>
+                    <div className="flex items-center gap-1 mt-1 flex-wrap">
+                      <span className="text-[9px] text-blue-400/70">{n.sub.split('·')[0].trim()}</span>
+                      {n.hs.map(h => <HBadge key={h.id} id={h.id} color={h.c} />)}
+                    </div>
                   </div>
-                  <p className="text-[12px] text-text2 leading-relaxed">{s.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* No-buy scenario */}
-          <div className="rounded-xl border border-red-500/20 overflow-hidden">
-            <div className="px-5 py-3.5 bg-red-500/10 flex items-center justify-between">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-text3">{isVi ? 'Khi niềm tin sụp đổ' : 'When trust collapses'}</p>
-                <p className="text-[16px] font-extrabold text-red-300 mt-0.5">{isVi ? 'Khách KHÔNG MUA' : 'Customer WALKS AWAY'}</p>
+                ))}
               </div>
-              <span className="text-[11px] font-extrabold bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1.5 rounded-lg">~61%</span>
             </div>
-            <div className="p-5 space-y-3">
-              {[
-                { dot:'bg-slate-500',  text: isVi?'Khách lẻ tự vào gian hàng. Không HDV, không ai giải thích bình dừa này là gì.':'Solo visitor enters the stall. No guide, nobody explains what the coconut thermos is.' },
-                { dot:'bg-red-500',    text: isVi?'Lật đáy thấy "Made in China" → niềm tin tụt ngay dưới 40. Cửa đóng.':'Flips it over, sees "Made in China" → trust drops below 40 instantly. Gate closed.' },
-                { dot:'bg-red-600',    text: isVi?'Dù HDV giỏi có xuất hiện lúc này cũng không cứu được — quyết định đã xong.':'Even a skilled guide appearing now can\'t save it — the decision is already made.' },
-                { dot:'bg-slate-600',  text: isVi?'Hỏi vài câu cho phải phép, rồi quay lưng đi. Không mua. Không chia sẻ.':'Asks a few polite questions, then turns and walks. No buy. No share.' },
-              ].map((s, i, arr) => (
-                <div key={i} className="flex gap-3 items-start">
-                  <div className="flex flex-col items-center shrink-0 pt-1">
-                    <div className={`w-2 h-2 rounded-full ${s.dot}`} />
-                    {i < arr.length - 1 && <div className="w-px flex-1 bg-border mt-1 min-h-[14px]" />}
+
+            {/* ── Arrow S→O with H-badges ── */}
+            <div className="flex items-center gap-2 py-1.5 pl-5">
+              <div className="flex flex-col items-center gap-0.5">
+                <div className="w-px h-3 bg-border" />
+                <div className="text-text3 text-base leading-none">↓</div>
+              </div>
+              <div className="flex gap-1 flex-wrap">
+                <HBadge id="H1" color="bg-purple-500/20 text-purple-300" />
+                <HBadge id="H3" color="bg-cyan-500/20 text-cyan-300" />
+                <HBadge id="H6" color="bg-purple-500/20 text-purple-300" />
+                <HBadge id="H8" color="bg-amber-500/20 text-amber-300" />
+              </div>
+              <span className="text-[10px] text-text3 italic">
+                {isVi ? 'S_Cultural → O_Arousal / O_Attitude' : 'S_Cultural → O_Arousal / O_Attitude'}
+              </span>
+            </div>
+
+            {/* ── [O] Organism ── */}
+            <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[18px] font-black text-purple-300 leading-none w-6 shrink-0">[O]</span>
+                <span className="text-[13px] font-extrabold text-purple-200">
+                  {isVi ? 'Cảm xúc & bộ lọc bên trong' : 'Inner Emotions & Filter'}
+                </span>
+              </div>
+              <div className="space-y-2">
+                {/* O_Arousal + O_Pleasure side by side */}
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="rounded-lg bg-purple-500/10 border border-purple-500/20 px-3 py-2.5">
+                    <p className="text-[10px] font-extrabold text-purple-300 mb-0.5">O_Arousal</p>
+                    <p className="text-[11px] text-text2">{isVi ? 'Hứng thú tức thì — muốn cầm lên ngay' : 'Instant excitement — urge to pick it up'}</p>
                   </div>
-                  <p className="text-[12px] text-text2 leading-relaxed">{s.text}</p>
+                  <div className="rounded-lg bg-cyan-500/10 border border-cyan-500/20 px-3 py-2.5">
+                    <p className="text-[10px] font-extrabold text-cyan-300 mb-0.5">O_Pleasure</p>
+                    <p className="text-[11px] text-text2">{isVi ? 'Cảm xúc lâu dài — muốn giữ làm kỷ niệm' : 'Lasting feeling — wants to keep it'}</p>
+                  </div>
                 </div>
-              ))}
+                {/* O_Attitude — gate, full width, amber */}
+                <div className="rounded-lg bg-amber-500/8 border border-amber-500/25 border-dashed px-3 py-2.5 flex items-center gap-3">
+                  <div className="shrink-0">
+                    <p className="text-[10px] font-extrabold text-amber-300">O_Attitude</p>
+                    <div className="flex gap-1 mt-0.5">
+                      <HBadge id="H5" color="bg-red-500/20 text-red-300" />
+                      <HBadge id="H8" color="bg-amber-500/20 text-amber-300" />
+                    </div>
+                  </div>
+                  <div className="flex-1 border-l border-amber-500/20 pl-3">
+                    <p className="text-[11px] text-amber-100/80 leading-snug">
+                      {isVi
+                        ? 'Niềm tin — cánh cửa duy nhất. Nếu tụt dưới ngưỡng 40 → H5 kích hoạt → chặn hoàn toàn, không mua dù giá tốt.'
+                        : 'Trust — the only gate. Falls below 40 → H5 activates → total block, no buy even at a good price.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
-        </div>
+            {/* ── Arrow O→R with H-badges, branching ── */}
+            <div className="flex items-center gap-2 py-1.5 pl-5">
+              <div className="flex flex-col items-center gap-0.5">
+                <div className="w-px h-3 bg-border" />
+                <div className="text-text3 text-base leading-none">↓</div>
+              </div>
+              <div className="flex gap-1 flex-wrap">
+                <HBadge id="H2" color="bg-green-500/20 text-green-300" />
+                <HBadge id="H4" color="bg-cyan-500/20 text-cyan-300" />
+                <HBadge id="H5" color="bg-red-500/20 text-red-300" />
+              </div>
+              <span className="text-[10px] text-text3 italic">
+                {isVi ? 'O_Arousal/Pleasure → R_Buy · O_Attitude↓ → R_NoBuy' : 'O_Arousal/Pleasure → R_Buy · O_Attitude↓ → R_NoBuy'}
+              </span>
+            </div>
 
-        {/* ── Paradox callout ── */}
-        <div className="rounded-xl bg-amber-500/5 border border-amber-500/25 p-5 flex gap-4">
-          <div className="text-2xl shrink-0 mt-0.5">⚡</div>
-          <div>
-            <p className="text-[13px] font-extrabold text-amber-400 mb-2">
-              {isVi ? 'Phát hiện ngược đời: Giá không phải rào cản' : 'The paradox: Price is not the barrier'}
-            </p>
-            <p className="text-[12px] text-text2 leading-relaxed mb-3">
-              {isVi
-                ? 'Người ta không mua vì không biết sản phẩm là gì — không phải vì đắt. Khách quốc tế sẵn sàng trả 150k, 200k — nhưng không ai nói cho họ biết cái bình dừa kia được làm thế nào, từ đâu, ý nghĩa là gì.'
-                : 'They don\'t buy because they don\'t know what the product is — not because it\'s expensive. International visitors are willing to pay 150k, 200k — but nobody tells them how the coconut thermos is made, where it\'s from, or what it means.'}
-            </p>
-            <blockquote className="border-l-2 border-amber-500/40 pl-3 mb-2.5">
-              <p className="text-[11px] text-amber-200/70 italic leading-relaxed">
+            {/* ── [R] Response — 2 parallel branches ── */}
+            <div className="rounded-xl border border-border bg-surface2/30 p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[18px] font-black text-text2 leading-none w-6 shrink-0">[R]</span>
+                <span className="text-[13px] font-extrabold text-text">
+                  {isVi ? 'Hành vi — 2 nhánh song song' : 'Response — 2 parallel branches'}
+                </span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* R_Buy */}
+                <div className="rounded-lg bg-green-500/8 border border-green-500/25 p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-green-400 text-base leading-none">✅</span>
+                    <p className="text-[11px] font-extrabold text-green-300">R_Buy</p>
+                    <div className="flex gap-1 ml-auto">
+                      <HBadge id="H2" color="bg-green-500/20 text-green-300" />
+                      <HBadge id="H4" color="bg-cyan-500/20 text-cyan-300" />
+                      <HBadge id="H9" color="bg-teal-500/20 text-teal-300" />
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-text2 leading-relaxed">
+                    {isVi
+                      ? 'Mua xung · Mua nhiều (5–10 cái) · Đăng mạng → vòng lặp H9–H10'
+                      : 'Impulse buy · Buy in bulk (5–10) · Share online → H9–H10 loop'}
+                  </p>
+                  <p className="text-[10px] text-green-400 font-bold mt-2">~85–95% {isVi ? 'khi HDV + niềm tin ổn' : 'when guide + trust OK'}</p>
+                </div>
+                {/* R_NoBuy */}
+                <div className="rounded-lg bg-red-500/8 border border-red-500/25 p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-red-400 text-base leading-none">❌</span>
+                    <p className="text-[11px] font-extrabold text-red-300">R_NoBuy</p>
+                    <div className="flex gap-1 ml-auto">
+                      <HBadge id="H5" color="bg-red-500/20 text-red-300" />
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-text2 leading-relaxed">
+                    {isVi
+                      ? 'Cửa niềm tin đóng → rời đi · không hỏi thêm · không chia sẻ'
+                      : 'Trust gate shut → walks away · no questions · no share'}
+                  </p>
+                  <p className="text-[10px] text-red-400 font-bold mt-2">~61% {isVi ? 'khi không có HDV / thấy Made in China' : 'no guide / sees Made in China'}</p>
+                </div>
+              </div>
+              {/* R_Recommend */}
+              <div className="mt-2 rounded-lg bg-teal-500/5 border border-teal-500/20 px-3 py-2 flex items-center gap-3">
+                <div>
+                  <p className="text-[10px] font-extrabold text-teal-300 flex items-center gap-1">
+                    R_Recommend <HBadge id="H9" color="bg-teal-500/20 text-teal-300" /> <HBadge id="H10" color="bg-slate-500/20 text-slate-300" />
+                  </p>
+                </div>
+                <p className="text-[11px] text-text2 border-l border-teal-500/20 pl-3">
+                  {isVi ? 'Sau khi mua: đăng Facebook / kể bạn bè → tạo S_Social cho đoàn kế tiếp (vòng lặp H10)' : 'After buying: posts / tells friends → creates S_Social for next tour (H10 loop)'}
+                </p>
+              </div>
+            </div>
+
+            {/* ── [C] Context moderator — below, dashed border ── */}
+            <div className="mt-3 rounded-xl border border-dashed border-slate-500/30 bg-slate-500/5 px-4 py-3 flex items-start gap-3">
+              <div className="shrink-0 mt-0.5">
+                <span className="text-[15px] font-black text-slate-300">⊕ [C]</span>
+              </div>
+              <div className="flex-1">
+                <p className="text-[11px] font-extrabold text-slate-200 mb-1">
+                  {isVi ? 'Bối cảnh điều tiết — không thuộc S/O/R nhưng khuếch đại tất cả' : 'Context moderator — outside S/O/R but amplifies everything'}
+                </p>
+                <div className="flex flex-wrap gap-x-4 gap-y-1">
+                  <span className="text-[11px] text-slate-300 flex items-center gap-1">
+                    <HBadge id="H7" color="bg-slate-500/25 text-slate-300" />
+                    {isVi ? 'Tour đoàn ×2.25 so với đi lẻ' : 'Group tour ×2.25 vs solo'}
+                  </span>
+                  <span className="text-[11px] text-slate-400">
+                    {isVi ? '· Thời gian tiếp xúc · HDV có mặt hay không' : '· Contact time · Guide present or not'}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>{/* end left column */}
+
+          {/* ── RIGHT: key insight cards (desktop sidebar) ── */}
+          <div className="lg:w-64 xl:w-72 shrink-0 flex flex-col gap-4">
+
+            {/* Insight 1 */}
+            <div className="rounded-xl bg-purple-500/5 border border-purple-500/20 p-4">
+              <p className="text-[10px] font-extrabold uppercase tracking-widest text-purple-400 mb-2">
+                {isVi ? '💬 Câu chuyện > Giá cả' : '💬 Story beats price'}
+              </p>
+              <p className="text-[12px] text-text2 leading-relaxed mb-3">
                 {isVi
-                  ? '"Không phải người ta không có tiền. Người ta không mua vì không biết cái đó là cái gì, nó có gì đặc biệt."'
-                  : '"It\'s not that they can\'t afford it. They don\'t buy because they don\'t know what it is or what makes it special."'}
+                  ? 'HDV kể "Nông dân làm 3 ngày" → khách Ý với tay lấy trước khi hỏi giá. Không cần discount.'
+                  : '"Farmer spends 3 days" → Italian guest reaches before asking price. No discount needed.'}
               </p>
-              <footer className="text-[10px] text-amber-400 font-semibold mt-1">— HDV Trần Minh Luyện</footer>
-            </blockquote>
-            <p className="text-[12px] font-bold text-amber-400">
-              {isVi ? '→ Kể chuyện là đòn bẩy ROI cao nhất — không tốn thêm đồng nào' : '→ Storytelling is the highest-ROI lever — costs nothing extra'}
-            </p>
-          </div>
-        </div>
+              <blockquote className="border-l-2 border-purple-500/35 pl-2.5">
+                <p className="text-[10px] text-purple-200/60 italic">{isVi ? '"Nghe kể xong là muốn mua ngay."' : '"After the story, I just wanted it."'}</p>
+              </blockquote>
+            </div>
 
+            {/* Insight 2 */}
+            <div className="rounded-xl bg-red-500/5 border border-red-500/20 p-4">
+              <p className="text-[10px] font-extrabold uppercase tracking-widest text-red-400 mb-2">
+                {isVi ? '🏷️ Made in China → cửa đóng' : '🏷️ Made in China → gate shut'}
+              </p>
+              <p className="text-[12px] text-text2 leading-relaxed mb-3">
+                {isVi
+                  ? 'H8 làm niềm tin tụt → H5 kích hoạt. Lúc này dù HDV giỏi đến cũng không cứu được quyết định.'
+                  : 'H8 drops trust → H5 activates. Even a skilled guide arriving now cannot reverse the decision.'}
+              </p>
+              <blockquote className="border-l-2 border-red-500/35 pl-2.5">
+                <p className="text-[10px] text-red-200/60 italic">{isVi ? '"Thấy là để xuống ngay, không hỏi thêm."' : '"Saw it — put it down, no more questions."'}</p>
+              </blockquote>
+            </div>
+
+            {/* Insight 3 */}
+            <div className="rounded-xl bg-slate-500/5 border border-slate-500/20 p-4">
+              <p className="text-[10px] font-extrabold uppercase tracking-widest text-slate-300 mb-2">
+                {isVi ? '👥 Đoàn là máy nhân × 2.25' : '👥 Group = ×2.25 multiplier'}
+              </p>
+              <p className="text-[12px] text-text2 leading-relaxed mb-3">
+                {isVi
+                  ? '1 người dừng → 5 người dừng → cả đoàn 20 người xúm vào. Cùng HDV, cùng sản phẩm — đoàn mua gấp 2.25 lần đi lẻ.'
+                  : '1 stops → 5 stop → whole 20-person group crowds in. Same guide, same product — group buys 2.25× more than solo.'}
+              </p>
+              <blockquote className="border-l-2 border-slate-500/35 pl-2.5">
+                <p className="text-[10px] text-slate-200/60 italic">{isVi ? '"Thấy người ta mua là mình cũng muốn mua theo."' : '"Seeing everyone buying made me want to buy too."'}</p>
+              </blockquote>
+            </div>
+
+            {/* ⚡ Paradox */}
+            <div className="rounded-xl bg-amber-500/5 border border-amber-500/25 p-4">
+              <p className="text-[10px] font-extrabold uppercase tracking-widest text-amber-400 mb-2">⚡ {isVi ? 'Nghịch lý' : 'The paradox'}</p>
+              <p className="text-[12px] text-text2 leading-relaxed mb-2.5">
+                {isVi
+                  ? 'Người ta không mua vì không biết sản phẩm là gì — không phải vì đắt.'
+                  : 'They don\'t buy because they don\'t understand the product — not because it\'s expensive.'}
+              </p>
+              <blockquote className="border-l-2 border-amber-500/40 pl-2.5 mb-2">
+                <p className="text-[10px] text-amber-200/70 italic">
+                  {isVi ? '"Không phải không có tiền. Không biết cái đó là cái gì."' : '"Not that they can\'t afford it. They don\'t know what it is."'}
+                </p>
+                <footer className="text-[9px] text-amber-400 font-semibold mt-0.5">— HDV Trần Minh Luyện</footer>
+              </blockquote>
+              <p className="text-[11px] font-bold text-amber-400">
+                {isVi ? '→ Kể chuyện = đòn bẩy ROI cao nhất' : '→ Storytelling = highest-ROI lever'}
+              </p>
+            </div>
+
+          </div>{/* end right column */}
+
+        </div>{/* end flex row */}
       </div>
     </div>
   );
