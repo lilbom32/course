@@ -630,243 +630,142 @@ class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { has
 
 // --- COMPONENT: ESORC DIAGRAM (SVG) ---
 const ESORCDiagram = () => {
-  // ── Layout constants (viewBox 1280 × 500) ──────────────────────────────────
-  // Zones: S 20–280 | gap | O 320–780 | gap | R 820–1110
-  // Rows (node centres): r1=120, r2=230, r3=340, r4=430 (O_Attitude, inside O)
-  // Node dims: S/R nodes 240×76 | O nodes 210×76 | O_Attitude 200×62
-  // H10 feedback arc at y=12 (very top, above zone border)
-  const W = 1280, H = 500;
-  const xp = (v: number) => `${(v / W) * 100}%`;
-  const yp = (v: number) => `${(v / H) * 100}%`;
-
-  // Pill-shaped H-badge in SVG
-  const HBadgeSVG = ({ x, y, label, fill, stroke, textFill }:
-    { x:number; y:number; label:string; fill:string; stroke:string; textFill:string }) => (
-    <g>
-      <rect x={x-16} y={y-9} width={32} height={18} rx={6}
-        fill={fill} stroke={stroke} strokeWidth={1.2} />
-      <text x={x} y={y+5} textAnchor="middle"
-        fill={textFill} fontSize={10} fontWeight={700}>{label}</text>
-    </g>
-  );
+  // ViewBox: 1200 × 640. Three zones: S(10–255), O(265–785), R(795–1110). Bottom row: O_Attitude + [C] Context
+  const xp = (v: number) => `${(v / 1200) * 100}%`;
+  const yp = (v: number) => `${(v / 640) * 100}%`;
 
   const Node = ({ l, t, w, h, bg, border, title, sub, titleColor, subColor, dashed = false }: any) => {
     const isHexBg = bg.startsWith('#');
     const isHexBorder = border.startsWith('#');
     return (
       <div
-        className={`absolute z-20 flex flex-col items-center justify-center rounded-xl border-2 shadow-sm
-          ${dashed ? 'border-dashed' : ''}
-          ${!isHexBg ? bg : ''} ${!isHexBorder ? border : ''}`}
+        className={`absolute z-20 flex flex-col items-center justify-center rounded-xl border-2 shadow-sm transition-transform hover:scale-105 ${dashed ? 'border-dashed' : ''} ${!isHexBg ? bg : ''} ${!isHexBorder ? border : ''}`}
         style={{
           left: xp(l), top: yp(t), width: xp(w), height: yp(h),
           backgroundColor: isHexBg ? bg : undefined,
           borderColor: isHexBorder ? border : undefined,
         }}
       >
-        <div
-          className={`font-bold text-[13px] sm:text-[15px] text-center leading-tight px-2 ${titleColor}`}
-          style={{ color: titleColor.startsWith('#') ? titleColor : undefined }}
-        >{title}</div>
-        <div
-          className={`text-[9px] sm:text-[11px] text-center mt-1 leading-tight px-2 ${subColor}`}
-          style={{ color: subColor.startsWith('#') ? subColor : undefined }}
-        >{sub}</div>
+        <div className={`font-bold text-sm sm:text-base text-center leading-tight px-2 ${titleColor}`} style={{ color: titleColor.startsWith('#') ? titleColor : undefined }}>{title}</div>
+        <div className={`text-[9px] sm:text-[11px] text-center mt-1 leading-tight px-2 ${subColor}`} style={{ color: subColor.startsWith('#') ? subColor : undefined }}>{sub}</div>
       </div>
     );
   };
 
-  // Node geometry (l=left, t=top, w=width, h=height — all in SVG px)
-  // S column: l=20, w=240
-  const sL=20, sW=240, sH=76;
-  const sR = sL+sW; // right edge = 260
-
-  // O column: l=320, w=210
-  const oL=320, oW=210, oH=76;
-  const oR = oL+oW; // right edge = 530
-
-  // O_Attitude: inside O zone, bottom
-  const attL=330, attW=200, attH=62;
-
-  // R column: l=820, w=240
-  const rL=820, rW=240, rH=76;
-
-  // Row centres
-  const r1=120, r2=230, r3=340; // S + R rows
-  const oArousalY=105, oPleasureY=220; // O_Arousal top=67, O_Pleasure top=182
-  const attTop=380; // O_Attitude top
-
-  // Mid-points for arrows
-  const sRightR1 = sR;      // S row1 right = 260
-  const oLeftAr  = oL;      // O_Arousal left = 320
-  const oLeftPl  = oL;      // O_Pleasure left = 320
-  const oRightAr = oR;      // O right = 530
-  const oRightPl = oR;
-  const rLeft    = rL;      // R left = 820
-
   return (
-    <div
-      className="relative w-full select-none bg-[#0b1120] rounded-xl border border-border overflow-hidden"
-      style={{ aspectRatio: `${W}/${H}`, minHeight: 360 }}
-    >
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        xmlns="http://www.w3.org/2000/svg"
-        className="absolute inset-0 w-full h-full z-[5] pointer-events-none"
-      >
+    <div className="relative w-full select-none bg-surface2/30 rounded-xl border border-border overflow-hidden" style={{ aspectRatio: '1200/640', minHeight: 420 }}>
+      <svg viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full z-[5] pointer-events-none">
         <defs>
-          {/* Arrow markers — one per colour */}
-          {([
-            ['pu','#a855f7'],['cy','#06b6d4'],['gr','#22c55e'],
-            ['am','#f59e0b'],['re','#ef4444'],['te','#14b8a6'],['sl','#64748b'],
-          ] as [string,string][]).map(([id, c]) => (
-            <marker key={id} id={`d-${id}`} markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L7,3 z" fill={c} />
-            </marker>
-          ))}
+          <marker id="arr-pu"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a855f7"/></marker>
+          <marker id="arr-cy"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#06b6d4"/></marker>
+          <marker id="arr-gr"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/></marker>
+          <marker id="arr-am"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f59e0b"/></marker>
+          <marker id="arr-re"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/></marker>
+          <marker id="arr-te"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#14b8a6"/></marker>
+          <marker id="arr-sl"  markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
         </defs>
 
-        {/* ── Zone outlines ─────────────────────────────────────────── */}
-        {/* S zone */}
-        <rect x={sL-2} y="30" width={sW+4} height="420" rx="14"
-          fill="none" stroke="#3b82f6" strokeWidth="1" strokeDasharray="6,4" opacity="0.35" />
-        <text x={sL+sW/2} y="52" textAnchor="middle"
-          fill="#60a5fa" fontWeight="800" fontSize="11" letterSpacing="2" opacity="0.9">STIMULUS [S]</text>
+        {/* ── Zone backgrounds ── */}
+        <rect x="10"  y="25" width="245" height="440" rx="14" fill="none" stroke="#3b82f6" strokeWidth="1" strokeDasharray="5,4" opacity="0.4"/>
+        <text x="132" y="47" textAnchor="middle" fill="#60a5fa" fontWeight="800" fontSize="13" letterSpacing="2">STIMULUS [S]</text>
 
-        {/* O zone */}
-        <rect x={oL-10} y="30" width={oW+20} height="420" rx="14"
-          fill="none" stroke="#a855f7" strokeWidth="1" strokeDasharray="6,4" opacity="0.35" />
-        <text x={oL+oW/2} y="52" textAnchor="middle"
-          fill="#c084fc" fontWeight="800" fontSize="11" letterSpacing="2" opacity="0.9">ORGANISM [O]</text>
+        <rect x="265" y="25" width="520" height="440" rx="14" fill="none" stroke="#a855f7" strokeWidth="1" strokeDasharray="5,4" opacity="0.4"/>
+        <text x="525" y="47" textAnchor="middle" fill="#c084fc" fontWeight="800" fontSize="13" letterSpacing="2">ORGANISM [O]</text>
 
-        {/* R zone */}
-        <rect x={rL-10} y="30" width={rW+20} height="420" rx="14"
-          fill="none" stroke="#22c55e" strokeWidth="1" strokeDasharray="6,4" opacity="0.35" />
-        <text x={rL+rW/2} y="52" textAnchor="middle"
-          fill="#4ade80" fontWeight="800" fontSize="11" letterSpacing="2" opacity="0.9">RESPONSE [R]</text>
+        <rect x="795" y="25" width="315" height="440" rx="14" fill="none" stroke="#22c55e" strokeWidth="1" strokeDasharray="5,4" opacity="0.4"/>
+        <text x="952" y="47" textAnchor="middle" fill="#4ade80" fontWeight="800" fontSize="13" letterSpacing="2">RESPONSE [R]</text>
 
-        {/* ── H10 feedback arc: R_Recommend top → S_Social top ─────── */}
-        <path
-          d={`M ${rL+rW/2},${r3-38} L ${rL+rW/2},12 L ${sL+sW/2},12 L ${sL+sW/2},${r2-38}`}
-          fill="none" stroke="#475569" strokeWidth="1.5" strokeDasharray="8,4"
-          markerEnd="url(#d-sl)" opacity="0.6"
-        />
-        <text x={(rL+rW/2+sL+sW/2)/2} y="9" textAnchor="middle"
-          fill="#64748b" fontSize="9" fontStyle="italic" opacity="0.8">H10: vòng lặp xã hội</text>
+        {/* Bottom row separator */}
+        <line x1="10" y1="477" x2="1190" y2="477" stroke="#334155" strokeWidth="1" strokeDasharray="3,4" opacity="0.5"/>
+        <text x="600" y="488" textAnchor="middle" fill="#64748b" fontSize="10" fontStyle="italic" opacity="0.7">Moderators &amp; context</text>
 
-        {/* ── S → O connections ─────────────────────────────────────── */}
-        {/* S_Product → O_Arousal (faint, no badge) */}
-        <path
-          d={`M ${sR},${r1} C ${sR+30},${r1} ${oL-30},${oArousalY+38} ${oL},${oArousalY+38}`}
-          fill="none" stroke="#a855f7" strokeWidth="1.5" markerEnd="url(#d-pu)" opacity="0.25"
-        />
-        {/* S_Social → O_Arousal  H6 */}
-        <path
-          d={`M ${sR},${r2} C ${sR+40},${r2} ${oL-40},${oArousalY+38} ${oL},${oArousalY+38}`}
-          fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#d-pu)" opacity="0.8"
-        />
-        <HBadgeSVG x={sR+52} y={r2-18} label="H6" fill="#1e1b4b" stroke="#a855f7" textFill="#c4b5fd" />
+        {/* ── S → O connections ── */}
 
-        {/* S_Cultural → O_Arousal  H1 */}
-        <path
-          d={`M ${sR},${r3} C ${sR+40},${r3} ${oL-40},${oArousalY+38} ${oL},${oArousalY+38}`}
-          fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#d-pu)" opacity="0.8"
-        />
-        <HBadgeSVG x={sR+52} y={r3-20} label="H1" fill="#1e1b4b" stroke="#a855f7" textFill="#c4b5fd" />
+        {/* S_Product → O_Arousal (faint, no label) */}
+        <path d="M255,100 C310,100 310,110 380,110" fill="none" stroke="#a855f7" strokeWidth="1.5" markerEnd="url(#arr-pu)" opacity="0.25"/>
+
+        {/* S_Social → O_Arousal  H6 — badge shifted right to avoid H1 */}
+        <path d="M255,200 C310,200 310,115 380,115" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arr-pu)" opacity="0.75"/>
+        <rect x="295" y="152" width="30" height="18" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1.5"/>
+        <text x="310" y="165" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H6</text>
+
+        {/* S_Cultural → O_Arousal  H1 — badge lower to avoid H6 */}
+        <path d="M255,300 C310,300 310,120 380,120" fill="none" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arr-pu)" opacity="0.75"/>
+        <rect x="295" y="225" width="30" height="18" rx="3" fill="#1e1b4b" stroke="#a855f7" strokeWidth="1.5"/>
+        <text x="310" y="238" textAnchor="middle" fill="#c4b5fd" fontSize="10" fontWeight="700">H1</text>
 
         {/* S_Cultural → O_Pleasure  H3 */}
-        <path
-          d={`M ${sR},${r3} C ${sR+60},${r3} ${oL-60},${oPleasureY+38} ${oL},${oPleasureY+38}`}
-          fill="none" stroke="#06b6d4" strokeWidth="2" markerEnd="url(#d-cy)" opacity="0.8"
-        />
-        <HBadgeSVG x={sR+80} y={r3+10} label="H3" fill="#082f49" stroke="#06b6d4" textFill="#67e8f9" />
+        <path d="M255,300 C310,300 310,230 380,230" fill="none" stroke="#06b6d4" strokeWidth="2" markerEnd="url(#arr-cy)" opacity="0.75"/>
+        <rect x="295" y="278" width="30" height="18" rx="3" fill="#082f49" stroke="#06b6d4" strokeWidth="1.5"/>
+        <text x="310" y="291" textAnchor="middle" fill="#67e8f9" fontSize="10" fontWeight="700">H3</text>
 
-        {/* H8: S_Cultural → O_Attitude (dashed amber, clean arc below O_Pleasure) */}
-        <path
-          d={`M ${sR},${r3} C ${sR+80},${r3+60} ${attL-60},${attTop+31} ${attL},${attTop+31}`}
-          fill="none" stroke="#f59e0b" strokeWidth="1.8" strokeDasharray="6,3"
-          markerEnd="url(#d-am)" opacity="0.75"
-        />
-        <HBadgeSVG x={sR+90} y={r3+70} label="H8" fill="#1c1003" stroke="#f59e0b" textFill="#fcd34d" />
+        {/* S_Place/Price → O_Arousal (faint atmospheric, no label) */}
+        <path d="M255,400 C310,400 310,130 380,130" fill="none" stroke="#a855f7" strokeWidth="1.5" markerEnd="url(#arr-pu)" opacity="0.2"/>
 
-        {/* ── O → R connections ─────────────────────────────────────── */}
+        {/* H8: S_Cultural → O_Attitude (dashed amber, exits right of S zone below S_Cultural) */}
+        <path d="M255,300 L255,540 L430,540 L430,530" fill="none" stroke="#f59e0b" strokeWidth="1.8" strokeDasharray="6,3" markerEnd="url(#arr-am)" opacity="0.8"/>
+        <rect x="258" y="355" width="90" height="36" rx="5" fill="#1c1003" stroke="#f59e0b" strokeWidth="1.5" opacity="0.95"/>
+        <text x="303" y="369" textAnchor="middle" fill="#fcd34d" fontSize="10" fontWeight="700">H8</text>
+        <text x="303" y="383" textAnchor="middle" fill="#fbbf24" fontSize="9" fontStyle="italic">Thiếu story → Att.↓</text>
+
+        {/* ── O → R connections ── */}
+
         {/* O_Arousal → R_Buy  H2 */}
-        <path
-          d={`M ${oR},${oArousalY+38} L ${rLeft},${r1-10}`}
-          fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#d-gr)"
-        />
-        <HBadgeSVG x={(oR+rLeft)/2} y={oArousalY+20} label="H2" fill="#052e16" stroke="#22c55e" textFill="#86efac" />
+        <path d="M580,110 L795,105" fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#arr-gr)"/>
+        <rect x="666" y="95" width="32" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1.5"/>
+        <text x="682" y="109" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H2</text>
 
         {/* O_Pleasure → R_Buy  H4 */}
-        <path
-          d={`M ${oR},${oPleasureY+38} L ${rLeft},${r1+10}`}
-          fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#d-gr)"
-        />
-        <HBadgeSVG x={(oR+rLeft)/2} y={oPleasureY+20} label="H4" fill="#052e16" stroke="#22c55e" textFill="#86efac" />
+        <path d="M580,230 L795,120" fill="none" stroke="#22c55e" strokeWidth="2.5" markerEnd="url(#arr-gr)"/>
+        <rect x="666" y="163" width="32" height="20" rx="4" fill="#0f172a" stroke="#22c55e" strokeWidth="1.5"/>
+        <text x="682" y="177" textAnchor="middle" fill="#22c55e" fontSize="11" fontWeight="700">H4</text>
 
-        {/* H5: O_Attitude → R_NoBuy (dashed red) */}
-        <path
-          d={`M ${attL+attW},${attTop+31} C ${attL+attW+80},${attTop+31} ${rLeft-60},${r2+38} ${rLeft},${r2+38}`}
-          fill="none" stroke="#ef4444" strokeWidth="1.8" strokeDasharray="6,4"
-          markerEnd="url(#d-re)" opacity="0.9"
-        />
-        <HBadgeSVG x={attL+attW+80} y={attTop+14} label="H5" fill="#450a0a" stroke="#ef4444" textFill="#fca5a5" />
+        {/* H5: O_Attitude → R_NoBuy */}
+        <path d="M580,515 L795,260" fill="none" stroke="#ef4444" strokeWidth="1.8" strokeDasharray="6,4" markerEnd="url(#arr-re)" opacity="0.9"/>
+        <rect x="660" y="378" width="34" height="20" rx="4" fill="#450a0a" stroke="#ef4444" strokeWidth="1.5"/>
+        <text x="677" y="392" textAnchor="middle" fill="#fca5a5" fontSize="10" fontWeight="700">H5</text>
 
-        {/* ── H9: R_Buy → R_Recommend (right side bracket) ─────────── */}
-        <path
-          d={`M ${rL+rW+8},${r1} L ${rL+rW+36},${r1} L ${rL+rW+36},${r3} L ${rL+rW+8},${r3}`}
-          fill="none" stroke="#14b8a6" strokeWidth="1.8" strokeDasharray="5,3"
-          markerEnd="url(#d-te)"
-        />
-        <HBadgeSVG x={rL+rW+36} y={(r1+r3)/2} label="H9" fill="#0f172a" stroke="#14b8a6" textFill="#14b8a6" />
+        {/* H7: [C] Context → × on H6 path */}
+        <path d="M720,495 L720,155" fill="none" stroke="#64748b" strokeWidth="1.5" strokeDasharray="5,4" opacity="0.7"/>
+        <circle cx="720" cy="155" r="9" fill="#1e293b" stroke="#94a3b8" strokeWidth="1.5"/>
+        <text x="720" y="159" textAnchor="middle" fill="#e2e8f0" fontSize="12" fontWeight="800">×</text>
+        <rect x="694" y="300" width="52" height="34" rx="4" fill="#0f172a" stroke="#64748b" strokeWidth="1" opacity="0.9"/>
+        <text x="720" y="314" textAnchor="middle" fill="#cbd5e1" fontSize="10" fontWeight="700">H7</text>
+        <text x="720" y="328" textAnchor="middle" fill="#94a3b8" fontSize="9">Tour ×2.25</text>
 
-        {/* ── H7: [C] Context pill → × on H6 path ─────────────────── */}
-        {/* [C] Context pill at bottom-centre of O zone */}
-        {/* H7 dashed line from context pill up to a junction circle on H6 arc */}
-        {/* H6 arc midpoint approx x=310, y=r2 = 230 */}
-        <path
-          d={`M 470,460 L 470,${r2}`}
-          fill="none" stroke="#64748b" strokeWidth="1.3" strokeDasharray="5,4" opacity="0.6"
-        />
-        <circle cx="470" cy={r2} r="8" fill="#1e293b" stroke="#94a3b8" strokeWidth="1.3" />
-        <text x="470" y={r2+4} textAnchor="middle" fill="#e2e8f0" fontSize="11" fontWeight="800">×</text>
-        {/* H7 label */}
-        <rect x="476" y={r2-10} width="56" height="24" rx="5" fill="#0f172a" stroke="#64748b" strokeWidth="1" opacity="0.9" />
-        <text x="504" y={r2+2} textAnchor="middle" fill="#cbd5e1" fontSize="9" fontWeight="700">H7 ×2.25</text>
+        {/* H9: R_Buy → R_Recommend (right bracket) */}
+        <path d="M1110,105 L1140,105 L1140,390 L1110,390" fill="none" stroke="#14b8a6" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#arr-te)"/>
+        <rect x="1118" y="235" width="34" height="18" rx="4" fill="#0f172a" stroke="#14b8a6" strokeWidth="1.5"/>
+        <text x="1135" y="248" textAnchor="middle" fill="#14b8a6" fontSize="11" fontWeight="700">H9</text>
 
+        {/* H10: R_Recommend → S_Social (top feedback arc) */}
+        <path d="M952,370 L952,14 L132,14 L132,58" fill="none" stroke="#64748b" strokeWidth="1.8" strokeDasharray="7,4" markerEnd="url(#arr-sl)" opacity="0.75"/>
+        <rect x="420" y="3" width="264" height="19" rx="4" fill="#0f172a" stroke="#475569" strokeWidth="1"/>
+        <text x="552" y="16" textAnchor="middle" fill="#94a3b8" fontSize="10" fontStyle="italic">H10: R_Recommend → S_Social (vòng lặp)</text>
       </svg>
 
       {/* ── HTML Nodes ── */}
 
-      {/* S column: l=20, spacing: t = r-38 (centre to top = 38 = h/2) */}
-      <Node l={sL}   t={r1-38} w={sW} h={sH}  bg="#0d1e38" border="#3b82f6"
-        title="S_Product"    titleColor="#93c5fd" sub="Đặc điểm sản phẩm · 16 mã" subColor="#60a5fa" />
-      <Node l={sL}   t={r2-38} w={sW} h={sH}  bg="#0d1e38" border="#3b82f6"
-        title="S_Social"     titleColor="#93c5fd" sub="Ảnh hưởng xã hội · 5 mã"  subColor="#60a5fa" />
-      <Node l={sL}   t={r3-38} w={sW} h={sH}  bg="#0d1e38" border="#3b82f6"
-        title="S_Cultural"   titleColor="#93c5fd" sub="Bản sắc văn hóa · 7 mã"   subColor="#60a5fa" />
+      {/* S column */}
+      <Node l={18}  t={58}  w={237} h={72} bg="bg-surface dark:bg-[#0f172a]" border="border-blue-500" title="S_Product"    titleColor="text-blue-300"  sub="Đặc điểm sản phẩm · 16 mã"     subColor="text-blue-500"/>
+      <Node l={18}  t={158} w={237} h={72} bg="bg-surface dark:bg-[#0f172a]" border="border-blue-500" title="S_Social"     titleColor="text-blue-300"  sub="Ảnh hưởng xã hội · 5 mã"       subColor="text-blue-500"/>
+      <Node l={18}  t={258} w={237} h={72} bg="bg-surface dark:bg-[#0f172a]" border="border-blue-500" title="S_Cultural"   titleColor="text-blue-300"  sub="Bản sắc văn hóa · 7 mã"        subColor="text-blue-500"/>
+      <Node l={18}  t={358} w={237} h={72} bg="bg-surface dark:bg-[#0f172a]" border="border-blue-500" title="S_Place/Price" titleColor="text-blue-300" sub="Không gian · Giá · Promo"        subColor="text-blue-500"/>
 
-      {/* O_Arousal + O_Pleasure — vertically centred in O zone */}
-      <Node l={oL}   t={oArousalY}  w={oW} h={oH}  bg="#2e1065" border="#a855f7"
-        title="O_Arousal"    titleColor="#e9d5ff" sub="Hứng thú tức thì"          subColor="#c084fc" />
-      <Node l={oL}   t={oPleasureY} w={oW} h={oH}  bg="#083344" border="#06b6d4"
-        title="O_Pleasure"   titleColor="#a5f3fc" sub="Cảm xúc lâu dài"           subColor="#67e8f9" />
+      {/* O column */}
+      <Node l={380} t={68}  w={200} h={72} bg="#2e1065" border="#a855f7" title="O_Arousal"  titleColor="#e9d5ff" sub="Hứng thú tức thì"    subColor="#c084fc"/>
+      <Node l={380} t={188} w={200} h={72} bg="#083344" border="#06b6d4" title="O_Pleasure" titleColor="#a5f3fc" sub="Cảm xúc lâu dài"     subColor="#67e8f9"/>
 
-      {/* O_Attitude — inside O zone, bottom row */}
-      <Node l={attL} t={attTop}     w={attW} h={attH} bg="#431407" border="#f59e0b" dashed={true}
-        title="O_Attitude"   titleColor="#fdba74" sub="Cổng niềm tin"             subColor="#fb923c" />
+      {/* O_Attitude — bottom row */}
+      <Node l={280} t={490} w={220} h={72} bg="#431407" border="#f59e0b" dashed={true} title="O_Attitude" titleColor="#fdba74" sub="BỘ LỌC / CỔNG NIỀM TIN" subColor="#fb923c"/>
 
-      {/* [C] Context pill — below O_Attitude */}
-      <Node l={oL+10} t={462} w={oW-20} h={30} bg="#0f1e2e" border="#475569" dashed={true}
-        title="[C] Bối cảnh: Tour đoàn · Thời gian" titleColor="#94a3b8" sub="" subColor="" />
+      {/* [C] Context — bottom row */}
+      <Node l={560} t={490} w={210} h={72} bg="bg-surface dark:bg-[#0f172a]" border="#64748b" dashed={true} title="[C] Context" titleColor="text-text2" sub="Tour đoàn / Đi lẻ · Thời gian" subColor="text-text3"/>
 
       {/* R column */}
-      <Node l={rL}   t={r1-38} w={rW} h={rH}  bg="#052e16" border="#22c55e"
-        title="R_Buy"        titleColor="#86efac" sub="Mua xung · Mua nhiều · Lan truyền" subColor="#4ade80" />
-      <Node l={rL}   t={r2-38} w={rW} h={rH}  bg="#450a0a" border="#ef4444"
-        title="R_NoBuy"      titleColor="#fca5a5" sub="Mất tin · Không rõ sản phẩm"      subColor="#f87171" />
-      <Node l={rL}   t={r3-38} w={rW} h={rH}  bg="#042f2e" border="#14b8a6"
-        title="R_Recommend"  titleColor="#5eead4" sub="SNS · WOM · Khách quay lại"       subColor="#2dd4bf" />
+      <Node l={800} t={68}  w={225} h={72} bg="#052e16" border="#22c55e" title="R_Buy"       titleColor="#86efac" sub="Mua xung · Mua nhiều · Lan truyền"  subColor="#4ade80"/>
+      <Node l={800} t={218} w={225} h={72} bg="#450a0a" border="#ef4444" title="R_NoBuy"     titleColor="#fca5a5" sub="Mất tin · Khó vận chuyển · Không rõ" subColor="#f87171"/>
+      <Node l={800} t={368} w={225} h={72} bg="#042f2e" border="#14b8a6" title="R_Recommend" titleColor="#5eead4" sub="SNS · WOM · Khách quay lại"          subColor="#2dd4bf"/>
     </div>
   );
 };
