@@ -2260,29 +2260,27 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
           <span className="text-xs text-text3">{t.igFlowSub}</span>
         </div>
 
-        {/* Flow: Desktop horizontal, Mobile vertical */}
+        {/* Flow: always flex — column on mobile, row on md+ */}
         <div className="relative">
-          {/* Desktop connector line */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-green-500/30 -translate-y-1/2 -z-10" />
-
-          <div className="grid grid-cols-1 md:grid-cols-7 gap-2 items-center">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2">
 
             {/* S Block */}
-            <div className="md:col-span-2 rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 text-center">
+            <div className="flex-1 rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 text-center">
               <div className="text-xs font-black uppercase tracking-widest text-blue-400 mb-1">[S]</div>
               <div className="text-base font-bold text-text mb-1">{t.igFlowS}</div>
               <div className="text-[11px] text-text3">{t.igFlowSDesc}</div>
             </div>
 
             {/* Arrow */}
-            <div className="flex justify-center"><ArrowRight size={22} className="text-border rotate-90 md:rotate-0" /></div>
+            <div className="flex justify-center shrink-0">
+              <ArrowRight size={20} className="text-border rotate-90 md:rotate-0" />
+            </div>
 
             {/* O Block */}
-            <div className="md:col-span-2 rounded-xl bg-purple-500/10 border border-purple-500/30 p-4 text-center">
+            <div className="flex-1 rounded-xl bg-purple-500/10 border border-purple-500/30 p-4 text-center">
               <div className="text-xs font-black uppercase tracking-widest text-purple-400 mb-1">[O]</div>
               <div className="text-base font-bold text-text mb-1">{t.igFlowO}</div>
               <div className="text-[11px] text-text3">{t.igFlowODesc}</div>
-              {/* Gate indicator inside O */}
               <div className="mt-3 pt-3 border-t border-purple-500/20">
                 <div className="inline-flex items-center gap-1.5 text-[10px] font-bold text-red-400 bg-red-500/10 rounded-full px-2 py-1">
                   <ShieldAlert size={10} /> {t.igFlowGate}
@@ -2292,10 +2290,12 @@ const InfographicView = ({ lang }: { lang: Lang }) => {
             </div>
 
             {/* Arrow */}
-            <div className="flex justify-center"><ArrowRight size={22} className="text-border rotate-90 md:rotate-0" /></div>
+            <div className="flex justify-center shrink-0">
+              <ArrowRight size={20} className="text-border rotate-90 md:rotate-0" />
+            </div>
 
             {/* R Block */}
-            <div className="md:col-span-2 rounded-xl bg-green-500/10 border border-green-500/30 p-4 text-center">
+            <div className="flex-1 rounded-xl bg-green-500/10 border border-green-500/30 p-4 text-center">
               <div className="text-xs font-black uppercase tracking-widest text-green-400 mb-1">[R]</div>
               <div className="text-base font-bold text-text mb-2">{t.igFlowR}</div>
               <div className="space-y-1.5">
